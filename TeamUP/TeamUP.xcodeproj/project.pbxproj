@@ -22,10 +22,7 @@
 		2C2E58222CE71F0D008766A8 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E580C2CE71F0D008766A8 /* RoundedCorner.swift */; };
 		2C2E58232CE71F0D008766A8 /* SignUPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E580F2CE71F0D008766A8 /* SignUPViewModel.swift */; };
 		2C2E58242CE71F0D008766A8 /* ProjectMoyoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E58132CE71F0D008766A8 /* ProjectMoyoApp.swift */; };
-		2C2E58252CE71F0D008766A8 /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E57E32CE71F0D008766A8 /* Pretendard-Black.ttf */; };
 		2C2E58262CE71F0D008766A8 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E57E42CE71F0D008766A8 /* Pretendard-Bold.ttf */; };
-		2C2E58272CE71F0D008766A8 /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E57E52CE71F0D008766A8 /* Pretendard-ExtraBold.ttf */; };
-		2C2E58282CE71F0D008766A8 /* Pretendard-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E57E62CE71F0D008766A8 /* Pretendard-ExtraLight.ttf */; };
 		2C2E58292CE71F0D008766A8 /* Pretendard-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E57E72CE71F0D008766A8 /* Pretendard-Light.ttf */; };
 		2C2E582A2CE71F0D008766A8 /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E57E82CE71F0D008766A8 /* Pretendard-Medium.ttf */; };
 		2C2E582B2CE71F0D008766A8 /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E57E92CE71F0D008766A8 /* Pretendard-Regular.ttf */; };
@@ -36,14 +33,13 @@
 		2C2E58302CE71F0D008766A8 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E57EF2CE71F0D008766A8 /* Config.xcconfig */; };
 		2C2E58312CE71F0D008766A8 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E57F02CE71F0D008766A8 /* Image.xcassets */; };
 		2C2E58322CE71F0D008766A8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E58122CE71F0D008766A8 /* Info.plist */; };
+		770E953F2CE722E500761A03 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E953E2CE722E500761A03 /* BackButton.swift */; };
+		770E95412CE7232E00761A03 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E95402CE7232E00761A03 /* CustomFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2C2E57832CE71E8B008766A8 /* TeamUP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamUP.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C2E57E32CE71F0D008766A8 /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
 		2C2E57E42CE71F0D008766A8 /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
-		2C2E57E52CE71F0D008766A8 /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
-		2C2E57E62CE71F0D008766A8 /* Pretendard-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.ttf"; sourceTree = "<group>"; };
 		2C2E57E72CE71F0D008766A8 /* Pretendard-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.ttf"; sourceTree = "<group>"; };
 		2C2E57E82CE71F0D008766A8 /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
 		2C2E57E92CE71F0D008766A8 /* Pretendard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.ttf"; sourceTree = "<group>"; };
@@ -69,6 +65,9 @@
 		2C2E580F2CE71F0D008766A8 /* SignUPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPViewModel.swift; sourceTree = "<group>"; };
 		2C2E58122CE71F0D008766A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C2E58132CE71F0D008766A8 /* ProjectMoyoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMoyoApp.swift; sourceTree = "<group>"; };
+		770E953E2CE722E500761A03 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		770E95402CE7232E00761A03 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
+		770E95422CE724A700761A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +100,7 @@
 		2C2E57EC2CE71F0D008766A8 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				2C2E57E32CE71F0D008766A8 /* Pretendard-Black.ttf */,
 				2C2E57E42CE71F0D008766A8 /* Pretendard-Bold.ttf */,
-				2C2E57E52CE71F0D008766A8 /* Pretendard-ExtraBold.ttf */,
-				2C2E57E62CE71F0D008766A8 /* Pretendard-ExtraLight.ttf */,
 				2C2E57E72CE71F0D008766A8 /* Pretendard-Light.ttf */,
 				2C2E57E82CE71F0D008766A8 /* Pretendard-Medium.ttf */,
 				2C2E57E92CE71F0D008766A8 /* Pretendard-Regular.ttf */,
@@ -250,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				2C2E580C2CE71F0D008766A8 /* RoundedCorner.swift */,
+				770E95402CE7232E00761A03 /* CustomFont.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -257,6 +254,7 @@
 		2C2E580E2CE71F0D008766A8 /* Uitl */ = {
 			isa = PBXGroup;
 			children = (
+				770E953D2CE722CD00761A03 /* Component */,
 				2C2E580B2CE71F0D008766A8 /* Color */,
 				2C2E580D2CE71F0D008766A8 /* Extension */,
 			);
@@ -296,6 +294,7 @@
 		2C2E58152CE71F0D008766A8 /* TeamUP */ = {
 			isa = PBXGroup;
 			children = (
+				770E95422CE724A700761A03 /* Info.plist */,
 				2C2E58142CE71F0D008766A8 /* TeamUPApp */,
 			);
 			path = TeamUP;
@@ -308,6 +307,14 @@
 				2C2E58122CE71F0D008766A8 /* Info.plist */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		770E953D2CE722CD00761A03 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				770E953E2CE722E500761A03 /* BackButton.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,10 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C2E58252CE71F0D008766A8 /* Pretendard-Black.ttf in Resources */,
 				2C2E58262CE71F0D008766A8 /* Pretendard-Bold.ttf in Resources */,
-				2C2E58272CE71F0D008766A8 /* Pretendard-ExtraBold.ttf in Resources */,
-				2C2E58282CE71F0D008766A8 /* Pretendard-ExtraLight.ttf in Resources */,
 				2C2E58292CE71F0D008766A8 /* Pretendard-Light.ttf in Resources */,
 				2C2E582A2CE71F0D008766A8 /* Pretendard-Medium.ttf in Resources */,
 				2C2E582B2CE71F0D008766A8 /* Pretendard-Regular.ttf in Resources */,
@@ -397,12 +401,14 @@
 			files = (
 				2C2E58162CE71F0D008766A8 /* UserModel.swift in Sources */,
 				2C2E58172CE71F0D008766A8 /* MainService.swift in Sources */,
+				770E95412CE7232E00761A03 /* CustomFont.swift in Sources */,
 				2C2E58182CE71F0D008766A8 /* LoginView.swift in Sources */,
 				2C2E58192CE71F0D008766A8 /* SignUPView.swift in Sources */,
 				2C2E581A2CE71F0D008766A8 /* ChatView.swift in Sources */,
 				2C2E581B2CE71F0D008766A8 /* HomeView.swift in Sources */,
 				2C2E581C2CE71F0D008766A8 /* LoungeView.swift in Sources */,
 				2C2E581D2CE71F0D008766A8 /* PostView.swift in Sources */,
+				770E953F2CE722E500761A03 /* BackButton.swift in Sources */,
 				2C2E581E2CE71F0D008766A8 /* ProfileView.swift in Sources */,
 				2C2E581F2CE71F0D008766A8 /* MainTabView.swift in Sources */,
 				2C2E58202CE71F0D008766A8 /* TabBar.swift in Sources */,
@@ -546,11 +552,11 @@
 				DEVELOPMENT_TEAM = U4BQZ3AXAA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TeamUP/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -558,9 +564,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sueunal.com.TeamUP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -575,11 +585,11 @@
 				DEVELOPMENT_TEAM = U4BQZ3AXAA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TeamUP/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -587,9 +597,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sueunal.com.TeamUP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
