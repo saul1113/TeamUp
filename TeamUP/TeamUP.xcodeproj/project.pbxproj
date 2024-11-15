@@ -33,6 +33,10 @@
 		2C2E58302CE71F0D008766A8 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E57EF2CE71F0D008766A8 /* Config.xcconfig */; };
 		2C2E58312CE71F0D008766A8 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E57F02CE71F0D008766A8 /* Image.xcassets */; };
 		2C2E58322CE71F0D008766A8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E58122CE71F0D008766A8 /* Info.plist */; };
+		2CB1BF4B2CE725B000CA6A26 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB1BF4A2CE725B000CA6A26 /* Alamofire */; };
+		2CB1BF502CE725D000CA6A26 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB1BF4F2CE725D000CA6A26 /* KeychainSwift */; };
+		2CB1BF532CE725DF00CA6A26 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB1BF522CE725DF00CA6A26 /* MarkdownUI */; };
+		2CB1BF562CE725ED00CA6A26 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB1BF552CE725ED00CA6A26 /* SocketIO */; };
 		770E953F2CE722E500761A03 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E953E2CE722E500761A03 /* BackButton.swift */; };
 		770E95412CE7232E00761A03 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E95402CE7232E00761A03 /* CustomFont.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +79,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB1BF532CE725DF00CA6A26 /* MarkdownUI in Frameworks */,
+				2CB1BF562CE725ED00CA6A26 /* SocketIO in Frameworks */,
+				2CB1BF502CE725D000CA6A26 /* KeychainSwift in Frameworks */,
+				2CB1BF4B2CE725B000CA6A26 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,8 +280,8 @@
 		2C2E58112CE71F0D008766A8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				2C2E580E2CE71F0D008766A8 /* Uitl */,
 				2C2E58332CE71F1B008766A8 /* Application */,
+				2C2E580E2CE71F0D008766A8 /* Uitl */,
 				2C2E57F32CE71F0D008766A8 /* Model */,
 				2C2E58102CE71F0D008766A8 /* ViewModel */,
 				2C2E58092CE71F0D008766A8 /* UI */,
@@ -334,6 +342,10 @@
 			);
 			name = TeamUP;
 			packageProductDependencies = (
+				2CB1BF4A2CE725B000CA6A26 /* Alamofire */,
+				2CB1BF4F2CE725D000CA6A26 /* KeychainSwift */,
+				2CB1BF522CE725DF00CA6A26 /* MarkdownUI */,
+				2CB1BF552CE725ED00CA6A26 /* SocketIO */,
 			);
 			productName = TeamUP;
 			productReference = 2C2E57832CE71E8B008766A8 /* TeamUP.app */;
@@ -363,6 +375,12 @@
 			);
 			mainGroup = 2C2E577A2CE71E8B008766A8;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2CB1BF492CE725B000CA6A26 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				2CB1BF4E2CE725D000CA6A26 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				2CB1BF512CE725DF00CA6A26 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				2CB1BF542CE725ED00CA6A26 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2C2E57842CE71E8B008766A8 /* Products */;
 			projectDirPath = "";
@@ -557,6 +575,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -590,6 +609,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -629,6 +649,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2CB1BF492CE725B000CA6A26 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
+		2CB1BF4E2CE725D000CA6A26 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 24.0.0;
+			};
+		};
+		2CB1BF512CE725DF00CA6A26 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.1;
+			};
+		};
+		2CB1BF542CE725ED00CA6A26 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2CB1BF4A2CE725B000CA6A26 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CB1BF492CE725B000CA6A26 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		2CB1BF4F2CE725D000CA6A26 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CB1BF4E2CE725D000CA6A26 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+		2CB1BF522CE725DF00CA6A26 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CB1BF512CE725DF00CA6A26 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
+		};
+		2CB1BF552CE725ED00CA6A26 /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CB1BF542CE725ED00CA6A26 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */;
+			productName = SocketIO;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2C2E577B2CE71E8B008766A8 /* Project object */;
 }
