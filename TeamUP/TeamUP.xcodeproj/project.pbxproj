@@ -41,6 +41,7 @@
 		FE20613C2CE94A1A0001FCD1 /* AnnouncementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE20613B2CE94A1A0001FCD1 /* AnnouncementDetailView.swift */; };
 		FE2061402CE951380001FCD1 /* AnnouncementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE20613F2CE951380001FCD1 /* AnnouncementModel.swift */; };
 		FE2061452CE95AAF0001FCD1 /* ViewBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061442CE95AAF0001FCD1 /* ViewBackButton.swift */; };
+		FE2061482CE9612F0001FCD1 /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061472CE9612F0001FCD1 /* CustomBackButton.swift */; };
 		FE54F79B2CE7AF3700944749 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FE54F79A2CE7AF3700944749 /* Config.xcconfig */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		FE20613B2CE94A1A0001FCD1 /* AnnouncementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementDetailView.swift; sourceTree = "<group>"; };
 		FE20613F2CE951380001FCD1 /* AnnouncementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementModel.swift; sourceTree = "<group>"; };
 		FE2061442CE95AAF0001FCD1 /* ViewBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBackButton.swift; sourceTree = "<group>"; };
+		FE2061472CE9612F0001FCD1 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
 		FE54F79A2CE7AF3700944749 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -271,6 +273,7 @@
 		2C2E580E2CE71F0D008766A8 /* Uitl */ = {
 			isa = PBXGroup;
 			children = (
+				FE2061462CE9610A0001FCD1 /* ViewModifier */,
 				770E953D2CE722CD00761A03 /* Component */,
 				2C2E580B2CE71F0D008766A8 /* Color */,
 				2C2E580D2CE71F0D008766A8 /* Extension */,
@@ -356,6 +359,14 @@
 				FE20613F2CE951380001FCD1 /* AnnouncementModel.swift */,
 			);
 			path = Announcement;
+			sourceTree = "<group>";
+		};
+		FE2061462CE9610A0001FCD1 /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				FE2061472CE9612F0001FCD1 /* CustomBackButton.swift */,
+			);
+			path = ViewModifier;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,6 +469,7 @@
 				FE2061402CE951380001FCD1 /* AnnouncementModel.swift in Sources */,
 				2C2E581B2CE71F0D008766A8 /* HomeView.swift in Sources */,
 				FE2061372CE949780001FCD1 /* AnnouncementView.swift in Sources */,
+				FE2061482CE9612F0001FCD1 /* CustomBackButton.swift in Sources */,
 				2C2E581C2CE71F0D008766A8 /* LoungeView.swift in Sources */,
 				2C2E581D2CE71F0D008766A8 /* PostView.swift in Sources */,
 				FE2061452CE95AAF0001FCD1 /* ViewBackButton.swift in Sources */,

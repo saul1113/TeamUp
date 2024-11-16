@@ -10,13 +10,6 @@ import SwiftUI
 
 extension View {
     public func backButton() -> some View {
-        self
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden()
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    BackButton()
-                }
-            }
+        self.modifier(CustomBackButton())
     }
 }
