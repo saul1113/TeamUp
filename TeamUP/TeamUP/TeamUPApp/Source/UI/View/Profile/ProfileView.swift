@@ -9,10 +9,26 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            NavigationLink {
+                AnnouncementView()
+            } label: {
+                Text("공지사항")
+            }
+            
+            NavigationLink {
+                Text("자주 묻는 질문")
+            } label: {
+                Text("자주 묻는 질문")
+            }
+        }
+        .listStyle(.plain)
+        .font(.semibold18)
     }
 }
 
 #Preview {
-    ProfileView()
+    NavigationStack {
+        ProfileView()
+    }
 }
