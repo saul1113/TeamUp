@@ -30,15 +30,14 @@
 		2C2E582D2CE71F0D008766A8 /* Pretendard-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E57EB2CE71F0D008766A8 /* Pretendard-Thin.ttf */; };
 		2C2E582E2CE71F0D008766A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E57ED2CE71F0D008766A8 /* Assets.xcassets */; };
 		2C2E582F2CE71F0D008766A8 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E57EE2CE71F0D008766A8 /* Color.xcassets */; };
-		2C2E58302CE71F0D008766A8 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E57EF2CE71F0D008766A8 /* Config.xcconfig */; };
 		2C2E58312CE71F0D008766A8 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E57F02CE71F0D008766A8 /* Image.xcassets */; };
-		2C2E58322CE71F0D008766A8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E58122CE71F0D008766A8 /* Info.plist */; };
 		2CB1BF4B2CE725B000CA6A26 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB1BF4A2CE725B000CA6A26 /* Alamofire */; };
 		2CB1BF502CE725D000CA6A26 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB1BF4F2CE725D000CA6A26 /* KeychainSwift */; };
 		2CB1BF532CE725DF00CA6A26 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB1BF522CE725DF00CA6A26 /* MarkdownUI */; };
 		2CB1BF562CE725ED00CA6A26 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB1BF552CE725ED00CA6A26 /* SocketIO */; };
 		770E953F2CE722E500761A03 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E953E2CE722E500761A03 /* BackButton.swift */; };
 		770E95412CE7232E00761A03 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E95402CE7232E00761A03 /* CustomFont.swift */; };
+		FE54F79B2CE7AF3700944749 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FE54F79A2CE7AF3700944749 /* Config.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +50,6 @@
 		2C2E57EB2CE71F0D008766A8 /* Pretendard-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.ttf"; sourceTree = "<group>"; };
 		2C2E57ED2CE71F0D008766A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C2E57EE2CE71F0D008766A8 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
-		2C2E57EF2CE71F0D008766A8 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		2C2E57F02CE71F0D008766A8 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		2C2E57F22CE71F0D008766A8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		2C2E57F42CE71F0D008766A8 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
@@ -67,11 +65,11 @@
 		2C2E580A2CE71F0D008766A8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2C2E580C2CE71F0D008766A8 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		2C2E580F2CE71F0D008766A8 /* SignUPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPViewModel.swift; sourceTree = "<group>"; };
-		2C2E58122CE71F0D008766A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C2E58132CE71F0D008766A8 /* ProjectMoyoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMoyoApp.swift; sourceTree = "<group>"; };
 		770E953E2CE722E500761A03 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		770E95402CE7232E00761A03 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		770E95422CE724A700761A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FE54F79A2CE7AF3700944749 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +123,7 @@
 				2C2E57ED2CE71F0D008766A8 /* Assets.xcassets */,
 				2C2E57EE2CE71F0D008766A8 /* Color.xcassets */,
 				2C2E57F02CE71F0D008766A8 /* Image.xcassets */,
-				2C2E57EF2CE71F0D008766A8 /* Config.xcconfig */,
+				FE54F79A2CE7AF3700944749 /* Config.xcconfig */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -312,7 +310,6 @@
 			isa = PBXGroup;
 			children = (
 				2C2E58132CE71F0D008766A8 /* ProjectMoyoApp.swift */,
-				2C2E58122CE71F0D008766A8 /* Info.plist */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -400,13 +397,12 @@
 				2C2E58292CE71F0D008766A8 /* Pretendard-Light.ttf in Resources */,
 				2C2E582A2CE71F0D008766A8 /* Pretendard-Medium.ttf in Resources */,
 				2C2E582B2CE71F0D008766A8 /* Pretendard-Regular.ttf in Resources */,
+				FE54F79B2CE7AF3700944749 /* Config.xcconfig in Resources */,
 				2C2E582C2CE71F0D008766A8 /* Pretendard-SemiBold.ttf in Resources */,
 				2C2E582D2CE71F0D008766A8 /* Pretendard-Thin.ttf in Resources */,
 				2C2E582E2CE71F0D008766A8 /* Assets.xcassets in Resources */,
 				2C2E582F2CE71F0D008766A8 /* Color.xcassets in Resources */,
-				2C2E58302CE71F0D008766A8 /* Config.xcconfig in Resources */,
 				2C2E58312CE71F0D008766A8 /* Image.xcassets in Resources */,
-				2C2E58322CE71F0D008766A8 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,8 +562,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TeamUP/Preview Content\"";
-				DEVELOPMENT_TEAM = U4BQZ3AXAA;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 6R3M7VGRP2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TeamUP/Info.plist;
@@ -600,8 +596,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TeamUP/Preview Content\"";
-				DEVELOPMENT_TEAM = U4BQZ3AXAA;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 6R3M7VGRP2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TeamUP/Info.plist;
