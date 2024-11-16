@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct AnnouncementDetailView: View {
-    private(set) var item: AnnouncementModel
+struct InformationDetailView: View {
+    private(set) var item: InformationModel
     private let padding: CGFloat = 20
     
-    init(item: AnnouncementModel) {
+    init(item: InformationModel) {
         self.item = item
     }
     
@@ -42,6 +42,6 @@ struct AnnouncementDetailView: View {
 
 #Preview {
     NavigationStack {
-        AnnouncementDetailView(item: AnnouncementModel(title: "공지사항", content: "고오오옹지지지ㅣㅈ하항", createAt: "2024.11.17"))
+        InformationDetailView(item: InformationModel(title: "공지사항", content: "고오오옹지지지ㅣㅈ하항", createAt: "2024.11.17"))
     }
 }
