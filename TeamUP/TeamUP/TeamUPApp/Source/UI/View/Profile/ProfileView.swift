@@ -11,11 +11,30 @@ struct ProfileView: View {
     private let padding: CGFloat = 20
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Image(systemName: "person.circle.fill")
-                .font(.system(size: 80))
-                .padding(.horizontal, padding - 10)
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .center) {
+                Image(systemName: "person.circle.fill")
+                    .font(.system(size: 80))
+                
+                VStack(alignment: .leading) {
+                    Text("유저")
+                        .font(.semibold24)
+                    
+                    Text("프론트엔드인데 백엔드가 좋아요\n근데 C밖에 못해요 데려가주세요🐱\n안데려가면 물거임")
+                        .font(.medium16)
+                }
+            }
+            .padding(.horizontal, padding)
             
+            HStack(alignment: .center) {
+                Text("#프론트엔드")
+                    .font(.regular16)
+                
+                Text("#몰라백엔드")
+                    .font(.regular16)
+            }
+            .padding(.horizontal, padding)
+                
             List {
                 listItem("공지사항") {
                     AnnouncementView()
@@ -44,7 +63,7 @@ struct ProfileView: View {
         }
         
         Button("로그아웃") {
-                
+            // TODO: 로그아웃 로직 연결
         }
         .font(.bold16)
         .foregroundStyle(.red)
