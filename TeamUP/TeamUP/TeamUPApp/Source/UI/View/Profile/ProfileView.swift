@@ -42,6 +42,12 @@ struct ProfileView: View {
             .environment(\.defaultMinListRowHeight, 0)
             .font(.semibold18)
         }
+        
+        Button("로그아웃") {
+                
+        }
+        .font(.bold16)
+        .foregroundStyle(.red)
     }
     
     @ViewBuilder
