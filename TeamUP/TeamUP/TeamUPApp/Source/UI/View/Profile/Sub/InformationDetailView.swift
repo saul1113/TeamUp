@@ -35,8 +35,6 @@ struct InformationDetailView: View {
             Spacer()
         }
         .padding(.horizontal, padding)
-        .navigationTitle("공지사항")
-        .backButton()
     }
 }
 

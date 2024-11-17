@@ -49,11 +49,13 @@ struct MainTabView: View {
                         }
                         .tag(3)
                 case .profile:
-                    ProfileView()
-                        .tabItem() {
-                            Label("Profile", systemImage: "person.crop.circle")
-                        }
-                        .tag(4)
+                    NavigationStack {
+                        ProfileView()
+                            .tabItem() {
+                                Label("Profile", systemImage: "person.crop.circle")
+                            }
+                            .tag(4)
+                    }
                 }
             }
             TabBar(selectedTab: $selectedTab)
