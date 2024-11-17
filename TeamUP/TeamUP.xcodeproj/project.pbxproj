@@ -47,6 +47,7 @@
 		FE2061502CE96DF30001FCD1 /* ExpandedDividerWithVStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE20614F2CE96DF30001FCD1 /* ExpandedDividerWithVStackView.swift */; };
 		FE2061532CE983400001FCD1 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061522CE983400001FCD1 /* SettingView.swift */; };
 		FE2061562CE991320001FCD1 /* TermsAndConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061552CE991320001FCD1 /* TermsAndConditionsView.swift */; };
+		FE2061582CE992D90001FCD1 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061572CE992D90001FCD1 /* PrivacyPolicyView.swift */; };
 		FE54F79B2CE7AF3700944749 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FE54F79A2CE7AF3700944749 /* Config.xcconfig */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		FE20614F2CE96DF30001FCD1 /* ExpandedDividerWithVStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedDividerWithVStackView.swift; sourceTree = "<group>"; };
 		FE2061522CE983400001FCD1 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		FE2061552CE991320001FCD1 /* TermsAndConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsView.swift; sourceTree = "<group>"; };
+		FE2061572CE992D90001FCD1 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		FE54F79A2CE7AF3700944749 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -412,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				FE2061552CE991320001FCD1 /* TermsAndConditionsView.swift */,
+				FE2061572CE992D90001FCD1 /* PrivacyPolicyView.swift */,
 			);
 			path = Policies;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				2C2E581D2CE71F0D008766A8 /* PostView.swift in Sources */,
 				FE2061452CE95AAF0001FCD1 /* ViewBackButton.swift in Sources */,
 				770E953F2CE722E500761A03 /* BackButton.swift in Sources */,
+				FE2061582CE992D90001FCD1 /* PrivacyPolicyView.swift in Sources */,
 				2C2E581E2CE71F0D008766A8 /* ProfileView.swift in Sources */,
 				2C2E581F2CE71F0D008766A8 /* MainTabView.swift in Sources */,
 				FE20614E2CE969070001FCD1 /* QuestionView.swift in Sources */,

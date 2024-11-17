@@ -32,6 +32,10 @@ struct ProfileView: View {
                 listItem("이용약관") {
                     TermsAndConditionsView()
                 }
+                
+                listItem("개인정보처리방침") {
+                    PrivacyPolicyView()
+                }
             }
             .listStyle(.plain)
             .listRowInsets(EdgeInsets(top: 0, leading: padding, bottom: 0, trailing: padding))
