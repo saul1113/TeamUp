@@ -37,6 +37,10 @@
 		2CB1BF562CE725ED00CA6A26 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB1BF552CE725ED00CA6A26 /* SocketIO */; };
 		770E953F2CE722E500761A03 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E953E2CE722E500761A03 /* BackButton.swift */; };
 		770E95412CE7232E00761A03 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E95402CE7232E00761A03 /* CustomFont.swift */; };
+		EB45716F2CE9CFF5002C9166 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB45716E2CE9CFF5002C9166 /* AuthManager.swift */; };
+		EB4571712CE9D000002C9166 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EB4571702CE9D000002C9166 /* Config.xcconfig */; };
+		EB4571732CE9D028002C9166 /* StartTeamupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4571722CE9D028002C9166 /* StartTeamupView.swift */; };
+		EB4571752CE9D030002C9166 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4571742CE9D030002C9166 /* TextFieldView.swift */; };
 		FE54F79B2CE7AF3700944749 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FE54F79A2CE7AF3700944749 /* Config.xcconfig */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +73,10 @@
 		770E953E2CE722E500761A03 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		770E95402CE7232E00761A03 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		770E95422CE724A700761A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EB45716E2CE9CFF5002C9166 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		EB4571702CE9D000002C9166 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		EB4571722CE9D028002C9166 /* StartTeamupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTeamupView.swift; sourceTree = "<group>"; };
+		EB4571742CE9D030002C9166 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		FE54F79A2CE7AF3700944749 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +132,7 @@
 				2C2E57EE2CE71F0D008766A8 /* Color.xcassets */,
 				2C2E57F02CE71F0D008766A8 /* Image.xcassets */,
 				FE54F79A2CE7AF3700944749 /* Config.xcconfig */,
+				EB4571702CE9D000002C9166 /* Config.xcconfig */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -155,6 +164,7 @@
 		2C2E57F92CE71F0D008766A8 /* SignUP */ = {
 			isa = PBXGroup;
 			children = (
+				EB4571722CE9D028002C9166 /* StartTeamupView.swift */,
 				2C2E57F82CE71F0D008766A8 /* SignUPView.swift */,
 			);
 			path = SignUP;
@@ -221,6 +231,7 @@
 		2C2E58082CE71F0D008766A8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EB4571742CE9D030002C9166 /* TextFieldView.swift */,
 				2C2E57FA2CE71F0D008766A8 /* Authorization */,
 				2C2E57FC2CE71F0D008766A8 /* Chat */,
 				2C2E57FE2CE71F0D008766A8 /* Home */,
@@ -270,6 +281,7 @@
 		2C2E58102CE71F0D008766A8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				EB45716E2CE9CFF5002C9166 /* AuthManager.swift */,
 				2C2E580F2CE71F0D008766A8 /* SignUPViewModel.swift */,
 			);
 			path = ViewModel;
@@ -396,6 +408,7 @@
 				2C2E58262CE71F0D008766A8 /* Pretendard-Bold.ttf in Resources */,
 				2C2E58292CE71F0D008766A8 /* Pretendard-Light.ttf in Resources */,
 				2C2E582A2CE71F0D008766A8 /* Pretendard-Medium.ttf in Resources */,
+				EB4571712CE9D000002C9166 /* Config.xcconfig in Resources */,
 				2C2E582B2CE71F0D008766A8 /* Pretendard-Regular.ttf in Resources */,
 				FE54F79B2CE7AF3700944749 /* Config.xcconfig in Resources */,
 				2C2E582C2CE71F0D008766A8 /* Pretendard-SemiBold.ttf in Resources */,
@@ -414,16 +427,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C2E58162CE71F0D008766A8 /* UserModel.swift in Sources */,
+				EB45716F2CE9CFF5002C9166 /* AuthManager.swift in Sources */,
 				2C2E58172CE71F0D008766A8 /* MainService.swift in Sources */,
 				770E95412CE7232E00761A03 /* CustomFont.swift in Sources */,
 				2C2E58182CE71F0D008766A8 /* LoginView.swift in Sources */,
 				2C2E58192CE71F0D008766A8 /* SignUPView.swift in Sources */,
+				EB4571752CE9D030002C9166 /* TextFieldView.swift in Sources */,
 				2C2E581A2CE71F0D008766A8 /* ChatView.swift in Sources */,
 				2C2E581B2CE71F0D008766A8 /* HomeView.swift in Sources */,
 				2C2E581C2CE71F0D008766A8 /* LoungeView.swift in Sources */,
 				2C2E581D2CE71F0D008766A8 /* PostView.swift in Sources */,
 				770E953F2CE722E500761A03 /* BackButton.swift in Sources */,
 				2C2E581E2CE71F0D008766A8 /* ProfileView.swift in Sources */,
+				EB4571732CE9D028002C9166 /* StartTeamupView.swift in Sources */,
 				2C2E581F2CE71F0D008766A8 /* MainTabView.swift in Sources */,
 				2C2E58202CE71F0D008766A8 /* TabBar.swift in Sources */,
 				2C2E58212CE71F0D008766A8 /* Color.swift in Sources */,
