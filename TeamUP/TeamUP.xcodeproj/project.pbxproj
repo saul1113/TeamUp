@@ -45,6 +45,7 @@
 		FE20614B2CE967AD0001FCD1 /* AnnouncementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE20614A2CE967AD0001FCD1 /* AnnouncementView.swift */; };
 		FE20614E2CE969070001FCD1 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE20614D2CE969070001FCD1 /* QuestionView.swift */; };
 		FE2061502CE96DF30001FCD1 /* ExpandedDividerWithVStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE20614F2CE96DF30001FCD1 /* ExpandedDividerWithVStackView.swift */; };
+		FE2061532CE983400001FCD1 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061522CE983400001FCD1 /* SettingView.swift */; };
 		FE54F79B2CE7AF3700944749 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FE54F79A2CE7AF3700944749 /* Config.xcconfig */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		FE20614A2CE967AD0001FCD1 /* AnnouncementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementView.swift; sourceTree = "<group>"; };
 		FE20614D2CE969070001FCD1 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		FE20614F2CE96DF30001FCD1 /* ExpandedDividerWithVStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedDividerWithVStackView.swift; sourceTree = "<group>"; };
+		FE2061522CE983400001FCD1 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		FE54F79A2CE7AF3700944749 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,6 +226,7 @@
 				FE2061492CE9679D0001FCD1 /* Sub */,
 				FE2061382CE949C60001FCD1 /* Announcement */,
 				FE20614C2CE968E40001FCD1 /* Question */,
+				FE2061512CE9831F0001FCD1 /* Setting */,
 				2C2E58032CE71F0D008766A8 /* ProfileView.swift */,
 			);
 			path = Profile;
@@ -394,6 +397,14 @@
 			path = Question;
 			sourceTree = "<group>";
 		};
+		FE2061512CE9831F0001FCD1 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				FE2061522CE983400001FCD1 /* SettingView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -506,6 +517,7 @@
 				2C2E58202CE71F0D008766A8 /* TabBar.swift in Sources */,
 				2C2E58212CE71F0D008766A8 /* Color.swift in Sources */,
 				FE20614B2CE967AD0001FCD1 /* AnnouncementView.swift in Sources */,
+				FE2061532CE983400001FCD1 /* SettingView.swift in Sources */,
 				2C2E58222CE71F0D008766A8 /* RoundedCorner.swift in Sources */,
 				2C2E58232CE71F0D008766A8 /* SignUPViewModel.swift in Sources */,
 				FE20613C2CE94A1A0001FCD1 /* InformationDetailView.swift in Sources */,

@@ -26,6 +26,7 @@ struct ProfileView: View {
                 
                 Divider()
                     .listRowInsets(EdgeInsets())
+                    .listRowSeparator(.hidden)
                 
                 NavigationLink {
                     QuestionView()
@@ -36,6 +37,18 @@ struct ProfileView: View {
                 
                 Divider()
                     .listRowInsets(EdgeInsets())
+                    .listRowSeparator(.hidden)
+                
+                NavigationLink {
+                    SettingView()
+                } label: {
+                    Text("설정")
+                }
+                .listRowSeparator(.hidden)
+                
+                Divider()
+                    .listRowInsets(EdgeInsets())
+                    .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
             .listRowInsets(EdgeInsets(top: 0, leading: padding, bottom: 0, trailing: padding))
