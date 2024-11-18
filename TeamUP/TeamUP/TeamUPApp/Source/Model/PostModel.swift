@@ -5,6 +5,8 @@
 //  Created by wonhoKim on 11/18/24.
 //
 
+import Foundation
+
 
 
 enum PostCategory: String, CaseIterable, Identifiable {
@@ -14,7 +16,8 @@ enum PostCategory: String, CaseIterable, Identifiable {
     var id: String { self.rawValue }
 }
 // Post 모델
-struct Post: Listable {
+struct Post: Listable, Identifiable {
+    var id: String = UUID().uuidString
     var category: PostCategory
     var user: User
     var isRecruit: Bool

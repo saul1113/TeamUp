@@ -26,12 +26,13 @@ enum RoungeCategory: String, CaseIterable, Identifiable {
 }
 
 // Rounge 모델
-struct Rounge: Listable {
+struct Rounge: Listable, Identifiable {
+    var id: String = UUID().uuidString
     var category: RoungeCategory
     var user: User
     var title: String
     var content: String
-    var reply: [String]
+    var reply: [Reply]
     var time: String
     var save: Int
     var seen: Int
@@ -40,4 +41,10 @@ struct Rounge: Listable {
     var categoryString: String {
         return category.rawValue
     }
+}
+struct Reply: Identifiable, Codable {
+    var id: String = UUID().uuidString // 댓글 고유 ID
+    var user: String // 작성자
+    var content: String // 댓글 내용
+    var timestamp: Date // 작성 시간
 }

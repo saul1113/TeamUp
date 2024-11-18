@@ -12,7 +12,11 @@ let sampleRoungeData: [Rounge] = [
         user: User(email: "add", password: "123", nickname: "ㅎㅎ", profileImageName: "String"),
         title: "새로운 규정 공지",
         content: "새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요.",
-        reply: ["규정은 언제부터 적용되나요?", "상세한 내용은 어디에서 확인할 수 있나요?"],
+        reply: [
+            Reply(user: "Alice", content: "공지 확인했습니다. 감사합니다.", timestamp: Date()),
+            Reply(user: "Bob", content: "규정 변경 관련 문의는 어디로 해야 하나요?", timestamp: Date()),
+            Reply(user: "Charlie", content: "수고하셨습니다!", timestamp: Date())
+        ],
         time: "2024-11-18 10:00",
         save: 120,
         seen: 350, hasTag: ["질문","궁금해요","스터디"]
@@ -22,7 +26,11 @@ let sampleRoungeData: [Rounge] = [
         user:User(email: "add", password: "123", nickname: "친구야", profileImageName: "String"),
         title: "오늘 점심 뭐 먹을까요?",
         content: "여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!",
-        reply: ["김밥 어때요?", "치킨 좋죠!", "피자 먹고 싶어요!"],
+        reply: [
+            Reply(user: "Alice", content: "공지 확인했습니다. 감사합니다.", timestamp: Date()),
+            Reply(user: "Bob", content: "규정 변경 관련 문의는 어디로 해야 하나요?", timestamp: Date()),
+            Reply(user: "Charlie", content: "수고하셨습니다!", timestamp: Date())
+        ],
         time: "2024-11-18 12:15",
         save: 40,
         seen: 150, hasTag: ["질문","궁금해요","스터디"]
@@ -32,7 +40,11 @@ let sampleRoungeData: [Rounge] = [
         user: User(email: "add", password: "123", nickname: "김원호요", profileImageName: "String"),
         title: "iOS 프로젝트에서 List 뷰 사용법",
         content: "iOS 프로젝트에서 `List` 뷰를 사용하려면 어떻게 해야 하나요? 방법을 알고 싶은데 알려주세요!",
-        reply: ["`List`는 데이터를 배열로 받아서 뷰를 생성해요.", "List의 아이템은 `ForEach`로 구성할 수 있습니다."],
+        reply: [
+            Reply(user: "Alice", content: "공지 확인했습니다. 감사합니다.", timestamp: Date()),
+            Reply(user: "Bob", content: "규정 변경 관련 문의는 어디로 해야 하나요?", timestamp: Date()),
+            Reply(user: "Charlie", content: "수고하셨습니다!", timestamp: Date())
+        ],
         time: "2024-11-17 15:30",
         save: 25,
         seen: 200, hasTag: ["질문","궁금해요","스터디"]
