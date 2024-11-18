@@ -58,17 +58,18 @@ struct LoginView: View {
             Spacer()
                 .frame(height: 40)
             
-            Button(action: {
-                
-            }) {
-                Text("로그인")
-                    .font(.headline)
-                    .foregroundColor(isLoginEnabled ? .white : .gray)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 48)
-                    .background(isLoginEnabled ? Color.blue : Color.gray.opacity(0.4))
-                    .cornerRadius(4)
-            }
+            NavigationLink(
+                destination: MainTabView(),
+                label: {
+                    Text("로그인")
+                        .font(.headline)
+                        .foregroundColor(isLoginEnabled ? .white : .gray)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 48)
+                        .background(isLoginEnabled ? Color.blue : Color.gray.opacity(0.4))
+                        .cornerRadius(4)
+                }
+            )
             .disabled(!isLoginEnabled)
             
             // Sign Up Link

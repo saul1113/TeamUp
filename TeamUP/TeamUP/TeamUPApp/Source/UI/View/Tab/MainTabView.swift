@@ -62,6 +62,7 @@ struct MainTabView: View {
                     .background(.white)
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
