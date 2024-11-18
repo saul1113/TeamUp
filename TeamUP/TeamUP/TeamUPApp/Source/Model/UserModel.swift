@@ -8,9 +8,18 @@
 import Foundation
 
 
-struct User {
+struct User: Codable {
+    let id: String
     let email: String
-    let password: String
-    let nickname: String
-    let profileImageName: String
+    var password: String
+    var nickname: String
+    var profileImageName: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case email
+        case password
+        case nickname
+        case profileImageName = "profile_image_name"
+    }
 }
