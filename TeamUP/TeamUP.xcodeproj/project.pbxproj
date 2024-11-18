@@ -35,6 +35,7 @@
 		2CB1BF502CE725D000CA6A26 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB1BF4F2CE725D000CA6A26 /* KeychainSwift */; };
 		2CB1BF532CE725DF00CA6A26 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB1BF522CE725DF00CA6A26 /* MarkdownUI */; };
 		2CB1BF562CE725ED00CA6A26 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB1BF552CE725ED00CA6A26 /* SocketIO */; };
+		2CBEEB3F2CEB001B001CE6ED /* GroupChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBEEB3E2CEB001B001CE6ED /* GroupChatView.swift */; };
 		770E953F2CE722E500761A03 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E953E2CE722E500761A03 /* BackButton.swift */; };
 		770E95412CE7232E00761A03 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E95402CE7232E00761A03 /* CustomFont.swift */; };
 		FE2061372CE949780001FCD1 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061362CE949780001FCD1 /* InformationView.swift */; };
@@ -77,6 +78,7 @@
 		2C2E580C2CE71F0D008766A8 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		2C2E580F2CE71F0D008766A8 /* SignUPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPViewModel.swift; sourceTree = "<group>"; };
 		2C2E58132CE71F0D008766A8 /* ProjectMoyoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMoyoApp.swift; sourceTree = "<group>"; };
+		2CBEEB3E2CEB001B001CE6ED /* GroupChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatView.swift; sourceTree = "<group>"; };
 		770E953E2CE722E500761A03 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		770E95402CE7232E00761A03 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		770E95422CE724A700761A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				2C2E57FB2CE71F0D008766A8 /* ChatView.swift */,
+				2CBEEB3E2CEB001B001CE6ED /* GroupChatView.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				FE2061562CE991320001FCD1 /* TermsAndConditionsView.swift in Sources */,
 				2C2E58232CE71F0D008766A8 /* SignUPViewModel.swift in Sources */,
 				FE20613C2CE94A1A0001FCD1 /* InformationDetailView.swift in Sources */,
+				2CBEEB3F2CEB001B001CE6ED /* GroupChatView.swift in Sources */,
 				2C2E58242CE71F0D008766A8 /* ProjectMoyoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
