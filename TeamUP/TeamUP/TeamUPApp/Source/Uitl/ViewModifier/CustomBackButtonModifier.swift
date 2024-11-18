@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct CustomBackButton: ViewModifier {
+struct CustomBackButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .navigationBarTitleDisplayMode(.inline)

@@ -10,6 +10,6 @@ import SwiftUI
 
 extension View {
     public func backButton() -> some View {
-        self.modifier(CustomBackButton())
+        self.modifier(CustomBackButtonModifier())
     }
 }
