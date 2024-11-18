@@ -10,6 +10,7 @@ import SwiftUI
 struct ChatMessage: Identifiable {
     let id = UUID()
     let message: String
+    let image: Image
     let author: String
     let sendDate: Date
     var decodeToStringDate: String {
@@ -18,9 +19,9 @@ struct ChatMessage: Identifiable {
         return formatter.string(from: sendDate)
     }
     static let dummyData: [ChatMessage] = [
-        ChatMessage(message: "안녕하세요", author: "Soom", sendDate: .distantPast),
-        ChatMessage(message: "집가고싶어요", author: "sooso", sendDate: .distantPast),
-        ChatMessage(message: "전 배고파요", author: "aaa", sendDate: .distantPast)
+        ChatMessage(message: "안녕하세요", image: Image(systemName: "person.crop.circle"), author: "Soom", sendDate: .distantPast),
+        ChatMessage(message: "집가고싶어요", image: Image(systemName: "person.crop.circle"), author: "sooso", sendDate: .distantPast),
+        ChatMessage(message: "전 배고파요", image: Image(systemName: "person.crop.circle"), author: "aaa", sendDate: .distantPast)
     ]
 }
 struct GroupChatView: View {
@@ -73,7 +74,7 @@ struct GroupChatView: View {
                         .strokeBorder(Color.gray, lineWidth: 0.5)
                 }
             Button {
-                messages.append(ChatMessage(message: text, author: "Soom" , sendDate: .distantFuture))
+                messages.append(ChatMessage(message: text, image: Image(systemName: ""), author: "Soom" , sendDate: .distantFuture))
                 text = ""
             }label: {
                 Image(systemName: "arrow.up.circle.fill")
@@ -105,15 +106,25 @@ struct GroupChatView: View {
             .frame(maxWidth: .infinity, alignment: .trailing)
         } else {
             HStack ( alignment: .bottom ) {
-                Text(message.message)
-                    .padding(.vertical, 12)
-                    .customPadding()
-                    .foregroundStyle(.black)
-                    .background {
-                        Rectangle()
-                            .fill(Color.customGray)
-                            .cornerRadius(20, corners: [.topRight, .bottomLeft, .bottomRight])
-                    }
+                VStack {
+                    message.image
+                        .resizable()
+                        .frame(width: 35,height: 35)
+                    Spacer()
+                }
+                VStack (alignment: .leading) {
+                    Text(message.author)
+                        .font(Font.semibold14)
+                    Text(message.message)
+                        .padding(.vertical, 12)
+                        .customPadding()
+                        .foregroundStyle(.black)
+                        .background {
+                            Rectangle()
+                                .fill(Color.customGray)
+                                .cornerRadius(20, corners: [.topRight, .bottomLeft, .bottomRight])
+                        }
+                }
                 Text(message.decodeToStringDate)
                     .font(Font.regular12)
                     .foregroundStyle(.gray)
