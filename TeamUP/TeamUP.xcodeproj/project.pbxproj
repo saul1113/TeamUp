@@ -42,11 +42,21 @@
 		770E953F2CE722E500761A03 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E953E2CE722E500761A03 /* BackButton.swift */; };
 		770E95412CE7232E00761A03 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E95402CE7232E00761A03 /* CustomFont.swift */; };
 		EB45716F2CE9CFF5002C9166 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB45716E2CE9CFF5002C9166 /* AuthManager.swift */; };
-		EB4571712CE9D000002C9166 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EB4571702CE9D000002C9166 /* Config.xcconfig */; };
 		EB4571732CE9D028002C9166 /* StartTeamupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4571722CE9D028002C9166 /* StartTeamupView.swift */; };
 		EB4571752CE9D030002C9166 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4571742CE9D030002C9166 /* TextFieldView.swift */; };
 		EBB25C9F2CEB12700018A139 /* SignUpPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB25C9E2CEB12700018A139 /* SignUpPasswordView.swift */; };
-		FE54F79B2CE7AF3700944749 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FE54F79A2CE7AF3700944749 /* Config.xcconfig */; };
+		FE2061372CE949780001FCD1 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061362CE949780001FCD1 /* InformationView.swift */; };
+		FE20613C2CE94A1A0001FCD1 /* InformationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE20613B2CE94A1A0001FCD1 /* InformationDetailView.swift */; };
+		FE2061402CE951380001FCD1 /* InformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE20613F2CE951380001FCD1 /* InformationModel.swift */; };
+		FE2061452CE95AAF0001FCD1 /* ViewBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061442CE95AAF0001FCD1 /* ViewBackButton.swift */; };
+		FE2061482CE9612F0001FCD1 /* CustomBackButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061472CE9612F0001FCD1 /* CustomBackButtonModifier.swift */; };
+		FE20614B2CE967AD0001FCD1 /* AnnouncementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE20614A2CE967AD0001FCD1 /* AnnouncementView.swift */; };
+		FE20614E2CE969070001FCD1 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE20614D2CE969070001FCD1 /* QuestionView.swift */; };
+		FE2061502CE96DF30001FCD1 /* ExpandedDividerWithVStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE20614F2CE96DF30001FCD1 /* ExpandedDividerWithVStackView.swift */; };
+		FE2061532CE983400001FCD1 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061522CE983400001FCD1 /* SettingView.swift */; };
+		FE2061562CE991320001FCD1 /* TermsAndConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061552CE991320001FCD1 /* TermsAndConditionsView.swift */; };
+		FE2061582CE992D90001FCD1 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061572CE992D90001FCD1 /* PrivacyPolicyView.swift */; };
+		FE7836EE2CEB385F00EF5569 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FE7836ED2CEB385F00EF5569 /* Config.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,11 +93,21 @@
 		770E95402CE7232E00761A03 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		770E95422CE724A700761A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EB45716E2CE9CFF5002C9166 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		EB4571702CE9D000002C9166 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		EB4571722CE9D028002C9166 /* StartTeamupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTeamupView.swift; sourceTree = "<group>"; };
 		EB4571742CE9D030002C9166 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		EBB25C9E2CEB12700018A139 /* SignUpPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordView.swift; sourceTree = "<group>"; };
-		FE54F79A2CE7AF3700944749 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		FE2061362CE949780001FCD1 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+		FE20613B2CE94A1A0001FCD1 /* InformationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailView.swift; sourceTree = "<group>"; };
+		FE20613F2CE951380001FCD1 /* InformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationModel.swift; sourceTree = "<group>"; };
+		FE2061442CE95AAF0001FCD1 /* ViewBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBackButton.swift; sourceTree = "<group>"; };
+		FE2061472CE9612F0001FCD1 /* CustomBackButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButtonModifier.swift; sourceTree = "<group>"; };
+		FE20614A2CE967AD0001FCD1 /* AnnouncementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementView.swift; sourceTree = "<group>"; };
+		FE20614D2CE969070001FCD1 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		FE20614F2CE96DF30001FCD1 /* ExpandedDividerWithVStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedDividerWithVStackView.swift; sourceTree = "<group>"; };
+		FE2061522CE983400001FCD1 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		FE2061552CE991320001FCD1 /* TermsAndConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsView.swift; sourceTree = "<group>"; };
+		FE2061572CE992D90001FCD1 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		FE7836ED2CEB385F00EF5569 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,8 +161,7 @@
 				2C2E57ED2CE71F0D008766A8 /* Assets.xcassets */,
 				2C2E57EE2CE71F0D008766A8 /* Color.xcassets */,
 				2C2E57F02CE71F0D008766A8 /* Image.xcassets */,
-				FE54F79A2CE7AF3700944749 /* Config.xcconfig */,
-				EB4571702CE9D000002C9166 /* Config.xcconfig */,
+				FE7836ED2CEB385F00EF5569 /* Config.xcconfig */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -150,6 +169,7 @@
 		2C2E57F32CE71F0D008766A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FE20613D2CE951120001FCD1 /* Profile */,
 				2C2E57F22CE71F0D008766A8 /* UserModel.swift */,
 			);
 			path = Model;
@@ -228,6 +248,11 @@
 		2C2E58042CE71F0D008766A8 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				FE2061542CE990F80001FCD1 /* Policies */,
+				FE2061492CE9679D0001FCD1 /* Sub */,
+				FE2061382CE949C60001FCD1 /* Announcement */,
+				FE20614C2CE968E40001FCD1 /* Question */,
+				FE2061512CE9831F0001FCD1 /* Setting */,
 				2C2E58032CE71F0D008766A8 /* ProfileView.swift */,
 			);
 			path = Profile;
@@ -278,6 +303,7 @@
 			children = (
 				2C2E580C2CE71F0D008766A8 /* RoundedCorner.swift */,
 				770E95402CE7232E00761A03 /* CustomFont.swift */,
+				FE2061442CE95AAF0001FCD1 /* ViewBackButton.swift */,
 				2C6D8CE42CEB18A0001B8F08 /* CustomPadding.swift */,
 			);
 			path = Extension;
@@ -286,6 +312,7 @@
 		2C2E580E2CE71F0D008766A8 /* Uitl */ = {
 			isa = PBXGroup;
 			children = (
+				FE2061462CE9610A0001FCD1 /* ViewModifier */,
 				770E953D2CE722CD00761A03 /* Component */,
 				2C2E580B2CE71F0D008766A8 /* Color */,
 				2C2E580D2CE71F0D008766A8 /* Extension */,
@@ -345,8 +372,75 @@
 			isa = PBXGroup;
 			children = (
 				770E953E2CE722E500761A03 /* BackButton.swift */,
+				FE20614F2CE96DF30001FCD1 /* ExpandedDividerWithVStackView.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		FE2061382CE949C60001FCD1 /* Announcement */ = {
+			isa = PBXGroup;
+			children = (
+				FE20614A2CE967AD0001FCD1 /* AnnouncementView.swift */,
+			);
+			path = Announcement;
+			sourceTree = "<group>";
+		};
+		FE20613D2CE951120001FCD1 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FE20613E2CE951190001FCD1 /* Announcement */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		FE20613E2CE951190001FCD1 /* Announcement */ = {
+			isa = PBXGroup;
+			children = (
+				FE20613F2CE951380001FCD1 /* InformationModel.swift */,
+			);
+			path = Announcement;
+			sourceTree = "<group>";
+		};
+		FE2061462CE9610A0001FCD1 /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				FE2061472CE9612F0001FCD1 /* CustomBackButtonModifier.swift */,
+			);
+			path = ViewModifier;
+			sourceTree = "<group>";
+		};
+		FE2061492CE9679D0001FCD1 /* Sub */ = {
+			isa = PBXGroup;
+			children = (
+				FE2061362CE949780001FCD1 /* InformationView.swift */,
+				FE20613B2CE94A1A0001FCD1 /* InformationDetailView.swift */,
+			);
+			path = Sub;
+			sourceTree = "<group>";
+		};
+		FE20614C2CE968E40001FCD1 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				FE20614D2CE969070001FCD1 /* QuestionView.swift */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		FE2061512CE9831F0001FCD1 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				FE2061522CE983400001FCD1 /* SettingView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		FE2061542CE990F80001FCD1 /* Policies */ = {
+			isa = PBXGroup;
+			children = (
+				FE2061552CE991320001FCD1 /* TermsAndConditionsView.swift */,
+				FE2061572CE992D90001FCD1 /* PrivacyPolicyView.swift */,
+			);
+			path = Policies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,11 +517,10 @@
 				2C2E58262CE71F0D008766A8 /* Pretendard-Bold.ttf in Resources */,
 				2C2E58292CE71F0D008766A8 /* Pretendard-Light.ttf in Resources */,
 				2C2E582A2CE71F0D008766A8 /* Pretendard-Medium.ttf in Resources */,
-				EB4571712CE9D000002C9166 /* Config.xcconfig in Resources */,
 				2C2E582B2CE71F0D008766A8 /* Pretendard-Regular.ttf in Resources */,
-				FE54F79B2CE7AF3700944749 /* Config.xcconfig in Resources */,
 				2C2E582C2CE71F0D008766A8 /* Pretendard-SemiBold.ttf in Resources */,
 				2C2E582D2CE71F0D008766A8 /* Pretendard-Thin.ttf in Resources */,
+				FE7836EE2CEB385F00EF5569 /* Config.xcconfig in Resources */,
 				2C2E582E2CE71F0D008766A8 /* Assets.xcassets in Resources */,
 				2C2E582F2CE71F0D008766A8 /* Color.xcassets in Resources */,
 				2C2E58312CE71F0D008766A8 /* Image.xcassets in Resources */,
@@ -448,22 +541,33 @@
 				2C6D8CE12CEB13F3001B8F08 /* GroupChatView.swift in Sources */,
 				770E95412CE7232E00761A03 /* CustomFont.swift in Sources */,
 				2C2E58182CE71F0D008766A8 /* LoginView.swift in Sources */,
+				FE2061502CE96DF30001FCD1 /* ExpandedDividerWithVStackView.swift in Sources */,
 				2C2E58192CE71F0D008766A8 /* SignUPView.swift in Sources */,
 				EB4571752CE9D030002C9166 /* TextFieldView.swift in Sources */,
 				2C2E581A2CE71F0D008766A8 /* ChatView.swift in Sources */,
+				FE2061402CE951380001FCD1 /* InformationModel.swift in Sources */,
 				2C2E581B2CE71F0D008766A8 /* HomeView.swift in Sources */,
+				FE2061372CE949780001FCD1 /* InformationView.swift in Sources */,
+				FE2061482CE9612F0001FCD1 /* CustomBackButtonModifier.swift in Sources */,
 				2C2E581C2CE71F0D008766A8 /* LoungeView.swift in Sources */,
 				2C2E581D2CE71F0D008766A8 /* PostView.swift in Sources */,
+				FE2061452CE95AAF0001FCD1 /* ViewBackButton.swift in Sources */,
 				EBB25C9F2CEB12700018A139 /* SignUpPasswordView.swift in Sources */,
 				2C6D8CE52CEB18A0001B8F08 /* CustomPadding.swift in Sources */,
 				770E953F2CE722E500761A03 /* BackButton.swift in Sources */,
+				FE2061582CE992D90001FCD1 /* PrivacyPolicyView.swift in Sources */,
 				2C2E581E2CE71F0D008766A8 /* ProfileView.swift in Sources */,
 				EB4571732CE9D028002C9166 /* StartTeamupView.swift in Sources */,
 				2C2E581F2CE71F0D008766A8 /* MainTabView.swift in Sources */,
+				FE20614E2CE969070001FCD1 /* QuestionView.swift in Sources */,
 				2C2E58202CE71F0D008766A8 /* TabBar.swift in Sources */,
 				2C2E58212CE71F0D008766A8 /* Color.swift in Sources */,
+				FE20614B2CE967AD0001FCD1 /* AnnouncementView.swift in Sources */,
+				FE2061532CE983400001FCD1 /* SettingView.swift in Sources */,
 				2C2E58222CE71F0D008766A8 /* RoundedCorner.swift in Sources */,
+				FE2061562CE991320001FCD1 /* TermsAndConditionsView.swift in Sources */,
 				2C2E58232CE71F0D008766A8 /* SignUPViewModel.swift in Sources */,
+				FE20613C2CE94A1A0001FCD1 /* InformationDetailView.swift in Sources */,
 				2CBEEB3F2CEB001B001CE6ED /* GroupChatListView.swift in Sources */,
 				2C2E58242CE71F0D008766A8 /* ProjectMoyoApp.swift in Sources */,
 			);
