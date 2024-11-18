@@ -10,9 +10,9 @@ import SwiftUI
 
 // 샘플 게시글 데이터
 let samplePostData = [
-    Post(category: .study, user: "수민이다", isRecruit: true, title: "강아지 잃어버리신분!!!", content: "여기 뚝도시장입니다 주인없이 돌아다니는데 찾으러 오세요", time: "4시간 전", save: 4, seen: 6, capacity: 5),
-    Post(category: .project, user: "쨍쨍이다", isRecruit: true, title: "건물안에서 갇혔는데 열어주실분", content: "독카실용음악학원 4층인데요 지금 오셔서 열어주시면 감사하겠습니다.", time: "1일 전", save: 4, seen: 6, capacity: 5),
-    Post(category: .study, user: "사람이다", isRecruit: false, title: "강아지 보호소 괜찮을까요", content: "동네 강아지 주인분이 포기하셔서 제가 임시보호 하고 있는데...", time: "43분 전", save: 8, seen: 2, capacity: 6)
+    Post(category: .study, user: "수민이다", isRecruit: true, title: "강아지 잃어버리신분!!!", content: "여기 뚝도시장입니다 주인없이 돌아다니는데 찾으러 오세요", time: "4시간 전", save: 4, seen: 6, capacity: 5, hasTag: ["알고리즘","스터디","프로젝트"]),
+    Post(category: .project, user: "쨍쨍이다", isRecruit: true, title: "건물안에서 갇혔는데 열어주실분", content: "독카실용음악학원 4층인데요 지금 오셔서 열어주시면 감사하겠습니다.", time: "1일 전", save: 4, seen: 6, capacity: 5, hasTag: ["알고리즘","스터디","프로젝트"]),
+    Post(category: .study, user: "사람이다", isRecruit: false, title: "강아지 보호소 괜찮을까요", content: "동네 강아지 주인분이 포기하셔서 제가 임시보호 하고 있는데...", time: "43분 전", save: 8, seen: 2, capacity: 6, hasTag: ["알고리즘","스터디","프로젝트"])
 ]
 
 struct HomeView: View {

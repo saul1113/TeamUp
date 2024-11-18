@@ -28,7 +28,7 @@ struct DetailView: View {
             
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
-                    // 카테고리 뱃지
+                  
                     Text(post.category.rawValue)
                         .font(.caption)
                         .fontWeight(.bold)
@@ -126,38 +126,8 @@ struct DetailView: View {
     }
 }
 
-//재사용 위한 분리
-
-struct PostDetailContentView: View {
-    var model: Post
-    var body: some View {
-        // 게시글 제목
-        Text(model.title)
-            .font(.title)
-            .fontWeight(.bold)
-        
-        // 게시글 내용
-        Text(model.content)
-            .font(.body)
-            .foregroundColor(.black.opacity(0.8))
-        
-        // 태그는 .. 모델 어케할지 모르겠어서 일단 더미로 넣었습니다
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 8) {
-                ForEach(["알고리즘", "스터디", "모각코", "코딩해요"], id: \.self) { tag in
-                    Text(tag)
-                        .font(.caption)
-                        .padding(.vertical, 4)
-                        .padding(.horizontal, 8)
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(4)
-                }
-            }
-        }
-    }
-}
 
 #Preview {
-    let samplePost = Post(category: .study, user: "수민이다", isRecruit: true, title: "강아지 잃어버리신분!!!", content: "여기 뚝도시장입니다 주인없이 돌아다니는데 찾으러 오세요", time: "4시간 전", save: 4, seen: 6, capacity: 5)
+    let samplePost = Post(category: .study, user: "수민이다", isRecruit: true, title: "강아지 잃어버리신분!!!", content: "배가고파서 집에서 나오는길 늘 그렇듯 늘어선 가로등은 타오르지 마치 싸울듯이 엉켜있었떤 머시기 시기지난 래퍼들의 반대편을 바라보던 래퍼들의 래퍼 그건 100프로 난 몰라요 하하하하 아무말이나 쓰는중 흐흐테스트 테스트 테스트 입니다 테스트 ", time: "4시간 전", save: 4, seen: 6, capacity: 5, hasTag: ["알고리즘","스터디","프로젝트"])
     DetailView(post: samplePost)
 }

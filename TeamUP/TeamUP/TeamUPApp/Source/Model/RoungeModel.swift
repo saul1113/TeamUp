@@ -20,6 +20,7 @@ struct Rounge {
     var user: String
     var title: String
     var content: String
+    var reply: [String]
     var time: String
     var save: Int
     var seen: Int
