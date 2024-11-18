@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct StartTeamupView: View {
-    @StateObject private var viewModel = SignUPViewModel()
     @State private var email: String = ""
 
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.customBlue
+                Color.customBlue.ignoresSafeArea()
                 VStack(alignment: .center, spacing: 0) {
                     Image(systemName: "person.fill")
                     Spacer()
@@ -42,7 +41,6 @@ struct StartTeamupView: View {
                     }
                 }
             }
-            .ignoresSafeArea()
         }
     }
 }

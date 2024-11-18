@@ -50,13 +50,17 @@ struct TextFieldView: View {
                         }
                 }
             }
-            if let errorMessage {
-                Text(errorMessage)
-                    .font(.regular12)
-                    .foregroundColor(errorColor)
-                    .padding(.top, 4)
+            ZStack {
+                if let errorMessage {
+                    Text(errorMessage)
+                        .font(.caption)
+                        .foregroundColor(errorColor)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
             }
+            .frame(height: 20) // 고정된 높이로 설정하여 레이아웃 변화 방지
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
