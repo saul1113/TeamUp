@@ -14,6 +14,7 @@ protocol Listable {
     var time: String { get }
     var save: Int { get }
     var seen: Int { get }
+    var hasTag: [String] {get}
 }
 
 
@@ -34,7 +35,7 @@ struct Rounge: Listable {
     var time: String
     var save: Int
     var seen: Int
-    
+    var hasTag: [String]
     
     var categoryString: String {
         return category.rawValue

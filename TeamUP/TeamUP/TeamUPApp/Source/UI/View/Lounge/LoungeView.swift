@@ -15,7 +15,7 @@ let sampleRoungeData: [Rounge] = [
         reply: ["규정은 언제부터 적용되나요?", "상세한 내용은 어디에서 확인할 수 있나요?"],
         time: "2024-11-18 10:00",
         save: 120,
-        seen: 350
+        seen: 350, hasTag: ["질문","궁금해요","스터디"]
     ),
     Rounge(
         category: .talk,
@@ -25,7 +25,7 @@ let sampleRoungeData: [Rounge] = [
         reply: ["김밥 어때요?", "치킨 좋죠!", "피자 먹고 싶어요!"],
         time: "2024-11-18 12:15",
         save: 40,
-        seen: 150
+        seen: 150, hasTag: ["질문","궁금해요","스터디"]
     ),
     Rounge(
         category: .qna,
@@ -35,7 +35,7 @@ let sampleRoungeData: [Rounge] = [
         reply: ["`List`는 데이터를 배열로 받아서 뷰를 생성해요.", "List의 아이템은 `ForEach`로 구성할 수 있습니다."],
         time: "2024-11-17 15:30",
         save: 25,
-        seen: 200
+        seen: 200, hasTag: ["질문","궁금해요","스터디"]
     )
 ]
 
@@ -138,11 +138,11 @@ struct LoungeView: View {
                         }
                         return true
                     }, id: \.title) { rounge in
-                       // NavigationLink(destination: DetailView(post: rounge)) {  // NavigationLink 추가
-                            HomeListRowView(model: rounge)
-                                //.padding(.vertical, 5)
+                        NavigationLink(destination: DetailView(model: rounge)) {  // NavigationLink 추가
+                            ListRowView(model: rounge)
+                            //.padding(.vertical, 5)
                         }
-                        
+                    }
                     
                 }
                 .listStyle(PlainListStyle())

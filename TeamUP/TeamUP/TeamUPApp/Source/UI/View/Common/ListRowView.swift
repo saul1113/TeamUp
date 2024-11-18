@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomeListRowView: View {
+struct ListRowView: View {
     var model: Listable
     
     var body: some View {

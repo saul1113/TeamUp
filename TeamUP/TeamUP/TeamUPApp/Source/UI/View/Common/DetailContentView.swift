@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct PostDetailContentView: View {
-    var model: Post
+struct DetailContentView: View {
+    var model: Listable
     var body: some View {
         // 게시글 제목
         Text(model.title)
@@ -23,6 +23,7 @@ struct PostDetailContentView: View {
             .kerning(0.5) // 자간
             .padding(.vertical, 5)
             .lineLimit(nil)
+        
         
         
         ScrollView(.horizontal, showsIndicators: false) {

@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct DetailView: View {
-    var post: Post
+    var model: Listable
     
     var body: some View {
         VStack(spacing: 0) {
@@ -29,7 +29,7 @@ struct DetailView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
                   
-                    Text(post.category.rawValue)
+                    Text(model.categoryString)
                         .font(.caption)
                         .fontWeight(.bold)
                         .padding(.vertical, 4)
@@ -44,22 +44,22 @@ struct DetailView: View {
                             .fill(Color.gray.opacity(0.5))
                             .frame(width: 40, height: 40)
                             .overlay(
-                                Text(post.user.prefix(1))
+                                Text(model.user.prefix(1))
                                     .font(.headline)
                                     .foregroundColor(.white)
                             )
                         
                         VStack(alignment: .leading) {
-                            Text(post.user)
+                            Text(model.user)
                                 .font(.headline)
                             HStack(spacing: 5) {
-                                Text(post.time)
+                                Text(model.time)
                                     .font(.caption)
                                     .foregroundColor(.gray)
                                 Text("•")
                                     .font(.caption)
                                     .foregroundColor(.gray)
-                                Text("조회수 \(post.seen)")
+                                Text("조회수 \(model.seen)")
                                     .font(.caption)
                                     .foregroundColor(.gray)
                             }
@@ -81,13 +81,15 @@ struct DetailView: View {
                     }
                     Divider()
                     
-                    PostDetailContentView(model: post)
+                    DetailContentView(model: model)
                     
                     // 인원 정보
                     HStack {
-                        Text("👤 \(2)/\(post.capacity)")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
+                        if let post = model as? Post{
+                            Text("👤 \(2)/\(post.capacity)")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
                         Spacer()
                         Button {
                             
@@ -96,7 +98,7 @@ struct DetailView: View {
                         }
 
                         Image(systemName: "bookmark")
-                        Text("\(post.save)")
+                        Text("\(model.save)")
                             .font(.subheadline)
                             .foregroundColor(.gray)
                     }
@@ -129,5 +131,5 @@ struct DetailView: View {
 
 #Preview {
     let samplePost = Post(category: .study, user: "수민이다", isRecruit: true, title: "강아지 잃어버리신분!!!", content: "배가고파서 집에서 나오는길 늘 그렇듯 늘어선 가로등은 타오르지 마치 싸울듯이 엉켜있었떤 머시기 시기지난 래퍼들의 반대편을 바라보던 래퍼들의 래퍼 그건 100프로 난 몰라요 하하하하 아무말이나 쓰는중 흐흐테스트 테스트 테스트 입니다 테스트 ", time: "4시간 전", save: 4, seen: 6, capacity: 5, hasTag: ["알고리즘","스터디","프로젝트"])
-    DetailView(post: samplePost)
+    DetailView(model: samplePost)
 }
