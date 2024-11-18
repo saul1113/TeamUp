@@ -20,7 +20,7 @@ struct ChatView: View {
             case .privateChat:
                 Text("개인 채팅 뷰")
             case .groupChat:
-                GroupChatView()
+                GroupChatListView()
             }
             Spacer()
         }
