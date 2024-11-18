@@ -133,7 +133,7 @@ struct HomeView: View {
                         }
                         return true
                     }, id: \.title) { post in
-                        NavigationLink(destination: DetailView(model: post)) {  // NavigationLink 추가
+                        NavigationLink(destination: HomeLoungeDetailView(model: post)) {  // NavigationLink 추가
                             ListRowView(model: post)
                                 //.padding(.vertical, 5)
                         }

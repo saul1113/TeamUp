@@ -150,7 +150,7 @@ struct LoungeView: View {
                         }
                         return true
                     }, id: \.title) { rounge in
-                        NavigationLink(destination: DetailView(model: rounge)) {  // NavigationLink 추가
+                        NavigationLink(destination: HomeLoungeDetailView(model: rounge)) {  // NavigationLink 추가
                             ListRowView(model: rounge)
                             //.padding(.vertical, 5)
                         }

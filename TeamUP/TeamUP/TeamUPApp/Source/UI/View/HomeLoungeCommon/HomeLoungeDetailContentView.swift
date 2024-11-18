@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DetailContentView: View {
+struct HomeLoungeDetailContentView: View {
     var model: Listable
     var body: some View {
         // 게시글 제목

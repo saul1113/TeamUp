@@ -6,7 +6,7 @@
 //
 import SwiftUI
 
-struct DetailView: View {
+struct HomeLoungeDetailView: View {
     var model: Listable
     @State private var saveCount: Int // `save` 값을 수정 가능한 변수로 관리
     @State private var isBookmarked = false
@@ -90,7 +90,7 @@ struct DetailView: View {
                 }
                 Divider()
                 
-                DetailContentView(model: model)
+                HomeLoungeDetailContentView(model: model)
                 
                 // 인원 정보
                 HStack {
@@ -246,5 +246,5 @@ struct DetailView: View {
         seen: 350, hasTag: ["질문","궁금해요","스터디"]
     )
     let samplePost = Post(category: .study, user: User(email: "1231", password: "1231", nickname: "수민이다", profileImageName: "ㅁㄴㅇㄴㅇ"), isRecruit: true, title: "강아지 잃어버리신분!!!", content: "배가고파서 집에서 나오는길 늘 그렇듯 늘어선 가로등은 타오르지 마치 싸울듯이 엉켜있었떤 머시기 시기지난 래퍼들의 반대편을 바라보던 래퍼들의 래퍼 그건 100프로 난 몰라요 하하하하 아무말이나 반대편을 바라보던 래퍼들의 래퍼 그건 100프로 난 몰라요 늘 그렇듯 늘어선 가로등은 타오르지 마치 싸울듯이 엉켜있었떤 머시기 시기지난 래퍼들의 반대편을 바라보던 래퍼들의 래퍼 그건 100프로 난 몰라요  ", time: "4시간 전", save: 4, seen: 6, capacity: 5, hasTag: ["알고리즘","스터디","프로젝트"])
-    DetailView(model: sampleRoungeData)
+    HomeLoungeDetailView(model: sampleRoungeData)
 }
