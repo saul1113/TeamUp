@@ -41,6 +41,13 @@
 		2CBEEB3F2CEB001B001CE6ED /* GroupChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBEEB3E2CEB001B001CE6ED /* GroupChatListView.swift */; };
 		770E953F2CE722E500761A03 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E953E2CE722E500761A03 /* BackButton.swift */; };
 		770E95412CE7232E00761A03 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E95402CE7232E00761A03 /* CustomFont.swift */; };
+		F6CFC5BB2CEB2429003C0087 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5BA2CEB241D003C0087 /* PostModel.swift */; };
+		F6CFC5BD2CEB2488003C0087 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5BC2CEB247D003C0087 /* CustomSearchBar.swift */; };
+		F6CFC5BF2CEB24F4003C0087 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5BE2CEB24EC003C0087 /* ListRowView.swift */; };
+		F6CFC5C12CEB256B003C0087 /* RoungeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5C02CEB2563003C0087 /* RoungeModel.swift */; };
+		F6CFC5C32CEB2C38003C0087 /* HomeLoungeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5C22CEB2C32003C0087 /* HomeLoungeDetailView.swift */; };
+		F6CFC5C92CEB4803003C0087 /* HomeLoungeDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5C82CEB4803003C0087 /* HomeLoungeDetailContentView.swift */; };
+		FE54F79B2CE7AF3700944749 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FE54F79A2CE7AF3700944749 /* Config.xcconfig */; };
 		EB45716F2CE9CFF5002C9166 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB45716E2CE9CFF5002C9166 /* AuthManager.swift */; };
 		EB4571732CE9D028002C9166 /* StartTeamupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4571722CE9D028002C9166 /* StartTeamupView.swift */; };
 		EB4571752CE9D030002C9166 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4571742CE9D030002C9166 /* TextFieldView.swift */; };
@@ -92,6 +99,13 @@
 		770E953E2CE722E500761A03 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		770E95402CE7232E00761A03 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		770E95422CE724A700761A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F6CFC5BA2CEB241D003C0087 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		F6CFC5BC2CEB247D003C0087 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		F6CFC5BE2CEB24EC003C0087 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
+		F6CFC5C02CEB2563003C0087 /* RoungeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoungeModel.swift; sourceTree = "<group>"; };
+		F6CFC5C22CEB2C32003C0087 /* HomeLoungeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoungeDetailView.swift; sourceTree = "<group>"; };
+		F6CFC5C82CEB4803003C0087 /* HomeLoungeDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoungeDetailContentView.swift; sourceTree = "<group>"; };
+		FE54F79A2CE7AF3700944749 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		EB45716E2CE9CFF5002C9166 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		EB4571722CE9D028002C9166 /* StartTeamupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTeamupView.swift; sourceTree = "<group>"; };
 		EB4571742CE9D030002C9166 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
@@ -169,6 +183,8 @@
 		2C2E57F32CE71F0D008766A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F6CFC5C02CEB2563003C0087 /* RoungeModel.swift */,
+				F6CFC5BA2CEB241D003C0087 /* PostModel.swift */,
 				FE20613D2CE951120001FCD1 /* Profile */,
 				2C2E57F22CE71F0D008766A8 /* UserModel.swift */,
 			);
@@ -270,6 +286,7 @@
 		2C2E58082CE71F0D008766A8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F6CFC5D22CEB718A003C0087 /* HomeLoungeCommon */,
 				EB4571742CE9D030002C9166 /* TextFieldView.swift */,
 				2C2E57FA2CE71F0D008766A8 /* Authorization */,
 				2C2E57FC2CE71F0D008766A8 /* Chat */,
@@ -377,6 +394,17 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
+		F6CFC5D22CEB718A003C0087 /* HomeLoungeCommon */ = {
+			isa = PBXGroup;
+			children = (
+				F6CFC5BC2CEB247D003C0087 /* CustomSearchBar.swift */,
+				F6CFC5BE2CEB24EC003C0087 /* ListRowView.swift */,
+				F6CFC5C82CEB4803003C0087 /* HomeLoungeDetailContentView.swift */,
+				F6CFC5C22CEB2C32003C0087 /* HomeLoungeDetailView.swift */,
+			);
+			path = HomeLoungeCommon;
+      sourceTree = "<group>";
+      };
 		FE2061382CE949C60001FCD1 /* Announcement */ = {
 			isa = PBXGroup;
 			children = (
@@ -538,9 +566,12 @@
 				EB45716F2CE9CFF5002C9166 /* AuthManager.swift in Sources */,
 				2C6D8CE32CEB14A6001B8F08 /* CustomBackButton.swift in Sources */,
 				2C2E58172CE71F0D008766A8 /* MainService.swift in Sources */,
+				F6CFC5BD2CEB2488003C0087 /* CustomSearchBar.swift in Sources */,
 				2C6D8CE12CEB13F3001B8F08 /* GroupChatView.swift in Sources */,
 				770E95412CE7232E00761A03 /* CustomFont.swift in Sources */,
+				F6CFC5C92CEB4803003C0087 /* HomeLoungeDetailContentView.swift in Sources */,
 				2C2E58182CE71F0D008766A8 /* LoginView.swift in Sources */,
+				F6CFC5C12CEB256B003C0087 /* RoungeModel.swift in Sources */,
 				FE2061502CE96DF30001FCD1 /* ExpandedDividerWithVStackView.swift in Sources */,
 				2C2E58192CE71F0D008766A8 /* SignUPView.swift in Sources */,
 				EB4571752CE9D030002C9166 /* TextFieldView.swift in Sources */,
@@ -550,6 +581,7 @@
 				FE2061372CE949780001FCD1 /* InformationView.swift in Sources */,
 				FE2061482CE9612F0001FCD1 /* CustomBackButtonModifier.swift in Sources */,
 				2C2E581C2CE71F0D008766A8 /* LoungeView.swift in Sources */,
+				F6CFC5BF2CEB24F4003C0087 /* ListRowView.swift in Sources */,
 				2C2E581D2CE71F0D008766A8 /* PostView.swift in Sources */,
 				FE2061452CE95AAF0001FCD1 /* ViewBackButton.swift in Sources */,
 				EBB25C9F2CEB12700018A139 /* SignUpPasswordView.swift in Sources */,
@@ -559,6 +591,10 @@
 				2C2E581E2CE71F0D008766A8 /* ProfileView.swift in Sources */,
 				EB4571732CE9D028002C9166 /* StartTeamupView.swift in Sources */,
 				2C2E581F2CE71F0D008766A8 /* MainTabView.swift in Sources */,
+				F6CFC5C32CEB2C38003C0087 /* HomeLoungeDetailView.swift in Sources */,
+				2C2E58202CE71F0D008766A8 /* TabBar.swift in Sources */,
+				2C2E58212CE71F0D008766A8 /* Color.swift in Sources */,
+				F6CFC5BB2CEB2429003C0087 /* PostModel.swift in Sources */,
 				FE20614E2CE969070001FCD1 /* QuestionView.swift in Sources */,
 				2C2E58202CE71F0D008766A8 /* TabBar.swift in Sources */,
 				2C2E58212CE71F0D008766A8 /* Color.swift in Sources */,
