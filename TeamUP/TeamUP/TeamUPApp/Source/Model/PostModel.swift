@@ -16,7 +16,7 @@ enum PostCategory: String, CaseIterable, Identifiable {
 // Post 모델
 struct Post: Listable {
     var category: PostCategory
-    var user: String
+    var user: User
     var isRecruit: Bool
     var title: String
     var content: String

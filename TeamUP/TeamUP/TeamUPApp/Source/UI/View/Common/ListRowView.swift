@@ -47,7 +47,7 @@ struct ListRowView: View {
                     .lineLimit(1)
                 
                 HStack() {
-                    Text(model.user)
+                    Text(model.user.nickname)
                     Text("•")
                     Text(model.time)
                     

@@ -8,7 +8,7 @@ import Foundation
 
 protocol Listable {
     var categoryString: String { get }
-    var user: String { get }
+    var user: User { get }
     var title: String { get }
     var content: String { get }
     var time: String { get }
@@ -28,7 +28,7 @@ enum RoungeCategory: String, CaseIterable, Identifiable {
 // Rounge 모델
 struct Rounge: Listable {
     var category: RoungeCategory
-    var user: String
+    var user: User
     var title: String
     var content: String
     var reply: [String]
