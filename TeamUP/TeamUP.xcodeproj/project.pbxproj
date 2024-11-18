@@ -38,6 +38,11 @@
 		2CBEEB3F2CEB001B001CE6ED /* GroupChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBEEB3E2CEB001B001CE6ED /* GroupChatView.swift */; };
 		770E953F2CE722E500761A03 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E953E2CE722E500761A03 /* BackButton.swift */; };
 		770E95412CE7232E00761A03 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E95402CE7232E00761A03 /* CustomFont.swift */; };
+		F6CFC5BB2CEB2429003C0087 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5BA2CEB241D003C0087 /* PostModel.swift */; };
+		F6CFC5BD2CEB2488003C0087 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5BC2CEB247D003C0087 /* CustomSearchBar.swift */; };
+		F6CFC5BF2CEB24F4003C0087 /* HomeListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5BE2CEB24EC003C0087 /* HomeListRowView.swift */; };
+		F6CFC5C12CEB256B003C0087 /* RoungeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5C02CEB2563003C0087 /* RoungeModel.swift */; };
+		F6CFC5C32CEB2C38003C0087 /* HomeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5C22CEB2C32003C0087 /* HomeDetailView.swift */; };
 		FE54F79B2CE7AF3700944749 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FE54F79A2CE7AF3700944749 /* Config.xcconfig */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +76,11 @@
 		770E953E2CE722E500761A03 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		770E95402CE7232E00761A03 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		770E95422CE724A700761A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F6CFC5BA2CEB241D003C0087 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		F6CFC5BC2CEB247D003C0087 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		F6CFC5BE2CEB24EC003C0087 /* HomeListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListRowView.swift; sourceTree = "<group>"; };
+		F6CFC5C02CEB2563003C0087 /* RoungeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoungeModel.swift; sourceTree = "<group>"; };
+		F6CFC5C22CEB2C32003C0087 /* HomeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailView.swift; sourceTree = "<group>"; };
 		FE54F79A2CE7AF3700944749 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +143,8 @@
 		2C2E57F32CE71F0D008766A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F6CFC5C02CEB2563003C0087 /* RoungeModel.swift */,
+				F6CFC5BA2CEB241D003C0087 /* PostModel.swift */,
 				2C2E57F22CE71F0D008766A8 /* UserModel.swift */,
 			);
 			path = Model;
@@ -183,6 +195,9 @@
 		2C2E57FE2CE71F0D008766A8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F6CFC5C22CEB2C32003C0087 /* HomeDetailView.swift */,
+				F6CFC5BE2CEB24EC003C0087 /* HomeListRowView.swift */,
+				F6CFC5BC2CEB247D003C0087 /* CustomSearchBar.swift */,
 				2C2E57FD2CE71F0D008766A8 /* HomeView.swift */,
 			);
 			path = Home;
@@ -418,18 +433,23 @@
 			files = (
 				2C2E58162CE71F0D008766A8 /* UserModel.swift in Sources */,
 				2C2E58172CE71F0D008766A8 /* MainService.swift in Sources */,
+				F6CFC5BD2CEB2488003C0087 /* CustomSearchBar.swift in Sources */,
 				770E95412CE7232E00761A03 /* CustomFont.swift in Sources */,
 				2C2E58182CE71F0D008766A8 /* LoginView.swift in Sources */,
+				F6CFC5C12CEB256B003C0087 /* RoungeModel.swift in Sources */,
 				2C2E58192CE71F0D008766A8 /* SignUPView.swift in Sources */,
 				2C2E581A2CE71F0D008766A8 /* ChatView.swift in Sources */,
 				2C2E581B2CE71F0D008766A8 /* HomeView.swift in Sources */,
 				2C2E581C2CE71F0D008766A8 /* LoungeView.swift in Sources */,
+				F6CFC5BF2CEB24F4003C0087 /* HomeListRowView.swift in Sources */,
 				2C2E581D2CE71F0D008766A8 /* PostView.swift in Sources */,
 				770E953F2CE722E500761A03 /* BackButton.swift in Sources */,
 				2C2E581E2CE71F0D008766A8 /* ProfileView.swift in Sources */,
 				2C2E581F2CE71F0D008766A8 /* MainTabView.swift in Sources */,
+				F6CFC5C32CEB2C38003C0087 /* HomeDetailView.swift in Sources */,
 				2C2E58202CE71F0D008766A8 /* TabBar.swift in Sources */,
 				2C2E58212CE71F0D008766A8 /* Color.swift in Sources */,
+				F6CFC5BB2CEB2429003C0087 /* PostModel.swift in Sources */,
 				2C2E58222CE71F0D008766A8 /* RoundedCorner.swift in Sources */,
 				2C2E58232CE71F0D008766A8 /* SignUPViewModel.swift in Sources */,
 				2CBEEB3F2CEB001B001CE6ED /* GroupChatView.swift in Sources */,
