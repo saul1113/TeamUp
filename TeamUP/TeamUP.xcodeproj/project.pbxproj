@@ -39,6 +39,8 @@
 		2CB1BF532CE725DF00CA6A26 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB1BF522CE725DF00CA6A26 /* MarkdownUI */; };
 		2CB1BF562CE725ED00CA6A26 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB1BF552CE725ED00CA6A26 /* SocketIO */; };
 		2CBEEB3F2CEB001B001CE6ED /* GroupChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBEEB3E2CEB001B001CE6ED /* GroupChatListView.swift */; };
+		50241F922CEB8D10002014EF /* PrivateChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50241F912CEB8D10002014EF /* PrivateChatListView.swift */; };
+		50241F942CEB8D1B002014EF /* PrivateChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50241F932CEB8D1B002014EF /* PrivateChatView.swift */; };
 		770E953F2CE722E500761A03 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E953E2CE722E500761A03 /* BackButton.swift */; };
 		770E95412CE7232E00761A03 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E95402CE7232E00761A03 /* CustomFont.swift */; };
 		EB45716F2CE9CFF5002C9166 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB45716E2CE9CFF5002C9166 /* AuthManager.swift */; };
@@ -89,6 +91,8 @@
 		2C6D8CE22CEB14A6001B8F08 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
 		2C6D8CE42CEB18A0001B8F08 /* CustomPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPadding.swift; sourceTree = "<group>"; };
 		2CBEEB3E2CEB001B001CE6ED /* GroupChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatListView.swift; sourceTree = "<group>"; };
+		50241F912CEB8D10002014EF /* PrivateChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateChatListView.swift; sourceTree = "<group>"; };
+		50241F932CEB8D1B002014EF /* PrivateChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateChatView.swift; sourceTree = "<group>"; };
 		770E953E2CE722E500761A03 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		770E95402CE7232E00761A03 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		770E95422CE724A700761A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				2C2E57FB2CE71F0D008766A8 /* ChatView.swift */,
+				50241F912CEB8D10002014EF /* PrivateChatListView.swift */,
+				50241F932CEB8D1B002014EF /* PrivateChatView.swift */,
 				2CBEEB3E2CEB001B001CE6ED /* GroupChatListView.swift */,
 				2C6D8CE02CEB13F3001B8F08 /* GroupChatView.swift */,
 				2C6D8CE22CEB14A6001B8F08 /* CustomBackButton.swift */,
@@ -549,6 +555,8 @@
 				2C2E581B2CE71F0D008766A8 /* HomeView.swift in Sources */,
 				FE2061372CE949780001FCD1 /* InformationView.swift in Sources */,
 				FE2061482CE9612F0001FCD1 /* CustomBackButtonModifier.swift in Sources */,
+				50241F922CEB8D10002014EF /* PrivateChatListView.swift in Sources */,
+				50241F942CEB8D1B002014EF /* PrivateChatView.swift in Sources */,
 				2C2E581C2CE71F0D008766A8 /* LoungeView.swift in Sources */,
 				2C2E581D2CE71F0D008766A8 /* PostView.swift in Sources */,
 				FE2061452CE95AAF0001FCD1 /* ViewBackButton.swift in Sources */,

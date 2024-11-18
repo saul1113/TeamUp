@@ -19,7 +19,7 @@ struct ChatView: View {
                 chatSpliteView()
                 switch selectedTab {
                 case .privateChat:
-                    Text("개인 채팅 뷰")
+                    PrivateChatListView()
                 case .groupChat:
                     GroupChatListView()
                 }
