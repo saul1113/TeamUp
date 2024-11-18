@@ -6,29 +6,28 @@
 //
 
 
-enum MainPostCategory: String, CaseIterable, Identifiable {
+
+enum PostCategory: String, CaseIterable, Identifiable {
     case study = "스터디"
     case project = "프로젝트"
 
     var id: String { self.rawValue }
 }
-
-
-
-// 게시글 데이터 구조체
-struct Post {
-    var category: MainPostCategory //공통
-    var user: String //공통
-    var isRecruit: Bool //스터디, 프로젝트
-    var title: String // 공통
-    var content: String// 공통
-    var time: String// 공통
-    var save: Int // 공통
-    var seen: Int //공통
-    //총인원수
-    var capacity: Int // 스터디, 프로젝트
+// Post 모델
+struct Post: Listable {
+    var category: PostCategory
+    var user: String
+    var isRecruit: Bool
+    var title: String
+    var content: String
+    var time: String
+    var save: Int
+    var seen: Int
+    var capacity: Int
     var hasTag: [String]
     
-  
     
+    var categoryString: String {
+        return category.rawValue
+    }
 }

@@ -16,7 +16,7 @@ let samplePostData = [
 ]
 
 struct HomeView: View {
-    @State private var selectedCategory: MainPostCategory?
+    @State private var selectedCategory: PostCategory?
     @State private var isSheetPresented = false
     @State private var searchText: String = ""
     @State private var selectedSort: String = "최신순"
@@ -65,7 +65,7 @@ struct HomeView: View {
                 
                 // 스터디 카테고리 필터링
                 HStack(spacing: 5) {
-                    ForEach([nil] + MainPostCategory.allCases, id: \.self) { category in
+                    ForEach([nil] + PostCategory.allCases, id: \.self) { category in
                         Button(action: {
                             selectedCategory = category
                         }) {

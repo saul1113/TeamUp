@@ -42,7 +42,7 @@
 		F6CFC5BD2CEB2488003C0087 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5BC2CEB247D003C0087 /* CustomSearchBar.swift */; };
 		F6CFC5BF2CEB24F4003C0087 /* HomeListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5BE2CEB24EC003C0087 /* HomeListRowView.swift */; };
 		F6CFC5C12CEB256B003C0087 /* RoungeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5C02CEB2563003C0087 /* RoungeModel.swift */; };
-		F6CFC5C32CEB2C38003C0087 /* HomeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5C22CEB2C32003C0087 /* HomeDetailView.swift */; };
+		F6CFC5C32CEB2C38003C0087 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5C22CEB2C32003C0087 /* DetailView.swift */; };
 		F6CFC5C92CEB4803003C0087 /* PostDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5C82CEB4803003C0087 /* PostDetailContentView.swift */; };
 		FE54F79B2CE7AF3700944749 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FE54F79A2CE7AF3700944749 /* Config.xcconfig */; };
 /* End PBXBuildFile section */
@@ -81,7 +81,7 @@
 		F6CFC5BC2CEB247D003C0087 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		F6CFC5BE2CEB24EC003C0087 /* HomeListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListRowView.swift; sourceTree = "<group>"; };
 		F6CFC5C02CEB2563003C0087 /* RoungeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoungeModel.swift; sourceTree = "<group>"; };
-		F6CFC5C22CEB2C32003C0087 /* HomeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailView.swift; sourceTree = "<group>"; };
+		F6CFC5C22CEB2C32003C0087 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		F6CFC5C82CEB4803003C0087 /* PostDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailContentView.swift; sourceTree = "<group>"; };
 		FE54F79A2CE7AF3700944749 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,7 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				F6CFC5C82CEB4803003C0087 /* PostDetailContentView.swift */,
-				F6CFC5C22CEB2C32003C0087 /* HomeDetailView.swift */,
+				F6CFC5C22CEB2C32003C0087 /* DetailView.swift */,
 				F6CFC5BE2CEB24EC003C0087 /* HomeListRowView.swift */,
 				F6CFC5BC2CEB247D003C0087 /* CustomSearchBar.swift */,
 				2C2E57FD2CE71F0D008766A8 /* HomeView.swift */,
@@ -450,7 +450,7 @@
 				770E953F2CE722E500761A03 /* BackButton.swift in Sources */,
 				2C2E581E2CE71F0D008766A8 /* ProfileView.swift in Sources */,
 				2C2E581F2CE71F0D008766A8 /* MainTabView.swift in Sources */,
-				F6CFC5C32CEB2C38003C0087 /* HomeDetailView.swift in Sources */,
+				F6CFC5C32CEB2C38003C0087 /* DetailView.swift in Sources */,
 				2C2E58202CE71F0D008766A8 /* TabBar.swift in Sources */,
 				2C2E58212CE71F0D008766A8 /* Color.swift in Sources */,
 				F6CFC5BB2CEB2429003C0087 /* PostModel.swift in Sources */,
