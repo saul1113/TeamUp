@@ -14,15 +14,17 @@ struct ChatView: View {
     }
     @State private var selectedTab: ChatTab = .groupChat
     var body: some View {
-        VStack (spacing: 20){
-            chatSpliteView()
-            switch selectedTab {
-            case .privateChat:
-                Text("개인 채팅 뷰")
-            case .groupChat:
-                GroupChatListView()
+        NavigationStack {
+            VStack (spacing: 20){
+                chatSpliteView()
+                switch selectedTab {
+                case .privateChat:
+                    Text("개인 채팅 뷰")
+                case .groupChat:
+                    GroupChatListView()
+                }
+                Spacer()
             }
-            Spacer()
         }
     }
     func chatSpliteView() -> some View {

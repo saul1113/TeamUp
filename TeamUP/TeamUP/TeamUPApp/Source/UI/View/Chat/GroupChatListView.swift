@@ -37,9 +37,8 @@ struct GroupChatListView: View {
             VStack (alignment: .leading, spacing: 15) {
                 ForEach(groupRooms, id: \.id) { room in
                     NavigationLink {
-                        Text(
-                            ""
-                        )
+                        GroupChatView(roomTitle: "봄날은 간다")
+                            .navigationBarBackButtonHidden(true)
                     } label: {
                         GroupRoomView(room)
                     }
