@@ -41,6 +41,7 @@
 		EB4571712CE9D000002C9166 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EB4571702CE9D000002C9166 /* Config.xcconfig */; };
 		EB4571732CE9D028002C9166 /* StartTeamupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4571722CE9D028002C9166 /* StartTeamupView.swift */; };
 		EB4571752CE9D030002C9166 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4571742CE9D030002C9166 /* TextFieldView.swift */; };
+		EBB25C9F2CEB12700018A139 /* SignUpPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB25C9E2CEB12700018A139 /* SignUpPasswordView.swift */; };
 		FE54F79B2CE7AF3700944749 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FE54F79A2CE7AF3700944749 /* Config.xcconfig */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		EB4571702CE9D000002C9166 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		EB4571722CE9D028002C9166 /* StartTeamupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTeamupView.swift; sourceTree = "<group>"; };
 		EB4571742CE9D030002C9166 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		EBB25C9E2CEB12700018A139 /* SignUpPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordView.swift; sourceTree = "<group>"; };
 		FE54F79A2CE7AF3700944749 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 			children = (
 				EB4571722CE9D028002C9166 /* StartTeamupView.swift */,
 				2C2E57F82CE71F0D008766A8 /* SignUPView.swift */,
+				EBB25C9E2CEB12700018A139 /* SignUpPasswordView.swift */,
 			);
 			path = SignUP;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				2C2E581B2CE71F0D008766A8 /* HomeView.swift in Sources */,
 				2C2E581C2CE71F0D008766A8 /* LoungeView.swift in Sources */,
 				2C2E581D2CE71F0D008766A8 /* PostView.swift in Sources */,
+				EBB25C9F2CEB12700018A139 /* SignUpPasswordView.swift in Sources */,
 				770E953F2CE722E500761A03 /* BackButton.swift in Sources */,
 				2C2E581E2CE71F0D008766A8 /* ProfileView.swift in Sources */,
 				EB4571732CE9D028002C9166 /* StartTeamupView.swift in Sources */,

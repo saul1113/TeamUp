@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct StartTeamupView: View {
+    @StateObject private var viewModel = SignUPViewModel()
+    @State private var email: String = ""
+
     var body: some View {
         NavigationStack {
             ZStack {
@@ -32,18 +35,12 @@ struct StartTeamupView: View {
                     }
                     Spacer()
                         .frame(height: 23)
-                    NavigationLink(destination: SignUPView()) {
+                    NavigationLink(destination: SignUPView(email: $email)) {
                         Text("회원가입")
                             .font(Font.semibold14)
                             .foregroundStyle(.white)
                     }
                 }
-//                .navigationBarBackButtonHidden(true)
-//                .toolbar {
-//                    ToolbarItem(placement: .navigationBarLeading) {
-//                        BackButton()
-//                    }
-//                }
             }
             .ignoresSafeArea()
         }

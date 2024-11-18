@@ -11,7 +11,6 @@ struct TextFieldView: View {
     @Binding var text: String
     var placeholder: String
     var isSecure: Bool = false       // 보안 입력 여부
-    var showError: Bool = false
     var errorColor: Color = .red
     var errorMessage: String? = nil
     var onTextChange: ((String) -> Void)? // 텍스트 변경 시 호출되는 콜백
@@ -29,13 +28,12 @@ struct TextFieldView: View {
                         .cornerRadius(4)
                         .overlay {
                             RoundedRectangle(cornerRadius: 4)
-                                .stroke(showError ? errorColor : (isFocused ? .black : .gray), lineWidth: 1)
+                                .stroke(isFocused ? .customBlue : .gray, lineWidth: 1)
                         }
                         .focused($isFocused)             // 포커스 상태 추적
                         .onChange(of: text) { newValue in
                             onTextChange?(newValue)      // 텍스트 변경 시 콜백 호출
                         }
-                        .padding(.horizontal, 20)
                 } else {
                     TextField(placeholder, text: $text)
                         .padding(.horizontal, 10)
@@ -44,21 +42,19 @@ struct TextFieldView: View {
                         .cornerRadius(8)
                         .overlay {
                             RoundedRectangle(cornerRadius: 4)
-                                .stroke(showError ? errorColor : (isFocused ? .black : .gray), lineWidth: 1)
+                                .stroke(isFocused ? .customBlue : .gray, lineWidth: 1)
                         }
                         .focused($isFocused)
                         .onChange(of: text) { newValue in
                             onTextChange?(newValue)
                         }
-                        .padding(.horizontal, 20)
                 }
             }
-            if showError, let errorMessage {
+            if let errorMessage {
                 Text(errorMessage)
-                    .font(Font.regular12)
+                    .font(.regular12)
                     .foregroundColor(errorColor)
                     .padding(.top, 4)
-                    .padding(.horizontal, 20)
             }
         }
     }
@@ -68,7 +64,6 @@ struct TextFieldView: View {
     TextFieldView(
         text: .constant(""),
         placeholder: "Text",
-        showError: true,
         errorMessage: "Error"
     )
 }
