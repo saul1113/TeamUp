@@ -12,6 +12,7 @@ struct ProjectMoyoApp: App {
     var body: some Scene {
         WindowGroup {
             StartTeamupView()
+                .environmentObject(AuthManager()) // 인스턴스 전달
         }
     }
 }

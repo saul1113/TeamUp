@@ -105,4 +105,14 @@ final class AuthManager: ObservableObject {
                 }
             }
     }
+    
+    func checkEmailDuplication(email: String) async throws -> Bool {
+        let url = "https://protectmeios.xyz/user/check-email"
+        let parameters = ["email": email]
+        
+        let response = try await AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default)
+            .serializingDecodable([String: Bool].self).value
+        
+        return response["exist"] ?? false
+    }
 }

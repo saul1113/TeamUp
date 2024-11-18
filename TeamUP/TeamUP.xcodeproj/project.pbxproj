@@ -20,7 +20,6 @@
 		2C2E58202CE71F0D008766A8 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E58062CE71F0D008766A8 /* TabBar.swift */; };
 		2C2E58212CE71F0D008766A8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E580A2CE71F0D008766A8 /* Color.swift */; };
 		2C2E58222CE71F0D008766A8 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E580C2CE71F0D008766A8 /* RoundedCorner.swift */; };
-		2C2E58232CE71F0D008766A8 /* SignUPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E580F2CE71F0D008766A8 /* SignUPViewModel.swift */; };
 		2C2E58242CE71F0D008766A8 /* ProjectMoyoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E58132CE71F0D008766A8 /* ProjectMoyoApp.swift */; };
 		2C2E58262CE71F0D008766A8 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E57E42CE71F0D008766A8 /* Pretendard-Bold.ttf */; };
 		2C2E58292CE71F0D008766A8 /* Pretendard-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E57E72CE71F0D008766A8 /* Pretendard-Light.ttf */; };
@@ -54,6 +53,7 @@
 		EB4571732CE9D028002C9166 /* StartTeamupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4571722CE9D028002C9166 /* StartTeamupView.swift */; };
 		EB4571752CE9D030002C9166 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4571742CE9D030002C9166 /* TextFieldView.swift */; };
 		EBB25C9F2CEB12700018A139 /* SignUpPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB25C9E2CEB12700018A139 /* SignUpPasswordView.swift */; };
+		EBE645DE2CEB82BE0033426B /* SignUpNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE645DD2CEB82BE0033426B /* SignUpNicknameView.swift */; };
 		FE2061372CE949780001FCD1 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061362CE949780001FCD1 /* InformationView.swift */; };
 		FE20613C2CE94A1A0001FCD1 /* InformationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE20613B2CE94A1A0001FCD1 /* InformationDetailView.swift */; };
 		FE2061402CE951380001FCD1 /* InformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE20613F2CE951380001FCD1 /* InformationModel.swift */; };
@@ -92,7 +92,6 @@
 		2C2E58062CE71F0D008766A8 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		2C2E580A2CE71F0D008766A8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2C2E580C2CE71F0D008766A8 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
-		2C2E580F2CE71F0D008766A8 /* SignUPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPViewModel.swift; sourceTree = "<group>"; };
 		2C2E58132CE71F0D008766A8 /* ProjectMoyoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMoyoApp.swift; sourceTree = "<group>"; };
 		2C6D8CE02CEB13F3001B8F08 /* GroupChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatView.swift; sourceTree = "<group>"; };
 		2C6D8CE22CEB14A6001B8F08 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
@@ -114,6 +113,7 @@
 		EB4571722CE9D028002C9166 /* StartTeamupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTeamupView.swift; sourceTree = "<group>"; };
 		EB4571742CE9D030002C9166 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		EBB25C9E2CEB12700018A139 /* SignUpPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordView.swift; sourceTree = "<group>"; };
+		EBE645DD2CEB82BE0033426B /* SignUpNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameView.swift; sourceTree = "<group>"; };
 		FE2061362CE949780001FCD1 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		FE20613B2CE94A1A0001FCD1 /* InformationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailView.swift; sourceTree = "<group>"; };
 		FE20613F2CE951380001FCD1 /* InformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationModel.swift; sourceTree = "<group>"; };
@@ -217,6 +217,7 @@
 				EB4571722CE9D028002C9166 /* StartTeamupView.swift */,
 				2C2E57F82CE71F0D008766A8 /* SignUPView.swift */,
 				EBB25C9E2CEB12700018A139 /* SignUpPasswordView.swift */,
+				EBE645DD2CEB82BE0033426B /* SignUpNicknameView.swift */,
 			);
 			path = SignUP;
 			sourceTree = "<group>";
@@ -347,7 +348,6 @@
 			isa = PBXGroup;
 			children = (
 				EB45716E2CE9CFF5002C9166 /* AuthManager.swift */,
-				2C2E580F2CE71F0D008766A8 /* SignUPViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -575,6 +575,7 @@
 				F6CFC5BD2CEB2488003C0087 /* CustomSearchBar.swift in Sources */,
 				2C6D8CE12CEB13F3001B8F08 /* GroupChatView.swift in Sources */,
 				770E95412CE7232E00761A03 /* CustomFont.swift in Sources */,
+				EBE645DE2CEB82BE0033426B /* SignUpNicknameView.swift in Sources */,
 				F6CFC5C92CEB4803003C0087 /* HomeLoungeDetailContentView.swift in Sources */,
 				2C2E58182CE71F0D008766A8 /* LoginView.swift in Sources */,
 				F6CFC5C12CEB256B003C0087 /* RoungeModel.swift in Sources */,
@@ -610,7 +611,6 @@
 				FE2061532CE983400001FCD1 /* SettingView.swift in Sources */,
 				2C2E58222CE71F0D008766A8 /* RoundedCorner.swift in Sources */,
 				FE2061562CE991320001FCD1 /* TermsAndConditionsView.swift in Sources */,
-				2C2E58232CE71F0D008766A8 /* SignUPViewModel.swift in Sources */,
 				FE20613C2CE94A1A0001FCD1 /* InformationDetailView.swift in Sources */,
 				2CBEEB3F2CEB001B001CE6ED /* GroupChatListView.swift in Sources */,
 				2C2E58242CE71F0D008766A8 /* ProjectMoyoApp.swift in Sources */,
