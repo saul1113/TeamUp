@@ -12,9 +12,9 @@ struct ChatView: View {
         case privateChat
         case groupChat
     }
-    @State private var selectedTab: ChatTab = .privateChat
+    @State private var selectedTab: ChatTab = .groupChat
     var body: some View {
-        VStack {
+        VStack (spacing: 20){
             chatSpliteView()
             switch selectedTab {
             case .privateChat:
