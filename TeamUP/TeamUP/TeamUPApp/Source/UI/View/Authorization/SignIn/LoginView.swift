@@ -34,6 +34,7 @@ struct LoginView: View {
                                 .stroke(Color.gray.opacity(0.5), lineWidth: 1)
                         )
                         .autocapitalization(.none)
+                        .keyboardType(.emailAddress)
                         .disableAutocorrection(true)
                 }
                 
@@ -97,21 +98,28 @@ struct LoginView: View {
                     Spacer()
                     
                     Text("계정이 없으신가요?")
-                        .font(.regular12)
+                        .font(.regular16)
                         .foregroundColor(.gray)
                     
                     NavigationLink(destination: SignUPView(email: $email)) {
                         Text("가입하기")
-                            .font(.regular12)
+                            .font(.regular16)
                             .foregroundColor(.blue)
                     }
                 }
+                .padding(.vertical)
                 
+                Spacer()
                 Spacer()
             }
             .padding()
+            .navigationBarBackButtonHidden(true)
+            .backButton()
             .navigationDestination(isPresented: $navigateToMain) {
                 MainTabView() // 로그인 성공 시 이동
+            }
+            .onAppear {
+                UITextField.appearance().clearButtonMode = .whileEditing
             }
         }
     }
