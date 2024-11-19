@@ -10,19 +10,22 @@ import SwiftUI
 struct SignUPView: View {
     @EnvironmentObject var authManager: AuthManager // AuthManager 인스턴스 사용
     
-    @State private var progress = 0.3
+    @State private var progress = 0.0
     @Binding var email: String
     @State private var isEmailValid: Bool = false    // 이메일 형식 유효성
     @State private var isEmailChecked: Bool = false  // 이메일 중복 확인 여부
     @State private var emailMessage: String? = nil   // 이메일 관련 메시지
     @State private var emailMessageColor: Color = .red
     @State private var canProceedToNextStep: Bool = false // 다음 버튼 활성화 상태
+    @State private var isNavigatingToPasswordView: Bool = false // NavigationLink 제어 상태
+    
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 0) {
                 Spacer()
                     .frame(height: 10)
                 ProgressView(value: progress)
+                    .animation(.easeInOut(duration: 1), value: progress) // 애니메이션 추가
                 
                 Spacer()
                     .frame(height: 40)
@@ -71,7 +74,19 @@ struct SignUPView: View {
                 }
                 Spacer()
                 
-                NavigationLink(destination: SignUpPasswordView(), isActive: $canProceedToNextStep) {
+                NavigationLink(
+                    destination: SignUpPasswordView(email: $email),
+                    isActive: $isNavigatingToPasswordView
+                ) {
+                    EmptyView() // NavigationLink 트리거 역할
+                }
+                
+                Button(action: {
+                    // 다음 화면으로 이동 로직
+                    if canProceedToNextStep {
+                        isNavigatingToPasswordView = true
+                    }
+                }) {
                     Text("다 음")
                         .frame(width: 360, height: 50)
                         .font(.semibold20)
@@ -79,7 +94,7 @@ struct SignUPView: View {
                         .background(canProceedToNextStep ? Color.customBlue : Color.gray)
                         .cornerRadius(4)
                 }
-                .disabled(canProceedToNextStep)
+                .disabled(!canProceedToNextStep)
                 
                 Spacer().frame(height: 35)
             }
@@ -91,6 +106,16 @@ struct SignUPView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     BackButton()
                 }
+            }
+        }
+        .onAppear {
+            startProgressAnimation() // 뷰가 나타날 때 진행률 애니메이션 시작
+        }
+    }
+    private func startProgressAnimation() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            withAnimation {
+                self.progress = 0.3 // 애니메이션과 함께 30%로 증가
             }
         }
     }
@@ -127,18 +152,18 @@ struct SignUPView: View {
                     self.emailMessage = "사용 가능한 이메일입니다."
                     self.emailMessageColor = .blue
                 }
-                self.updateProceedState()
+                updateProceedState()
             }
         } catch {
             DispatchQueue.main.async {
                 print("Email check error: \(error.localizedDescription)")
                 let nsError = error as NSError
-                           if nsError.domain == NSURLErrorDomain {
-                               self.emailMessage = "네트워크 연결에 문제가 있습니다. 다시 시도해주세요."
-                           } else {
-                               self.emailMessage = "서버 오류가 발생했습니다. 다시 시도해주세요."
-                           }
-                           self.emailMessageColor = .red
+                if nsError.domain == NSURLErrorDomain {
+                    self.emailMessage = "네트워크 연결에 문제가 있습니다. 다시 시도해주세요."
+                } else {
+                    self.emailMessage = "서버 오류가 발생했습니다. 다시 시도해주세요."
+                }
+                self.emailMessageColor = .red
             }
         }
     }

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct SignUpPasswordView: View {
-    @State private var progress = 0.7
+    @State private var progress = 0.3
+    @Binding var email: String
     @State private var password: String = ""
     @State private var confirmPassword: String = ""    // 비밀번호 확인 입력
     @State private var isPasswordMatched: Bool = true  // 비밀번호 일치 여부
@@ -23,7 +24,7 @@ struct SignUpPasswordView: View {
                 Spacer()
                     .frame(height: 10)
                 ProgressView(value: progress)
-                
+                    .animation(.easeInOut(duration: 1), value: progress)
                 
                 Spacer()
                     .frame(height: 40)
@@ -34,8 +35,8 @@ struct SignUpPasswordView: View {
                         .font(Font.regular14)
                         .foregroundStyle(.gray)
                 }
+                
                 ScrollView {
-                    
                     Spacer()
                         .frame(height: 50)
                     VStack(alignment: .leading, spacing: 10) {
@@ -46,6 +47,7 @@ struct SignUpPasswordView: View {
                             placeholder: "비밀번호 설정",
                             isSecure: true
                         )
+                        .onChange(of: password) { _ in validatePasswords() } // 비밀번호 변경 시 검증 실행
                     }
                     .padding(.horizontal, 1)
                     
@@ -62,8 +64,7 @@ struct SignUpPasswordView: View {
                             errorColor: .red,
                             errorMessage: errorMessage
                         )
-                        .onChange(of: confirmPassword) { _ in validatePasswords()
-                        }
+                        .onChange(of: confirmPassword) { _ in validatePasswords() }
                     }
                     .padding(.horizontal, 1)
                 }
@@ -85,7 +86,7 @@ struct SignUpPasswordView: View {
                 
                 // NavigationLink로 화면 전환
                 NavigationLink(
-                    destination: SignUpNicknameView(),
+                    destination: SignUpNicknameView(email: $email, password: $password),
                     isActive: $navigateToNext
                 ) {
                     EmptyView() // NavigationLink가 화면에 표시되지 않도록 설정
@@ -95,7 +96,6 @@ struct SignUpPasswordView: View {
                     .frame(height: 90)
             }
             .padding(.horizontal, 20)
-//            .background(Color.cyan)
             .navigationTitle("회원가입")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
@@ -103,6 +103,18 @@ struct SignUpPasswordView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     BackButton()
                 }
+            }
+        }
+        .onAppear {
+            startProgressAnimation() // 뷰가 나타날 때 진행률 애니메이션 시작
+        }
+    }
+    
+    // MARK: - 진행률 애니메이션
+    private func startProgressAnimation() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            withAnimation {
+                self.progress = 0.7 // 애니메이션과 함께 30%로 증가
             }
         }
     }
@@ -126,9 +138,4 @@ struct SignUpPasswordView: View {
     private func updateProceedState() {
         canProceedToNextStep = isPasswordMatched && !password.isEmpty && !confirmPassword.isEmpty
     }
-}
-
-#Preview {
-    SignUpPasswordView()
-        .environmentObject(AuthManager())
 }
