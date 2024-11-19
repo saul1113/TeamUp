@@ -8,7 +8,7 @@ import SwiftUI
 
 struct HomeLoungeDetailView: View {
     var model: Listable
-    @State private var saveCount: Int // `save` 값을 수정 가능한 변수로 관리
+    @State private var saveCount: Int
     @State private var isBookmarked = false
     @State private var newComment = ""
     // 모델이 수정 가능한 값으로 `save` 프로퍼티를 가지고 있다고 가정
@@ -95,7 +95,7 @@ struct HomeLoungeDetailView: View {
                 // 인원 정보
                 HStack {
                     if let post = model as? Post{
-                        Text("👤 \(2)/\(post.capacity)")
+                        Text("👤 \(post.currentCapacity)/\(post.maxCapacity)")
                             .font(.subheadline)
                             .foregroundColor(.gray)
                     }
@@ -123,7 +123,8 @@ struct HomeLoungeDetailView: View {
                     }
                     
                     
-                }
+                }.frame(height: 10 )
+               
             }
             .padding(.horizontal)
             .padding(.top, 10)
@@ -139,7 +140,10 @@ struct HomeLoungeDetailView: View {
                     Spacer()
                 }
                 .padding()
+                
                 Divider()
+                    .padding(.top , 1)
+                    
                 VStack{
                     List(rounge.reply) { reply in
                         VStack(alignment: .leading, spacing: 20) {
@@ -199,7 +203,7 @@ struct HomeLoungeDetailView: View {
                         
                         .disabled(newComment.isEmpty)
                     }
-                    .padding(.bottom,60)
+                    .padding(.bottom,10)
                     .padding(.horizontal)
                     Spacer()
                 }
@@ -235,7 +239,7 @@ struct HomeLoungeDetailView: View {
         category: .qna,
         user: User(id: UUID().uuidString, email: "add", password: "123", nickname: "ㅎㅎ", profileImageName: "String"),
         title: "새로운 규정 공지",
-        content: "새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요.",
+        content: "새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요.새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요",
         reply: [
             Reply(user: "Alice", content: "공지 확인했습니다. 감사합니다.", timestamp: Date()),
             Reply(user: "Bob", content: "규정 변경 관련 문의는 어디로 해야 하나요?", timestamp: Date()),
@@ -245,6 +249,6 @@ struct HomeLoungeDetailView: View {
         save: 120,
         seen: 350, hasTag: ["질문","궁금해요","스터디"]
     )
-    let samplePost = Post(category: .study, user: User(id: UUID().uuidString,email: "1231", password: "1231", nickname: "수민이다", profileImageName: "ㅁㄴㅇㄴㅇ"), isRecruit: true, title: "강아지 잃어버리신분!!!", content: "배가고파서 집에서 나오는길 늘 그렇듯 늘어선 가로등은 타오르지 마치 싸울듯이 엉켜있었떤 머시기 시기지난 래퍼들의 반대편을 바라보던 래퍼들의 래퍼 그건 100프로 난 몰라요 하하하하 아무말이나 반대편을 바라보던 래퍼들의 래퍼 그건 100프로 난 몰라요 늘 그렇듯 늘어선 가로등은 타오르지 마치 싸울듯이 엉켜있었떤 머시기 시기지난 래퍼들의 반대편을 바라보던 래퍼들의 래퍼 그건 100프로 난 몰라요  ", time: "4시간 전", save: 4, seen: 6, capacity: 5, hasTag: ["알고리즘","스터디","프로젝트"])
+    let samplePost = Post(category: .study, user: User(id: UUID().uuidString,email: "1231", password: "1231", nickname: "수민이다", profileImageName: "ㅁㄴㅇㄴㅇ"), isRecruit: true, title: "강아지 잃어버리신분!!!", content: "배가고파서 집에서 나오는길 늘 그렇듯 늘어선 가로등은 타오르지 마치 싸울듯이 엉켜있었떤 머시기 시기지난 래퍼들의 반대편을 바라보던 래퍼들의 래퍼 그건 100프로 난 몰라요 하하하하 아무말이나 반대편을 바라보던 래퍼들의 래퍼 그건 100프로 난 몰라요 늘 그렇듯 늘어선 가로등은 타오르지 마치 싸울듯이 엉켜있었떤 머시기 시기지난 래퍼들의 반대편을 바라보던 래퍼들의 래퍼 그건 100프로 난 몰라요  ", time: "4시간 전", save: 4, seen: 6, maxCapacity: 5, currentCapacity: 2 ,hasTag: ["알고리즘","스터디","프로젝트"])
     HomeLoungeDetailView(model: sampleRoungeData)
 }

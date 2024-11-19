@@ -42,6 +42,12 @@
 		50241F942CEB8D1B002014EF /* PrivateChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50241F932CEB8D1B002014EF /* PrivateChatView.swift */; };
 		770E953F2CE722E500761A03 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E953E2CE722E500761A03 /* BackButton.swift */; };
 		770E95412CE7232E00761A03 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E95402CE7232E00761A03 /* CustomFont.swift */; };
+		771306DD2CEB1CAC00D47BD5 /* TextEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771306DC2CEB1CAC00D47BD5 /* TextEditorView.swift */; };
+		771306DF2CEB1DB900D47BD5 /* CustomMarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771306DE2CEB1DB900D47BD5 /* CustomMarkdownView.swift */; };
+		7793F1842CEC1A28007595D4 /* CategorySelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793F1832CEC1A28007595D4 /* CategorySelectedView.swift */; };
+		7793F1862CEC2F03007595D4 /* ToggleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793F1852CEC2F03007595D4 /* ToggleButtonView.swift */; };
+		7793F1882CEC6534007595D4 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793F1872CEC6534007595D4 /* TagView.swift */; };
+		7793F18C2CEC6B46007595D4 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793F18B2CEC6B46007595D4 /* EditView.swift */; };
 		EB45716F2CE9CFF5002C9166 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB45716E2CE9CFF5002C9166 /* AuthManager.swift */; };
 		EB4571732CE9D028002C9166 /* StartTeamupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4571722CE9D028002C9166 /* StartTeamupView.swift */; };
 		EB4571752CE9D030002C9166 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4571742CE9D030002C9166 /* TextFieldView.swift */; };
@@ -101,6 +107,12 @@
 		770E953E2CE722E500761A03 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		770E95402CE7232E00761A03 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		770E95422CE724A700761A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		771306DC2CEB1CAC00D47BD5 /* TextEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorView.swift; sourceTree = "<group>"; };
+		771306DE2CEB1DB900D47BD5 /* CustomMarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarkdownView.swift; sourceTree = "<group>"; };
+		7793F1832CEC1A28007595D4 /* CategorySelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectedView.swift; sourceTree = "<group>"; };
+		7793F1852CEC2F03007595D4 /* ToggleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButtonView.swift; sourceTree = "<group>"; };
+		7793F1872CEC6534007595D4 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		7793F18B2CEC6B46007595D4 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		EB45716E2CE9CFF5002C9166 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		EB4571722CE9D028002C9166 /* StartTeamupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTeamupView.swift; sourceTree = "<group>"; };
 		EB4571742CE9D030002C9166 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
@@ -146,6 +158,7 @@
 			children = (
 				2C2E58152CE71F0D008766A8 /* TeamUP */,
 				2C2E57842CE71E8B008766A8 /* Products */,
+				7793F1802CEC1514007595D4 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,7 +190,6 @@
 				2C2E57ED2CE71F0D008766A8 /* Assets.xcassets */,
 				2C2E57EE2CE71F0D008766A8 /* Color.xcassets */,
 				2C2E57F02CE71F0D008766A8 /* Image.xcassets */,
-				FE7836ED2CEB385F00EF5569 /* Config.xcconfig */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -263,6 +275,11 @@
 			isa = PBXGroup;
 			children = (
 				2C2E58012CE71F0D008766A8 /* PostView.swift */,
+				771306DC2CEB1CAC00D47BD5 /* TextEditorView.swift */,
+				771306DE2CEB1DB900D47BD5 /* CustomMarkdownView.swift */,
+				7793F1832CEC1A28007595D4 /* CategorySelectedView.swift */,
+				7793F1852CEC2F03007595D4 /* ToggleButtonView.swift */,
+				7793F1872CEC6534007595D4 /* TagView.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -270,6 +287,7 @@
 		2C2E58042CE71F0D008766A8 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				7793F18A2CEC6B32007595D4 /* Edit */,
 				FE2061542CE990F80001FCD1 /* Policies */,
 				FE2061492CE9679D0001FCD1 /* Sub */,
 				FE2061382CE949C60001FCD1 /* Announcement */,
@@ -396,6 +414,22 @@
 				FE20614F2CE96DF30001FCD1 /* ExpandedDividerWithVStackView.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		7793F1802CEC1514007595D4 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				FE7836ED2CEB385F00EF5569 /* Config.xcconfig */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		7793F18A2CEC6B32007595D4 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				7793F18B2CEC6B46007595D4 /* EditView.swift */,
+			);
+			path = Edit;
 			sourceTree = "<group>";
 		};
 		F6CFC5D22CEB718A003C0087 /* HomeLoungeCommon */ = {
@@ -566,6 +600,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				771306DF2CEB1DB900D47BD5 /* CustomMarkdownView.swift in Sources */,
 				2C2E58162CE71F0D008766A8 /* UserModel.swift in Sources */,
 				EB45716F2CE9CFF5002C9166 /* AuthManager.swift in Sources */,
 				2C6D8CE32CEB14A6001B8F08 /* CustomBackButton.swift in Sources */,
@@ -582,10 +617,12 @@
 				EB4571752CE9D030002C9166 /* TextFieldView.swift in Sources */,
 				2C2E581A2CE71F0D008766A8 /* ChatView.swift in Sources */,
 				FE2061402CE951380001FCD1 /* InformationModel.swift in Sources */,
+				7793F1882CEC6534007595D4 /* TagView.swift in Sources */,
 				2C2E581B2CE71F0D008766A8 /* HomeView.swift in Sources */,
 				FE2061372CE949780001FCD1 /* InformationView.swift in Sources */,
 				FE2061482CE9612F0001FCD1 /* CustomBackButtonModifier.swift in Sources */,
 				50241F922CEB8D10002014EF /* PrivateChatListView.swift in Sources */,
+				7793F1842CEC1A28007595D4 /* CategorySelectedView.swift in Sources */,
 				50241F942CEB8D1B002014EF /* PrivateChatView.swift in Sources */,
 				2C2E581C2CE71F0D008766A8 /* LoungeView.swift in Sources */,
 				F6CFC5BF2CEB24F4003C0087 /* ListRowView.swift in Sources */,
@@ -605,13 +642,16 @@
 				FE20614E2CE969070001FCD1 /* QuestionView.swift in Sources */,
 				2C2E58202CE71F0D008766A8 /* TabBar.swift in Sources */,
 				2C2E58212CE71F0D008766A8 /* Color.swift in Sources */,
+				7793F1862CEC2F03007595D4 /* ToggleButtonView.swift in Sources */,
 				FE20614B2CE967AD0001FCD1 /* AnnouncementView.swift in Sources */,
 				FE2061532CE983400001FCD1 /* SettingView.swift in Sources */,
 				2C2E58222CE71F0D008766A8 /* RoundedCorner.swift in Sources */,
+				7793F18C2CEC6B46007595D4 /* EditView.swift in Sources */,
 				FE2061562CE991320001FCD1 /* TermsAndConditionsView.swift in Sources */,
 				FE20613C2CE94A1A0001FCD1 /* InformationDetailView.swift in Sources */,
 				2CBEEB3F2CEB001B001CE6ED /* GroupChatListView.swift in Sources */,
 				2C2E58242CE71F0D008766A8 /* ProjectMoyoApp.swift in Sources */,
+				771306DD2CEB1CAC00D47BD5 /* TextEditorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

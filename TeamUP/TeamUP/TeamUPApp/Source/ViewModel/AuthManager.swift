@@ -9,6 +9,11 @@ import SwiftUI
 import Alamofire
 import KeychainSwift
 
+struct LoginResponse: Decodable {
+    let token: AuthManager.Token
+    let user: User
+}
+
 final class AuthManager: ObservableObject {
     private let keychain = KeychainSwift()
     @Published private(set) var user: User?
@@ -86,22 +91,26 @@ final class AuthManager: ObservableObject {
     }
     
     // MARK: - 서버 로그인 요청
-    func login(email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void) {
+    func login(email: String, password: String, completion: @escaping (Result<User, Error>) -> Void) {
         let loginEndpoint = "https://protectmeios.xyz/user/signin"
         let parameters: [String: String] = [
-            "email": email,
+            "id": email,
             "password": password
         ]
         
         AF.request(loginEndpoint, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default)
+            .responseJSON { response in
+                debugPrint("Response JSON: \(response)") // 서버 응답 디버깅
+            }
             .validate()
-            .responseDecodable(of: Token.self) { response in
+            .responseDecodable(of: LoginResponse.self) { response in
                 switch response.result {
-                case .success(let token):
-                    self.saveToken(token) // 성공 시 JWT 저장
-                    completion(.success(()))
+                case .success(let data):
+                    self.saveToken(data.token)
+                    completion(.success(data.user))
                 case .failure(let error):
-                    completion(.failure(error)) // 실패 시 에러 반환
+                    debugPrint("Error: \(error)")
+                    completion(.failure(error))
                 }
             }
     }
@@ -221,4 +230,13 @@ final class AuthManager: ObservableObject {
     //            }
     //        }
     //    }
+    func logout() {
+        clearToken() // Keychain에서 토큰 삭제
+        isAuthenticated = false // 인증 상태 초기화
+        print("로그아웃 완료: 토큰 삭제 및 인증 상태 초기화")
+    }
+    
+    func hasAccessToken() -> Bool {
+        return keychain.get(accessTokenKey) != nil
+    }
 }
