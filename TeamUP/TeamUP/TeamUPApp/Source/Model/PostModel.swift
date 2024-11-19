@@ -26,7 +26,8 @@ struct Post: Listable, Identifiable {
     var time: String
     var save: Int
     var seen: Int
-    var capacity: Int
+    var maxCapacity: Int
+    var currentCapacity: Int
     var hasTag: [String]
     
     
