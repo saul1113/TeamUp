@@ -14,27 +14,27 @@ struct SignUpPasswordView: View {
     @State private var isPasswordMatched: Bool = true  // 비밀번호 일치 여부
     @State private var canProceedToNextStep: Bool = false // 다음 버튼 활성화 상태
     @State private var errorMessage: String? = nil
+    @State private var navigateToNext: Bool = false
     @EnvironmentObject var authManager: AuthManager
     
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 0) {
+                Spacer()
+                    .frame(height: 10)
+                ProgressView(value: progress)
+                
+                
+                Spacer()
+                    .frame(height: 40)
+                VStack(alignment: .leading) {
+                    Text("비밀번호를 입력해주세요")
+                        .font(Font.bold24)
+                    Text("로그인 시 사용할 비밀번호를 입력해주세요.")
+                        .font(Font.regular14)
+                        .foregroundStyle(.gray)
+                }
                 ScrollView {
-                    Spacer()
-                        .frame(height: 10)
-                    ProgressView(value: progress)
-                    
-                    
-                    Spacer()
-                        .frame(height: 40)
-                    VStack(alignment: .leading) {
-                        Text("비밀번호를 입력해주세요")
-                            .font(Font.bold24)
-                        Text("로그인 시 사용할 비밀번호를 입력해주세요.")
-                            .font(Font.regular14)
-                            .foregroundStyle(.gray)
-                    }
-                    .padding(.leading, -130)
                     
                     Spacer()
                         .frame(height: 50)
@@ -47,6 +47,8 @@ struct SignUpPasswordView: View {
                             isSecure: true
                         )
                     }
+                    .padding(.horizontal, 1)
+                    
                     Spacer()
                         .frame(height: 40)
                     
@@ -63,25 +65,37 @@ struct SignUpPasswordView: View {
                         .onChange(of: confirmPassword) { _ in validatePasswords()
                         }
                     }
+                    .padding(.horizontal, 1)
                 }
+                
                 Spacer()
-                NavigationLink(
-                    destination: SignUpNicknameView(),
-                    isActive: $canProceedToNextStep // 조건 만족 시 활성화
-                ) {
+                Button(action: {
+                    if canProceedToNextStep {
+                        navigateToNext = true // 사용자가 버튼을 눌렀을 때만 화면 전환
+                    }
+                }) {
                     Text("다 음")
                         .frame(width: 360, height: 50)
-                        .font(.headline)
+                        .font(.semibold20)
                         .foregroundColor(.white)
                         .background(canProceedToNextStep ? Color.customBlue : Color.gray)
                         .cornerRadius(4)
                 }
-                .disabled(canProceedToNextStep)
+                .disabled(!canProceedToNextStep) // 버튼 비활성화 상태
+                
+                // NavigationLink로 화면 전환
+                NavigationLink(
+                    destination: SignUpNicknameView(),
+                    isActive: $navigateToNext
+                ) {
+                    EmptyView() // NavigationLink가 화면에 표시되지 않도록 설정
+                }
                 
                 Spacer()
                     .frame(height: 90)
             }
             .padding(.horizontal, 20)
+//            .background(Color.cyan)
             .navigationTitle("회원가입")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
@@ -103,7 +117,7 @@ struct SignUpPasswordView: View {
             isPasswordMatched = false
         } else {
             errorMessage = nil
-            isPasswordMatched = false
+            isPasswordMatched = true
         }
         updateProceedState()
     }

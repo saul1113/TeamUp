@@ -11,5 +11,7 @@
 		<string>Pretendard-SemiBold.ttf</string>
 		<string>Pretendard-Thin.ttf</string>
 	</array>
+	<key>UrlString</key>
+	<string>$(UrlString)</string>
 </dict>
 </plist>

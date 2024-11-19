@@ -224,6 +224,7 @@
 		2C2E57F92CE71F0D008766A8 /* SignUP */ = {
 			isa = PBXGroup;
 			children = (
+				EB4571742CE9D030002C9166 /* TextFieldView.swift */,
 				EB4571722CE9D028002C9166 /* StartTeamupView.swift */,
 				2C2E57F82CE71F0D008766A8 /* SignUPView.swift */,
 				EBB25C9E2CEB12700018A139 /* SignUpPasswordView.swift */,
@@ -310,7 +311,6 @@
 			isa = PBXGroup;
 			children = (
 				F6CFC5D22CEB718A003C0087 /* HomeLoungeCommon */,
-				EB4571742CE9D030002C9166 /* TextFieldView.swift */,
 				2C2E57FA2CE71F0D008766A8 /* Authorization */,
 				2C2E57FC2CE71F0D008766A8 /* Chat */,
 				2C2E57FE2CE71F0D008766A8 /* Home */,
@@ -660,6 +660,7 @@
 /* Begin XCBuildConfiguration section */
 		2C2E578F2CE71E8C008766A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE7836ED2CEB385F00EF5569 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -723,6 +724,7 @@
 		};
 		2C2E57902CE71E8C008766A8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE7836ED2CEB385F00EF5569 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
