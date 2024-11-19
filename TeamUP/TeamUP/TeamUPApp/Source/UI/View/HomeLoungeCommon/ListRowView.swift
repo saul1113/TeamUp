@@ -61,6 +61,13 @@ struct ListRowView: View {
                         Image(systemName: "eye")
                         Text("\(model.seen)")
                     }
+                    if let rounge = model as? Rounge {
+                        HStack(spacing: 3){
+                            Image(systemName: "bubble.left")
+                            Text("\(rounge.reply.count)")
+                        }
+                    }
+                
                 }
                 .font(.caption)
                 .foregroundColor(.gray)

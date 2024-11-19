@@ -10,19 +10,25 @@ import SwiftUI
 struct HomeLoungeDetailContentView: View {
     var model: Listable
     var body: some View {
-        // 게시글 제목
-        Text(model.title)
-            .font(.title)
-            .fontWeight(.bold)
-        
-        // 게시글 내용
-        Text(model.content)
-            .font(.body)
-            .foregroundColor(.black.opacity(0.8)) 
-            .lineSpacing(6)//행간
-            .kerning(0.5) // 자간
-            .padding(.vertical, 5)
-            .lineLimit(nil)
+        ScrollView {
+            VStack(alignment: .leading){
+                // 게시글 제목
+                Text(model.title)
+                    .font(.title)
+                    .fontWeight(.bold)
+                
+                // 게시글 내용 // 이거도 마크다운으로 보여줘야할지도
+                Text(model.content)
+                    .font(.body)
+                    .foregroundColor(.black.opacity(0.8))
+                    .lineSpacing(6)//행간
+                    .kerning(0.5) // 자간
+                    .padding(.vertical, 5)
+                    .lineLimit(nil)
+            }
+            
+            
+        }
         
         
         
