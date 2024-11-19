@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject var authManager: AuthManager
+    @Environment(\.presentationMode) var presentationMode
     private let padding: CGFloat = 20
     
     var body: some View {
@@ -55,18 +57,26 @@ struct ProfileView: View {
                 listItem("개인정보처리방침") {
                     PrivacyPolicyView()
                 }
+                
+                Button("로그아웃") {
+                    authManager.logout()
+                }
+                .font(.bold16)
+                .foregroundStyle(.red)
             }
             .listStyle(.plain)
             .listRowInsets(EdgeInsets(top: 0, leading: padding, bottom: 0, trailing: padding))
             .environment(\.defaultMinListRowHeight, 0)
             .font(.semibold18)
         }
-        
-        Button("로그아웃") {
-            // TODO: 로그아웃 로직 연결
+        .onChange(of: authManager.isAuthenticated) { isAuthenticated in
+            // 로그아웃 상태일 때 스타트팀업뷰로 이동
+            if !isAuthenticated {
+                presentationMode.wrappedValue.dismiss()
+            }
         }
-        .font(.bold16)
-        .foregroundStyle(.red)
+        
+        
     }
     
     @ViewBuilder
