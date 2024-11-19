@@ -28,6 +28,7 @@ extension Font {
     static var semibold18 = Font.custom("Pretendard-SemiBold", size: 18)
     static var semibold16 = Font.custom("Pretendard-SemiBold", size: 16)
     static var semibold14 = Font.custom("Pretendard-SemiBold", size: 14)
+    static var semibold12 = Font.custom("Pretendard-SemiBold", size: 12)
     
     /// Medium
     static var medium30 = Font.custom("Pretendard-Medium", size: 28)

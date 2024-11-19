@@ -9,7 +9,7 @@ import SwiftUI
 import MarkdownUI
 
 struct CustomMarkdownView: UIViewRepresentable {
-    @Binding var text: String
+       @Binding var text: String
        @Binding var selectedRange: NSRange?
 
        class Coordinator: NSObject, UITextViewDelegate {
@@ -35,7 +35,7 @@ struct CustomMarkdownView: UIViewRepresentable {
        func makeUIView(context: Context) -> UITextView {
            let textView = UITextView()
            textView.delegate = context.coordinator
-           textView.font = UIFont.systemFont(ofSize: 16)
+           textView.font = UIFont.systemFont(ofSize: 14)
            textView.isEditable = true
            textView.isSelectable = true
            textView.text = text

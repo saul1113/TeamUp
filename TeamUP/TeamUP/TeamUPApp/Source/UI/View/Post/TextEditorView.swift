@@ -9,24 +9,24 @@ import SwiftUI
 import MarkdownUI
 
 struct TextEditorView: View {
-    @State private var markdownText: String = ""
+    @Binding var markdownText: String
     @State private var selectedRange: NSRange?
     
     var body: some View {
         VStack {
-            HStack(spacing: 18) {
+            HStack(spacing: 20) {
                 Button {
                     sizeHeader(level: 1)
                 } label: {
                     HStack {
                         Text("H")
                             .foregroundStyle(.black)
-                            .font(.system(size: 18, weight: .regular, design: .serif))
+                            .font(.system(size: 16, weight: .regular, design: .serif))
                         Text("1")
                             .foregroundStyle(.black)
                             .font(.system(size: 10, weight: .regular, design: .serif))
                             .padding(.bottom, -7)
-                            .padding(.leading, -5)
+                            .padding(.leading, -7)
                     }
                 }
                 
@@ -36,13 +36,13 @@ struct TextEditorView: View {
                     HStack {
                         Text("H")
                             .foregroundStyle(.black)
-                            .font(.system(size: 18, weight: .regular, design: .serif))
+                            .font(.system(size: 16, weight: .regular, design: .serif))
                         Text("2")
                             .foregroundStyle(.black)
                             .font(.system(size: 10, weight: .regular, design: .serif))
                             .padding(.bottom, -7)
-                            .padding(.leading, -5)
-
+                            .padding(.leading, -7)
+                        
                     }
                 }
                 
@@ -52,13 +52,13 @@ struct TextEditorView: View {
                     HStack {
                         Text("H")
                             .foregroundStyle(.black)
-                            .font(.system(size: 18, weight: .regular, design: .serif))
+                            .font(.system(size: 16, weight: .regular, design: .serif))
                         Text("3")
                             .foregroundStyle(.black)
                             .font(.system(size: 10, weight: .regular, design: .serif))
                             .padding(.bottom, -7)
-                            .padding(.leading, -5)
-
+                            .padding(.leading, -7)
+                        
                     }
                 }
                 
@@ -95,14 +95,7 @@ struct TextEditorView: View {
                 
                 Divider()
                     .frame(height: 30)
-                
-                Button {
-                    
-                } label: {
-                    Image(systemName: "photo")
-                        .foregroundStyle(.black)
-                }
-                
+
                 Button {
                     insertLink()
                 } label: {
@@ -113,17 +106,17 @@ struct TextEditorView: View {
             }
             .font(.system(size: 18))
             
-            CustomMarkdownView(text: $markdownText, selectedRange: $selectedRange)
-                .padding()
-                .border(Color.gray, width: 1)
-                .frame(height: 400)
-            
             Divider()
+                .padding(-20)
+                .padding(.top, 20)
             
-            Markdown(markdownText)
+            CustomMarkdownView(text: $markdownText, selectedRange: $selectedRange)
+                .frame(height: 400)
             
             Spacer()
         }
+        .padding()
+        
         .navigationTitle("")
     }
     
@@ -167,6 +160,6 @@ struct TextEditorView: View {
 
 
 #Preview {
-    TextEditorView()
+    TextEditorView(markdownText: .constant("Test markdown"))
 }
 
