@@ -66,6 +66,8 @@
 		FE2061562CE991320001FCD1 /* TermsAndConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061552CE991320001FCD1 /* TermsAndConditionsView.swift */; };
 		FE2061582CE992D90001FCD1 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061572CE992D90001FCD1 /* PrivacyPolicyView.swift */; };
 		FE7836EE2CEB385F00EF5569 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FE7836ED2CEB385F00EF5569 /* Config.xcconfig */; };
+		771306DD2CEB1CAC00D47BD5 /* TextEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771306DC2CEB1CAC00D47BD5 /* TextEditorView.swift */; };
+		771306DF2CEB1DB900D47BD5 /* CustomMarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771306DE2CEB1DB900D47BD5 /* CustomMarkdownView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +128,8 @@
 		FE2061552CE991320001FCD1 /* TermsAndConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsView.swift; sourceTree = "<group>"; };
 		FE2061572CE992D90001FCD1 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		FE7836ED2CEB385F00EF5569 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		771306DC2CEB1CAC00D47BD5 /* TextEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorView.swift; sourceTree = "<group>"; };
+		771306DE2CEB1DB900D47BD5 /* CustomMarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarkdownView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +183,7 @@
 				2C2E57ED2CE71F0D008766A8 /* Assets.xcassets */,
 				2C2E57EE2CE71F0D008766A8 /* Color.xcassets */,
 				2C2E57F02CE71F0D008766A8 /* Image.xcassets */,
-				FE7836ED2CEB385F00EF5569 /* Config.xcconfig */,
+				771306DA2CEB0CC800D47BD5 /* Config.xcconfig */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -264,6 +268,8 @@
 			isa = PBXGroup;
 			children = (
 				2C2E58012CE71F0D008766A8 /* PostView.swift */,
+				771306DC2CEB1CAC00D47BD5 /* TextEditorView.swift */,
+				771306DE2CEB1DB900D47BD5 /* CustomMarkdownView.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -551,6 +557,7 @@
 				2C2E58262CE71F0D008766A8 /* Pretendard-Bold.ttf in Resources */,
 				2C2E58292CE71F0D008766A8 /* Pretendard-Light.ttf in Resources */,
 				2C2E582A2CE71F0D008766A8 /* Pretendard-Medium.ttf in Resources */,
+				771306DB2CEB0CC800D47BD5 /* Config.xcconfig in Resources */,
 				2C2E582B2CE71F0D008766A8 /* Pretendard-Regular.ttf in Resources */,
 				2C2E582C2CE71F0D008766A8 /* Pretendard-SemiBold.ttf in Resources */,
 				2C2E582D2CE71F0D008766A8 /* Pretendard-Thin.ttf in Resources */,
@@ -568,6 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				771306DF2CEB1DB900D47BD5 /* CustomMarkdownView.swift in Sources */,
 				2C2E58162CE71F0D008766A8 /* UserModel.swift in Sources */,
 				EB45716F2CE9CFF5002C9166 /* AuthManager.swift in Sources */,
 				2C6D8CE32CEB14A6001B8F08 /* CustomBackButton.swift in Sources */,
@@ -614,6 +622,7 @@
 				FE20613C2CE94A1A0001FCD1 /* InformationDetailView.swift in Sources */,
 				2CBEEB3F2CEB001B001CE6ED /* GroupChatListView.swift in Sources */,
 				2C2E58242CE71F0D008766A8 /* ProjectMoyoApp.swift in Sources */,
+				771306DD2CEB1CAC00D47BD5 /* TextEditorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

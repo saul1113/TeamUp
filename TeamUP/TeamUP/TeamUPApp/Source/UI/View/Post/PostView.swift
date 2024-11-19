@@ -9,7 +9,38 @@ import SwiftUI
 
 struct PostView: View {
     var body: some View {
-        Text("Hello, World!")
+        NavigationStack {
+            ScrollView {
+                VStack {
+                    TextEditorView()
+                }
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    
+                }label: {
+                    BackButton()
+                }
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                HStack {
+                    Button {
+                        
+                    }label: {
+                        
+                    }
+                    
+                    Button {
+                        
+                    }label: {
+                        
+                    }
+                }
+            }
+        }
+        .navigationTitle("")
     }
 }
 
