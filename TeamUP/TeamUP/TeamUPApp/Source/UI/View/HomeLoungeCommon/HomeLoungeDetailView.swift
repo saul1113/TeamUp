@@ -8,7 +8,7 @@ import SwiftUI
 
 struct HomeLoungeDetailView: View {
     var model: Listable
-    @State private var saveCount: Int // `save` 값을 수정 가능한 변수로 관리
+    @State private var saveCount: Int
     @State private var isBookmarked = false
     @State private var newComment = ""
     // 모델이 수정 가능한 값으로 `save` 프로퍼티를 가지고 있다고 가정
@@ -123,7 +123,8 @@ struct HomeLoungeDetailView: View {
                     }
                     
                     
-                }
+                }.frame(height: 10 )
+               
             }
             .padding(.horizontal)
             .padding(.top, 10)
@@ -139,7 +140,10 @@ struct HomeLoungeDetailView: View {
                     Spacer()
                 }
                 .padding()
+                
                 Divider()
+                    .padding(.top , 1)
+                    
                 VStack{
                     List(rounge.reply) { reply in
                         VStack(alignment: .leading, spacing: 20) {
@@ -199,7 +203,7 @@ struct HomeLoungeDetailView: View {
                         
                         .disabled(newComment.isEmpty)
                     }
-                    .padding(.bottom,60)
+                    .padding(.bottom,10)
                     .padding(.horizontal)
                     Spacer()
                 }
@@ -235,7 +239,7 @@ struct HomeLoungeDetailView: View {
         category: .qna,
         user: User(id: UUID().uuidString, email: "add", password: "123", nickname: "ㅎㅎ", profileImageName: "String"),
         title: "새로운 규정 공지",
-        content: "새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요.",
+        content: "새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요.새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요",
         reply: [
             Reply(user: "Alice", content: "공지 확인했습니다. 감사합니다.", timestamp: Date()),
             Reply(user: "Bob", content: "규정 변경 관련 문의는 어디로 해야 하나요?", timestamp: Date()),
