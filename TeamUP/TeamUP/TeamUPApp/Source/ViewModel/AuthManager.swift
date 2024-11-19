@@ -11,6 +11,19 @@ import KeychainSwift
 
 final class AuthManager: ObservableObject {
     private let keychain = KeychainSwift()
+    @Published private(set) var user: User?
+    @Published private(set) var isValied: Bool = false
+    
+    
+    private var defaultURL: URLComponents = URLComponents()
+    
+    init() {
+        if let urlString = Bundle.main.infoDictionary?["UrlString"], let urlS = urlString as? String {
+            defaultURL.scheme = "https"
+            defaultURL.host = urlS
+        }
+    }
+    
     
     // Keychain 키 정의
     private let accessTokenKey = "access_token"
@@ -46,6 +59,30 @@ final class AuthManager: ObservableObject {
         keychain.delete(accessTokenKey)
         keychain.delete(refreshTokenKey)
         isAuthenticated = false // 사용자 인증 상태 초기화
+    }
+    
+    // MARK: - 회원가입
+    func signUp(user: User, password: String) async throws {
+        defaultURL.path = "/user/signup"
+        guard let url = defaultURL.url else {
+            return
+        }
+        
+        let parameters: [String: Any] = [
+            "email": user.email,
+            "nickname": user.nickname,
+            "profile_image_name": user.profileImageName,
+            "password" : password
+        ]
+        
+        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).response { response  in
+            switch response.result {
+            case .success(let data):
+                print(data)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     // MARK: - 서버 로그인 요청
@@ -106,13 +143,82 @@ final class AuthManager: ObservableObject {
             }
     }
     
-    func checkEmailDuplication(email: String) async throws -> Bool {
-        let url = "https://protectmeios.xyz/user/check-email"
-        let parameters = ["email": email]
+    // MARK: - 이메일 중복 확인
+    func checkEmailAvailability(email: String) async throws -> Bool {
+        var url = defaultURL
+        url.path = "/check-exists/email/data"
+        url.queryItems = [URLQueryItem(name: "email", value: email)]
         
-        let response = try await AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default)
-            .serializingDecodable([String: Bool].self).value
-        
-        return response["exist"] ?? false
+        guard let requestURL = url.url else {
+            throw NSError(domain: "Invalid URL", code: 400, userInfo: nil)
+        }
+        do {
+            // 서버 응답을 [String: Bool]로 디코딩
+            let response = try await AF.request(requestURL, method: .get)
+                .serializingDecodable([String: Bool].self)
+                .value
+            
+            // "exist" 키 확인
+            if let exists = response["exist"] {
+                return exists
+            } else {
+                throw NSError(domain: "Invalid Response", code: 500, userInfo: [NSLocalizedDescriptionKey: "Response missing 'exist' key"])
+            }
+        } catch {
+            throw error
+        }
     }
+    
+    // MARK: -  닉네임 중복 확인
+    
+    func checkNicknameAvailability(nickname: String) async throws -> Bool {
+        var url = defaultURL
+        url.path = "/check-exists/nickname/data"
+        url.queryItems = [URLQueryItem(name: "nickname", value: nickname)]
+        
+        guard let requestURL = url.url else {
+            throw NSError(domain: "Invalid URL", code: 400, userInfo: nil)
+        }
+        
+        do {
+            let response = try await AF.request(requestURL, method: .get)
+                .serializingDecodable([String: Bool].self)
+                .value
+            
+            if let exists = response["exist"] {
+                return exists
+            } else {
+                throw NSError(domain: "Invalid Response", code: 500, userInfo: nil)
+            }
+        } catch {
+            throw error
+        }
+    }
+    
+    //    func checkNicknameAvailability(nickname: String) async {
+    //        var url = defaultURL
+    //        url.path = "/check-exists/nickname/data"
+    //        url.queryItems = [URLQueryItem(name: "nickname", value: nickname)]
+    //
+    //        guard let requestURL = url.url else {
+    //            return
+    //        }
+    //        //let accessToken = await getAccessToken() else { return false }
+    //
+    //        //        let headers: HTTPHeaders = ["Authorization": "Bearer \(accessToken)"]
+    //
+    //        do {
+    //            AF.request(requestURL, method: .get).responseDecodable(of: [String :Bool].self) { response in
+    //                switch response.result {
+    //                case .success(let data):
+    //                    if let data = data["exist"] {
+    //                        self.isValied = data
+    //                        print(self.isValied)
+    //                    }
+    //                case .failure(let error):
+    //                    print(error.localizedDescription)
+    //                }
+    //            }
+    //        }
+    //    }
 }

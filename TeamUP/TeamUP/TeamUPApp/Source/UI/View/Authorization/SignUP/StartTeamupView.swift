@@ -23,12 +23,12 @@ struct StartTeamupView: View {
                         HStack {
                             Image(systemName: "envelope.fill")
                             Text("이메일로 로그인")
-                                .font(Font.semibold14)
+                                .font(.semibold14)
                         }
                         .padding(.horizontal, 88)
                         .padding(.vertical, 11)
                         .foregroundColor(.white)
-                        .font(Font.semibold14)
+                        .font(.semibold14)
                         .background(RoundedRectangle(cornerRadius: 4)
                             .stroke(Color.white, lineWidth: 1))
                     }
@@ -36,7 +36,7 @@ struct StartTeamupView: View {
                         .frame(height: 23)
                     NavigationLink(destination: SignUPView(email: $email)) {
                         Text("회원가입")
-                            .font(Font.semibold14)
+                            .font(.semibold14)
                             .foregroundStyle(.white)
                     }
                 }

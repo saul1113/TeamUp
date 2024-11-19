@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SignUPView: View {
     @EnvironmentObject var authManager: AuthManager // AuthManager 인스턴스 사용
+    
     @State private var progress = 0.3
     @Binding var email: String
     @State private var isEmailValid: Bool = false    // 이메일 형식 유효성
@@ -19,21 +20,20 @@ struct SignUPView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 0) {
+                Spacer()
+                    .frame(height: 10)
+                ProgressView(value: progress)
+                
+                Spacer()
+                    .frame(height: 40)
+                VStack(alignment: .leading) {
+                    Text("이메일을 입력해주세요.")
+                        .font(.bold24)
+                    Text("로그인 시 사용할 이메일을 형식에 맞게 입력해주세요.")
+                        .font(.regular14)
+                        .foregroundStyle(.gray)
+                }
                 ScrollView {
-                    Spacer()
-                        .frame(height: 10)
-                    ProgressView(value: progress)
-                    
-                    Spacer()
-                        .frame(height: 40)
-                    VStack(alignment: .leading) {
-                        Text("이메일을 입력해주세요.")
-                            .font(Font.bold24)
-                        Text("로그인 시 사용할 이메일을 형식에 맞게 입력해주세요.")
-                            .font(Font.regular14)
-                            .foregroundStyle(.gray)
-                    }
-                    .padding(.leading, -70)
                     
                     Spacer()
                         .frame(height: 60)
@@ -58,6 +58,7 @@ struct SignUPView: View {
                             }
                         }) {
                             Text("중복 확인")
+                                .font(.semibold16)
                                 .padding()
                                 .frame(height: 45)
                                 .background(isEmailValid ? Color.customBlue : Color.gray)
@@ -66,6 +67,7 @@ struct SignUPView: View {
                         }
                         .disabled(!isEmailValid) // 이메일 형식이 맞아야 버튼 활성화
                     }
+                    .padding(.horizontal, 1)
                 }
                 Spacer()
                 
@@ -79,7 +81,7 @@ struct SignUPView: View {
                 }
                 .disabled(canProceedToNextStep)
                 
-                Spacer().frame(height: 90)
+                Spacer().frame(height: 35)
             }
             .padding(.horizontal, 20)
             .navigationTitle("회원가입")
@@ -114,7 +116,7 @@ struct SignUPView: View {
         guard isEmailValid else { return } // 유효하지 않으면 요청하지 않음
         
         do {
-            let isDuplicated = try await authManager.checkEmailDuplication(email: email)
+            let isDuplicated = try await authManager.checkEmailAvailability(email: email)
             DispatchQueue.main.async {
                 if isDuplicated {
                     self.isEmailChecked = false
@@ -130,8 +132,13 @@ struct SignUPView: View {
         } catch {
             DispatchQueue.main.async {
                 print("Email check error: \(error.localizedDescription)")
-                self.emailMessage = "네트워크 오류가 발생했습니다."
-                self.emailMessageColor = .red
+                let nsError = error as NSError
+                           if nsError.domain == NSURLErrorDomain {
+                               self.emailMessage = "네트워크 연결에 문제가 있습니다. 다시 시도해주세요."
+                           } else {
+                               self.emailMessage = "서버 오류가 발생했습니다. 다시 시도해주세요."
+                           }
+                           self.emailMessageColor = .red
             }
         }
     }
