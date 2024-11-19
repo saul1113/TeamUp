@@ -204,32 +204,6 @@ final class AuthManager: ObservableObject {
         }
     }
     
-    //    func checkNicknameAvailability(nickname: String) async {
-    //        var url = defaultURL
-    //        url.path = "/check-exists/nickname/data"
-    //        url.queryItems = [URLQueryItem(name: "nickname", value: nickname)]
-    //
-    //        guard let requestURL = url.url else {
-    //            return
-    //        }
-    //        //let accessToken = await getAccessToken() else { return false }
-    //
-    //        //        let headers: HTTPHeaders = ["Authorization": "Bearer \(accessToken)"]
-    //
-    //        do {
-    //            AF.request(requestURL, method: .get).responseDecodable(of: [String :Bool].self) { response in
-    //                switch response.result {
-    //                case .success(let data):
-    //                    if let data = data["exist"] {
-    //                        self.isValied = data
-    //                        print(self.isValied)
-    //                    }
-    //                case .failure(let error):
-    //                    print(error.localizedDescription)
-    //                }
-    //            }
-    //        }
-    //    }
     func logout() {
         clearToken() // Keychain에서 토큰 삭제
         isAuthenticated = false // 인증 상태 초기화
