@@ -27,17 +27,21 @@ struct PostView: View {
             ScrollView {
                 VStack {
                     VStack(alignment: .leading, spacing: 20) {
-                        HStack {
-                            CategorySelectedView()
-                                .frame(maxWidth: .infinity)
-                                .padding(.bottom, 20)
-                            
-                        }
+                        CategorySelectedView()
+                            .frame(maxWidth: .infinity)
+                            .padding(.bottom, 10)
+                        
                         TextField("제목을 입력하세요", text: $postTitle)
                             .background(Color.clear)
                             .font(.semibold26)
                         
-                        TagView()
+                        TextField("태그를 입력한 후 엔터를 눌러주세요", text: $newTag, onCommit: {
+                            addTag()
+                        })
+                        .font(.system(size: 16))
+                        
+                        
+                        TagView(tags: $tags)
                         
                         ToggleButtonView(isPreviewMode: $isPreviewMode)
                             .padding(.top, 20)
@@ -94,6 +98,14 @@ struct PostView: View {
         }
         .navigationTitle("글 올리기")
     }
+    
+    func addTag() {
+        if !newTag.isEmpty {
+            tags.append(newTag)
+            newTag = ""
+        }
+    }
+    
 }
 
 #Preview {

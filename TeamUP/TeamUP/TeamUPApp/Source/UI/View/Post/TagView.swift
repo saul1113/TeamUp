@@ -8,65 +8,46 @@
 import SwiftUI
 
 
-//https://medium.com/geekculture/tags-view-in-swiftui-e47dc6ce52e8 참고함.
+//https://medium.com/geekculture/tags-view-in-swiftui-e47dc6ce52e8 참고.
 
 struct TagView: View {
-    @State private var tagText: String = ""
-
-    @State private var tags: [String] = []
+    @Binding var tags: [String]
+    @State private var newTag: String = ""
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 10) {
+//            TextField("태그를 입력한 후 엔터를 눌러주세요", text: $newTag, onCommit: {
+//                addTag()
+//            })
+//            .font(.system(size: 16))
             
-            TextField("엔터를 입력하여 태그를 등록할 수 있습니다 (최대 5개)", text: $tagText, onCommit: {
-
-                addTag()
-            })
-            .font(.regular14)
-
-            HStack(spacing: 4) {
-                ForEach(tags, id: \.self) { tag in
-                    HStack(spacing: 6) {
-                        Text(tag)
-                            .font(.regular14)
-                            .foregroundStyle(.customBlue)
-                            .padding(.leading, 10)
-                            .padding(.trailing, 30)
-                            .padding(.vertical, 8)
-                            .background(
-                                ZStack(alignment: .trailing) {
-                                    Capsule()
-                                        .fill(Color.gray.opacity(0.1))
-                                    Button {
-                                        removeTag(tag)
-                                    } label: {
-                                        Image(systemName: "xmark")
-                                            .font(.system(size: 12))
-                                            .padding(.trailing, 10)
-                                            .foregroundColor(.black)
-                                    }
-                                }
-                            )
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(tags, id: \.self) { tag in
+                        HStack {
+                            Text(tag)
+                                .font(.system(size: 16))
+                            
+                            Button {
+                                removeTag(tag)
+                            } label: {
+                                Image(systemName: "xmark")
+                                    .font(.system(size: 12))
+                                    .foregroundColor(.black)
+                            }
+                        }
+                        .padding(8)
+                        .background(Color.gray.opacity(0.1))
+                        .cornerRadius(8)
                     }
-                    .frame(height: 28)
                 }
             }
         }
     }
     
-    func addTag() {
-        guard !tagText.isEmpty else { return }
-        tags.append(tagText)
-        tagText = ""
-    }
-
     func removeTag(_ tag: String) {
         if let index = tags.firstIndex(of: tag) {
             tags.remove(at: index)
         }
     }
-}
-
-#Preview {
-    TagView()
 }
