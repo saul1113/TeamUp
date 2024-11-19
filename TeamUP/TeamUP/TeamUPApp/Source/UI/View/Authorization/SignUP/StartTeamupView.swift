@@ -14,14 +14,13 @@ struct StartTeamupView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.customBlue.ignoresSafeArea()
-                
                 if authManager.isAuthenticated {
                     // 로그인 상태라면 MainTabView로 이동
                     MainTabView()
                         .environmentObject(authManager) // MainTabView에 AuthManager 전달
                 } else {
                     // 로그인되지 않은 경우 로그인/회원가입 화면 표시
+                    Color.customBlue.ignoresSafeArea()
                     loginOrSignUpView
                         .environmentObject(authManager) // LoginView, SignUpView에서 AuthManager 사용
                 }
