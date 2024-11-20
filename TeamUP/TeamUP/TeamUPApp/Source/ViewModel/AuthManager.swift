@@ -98,20 +98,18 @@ final class AuthManager: ObservableObject {
             "password": password
         ]
         
-        AF.request(loginEndpoint, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default)
-            .responseJSON { response in
-                debugPrint("Response JSON: \(response)") // 서버 응답 디버깅
-            }
-            .validate()
+        AF.request(loginEndpoint, method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .responseDecodable(of: LoginResponse.self) { response in
-                switch response.result {
+                debugPrint("Response JSON: \(response)") // 서버 응답 디버깅
+                
+               switch response.result {
                 case .success(let data):
                     self.saveToken(data.token)
                     completion(.success(data.user))
                 case .failure(let error):
                     debugPrint("Error: \(error)")
                     completion(.failure(error))
-                }
+                } 
             }
     }
     

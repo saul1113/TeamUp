@@ -27,20 +27,14 @@ struct User: Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        // id가 Int로 오거나 String으로 올 경우를 처리
-        if let intId = try? container.decode(Int.self, forKey: .id) {
-            id = String(intId) // Int를 String으로 변환
-        } else {
-            id = try container.decode(String.self, forKey: .id)
-        }
-        
+        id = try container.decodeIfPresent(String.self, forKey: .id) ?? UUID().uuidString
         email = try container.decode(String.self, forKey: .email)
-        password = (try? container.decode(String.self, forKey: .password)) ?? ""
+        password = try container.decodeIfPresent(String.self, forKey: .password) ?? ""
         nickname = try container.decode(String.self, forKey: .nickname)
         profileImageName = try container.decode(String.self, forKey: .profileImageName)
     }
     
-    // 기본 생성자
+    //기본 생성자
     init(id: String, email: String, password: String, nickname: String, profileImageName: String) {
         self.id = id
         self.email = email
