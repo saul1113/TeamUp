@@ -15,7 +15,6 @@
 		2C2E581B2CE71F0D008766A8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E57FD2CE71F0D008766A8 /* HomeView.swift */; };
 		2C2E581C2CE71F0D008766A8 /* LoungeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E57FF2CE71F0D008766A8 /* LoungeView.swift */; };
 		2C2E581D2CE71F0D008766A8 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E58012CE71F0D008766A8 /* PostView.swift */; };
-		2C2E581E2CE71F0D008766A8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E58032CE71F0D008766A8 /* ProfileView.swift */; };
 		2C2E581F2CE71F0D008766A8 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E58052CE71F0D008766A8 /* MainTabView.swift */; };
 		2C2E58202CE71F0D008766A8 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E58062CE71F0D008766A8 /* TabBar.swift */; };
 		2C2E58212CE71F0D008766A8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E580A2CE71F0D008766A8 /* Color.swift */; };
@@ -37,6 +36,8 @@
 		2CB1BF502CE725D000CA6A26 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB1BF4F2CE725D000CA6A26 /* KeychainSwift */; };
 		2CB1BF532CE725DF00CA6A26 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB1BF522CE725DF00CA6A26 /* MarkdownUI */; };
 		2CB1BF562CE725ED00CA6A26 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB1BF552CE725ED00CA6A26 /* SocketIO */; };
+		2CBE30672CEDB94500066EB5 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE30662CEDB94500066EB5 /* MyProfileView.swift */; };
+		2CBE30692CEDB97700066EB5 /* XMarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE30682CEDB97700066EB5 /* XMarkButton.swift */; };
 		2CBEEB3F2CEB001B001CE6ED /* GroupChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBEEB3E2CEB001B001CE6ED /* GroupChatListView.swift */; };
 		50241F922CEB8D10002014EF /* PrivateChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50241F912CEB8D10002014EF /* PrivateChatListView.swift */; };
 		50241F942CEB8D1B002014EF /* PrivateChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50241F932CEB8D1B002014EF /* PrivateChatView.swift */; };
@@ -92,7 +93,6 @@
 		2C2E57FD2CE71F0D008766A8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2C2E57FF2CE71F0D008766A8 /* LoungeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoungeView.swift; sourceTree = "<group>"; };
 		2C2E58012CE71F0D008766A8 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
-		2C2E58032CE71F0D008766A8 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2C2E58052CE71F0D008766A8 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		2C2E58062CE71F0D008766A8 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		2C2E580A2CE71F0D008766A8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -101,6 +101,8 @@
 		2C6D8CE02CEB13F3001B8F08 /* GroupChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatView.swift; sourceTree = "<group>"; };
 		2C6D8CE22CEB14A6001B8F08 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
 		2C6D8CE42CEB18A0001B8F08 /* CustomPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPadding.swift; sourceTree = "<group>"; };
+		2CBE30662CEDB94500066EB5 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
+		2CBE30682CEDB97700066EB5 /* XMarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMarkButton.swift; sourceTree = "<group>"; };
 		2CBEEB3E2CEB001B001CE6ED /* GroupChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatListView.swift; sourceTree = "<group>"; };
 		50241F912CEB8D10002014EF /* PrivateChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateChatListView.swift; sourceTree = "<group>"; };
 		50241F932CEB8D1B002014EF /* PrivateChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateChatView.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 		2C2E58022CE71F0D008766A8 /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				2CBE30662CEDB94500066EB5 /* MyProfileView.swift */,
 				2C2E58012CE71F0D008766A8 /* PostView.swift */,
 				771306DC2CEB1CAC00D47BD5 /* TextEditorView.swift */,
 				771306DE2CEB1DB900D47BD5 /* CustomMarkdownView.swift */,
@@ -293,7 +296,6 @@
 				FE2061382CE949C60001FCD1 /* Announcement */,
 				FE20614C2CE968E40001FCD1 /* Question */,
 				FE2061512CE9831F0001FCD1 /* Setting */,
-				2C2E58032CE71F0D008766A8 /* ProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -410,6 +412,7 @@
 		770E953D2CE722CD00761A03 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				2CBE30682CEDB97700066EB5 /* XMarkButton.swift */,
 				770E953E2CE722E500761A03 /* BackButton.swift */,
 				FE20614F2CE96DF30001FCD1 /* ExpandedDividerWithVStackView.swift */,
 			);
@@ -616,6 +619,7 @@
 				2C2E58192CE71F0D008766A8 /* SignUPView.swift in Sources */,
 				EB4571752CE9D030002C9166 /* TextFieldView.swift in Sources */,
 				2C2E581A2CE71F0D008766A8 /* ChatView.swift in Sources */,
+				2CBE30672CEDB94500066EB5 /* MyProfileView.swift in Sources */,
 				FE2061402CE951380001FCD1 /* InformationModel.swift in Sources */,
 				7793F1882CEC6534007595D4 /* TagView.swift in Sources */,
 				2C2E581B2CE71F0D008766A8 /* HomeView.swift in Sources */,
@@ -624,6 +628,7 @@
 				50241F922CEB8D10002014EF /* PrivateChatListView.swift in Sources */,
 				7793F1842CEC1A28007595D4 /* CategorySelectedView.swift in Sources */,
 				50241F942CEB8D1B002014EF /* PrivateChatView.swift in Sources */,
+				2CBE30692CEDB97700066EB5 /* XMarkButton.swift in Sources */,
 				2C2E581C2CE71F0D008766A8 /* LoungeView.swift in Sources */,
 				F6CFC5BF2CEB24F4003C0087 /* ListRowView.swift in Sources */,
 				2C2E581D2CE71F0D008766A8 /* PostView.swift in Sources */,
@@ -632,7 +637,6 @@
 				2C6D8CE52CEB18A0001B8F08 /* CustomPadding.swift in Sources */,
 				770E953F2CE722E500761A03 /* BackButton.swift in Sources */,
 				FE2061582CE992D90001FCD1 /* PrivacyPolicyView.swift in Sources */,
-				2C2E581E2CE71F0D008766A8 /* ProfileView.swift in Sources */,
 				EB4571732CE9D028002C9166 /* StartTeamupView.swift in Sources */,
 				2C2E581F2CE71F0D008766A8 /* MainTabView.swift in Sources */,
 				F6CFC5C32CEB2C38003C0087 /* HomeLoungeDetailView.swift in Sources */,
