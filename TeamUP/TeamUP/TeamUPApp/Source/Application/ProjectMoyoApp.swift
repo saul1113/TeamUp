@@ -13,6 +13,7 @@ struct ProjectMoyoApp: App {
         WindowGroup {
             StartTeamupView()
                 .environmentObject(AuthManager()) // 인스턴스 전달
+                .environmentObject(PostViewModel())
         }
     }
 }

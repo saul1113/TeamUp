@@ -14,7 +14,6 @@ protocol Listable {
     var time: String { get }
     var save: Int { get }
     var seen: Int { get }
-    var hasTag: [String] {get}
 }
 
 

@@ -43,6 +43,7 @@ let samplePostData = [
 
 
 struct HomeView: View {
+    @EnvironmentObject private var postViewModel: PostViewModel
     @State private var selectedCategory: PostCategory?
     @State private var isSheetPresented = false
     @State private var searchText: String = ""
@@ -50,8 +51,8 @@ struct HomeView: View {
     @State private var isRecruit: Bool = false
 
     // 검색 필터
-    var filteredItems: [Post] {
-        var items = samplePostData
+    var filteredItems: [PostModelStruct] {
+        var items = postViewModel.posts
         
         // 검색 텍스트 필터링
         if !searchText.isEmpty {
@@ -63,13 +64,13 @@ struct HomeView: View {
         
         // "모집중" 필터링
         if isRecruit {
-            items = items.filter { $0.isRecruit }  // 리크루트 트루만 필터링
+            items = items.filter { $0.isRecruit == 1 }  // 리크루트 트루만 필터링
         }
         
         return items
     }
     
-    var sortedItems: [Post] {
+    var sortedItems: [PostModelStruct] {
         switch selectedSort {
         case "최신순":
             return filteredItems.sorted { $0.time > $1.time }
@@ -81,7 +82,7 @@ struct HomeView: View {
             return filteredItems
         }
     }
-    
+    var postStore = PostViewModel()
     var body: some View {
             VStack(alignment: .leading) {
                 CustomSearchBar(searchText: $searchText, placeholder: "검색어를 입력해주세요 (ex 웹프로젝트, 알고리즘 스터디", onSearch: { text in
@@ -112,6 +113,7 @@ struct HomeView: View {
                 }
                 .padding(.horizontal, 20)
                 .padding(.vertical, 20)
+
                 
                 // 최신순 저장많은순 조회순 필터링
                 HStack (spacing: 15){
@@ -153,11 +155,10 @@ struct HomeView: View {
                 .padding(.bottom, -10)
             
                 
-                VStack (spacing: 10) {
-                    
+                ScrollView {
                     ForEach(sortedItems.filter { post in
                         if let selectedCategory = selectedCategory {
-                            return post.category == selectedCategory
+                            return post.categoryString == selectedCategory.rawValue
                         }
                         return true
                     }, id: \.title) { post in
@@ -167,11 +168,9 @@ struct HomeView: View {
                         NavigationLink(destination: HomeLoungeDetailView(model: post)) {  // NavigationLink 추가
                             ListRowView(model: post, isMyPage: false)
                         }
-                        
                     }
-                    
+                    .padding(20)
                 }
-                .padding(20)
                 
                 Spacer()
             }

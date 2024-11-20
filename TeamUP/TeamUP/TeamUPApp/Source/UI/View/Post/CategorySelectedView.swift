@@ -8,14 +8,16 @@
 
 import SwiftUI
 
+enum CategoryTab: Int, CaseIterable {
+    case project
+    case study
+    case qAndA
+    case etc
+}
+
 struct CategorySelectedView: View {
-    enum CategoryTab: Int, CaseIterable {
-        case project
-        case study
-        case qAndA
-        case etc
-    }
-    @State private var selectedTab: CategoryTab = .project
+    @Binding var selectedTab: CategoryTab
+    
     var body: some View {
         VStack {
             HStack (alignment: .bottom,spacing: 0){
@@ -74,6 +76,6 @@ struct CategorySelectedView: View {
 }
 
 #Preview {
-    CategorySelectedView()
+    CategorySelectedView(selectedTab: .constant(.project))
 }
 

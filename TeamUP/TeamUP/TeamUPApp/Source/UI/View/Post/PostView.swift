@@ -10,6 +10,7 @@ import MarkdownUI
 
 struct PostView: View {
     @Environment(\.dismiss) var dismiss // 닫기 동작 처리
+    @EnvironmentObject private var postViewModel: PostViewModel
     
     @State private var postCategory = "프로젝트 모집"
     let categories = ["프로젝트 모집", "스터디 모집", "Q & A", "잡담"]
@@ -19,6 +20,7 @@ struct PostView: View {
     @State private var markdownText: String = ""
     @State private var tags: [String] = []
     @State private var newTag: String = ""
+    @State private var selectedTab: CategoryTab = .project
     
     var body: some View {
         VStack {
@@ -41,7 +43,7 @@ struct PostView: View {
             
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
-                    CategorySelectedView()
+                    CategorySelectedView(selectedTab: $selectedTab)
                         .frame(maxWidth: .infinity)
                         .padding(.bottom, 10)
                     
@@ -77,6 +79,10 @@ struct PostView: View {
             .padding(.horizontal)
             
             Button {
+                Task {
+                    let post = PostModelStruct(category: selectedTab.rawValue == 0 ? "프로젝트" : "스터디", title: postTitle, content: markdownText, maxUserCount: 15)
+                    try await postViewModel.addPost(post)
+                }
             } label: {
                 Text("작성 완료")
                     .frame(width: 360, height: 50)

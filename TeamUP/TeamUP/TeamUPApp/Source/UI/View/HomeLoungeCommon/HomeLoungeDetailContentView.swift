@@ -27,16 +27,16 @@ struct HomeLoungeDetailContentView: View {
         }
         
         
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 8) {
-                ForEach(model.hasTag, id: \.self) { tag in
-                    Text(tag)
-                        .font(.system(size: 12))
-                        .padding(8)
-                        .background(Color.gray.opacity(0.1))
-                        .cornerRadius(8)
-                }
-            }
-        }
+//        ScrollView(.horizontal, showsIndicators: false) {
+//            HStack(spacing: 8) {
+//                ForEach(model) { tag in
+//                    Text(tag)
+//                        .font(.system(size: 12))
+//                        .padding(8)
+//                        .background(Color.gray.opacity(0.1))
+//                        .cornerRadius(8)
+//                }
+//            }
+//        }
     }
 }
