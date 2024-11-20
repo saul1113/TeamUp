@@ -44,7 +44,7 @@ struct EditView: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .font(.regular14)
                     
-                        .padding(.bottom, 10)
+                    Spacer()
                     
                     Text("소개")
                         .font(.semibold18)
@@ -52,7 +52,7 @@ struct EditView: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .font(.regular14)
                     
-                        .padding(.bottom, 10)
+                    Spacer()
                     
                     Text("관심분야")
                         .font(.semibold18)
@@ -66,6 +66,8 @@ struct EditView: View {
                     
                     
                     TagView(tags: $tags)
+                     
+                    Spacer()
                     
                     
                     Text("링크")
@@ -94,7 +96,7 @@ struct EditView: View {
                 } label: {
                     Text("완료")
                         .fontWeight(.regular)
-                        .foregroundColor(.blue)
+                        .foregroundColor(.black)
                 }
             }
         }
