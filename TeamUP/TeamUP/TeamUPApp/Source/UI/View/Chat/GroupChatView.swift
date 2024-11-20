@@ -115,6 +115,7 @@ struct GroupChatView: View {
                     message.image
                         .resizable()
                         .frame(width: 35,height: 35)
+                        .foregroundStyle(.gray)
                     Spacer()
                 }
                 VStack (alignment: .leading) {
