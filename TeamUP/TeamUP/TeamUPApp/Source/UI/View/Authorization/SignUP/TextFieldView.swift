@@ -31,7 +31,7 @@ struct TextFieldView: View {
                             .cornerRadius(4)
                             .overlay {
                                 RoundedRectangle(cornerRadius: 4)
-                                    .stroke(isFocused ? .customBlue : .customLightGray, lineWidth: 1)
+                                    .stroke(isFocused ? Color(hex: "6B6B6B") : .customLightGray, lineWidth: 1)
                             }
                             .focused($isFocused)
                             .onChange(of: text) { newValue in
@@ -50,7 +50,7 @@ struct TextFieldView: View {
                             .cornerRadius(4)
                             .overlay {
                                 RoundedRectangle(cornerRadius: 4)
-                                    .stroke(isFocused ? .customBlue : .customLightGray, lineWidth: 1)
+                                    .stroke(isFocused ? Color(hex: "6B6B6B") : .customLightGray, lineWidth: 1)
                             }
                             .focused($isFocused)
                             .onChange(of: text) { newValue in
@@ -70,7 +70,7 @@ struct TextFieldView: View {
                         .cornerRadius(4)
                         .overlay {
                             RoundedRectangle(cornerRadius: 4)
-                                .stroke(isFocused ? .customBlue : .customLightGray, lineWidth: 1)
+                                .stroke(isFocused ? Color(hex: "6B6B6B") : .customLightGray, lineWidth: 1)
                         }
                         .focused($isFocused)
                         .onChange(of: text) { newValue in
@@ -115,6 +115,21 @@ struct TextFieldView: View {
             }
         }
         .padding(.trailing, 10)
+    }
+}
+
+extension Color {
+    init(hex: String) {
+        let scanner = Scanner(string: hex)
+        scanner.currentIndex = hex.startIndex
+        var rgbValue: UInt64 = 0
+        scanner.scanHexInt64(&rgbValue)
+        
+        let red = Double((rgbValue & 0xFF0000) >> 16) / 255.0
+        let green = Double((rgbValue & 0x00FF00) >> 8) / 255.0
+        let blue = Double(rgbValue & 0x0000FF) / 255.0
+        
+        self.init(red: red, green: green, blue: blue)
     }
 }
 

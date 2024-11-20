@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct MyProfileView: View {
-    //    @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var authManager: AuthManager
     @Environment(\.presentationMode) var presentationMode
     
-    @State private var nickname: String = "수민이다"
-    @State private var selfPR: String = "안녕하세요 김수민입니다~ 팀업 화이팅 !"
+
     @State private var tags: [String] = ["iOS", "앱개발"]
-    @State private var linkName: String = "노션"
     @State private var link: String = "www.example.com"
+    @State private var linkName: String = "노션"
+    @State private var showLogoutAlert: Bool = false
     
     init() {
         UINavigationBar.appearance().backgroundColor = .customBlue
@@ -50,11 +50,19 @@ struct MyProfileView: View {
                             .foregroundColor(.gray.opacity(0.3))
                             .padding(.trailing, 10)
                         
-                        Text("\(nickname)")
-                            .font(.semibold22)
+                        // 닉네임 표시
+                        if let user = authManager.user {
+                            Text(user.nickname)
+                                .font(.semibold22)
+                        } else {
+                            Text("로그인 필요")
+                                .font(.semibold22)
+                                .foregroundColor(.gray)
+                        }
                         
                         Spacer()
                         
+
                         NavigationLink(destination: EditView()) {
                             Text("프로필 수정")
                                 .frame(width: 80, height: 40)
@@ -72,8 +80,13 @@ struct MyProfileView: View {
                     
                     Text("소개")
                         .font(.semibold22)
-                    Text("\(selfPR)")
-                        .font(.regular16)
+                    
+                    if let user = authManager.user {
+                        Text(user.bio)
+                            .font(.regular16)
+                    } else {
+                        Text("소개 정보를 추가하세요.")
+                    }
                     
                     Spacer()
                     
@@ -86,6 +99,7 @@ struct MyProfileView: View {
                     
                     Text("링크")
                         .font(.semibold22)
+                    
                     HStack {
                         Image("LinkIcon/notionIcon")
                             .resizable()
@@ -134,32 +148,87 @@ struct MyProfileView: View {
                         NavigationLink("이용약관", destination: TermsAndConditionsView())
                         
                         NavigationLink("개인정보처리방침", destination: PrivacyPolicyView())
-                        Button("로그아웃") {
-                            // authManager.logout()
-                        }
+                        
+                        
                     }
                     .font(.regular16)
                     .foregroundStyle(.black)
+                    
+                    Divider()
+                    
+                    Button("로그아웃") {
+                        showLogoutAlert.toggle()
+                    }
+                    .padding(.bottom, 50)
+                    .font(.bold16)
+                    .foregroundStyle(.red)
+                    .alert(isPresented: $showLogoutAlert) {
+                        Alert(
+                            title: Text("로그아웃"),
+                            message: Text("정말 로그아웃 하시겠습니까?"),
+                            primaryButton: .destructive(Text("로그아웃")) {
+                                authManager.logout() // 로그아웃 실행
+                            },
+                            secondaryButton: .cancel(Text("취소"))
+                        )
+                    }
+                    
                 }
                 .padding(20)
+                
             }
+            
         }
-//        .toolbar {
-//            ToolbarItem(placement: .topBarTrailing) {
-//                
-//                ShareLink(
-//                    item: "TeamUpApp://MyProfile",
-//                    subject: Text("TeamUpApp"),
-//                    message: Text("프로필 공유")) {
-//                        Image(systemName: "square.and.arrow.up")
-//                    }
-//            }
-//        }
+// //        .toolbar {
+// //            ToolbarItem(placement: .topBarTrailing) {
+// //                
+// //                ShareLink(
+// //                    item: "TeamUpApp://MyProfile",
+// //                    subject: Text("TeamUpApp"),
+// //                    message: Text("프로필 공유")) {
+// //                        Image(systemName: "square.and.arrow.up")
+// //                    }
+// //            }
+// //        }
+//         .toolbar {
+//             ToolbarItem(placement: .topBarTrailing) {
+                
+//                 ShareLink(
+//                     item: "TeamUpApp://MyProfile",
+//                     subject: Text("TeamUpApp"),
+//                     message: Text("프로필 공유")) {
+//                         Image(systemName: "square.and.arrow.up")
+//                     }
+//             }
+//         }
+//         .onChange(of: authManager.isAuthenticated) { isAuthenticated in
+//             // 로그아웃 상태일 때 스타트팀업뷰로 이동
+//             if !isAuthenticated {
+//                 presentationMode.wrappedValue.dismiss()
+//             }
+//         }
+    }
+    @ViewBuilder
+    private func listItem(_ title: String, destination: () -> some View) -> some View {
+        NavigationLink {
+            destination()
+        } label: {
+            HStack {
+                Text(title)
+                    .font(.semibold18)
+                    .foregroundStyle(.black)
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.gray)
+            }
+            
+        }
+        .listRowSeparator(.hidden)
     }
 }
 
-#Preview {
-    NavigationStack {
-        MyProfileView()
-    }
-}
+//#Preview {
+//    NavigationStack {
+//        MyProfileView()
+//    }
+//}
