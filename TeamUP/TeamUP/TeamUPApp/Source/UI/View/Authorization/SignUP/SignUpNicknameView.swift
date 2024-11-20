@@ -67,12 +67,12 @@ struct SignUpNicknameView: View {
                                         await checkNickname()
                                     }
                                 }) {
-                                    Text("중복 확인")
+                                    Text("중복확인")
+                                        .font(.semibold16)
                                         .padding()
-                                        .font(.semibold14)
-                                        .frame(height: 45)
-                                        .background(isNicknameValid ? Color.customBlue : Color.gray)
-                                        .foregroundColor(.white)
+                                        .frame(height: 42)
+                                        .background(isNicknameValid ? Color.customBlue : Color.customLightGray)
+                                        .foregroundColor(isNicknameValid ? .white : .customDarkGray)
                                         .cornerRadius(4)
                                 }
                                 .disabled(!isNicknameValid)

@@ -28,11 +28,10 @@ struct TextFieldView: View {
                             .textContentType(.password)
                             .padding(.horizontal, 10)
                             .padding(.vertical, 10)
-                            .background(Color(.systemGray6))
                             .cornerRadius(4)
                             .overlay {
                                 RoundedRectangle(cornerRadius: 4)
-                                    .stroke(isFocused ? .customBlue : .gray, lineWidth: 1)
+                                    .stroke(isFocused ? .customBlue : .customLightGray, lineWidth: 1)
                             }
                             .focused($isFocused)
                             .onChange(of: text) { newValue in
@@ -48,11 +47,10 @@ struct TextFieldView: View {
                             .textContentType(.password)
                             .padding(.horizontal, 10)
                             .padding(.vertical, 10)
-                            .background(Color(.systemGray6))
                             .cornerRadius(4)
                             .overlay {
                                 RoundedRectangle(cornerRadius: 4)
-                                    .stroke(isFocused ? .customBlue : .gray, lineWidth: 1)
+                                    .stroke(isFocused ? .customBlue : .customLightGray, lineWidth: 1)
                             }
                             .focused($isFocused)
                             .onChange(of: text) { newValue in
@@ -69,11 +67,10 @@ struct TextFieldView: View {
                         .autocapitalization(.none)
                         .padding(.horizontal, 10)
                         .padding(.vertical, 10)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(8)
+                        .cornerRadius(4)
                         .overlay {
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(isFocused ? .blue : .gray, lineWidth: 1)
+                            RoundedRectangle(cornerRadius: 4)
+                                .stroke(isFocused ? .customBlue : .customLightGray, lineWidth: 1)
                         }
                         .focused($isFocused)
                         .onChange(of: text) { newValue in
@@ -88,8 +85,8 @@ struct TextFieldView: View {
             ZStack {
                 if let errorMessage {
                     Text(errorMessage)
-                        .font(.caption)
-                        .foregroundColor(errorColor)
+                        .font(.regular14)
+                        .foregroundColor(.customRed)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }

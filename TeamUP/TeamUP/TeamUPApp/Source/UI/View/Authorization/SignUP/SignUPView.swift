@@ -29,10 +29,10 @@ struct SignUPView: View {
                 
                 Spacer()
                     .frame(height: 40)
-                VStack(alignment: .leading) {
-                    Text("이메일을 입력해주세요.")
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("이메일을 입력해주세요")
                         .font(.bold24)
-                    Text("로그인 시 사용할 이메일을 형식에 맞게 입력해주세요.")
+                    Text("로그인 시 사용할 이메일을 형식에 맞게 입력해주세요")
                         .font(.regular14)
                         .foregroundStyle(.gray)
                 }
@@ -60,17 +60,16 @@ struct SignUPView: View {
                                 await checkEmail()
                             }
                         }) {
-                            Text("중복 확인")
+                            Text("중복확인")
                                 .font(.semibold16)
                                 .padding()
-                                .frame(height: 45)
-                                .background(isEmailValid ? Color.customBlue : Color.gray)
-                                .foregroundColor(.white)
+                                .frame(height: 42)
+                                .background(isEmailValid ? Color.customBlue : Color.customLightGray)
+                                .foregroundColor(isEmailValid ? .white : .customDarkGray)
                                 .cornerRadius(4)
                         }
                         .disabled(!isEmailValid) // 이메일 형식이 맞아야 버튼 활성화
                     }
-                    .padding(.horizontal, 1)
                 }
                 Spacer()
                 
@@ -90,8 +89,8 @@ struct SignUPView: View {
                     Text("다 음")
                         .frame(width: 360, height: 50)
                         .font(.semibold20)
-                        .foregroundColor(.white)
-                        .background(canProceedToNextStep ? Color.customBlue : Color.gray)
+                        .foregroundColor(canProceedToNextStep ? .white : .customDarkGray)
+                        .background(canProceedToNextStep ? Color.customBlue : Color.customLightGray)
                         .cornerRadius(4)
                 }
                 .disabled(!canProceedToNextStep)
