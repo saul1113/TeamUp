@@ -11,6 +11,7 @@ struct MyProfileView: View {
     @EnvironmentObject var authManager: AuthManager
     @Environment(\.presentationMode) var presentationMode
     
+
     @State private var tags: [String] = ["iOS", "앱개발"]
     @State private var link: String = "www.example.com"
     @State private var linkName: String = "노션"
@@ -39,12 +40,11 @@ struct MyProfileView: View {
                         
                         Spacer()
                         
-                        Button {
-                            // 프로필 수정 액션
-                        } label : {
+
+                        NavigationLink(destination: EditView()) {
                             Text("프로필 수정")
-                                .frame(width: 100, height: 45)
-                                .font(.semibold18)
+                                .frame(width: 80, height: 40)
+                                .font(.semibold14)
                                 .foregroundColor(.white)
                                 .background(Color.customBlue)
                                 .cornerRadius(5)
@@ -72,26 +72,71 @@ struct MyProfileView: View {
                     
                     TagViewX(tags: $tags)
                     
-                    
                     Spacer()
-                    
                     
                     Text("링크")
                         .font(.semibold22)
                     
                     HStack {
-                        Text("\(linkName)")
-                            .font(.regular18)
+                        Image("LinkIcon/notionIcon")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .padding(.trailing, 5)
                         
-                        Text("\(link)")
-                            .font(.regular16)
+                        Link(linkName, destination: URL(string: link) ?? URL(string: "https://likelion.notion.site/iOS-6-9e9fde30b6e74d58aa4ef9864c7ed093")!)
+                            .font(.regular18)
+                            .underline()
                     }
                     
-                    Spacer()
+                    Spacer().frame(height: 3)
+                    
+                    Rectangle()
+                        .fill(Color.gray)
+                        .frame(width: .infinity , height: 3)
+                    
+                    VStack (alignment: .leading, spacing: 20) {
+                        Text("내가 쓴 글")
+                            .font(.semibold18)
+                        
+                        Divider()
+                        
+                        Text("내가 모집 중인 팀")
+                            .font(.semibold18)
+                        
+                        Divider()
+                        
+                        Text("내가 신청한 팀")
+                            .font(.semibold18)
+                    }
+                    
+                    Divider()
+                    
+                    VStack (alignment: .leading, spacing: 20){
+                        
+                        Text("기타")
+                            .font(.semibold18)
+                        
+                        NavigationLink("공지사항", destination: AnnouncementView())
+                        
+                        NavigationLink("자주 묻는 질문", destination: QuestionView())
+                        
+                        NavigationLink("설정", destination: SettingView())
+                        
+                        NavigationLink("이용약관", destination: TermsAndConditionsView())
+                        
+                        NavigationLink("개인정보처리방침", destination: PrivacyPolicyView())
+                        
+                        
+                    }
+                    .font(.regular16)
+                    .foregroundStyle(.black)
+                    
+                    Divider()
                     
                     Button("로그아웃") {
                         showLogoutAlert.toggle()
                     }
+                    .padding(.bottom, 50)
                     .font(.bold16)
                     .foregroundStyle(.red)
                     .alert(isPresented: $showLogoutAlert) {
@@ -105,44 +150,21 @@ struct MyProfileView: View {
                         )
                     }
                     
-                    
-                    // 리스트 섹션
-                    VStack(spacing: 16) {
-                        listItem("공지사항") {
-                            AnnouncementView()
-                        }
-                        
-                        listItem("자주 묻는 질문") {
-                            QuestionView()
-                        }
-                        
-                        listItem("설정") {
-                            SettingView()
-                        }
-                        
-                        listItem("이용약관") {
-                            TermsAndConditionsView()
-                        }
-                        
-                        listItem("개인정보처리방침") {
-                            PrivacyPolicyView()
-                        }
-                    }
-                    .padding(.top, 10)
-                    .padding(.bottom, 50)
                 }
                 .padding(20)
+                
             }
             
         }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    
-                } label: {
-                    Image(systemName: "square.and.arrow.up")
-                        .foregroundStyle(.black)
-                }
+                
+                ShareLink(
+                    item: "TeamUpApp://MyProfile",
+                    subject: Text("TeamUpApp"),
+                    message: Text("프로필 공유")) {
+                        Image(systemName: "square.and.arrow.up")
+                    }
             }
         }
         .onChange(of: authManager.isAuthenticated) { isAuthenticated in
@@ -151,8 +173,6 @@ struct MyProfileView: View {
                 presentationMode.wrappedValue.dismiss()
             }
         }
-        
-        
     }
     @ViewBuilder
     private func listItem(_ title: String, destination: () -> some View) -> some View {
@@ -171,20 +191,6 @@ struct MyProfileView: View {
         }
         .listRowSeparator(.hidden)
     }
-    
-    //    @ViewBuilder
-    //    private func listItem(_ title: String, destination: () -> some View) -> some View {
-//        NavigationLink {
-//            destination()
-//        } label: {
-//            Text(title)
-//        }
-//        .listRowSeparator(.hidden)
-//
-//        Divider()
-//            .listRowInsets(EdgeInsets())
-//            .listRowSeparator(.hidden)
-//    }
 }
 
 //#Preview {

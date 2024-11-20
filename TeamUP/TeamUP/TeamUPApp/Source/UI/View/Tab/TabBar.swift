@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TabBar: View {
     @Binding var selectedTab: MainTabView.Tab
+    @Binding var isPostPresented: Bool
     var body: some View {
         VStack(spacing: 0){
             Divider()
@@ -42,7 +43,7 @@ struct TabBar: View {
                     .frame(maxWidth: .infinity)
                 }
                 Button{
-                    selectedTab = .post
+                    isPostPresented = true 
                 }label: {
                     VStack(alignment: .center,spacing: 0){
                         Image(systemName: "plus")
