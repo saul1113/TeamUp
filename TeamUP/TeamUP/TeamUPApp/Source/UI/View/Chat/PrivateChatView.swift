@@ -115,6 +115,7 @@ struct PrivateChatView: View {
                     message.image
                         .resizable()
                         .frame(width: 35,height: 35)
+                    
                         .foregroundStyle(.gray)
                     Spacer()
                 }
