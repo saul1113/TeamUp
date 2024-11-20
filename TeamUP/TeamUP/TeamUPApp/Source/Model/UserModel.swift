@@ -14,7 +14,7 @@ struct User: Codable {
     var password: String
     var nickname: String
     var profileImageName: String
-    var selfPR: String
+    var bio: String
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -22,7 +22,7 @@ struct User: Codable {
         case password
         case nickname
         case profileImageName = "profile_image_name"
-        case selfPR
+        case bio
     }
     
     // 커스텀 디코딩 구현
@@ -34,16 +34,16 @@ struct User: Codable {
         password = try container.decodeIfPresent(String.self, forKey: .password) ?? ""
         nickname = try container.decode(String.self, forKey: .nickname)
         profileImageName = try container.decode(String.self, forKey: .profileImageName)
-        selfPR = try container.decode(String.self, forKey: .selfPR)
+        bio = try container.decode(String.self, forKey: .bio)
     }
     
     //기본 생성자
-    init(id: String, email: String, password: String, nickname: String, profileImageName: String, selfPR: String = "iOS 앱스쿨 6기 입니다.") {
+    init(id: String, email: String, password: String, nickname: String, profileImageName: String, bio: String = "") {
         self.id = id
         self.email = email
         self.password = password
         self.nickname = nickname
         self.profileImageName = profileImageName
-        self.selfPR = selfPR
+        self.bio = bio
     }
 }

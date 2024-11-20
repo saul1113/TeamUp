@@ -114,6 +114,7 @@ final class AuthManager: ObservableObject {
                     print("Email: \(data.user.email)")
                     print("Nickname: \(data.user.nickname)")
                     print("Profile Image Name: \(data.user.profileImageName)")
+                    
                     completion(.success(data.user))
                 case .failure(let error):
                     debugPrint("Error: \(error)")
