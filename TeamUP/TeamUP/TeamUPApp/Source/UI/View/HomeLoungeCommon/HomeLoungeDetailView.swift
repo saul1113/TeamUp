@@ -19,20 +19,6 @@ struct HomeLoungeDetailView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
-                // 상단 바
-                HStack {
-                    BackButton()
-                    Spacer()
-                    Button(action: {
-                        // 공유 로직
-                    }) {
-                        Image(systemName: "square.and.arrow.up")
-                            .foregroundColor(.black)
-                    }
-                }
-                .padding(.horizontal)
-                .padding(.top, 10)
-                
                 
                 VStack(alignment: .leading, spacing: 16) {
                     
@@ -157,7 +143,7 @@ struct HomeLoungeDetailView: View {
                                                 .font(.semibold16)
                                                 .foregroundColor(.white)
                                         )
-                                       
+                                    
                                     VStack(alignment: .leading) {
                                         Text(reply.user)
                                             .font(.semibold16)
@@ -227,9 +213,25 @@ struct HomeLoungeDetailView: View {
                 
             }
             .navigationBarBackButtonHidden()
+        }.toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                
+                BackButton()
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    //공유 로직와야할곳
+                
+                    
+                } label: {
+                    Image(systemName: "square.and.arrow.up")
+                        .foregroundStyle(.black)
+                }
+            }
         }
     }
 }
+
 
 
 #Preview {
