@@ -93,7 +93,7 @@ struct EditView: View {
             ToolbarItem(placement: .principal) {
                 Text("프로필 수정")
                     .fontWeight(.semibold)
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
             }
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
@@ -101,7 +101,7 @@ struct EditView: View {
                 } label: {
                     Text("완료")
                         .fontWeight(.regular)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                 }
             }
         }

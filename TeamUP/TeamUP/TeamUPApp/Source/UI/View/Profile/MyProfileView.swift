@@ -17,15 +17,15 @@ struct MyProfileView: View {
     @State private var linkName: String = "노션"
     @State private var showLogoutAlert: Bool = false
     
-    init() {
-        UINavigationBar.appearance().backgroundColor = .customBlue
-            let navBarAppearance = UINavigationBarAppearance()
-            navBarAppearance.backgroundColor = UIColor.customBlue
-            navBarAppearance.shadowColor = .gray
-            UINavigationBar.appearance().standardAppearance = navBarAppearance
-            UINavigationBar.appearance().compactAppearance = navBarAppearance
-            UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-        }
+//    init() {
+//        UINavigationBar.appearance().backgroundColor = .customBlue
+//            let navBarAppearance = UINavigationBarAppearance()
+//            navBarAppearance.backgroundColor = UIColor.customBlue
+//            navBarAppearance.shadowColor = .gray
+//            UINavigationBar.appearance().standardAppearance = navBarAppearance
+//            UINavigationBar.appearance().compactAppearance = navBarAppearance
+//            UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+//        }
     
     var body: some View {
         NavigationStack {

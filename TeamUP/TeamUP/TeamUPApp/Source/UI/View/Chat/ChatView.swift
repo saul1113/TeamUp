@@ -12,16 +12,16 @@ struct ChatView: View {
         case privateChat
         case groupChat
     }
-    
-    init() {
-        UINavigationBar.appearance().backgroundColor = .customBlue
-            let navBarAppearance = UINavigationBarAppearance()
-            navBarAppearance.backgroundColor = UIColor.customBlue
-            navBarAppearance.shadowColor = .gray
-            UINavigationBar.appearance().standardAppearance = navBarAppearance
-            UINavigationBar.appearance().compactAppearance = navBarAppearance
-            UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-        }
+//    
+//    init() {
+//        UINavigationBar.appearance().backgroundColor = .customBlue
+//            let navBarAppearance = UINavigationBarAppearance()
+//            navBarAppearance.backgroundColor = UIColor.customBlue
+//            navBarAppearance.shadowColor = .gray
+//            UINavigationBar.appearance().standardAppearance = navBarAppearance
+//            UINavigationBar.appearance().compactAppearance = navBarAppearance
+//            UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+//        }
     
     @State private var selectedTab: ChatTab = .groupChat
     var body: some View {

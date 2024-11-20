@@ -44,12 +44,12 @@ struct PrivateChatView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem (placement: .topBarLeading) {
-                        BackButton()
+                        BackButtonBlack()
                     }
                     
                     ToolbarItem (placement: .principal) {
                         Text(roomTitle)
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.black)
                             .fontWeight(.semibold)
                     }
                     ToolbarItem (placement: .topBarTrailing) {
@@ -59,7 +59,7 @@ struct PrivateChatView: View {
                             Image(systemName: "line.3.horizontal")
                                 .resizable()
                                 .frame(width: 20,height: 15)
-                                .foregroundStyle(.white)
+                                .foregroundStyle(.black)
                         }
                     }
                 }
