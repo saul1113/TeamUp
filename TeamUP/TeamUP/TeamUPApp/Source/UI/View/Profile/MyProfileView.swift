@@ -11,11 +11,9 @@ struct MyProfileView: View {
     @EnvironmentObject var authManager: AuthManager
     @Environment(\.presentationMode) var presentationMode
     
-    @State private var nickname: String = "수민이다"
-    @State private var selfPR: String = "소개소개소개소개"
     @State private var tags: [String] = ["iOS", "앱개발"]
-    @State private var linkName: String = "노션"
     @State private var link: String = "www.example.com"
+    @State private var linkName: String = "노션"
     
     var body: some View {
         NavigationStack {
@@ -28,13 +26,20 @@ struct MyProfileView: View {
                             .foregroundColor(.gray.opacity(0.3))
                             .padding(.trailing, 10)
                         
-                        Text("\(nickname)")
-                            .font(.semibold22)
+                        // 닉네임 표시
+                        if let user = authManager.user {
+                            Text(user.nickname)
+                                .font(.semibold22)
+                        } else {
+                            Text("로그인 필요")
+                                .font(.semibold22)
+                                .foregroundColor(.gray)
+                        }
                         
                         Spacer()
                         
                         Button {
-                            
+                            // 프로필 수정 액션
                         } label : {
                             Text("프로필 수정")
                                 .frame(width: 100, height: 45)
@@ -51,9 +56,14 @@ struct MyProfileView: View {
                     
                     Text("소개")
                         .font(.semibold22)
-                    Text("\(selfPR)")
-                        .font(.regular16)
-                    
+                    if let user = authManager.user {
+                        Text(user.selfPR) // 예를 들어 profileImageName을 소개로 사용
+                            .font(.regular16)
+                    } else {
+                        Text("소개 정보를 추가하세요.")
+                            .font(.regular16)
+                            .foregroundColor(.gray)
+                    }
                     Spacer()
                     
                     Text("관심분야")
@@ -81,40 +91,36 @@ struct MyProfileView: View {
                     .font(.bold16)
                     .foregroundStyle(.red)
                     
-                                    List {
-                                        listItem("공지사항") {
-                                            AnnouncementView()
-                                        }
                     
-                                        listItem("자주 묻는 질문") {
-                                            QuestionView()
-                                        }
-                    
-                                        listItem("설정") {
-                                            SettingView()
-                                        }
-                    
-                                        listItem("이용약관") {
-                                            TermsAndConditionsView()
-                                        }
-                    
-                                        listItem("개인정보처리방침") {
-                                            PrivacyPolicyView()
-                                        }
-                    
-                                        Button("로그아웃") {
-                                            authManager.logout()
-                                        }
-                                        .font(.bold16)
-                                        .foregroundStyle(.red)
-                                    }
-                                    .listStyle(.plain)
-                                    .environment(\.defaultMinListRowHeight, 0)
-                                    .font(.semibold18)
-                                    .padding(-20)
                 }
                 .padding(20)
             }
+            List {
+                listItem("공지사항") {
+                    AnnouncementView()
+                }
+                
+                listItem("자주 묻는 질문") {
+                    QuestionView()
+                }
+                
+                listItem("설정") {
+                    SettingView()
+                }
+                
+                listItem("이용약관") {
+                    TermsAndConditionsView()
+                }
+                
+                listItem("개인정보처리방침") {
+                    PrivacyPolicyView()
+                }
+                
+            }
+            .listStyle(.plain)
+            .environment(\.defaultMinListRowHeight, 0)
+            .font(.semibold18)
+//            .padding(-20)
         }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
@@ -136,19 +142,19 @@ struct MyProfileView: View {
         
     }
     
-        @ViewBuilder
-        private func listItem(_ title: String, destination: () -> some View) -> some View {
-            NavigationLink {
-                destination()
-            } label: {
-                Text(title)
-            }
-            .listRowSeparator(.hidden)
-    
-            Divider()
-                .listRowInsets(EdgeInsets())
-                .listRowSeparator(.hidden)
+    @ViewBuilder
+    private func listItem(_ title: String, destination: () -> some View) -> some View {
+        NavigationLink {
+            destination()
+        } label: {
+            Text(title)
         }
+        .listRowSeparator(.hidden)
+        
+        Divider()
+            .listRowInsets(EdgeInsets())
+            .listRowSeparator(.hidden)
+    }
 }
 
 //#Preview {

@@ -102,9 +102,18 @@ final class AuthManager: ObservableObject {
             .responseDecodable(of: LoginResponse.self) { response in
                 debugPrint("Response JSON: \(response)") // 서버 응답 디버깅
                 
-               switch response.result {
+                switch response.result {
                 case .success(let data):
                     self.saveToken(data.token)
+                    self.user = data.user // 사용자 정보 저장
+                    self.isAuthenticated = true // 인증 상태 업데이트
+                    
+                    // 사용자 정보 콘솔에 출력
+                    print("로그인 성공: 사용자 정보")
+                    print("ID: \(data.user.id)")
+                    print("Email: \(data.user.email)")
+                    print("Nickname: \(data.user.nickname)")
+                    print("Profile Image Name: \(data.user.profileImageName)")
                     completion(.success(data.user))
                 case .failure(let error):
                     debugPrint("Error: \(error)")

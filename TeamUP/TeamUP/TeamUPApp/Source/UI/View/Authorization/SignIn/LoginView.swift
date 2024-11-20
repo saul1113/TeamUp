@@ -36,7 +36,6 @@ struct LoginView: View {
                     TextFieldView(
                         text: $email,
                         placeholder: "이메일을 입력해주세요",
-                        errorMessage: loginErrorMessage,
                         onTextChange: { _ in
                             loginErrorMessage = nil // 에러 메시지 초기화
                         }
@@ -55,7 +54,6 @@ struct LoginView: View {
                         text: $password,
                         placeholder: "비밀번호를 입력해주세요",
                         isSecure: true,
-                        errorMessage: loginErrorMessage,
                         onTextChange: { _ in
                             loginErrorMessage = nil // 에러 메시지 초기화
                         }
