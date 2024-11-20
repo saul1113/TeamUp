@@ -101,6 +101,8 @@ struct EditView: View {
             }
         }
         .navigationTitle("프로필 수정")
+        .navigationBarBackButtonHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
     }
     
     func addTag() {
