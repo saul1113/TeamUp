@@ -90,17 +90,21 @@ struct EditView: View {
             ToolbarItem(placement: .topBarLeading) {
                 XMarkButton()
             }
+            ToolbarItem(placement: .principal) {
+                Text("프로필 수정")
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+            }
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
                     
                 } label: {
                     Text("완료")
                         .fontWeight(.regular)
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
                 }
             }
         }
-        .navigationTitle("프로필 수정")
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
     }

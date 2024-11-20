@@ -17,10 +17,32 @@ struct MyProfileView: View {
     @State private var linkName: String = "노션"
     @State private var link: String = "www.example.com"
     
+    init() {
+        UINavigationBar.appearance().backgroundColor = .customBlue
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.backgroundColor = UIColor.customBlue
+            navBarAppearance.shadowColor = .gray
+            UINavigationBar.appearance().standardAppearance = navBarAppearance
+            UINavigationBar.appearance().compactAppearance = navBarAppearance
+            UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+        }
+    
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
+//                    HStack {
+//                        Spacer()
+//                        ShareLink(
+//                            item: "TeamUpApp://MyProfile",
+//                            subject: Text("TeamUpApp"),
+//                            message: Text("프로필 공유")) {
+//                                Image(systemName: "square.and.arrow.up")
+//                                    .font(.title2)
+//                                    .padding(.top, 10)
+//                                    .padding(.leading, 20)
+//                            }
+//                    }
                     HStack(alignment: .center) {
                         Image(systemName: "person.crop.circle.fill")
                             .resizable()
@@ -41,6 +63,7 @@ struct MyProfileView: View {
                                 .background(Color.customBlue)
                                 .cornerRadius(5)
                         }
+                        
                         
                     }
                     
@@ -121,17 +144,17 @@ struct MyProfileView: View {
                 .padding(20)
             }
         }
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                
-                ShareLink(
-                    item: "TeamUpApp://MyProfile",
-                    subject: Text("TeamUpApp"),
-                    message: Text("프로필 공유")) {
-                        Image(systemName: "square.and.arrow.up")
-                    }
-            }
-        }
+//        .toolbar {
+//            ToolbarItem(placement: .topBarTrailing) {
+//                
+//                ShareLink(
+//                    item: "TeamUpApp://MyProfile",
+//                    subject: Text("TeamUpApp"),
+//                    message: Text("프로필 공유")) {
+//                        Image(systemName: "square.and.arrow.up")
+//                    }
+//            }
+//        }
     }
 }
 

@@ -41,11 +41,16 @@ struct GroupChatView: View {
                         messageView(message: message)
                     }
                 }
-                .navigationTitle(roomTitle)
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem (placement: .topBarLeading) {
-                        CustomBackButton()
+                        BackButton()
+                    }
+                    
+                    ToolbarItem (placement: .principal) {
+                        Text(roomTitle)
+                            .foregroundStyle(.white)
+                            .fontWeight(.semibold)
                     }
                     ToolbarItem (placement: .topBarTrailing) {
                         Button {
@@ -54,7 +59,7 @@ struct GroupChatView: View {
                             Image(systemName: "line.3.horizontal")
                                 .resizable()
                                 .frame(width: 20,height: 15)
-                                .foregroundStyle(.black)
+                                .foregroundStyle(.white)
                         }
                     }
                 }

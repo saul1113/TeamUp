@@ -140,7 +140,6 @@ struct HomeView: View {
                     }
                 }
                 .padding(.horizontal)
-                .font(.caption)
                 .padding(.bottom, 10)
                 
                 // 모집중 필터링
@@ -151,24 +150,30 @@ struct HomeView: View {
                 }
                 .toggleStyle(CustomCheckBox())
                 .padding(.horizontal)
-                Divider()
+                .padding(.bottom, -10)
+            
                 
-                // 게시글 리스트
-                List {
+                VStack (spacing: 10) {
+                    
                     ForEach(sortedItems.filter { post in
                         if let selectedCategory = selectedCategory {
                             return post.category == selectedCategory
                         }
                         return true
                     }, id: \.title) { post in
+                        
+                        Divider()
+                        
                         NavigationLink(destination: HomeLoungeDetailView(model: post)) {  // NavigationLink 추가
                             ListRowView(model: post, isMyPage: false)
-                                //.padding(.vertical, 5)
                         }
                         
                     }
+                    
                 }
-                .listStyle(PlainListStyle())
+                .padding(20)
+                
+                Spacer()
             }
         
     }

@@ -17,7 +17,7 @@ struct XMarkButton: View {
             HStack {
                 Image(systemName: "xmark")
                     .aspectRatio(contentMode: .fit)
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.white)
             }
         }
     }

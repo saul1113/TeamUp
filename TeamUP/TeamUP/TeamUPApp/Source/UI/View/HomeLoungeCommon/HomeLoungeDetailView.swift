@@ -221,7 +221,7 @@ struct HomeLoungeDetailView: View {
         }.toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 
-                BackButton()
+                BackButtonBlack()
             }
             ToolbarItem(placement: .topBarTrailing) {
                 if model is Rounge {
@@ -231,7 +231,7 @@ struct HomeLoungeDetailView: View {
                         message: Text("게시글 공유")) {
                             Image(systemName: "square.and.arrow.up")
                         }
-                        .foregroundStyle(.customBlue)
+                        .foregroundStyle(.black)
                 } else if model is Post {
                     ShareLink(
                         item: "TeamUpApp://post",
@@ -239,7 +239,7 @@ struct HomeLoungeDetailView: View {
                         message: Text("게시글 공유")) {
                             Image(systemName: "square.and.arrow.up")
                         }
-                        .foregroundStyle(.customBlue)
+                        .foregroundStyle(.black)
                 }
                             
                

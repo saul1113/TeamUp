@@ -142,27 +142,27 @@ struct LoungeView: View {
                     }
                 }
                 .padding(.horizontal)
-                .font(.caption)
-                .padding(.bottom, 10)
+                .padding(.bottom, -10)
                 
-                
-                Divider()
-                
-                List {
-                    ForEach(sortedItems.filter { rounge in
-                        if let selectedCategory = selectedCategory {
-                            return rounge.category == selectedCategory
-                        }
-                        return true
-                    }, id: \.title) { rounge in
-                        NavigationLink(destination: HomeLoungeDetailView(model: rounge)) {  // NavigationLink 추가
-                            ListRowView(model: rounge, isMyPage: false)
-                            //.padding(.vertical, 5)
-                        }
+                VStack (spacing: 10) {
+                ForEach(sortedItems.filter { rounge in
+                    if let selectedCategory = selectedCategory {
+                        return rounge.category == selectedCategory
                     }
+                    return true
+                }, id: \.title) { rounge in
                     
+                    Divider()
+                    
+                    NavigationLink(destination: HomeLoungeDetailView(model: rounge)) {  // NavigationLink 추가
+                        ListRowView(model: rounge, isMyPage: false)
+                    }
                 }
-                .listStyle(PlainListStyle())
+                    
+                }.padding(20)
+                
+                Spacer()
+                    
             }
         
     }
