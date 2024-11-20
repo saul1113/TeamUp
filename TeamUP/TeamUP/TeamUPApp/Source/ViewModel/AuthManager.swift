@@ -160,6 +160,41 @@ final class AuthManager: ObservableObject {
             }
     }
     
+    func refreshTokenIfNeeded(completion: @escaping (Bool) -> Void) {
+        guard let refreshToken = getToken(key: refreshTokenKey) else {
+            print("리프레쉬 토큰이 없습니다.")
+            completion(false)
+            return
+        }
+        
+        defaultURL.path = "/auth/refresh" // 리프레쉬 토큰을 사용하는 엔드포인트
+        
+        guard let url = defaultURL.url else {
+            print("Invalid URL")
+            completion(false)
+            return
+        }
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(refreshToken)"
+        ]
+        
+        AF.request(url, method: .post, headers: headers)
+            .validate() // HTTP 상태 코드 검증
+            .responseDecodable(of: String.self) { response in
+                switch response.result {
+                case .success(let newToken):
+                    self.keychain.set(newToken, forKey: self.accessTokenKey, withAccess: .accessibleAfterFirstUnlock)
+                    print("토큰 갱신 성공: \(newToken)")
+                    completion(true)
+                case .failure(let error):
+                    print("토큰 갱신 실패: \(error.localizedDescription)")
+                    self.clearToken() // 리프레쉬 토큰도 만료되었다면 모든 인증 정보 삭제
+                    completion(false)
+                }
+            }
+    }
+    
     // MARK: - 이메일 중복 확인
     func checkEmailAvailability(email: String) async throws -> Bool {
         var url = defaultURL
@@ -222,6 +257,7 @@ final class AuthManager: ObservableObject {
         return keychain.get(accessTokenKey) != nil
     }
     
+    // 자동 로그인
     func fetchUserInfo(completion: @escaping (Result<User, Error>) -> Void) {
         defaultURL.path = "/user/signin/auto" // 엔드포인트 경로 설정
         
@@ -241,18 +277,35 @@ final class AuthManager: ObservableObject {
             "Authorization": "Bearer \(accessToken)"
         ]
         
-        // POST 요청 실행
         AF.request(url, method: .post, headers: headers)
-            .validate() // HTTP 상태 코드 200-299만 허용
+            .validate()
             .responseDecodable(of: User.self) { response in
                 switch response.result {
                 case .success(let user):
-                    self.user = user // 사용자 정보를 AuthManager에 저장
+                    self.user = user
+                    self.isAuthenticated = true
                     completion(.success(user))
                     print("자동 로그인 성공: \(user)")
                 case .failure(let error):
-                    print("자동 로그인 사용자 정보 가져오기 실패: \(error.localizedDescription)")
-                    completion(.failure(error))
+                    print(response.response?.statusCode)
+                    if let res = response.response, res.statusCode == 401 {
+                        // 토큰 만료 상태라면 갱신 시도
+                        print("토큰 만료: 리프레쉬 토큰으로 갱신 시도")
+                        self.refreshTokenIfNeeded { success in
+                            if success {
+                                // 갱신 성공 시 사용자 정보를 다시 가져옴
+                                self.fetchUserInfo(completion: completion)
+                            } else {
+                                // 갱신 실패
+                                self.isAuthenticated = false
+                                completion(.failure(error))
+                            }
+                        }
+                    } else {
+                        print("자동 로그인 실패: \(error.localizedDescription)")
+                        self.isAuthenticated = false
+                        completion(.failure(error))
+                    }
                 }
             }
     }
