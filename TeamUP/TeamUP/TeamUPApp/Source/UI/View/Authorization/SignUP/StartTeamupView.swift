@@ -27,7 +27,6 @@ struct StartTeamupView: View {
                 // 앱 실행 시 자동 로그인 확인
                 if authManager.hasAccessToken() {
                     print("자동 로그인 상태: \(authManager.getToken(key: "access_token") ?? "")")
-                    authManager.isAuthenticated = true
                     
                     // 서버에서 사용자 정보를 가져옴
                     authManager.fetchUserInfo { result in
