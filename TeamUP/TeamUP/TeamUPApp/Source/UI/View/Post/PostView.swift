@@ -46,7 +46,7 @@ struct PostView: View {
                         ToggleButtonView(isPreviewMode: $isPreviewMode)
                             .padding(.top, 20)
                     }
-                    .padding(.trailing, 60)
+//                    .padding(.trailing, 60)
                     
                     
                     ZStack(alignment: .topLeading) {
