@@ -82,6 +82,14 @@ struct PostView: View {
                 Task {
                     let post = PostModelStruct(category: selectedTab.rawValue == 0 ? "프로젝트" : "스터디", title: postTitle, content: markdownText, maxUserCount: 15)
                     try await postViewModel.addPost(post)
+                    try await postViewModel.fetchPosts { result in
+                        switch result {
+                        case .success(let data):
+                            postViewModel.setData(posts: data)
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
                 }
             } label: {
                 Text("작성 완료")

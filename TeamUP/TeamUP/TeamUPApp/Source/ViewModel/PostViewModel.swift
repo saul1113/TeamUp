@@ -80,6 +80,10 @@ final class PostViewModel: ObservableObject {
         }
     }
     
+    func setData(posts: [PostModelStruct]) {
+        self.posts = posts
+    }
+    
     func fetchPosts(completion: @escaping (Result<[PostModelStruct], Error>) -> Void) async throws {
         defaultURL.path = "/post/all/data"
         defaultURL.queryItems = [ URLQueryItem(name: "last-date", value: "0"), URLQueryItem(name: "last-id", value: "0") ]
