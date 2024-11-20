@@ -47,10 +47,10 @@ struct TabBar: View {
                 }label: {
                     VStack(alignment: .center,spacing: 0){
                         Image(systemName: "plus")
-                            .frame(width: 30,height: 30)
+                            .frame(width: 50,height: 50)
                             .aspectRatio(contentMode: .fit)
                             .foregroundStyle(selectedTab == .post  ? .customBlue : Color.projectTab)
-                        Text("플러스")
+                        Text("")
                             .foregroundStyle(selectedTab == .post  ? .customBlue : Color.projectTab)
                             .font(.semibold16)
                     }

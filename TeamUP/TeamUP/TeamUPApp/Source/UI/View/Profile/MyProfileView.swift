@@ -17,10 +17,32 @@ struct MyProfileView: View {
     @State private var linkName: String = "노션"
     @State private var showLogoutAlert: Bool = false
     
+//    init() {
+//        UINavigationBar.appearance().backgroundColor = .customBlue
+//            let navBarAppearance = UINavigationBarAppearance()
+//            navBarAppearance.backgroundColor = UIColor.customBlue
+//            navBarAppearance.shadowColor = .gray
+//            UINavigationBar.appearance().standardAppearance = navBarAppearance
+//            UINavigationBar.appearance().compactAppearance = navBarAppearance
+//            UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+//        }
+    
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
+//                    HStack {
+//                        Spacer()
+//                        ShareLink(
+//                            item: "TeamUpApp://MyProfile",
+//                            subject: Text("TeamUpApp"),
+//                            message: Text("프로필 공유")) {
+//                                Image(systemName: "square.and.arrow.up")
+//                                    .font(.title2)
+//                                    .padding(.top, 10)
+//                                    .padding(.leading, 20)
+//                            }
+//                    }
                     HStack(alignment: .center) {
                         Image(systemName: "person.crop.circle.fill")
                             .resizable()
@@ -49,6 +71,7 @@ struct MyProfileView: View {
                                 .background(Color.customBlue)
                                 .cornerRadius(5)
                         }
+                        
                         
                     }
                     
@@ -156,23 +179,34 @@ struct MyProfileView: View {
             }
             
         }
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+// //        .toolbar {
+// //            ToolbarItem(placement: .topBarTrailing) {
+// //                
+// //                ShareLink(
+// //                    item: "TeamUpApp://MyProfile",
+// //                    subject: Text("TeamUpApp"),
+// //                    message: Text("프로필 공유")) {
+// //                        Image(systemName: "square.and.arrow.up")
+// //                    }
+// //            }
+// //        }
+//         .toolbar {
+//             ToolbarItem(placement: .topBarTrailing) {
                 
-                ShareLink(
-                    item: "TeamUpApp://MyProfile",
-                    subject: Text("TeamUpApp"),
-                    message: Text("프로필 공유")) {
-                        Image(systemName: "square.and.arrow.up")
-                    }
-            }
-        }
-        .onChange(of: authManager.isAuthenticated) { isAuthenticated in
-            // 로그아웃 상태일 때 스타트팀업뷰로 이동
-            if !isAuthenticated {
-                presentationMode.wrappedValue.dismiss()
-            }
-        }
+//                 ShareLink(
+//                     item: "TeamUpApp://MyProfile",
+//                     subject: Text("TeamUpApp"),
+//                     message: Text("프로필 공유")) {
+//                         Image(systemName: "square.and.arrow.up")
+//                     }
+//             }
+//         }
+//         .onChange(of: authManager.isAuthenticated) { isAuthenticated in
+//             // 로그아웃 상태일 때 스타트팀업뷰로 이동
+//             if !isAuthenticated {
+//                 presentationMode.wrappedValue.dismiss()
+//             }
+//         }
     }
     @ViewBuilder
     private func listItem(_ title: String, destination: () -> some View) -> some View {

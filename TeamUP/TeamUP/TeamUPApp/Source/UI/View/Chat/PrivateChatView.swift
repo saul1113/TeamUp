@@ -41,11 +41,16 @@ struct PrivateChatView: View {
                         messageView(message: message)
                     }
                 }
-                .navigationTitle(roomTitle)
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem (placement: .topBarLeading) {
-                        CustomBackButton()
+                        BackButtonBlack()
+                    }
+                    
+                    ToolbarItem (placement: .principal) {
+                        Text(roomTitle)
+                            .foregroundStyle(.black)
+                            .fontWeight(.semibold)
                     }
                     ToolbarItem (placement: .topBarTrailing) {
                         Button {
@@ -110,6 +115,8 @@ struct PrivateChatView: View {
                     message.image
                         .resizable()
                         .frame(width: 35,height: 35)
+                    
+                        .foregroundStyle(.gray)
                     Spacer()
                 }
                 VStack (alignment: .leading) {

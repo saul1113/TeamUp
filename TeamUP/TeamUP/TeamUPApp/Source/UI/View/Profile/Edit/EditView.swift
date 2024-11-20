@@ -90,6 +90,11 @@ struct EditView: View {
             ToolbarItem(placement: .topBarLeading) {
                 XMarkButton()
             }
+            ToolbarItem(placement: .principal) {
+                Text("프로필 수정")
+                    .fontWeight(.semibold)
+                    .foregroundColor(.black)
+            }
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
                     
@@ -100,7 +105,6 @@ struct EditView: View {
                 }
             }
         }
-        .navigationTitle("프로필 수정")
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
     }

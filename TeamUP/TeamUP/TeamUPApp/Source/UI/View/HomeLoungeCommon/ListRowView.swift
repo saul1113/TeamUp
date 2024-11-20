@@ -54,6 +54,7 @@ struct ListRowView: View {
                
                     Text(model.title)
                     .font(.semibold18)
+                    .foregroundStyle(.black)
                 
                  
                
@@ -64,15 +65,14 @@ struct ListRowView: View {
                 
                 HStack() {
                     Text(model.user.nickname)
-                        .font(.regular12)
                     Text("•")
                     Text(model.time)
-                        .font(.regular12)
                     
                     Spacer()
                     
                     HStack(spacing: 3){
                         Image(systemName: "bookmark.fill")
+                            .foregroundStyle(.customLightGray)
                         Text("\(model.save)")
                     }
                     
@@ -83,12 +83,13 @@ struct ListRowView: View {
                     if let rounge = model as? Rounge {
                         HStack(spacing: 3){
                             Image(systemName: "bubble.left")
+                                .foregroundStyle(.customLightGray)
                             Text("\(rounge.reply.count)")
                         }
                     }
                 
                 }
-                .font(.semibold12)
+                .font(.regular12)
                 .foregroundColor(.gray)
                 
             }
