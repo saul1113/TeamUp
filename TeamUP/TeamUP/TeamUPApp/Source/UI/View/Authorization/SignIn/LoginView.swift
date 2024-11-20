@@ -97,7 +97,7 @@ struct LoginView: View {
                         .font(.regular16)
                         .foregroundColor(.customDarkGray)
                     
-                    NavigationLink(destination: SignUPView(email: $email)) {
+                    NavigationLink(destination: SignUPView()) {
                         Text("가입하기")
                             .font(.regular16)
                             .foregroundColor(.customBlue)

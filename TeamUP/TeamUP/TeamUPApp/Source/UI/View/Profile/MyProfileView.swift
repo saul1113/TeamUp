@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MyProfileView: View {
-    //    @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var authManager: AuthManager
     @Environment(\.presentationMode) var presentationMode
     
     @State private var nickname: String = "수민이다"
@@ -75,6 +75,11 @@ struct MyProfileView: View {
                     }
                     
                     Spacer()
+                    Button("로그아웃") {
+                        authManager.logout()
+                    }
+                    .font(.bold16)
+                    .foregroundStyle(.red)
                     
                                     List {
                                         listItem("공지사항") {
@@ -98,7 +103,7 @@ struct MyProfileView: View {
                                         }
                     
                                         Button("로그아웃") {
-                                            //                    authManager.logout()
+                                            authManager.logout()
                                         }
                                         .font(.bold16)
                                         .foregroundStyle(.red)
@@ -146,8 +151,8 @@ struct MyProfileView: View {
         }
 }
 
-#Preview {
-    NavigationStack {
-        MyProfileView()
-    }
-}
+//#Preview {
+//    NavigationStack {
+//        MyProfileView()
+//    }
+//}

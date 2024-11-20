@@ -11,7 +11,7 @@ struct SignUPView: View {
     @EnvironmentObject var authManager: AuthManager // AuthManager 인스턴스 사용
     
     @State private var progress = 0.0
-    @Binding var email: String
+    @State private var email: String = ""
     @State private var isEmailValid: Bool = false    // 이메일 형식 유효성
     @State private var isEmailChecked: Bool = false  // 이메일 중복 확인 여부
     @State private var emailMessage: String? = nil   // 이메일 관련 메시지
@@ -173,6 +173,6 @@ struct SignUPView: View {
 }
 
 #Preview {
-    SignUPView(email: .constant(""))
+    SignUPView()
         .environmentObject(AuthManager())
 }

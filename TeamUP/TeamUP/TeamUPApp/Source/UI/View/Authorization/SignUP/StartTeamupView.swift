@@ -62,7 +62,7 @@ struct StartTeamupView: View {
             Spacer()
                 .frame(height: 23)
             
-            NavigationLink(destination: SignUPView(email: $email)) {
+            NavigationLink(destination: SignUPView()) {
                 Text("회원가입")
                     .font(Font.semibold14)
                     .foregroundStyle(.white)
