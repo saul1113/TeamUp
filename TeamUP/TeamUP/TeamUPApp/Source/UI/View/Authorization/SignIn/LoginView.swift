@@ -5,6 +5,13 @@
 //  Created by Soom on 11/15/24.
 //
 
+//
+//  LoginView.swift
+//  ProjectMoyo
+//
+//  Created by Soom on 11/15/24.
+//
+
 import SwiftUI
 import Alamofire
 
@@ -12,7 +19,6 @@ struct LoginView: View {
     @EnvironmentObject var authManager: AuthManager // AuthManager 사용
     @State private var email: String = ""
     @State private var password: String = ""
-    @State private var isPasswordVisible: Bool = false
     @State private var isLoading: Bool = false // 로딩 상태
     @State private var loginErrorMessage: String? = nil // 에러 메시지
     @State private var navigateToMain: Bool = false // 메인 화면 이동 여부
@@ -27,15 +33,14 @@ struct LoginView: View {
                     Text("이메일")
                         .font(.semibold18)
                     
-                    TextField("이메일을 입력해주세요", text: $email)
-                        .padding(12)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 4)
-                                .stroke(Color.customLightGray, lineWidth: 1)
-                        )
-                        .autocapitalization(.none)
-                        .keyboardType(.emailAddress)
-                        .disableAutocorrection(true)
+                    TextFieldView(
+                        text: $email,
+                        placeholder: "이메일을 입력해주세요",
+                        errorMessage: loginErrorMessage,
+                        onTextChange: { _ in
+                            loginErrorMessage = nil // 에러 메시지 초기화
+                        }
+                    )
                 }
                 
                 Spacer()
@@ -46,23 +51,14 @@ struct LoginView: View {
                     Text("비밀번호")
                         .font(.semibold18)
                     
-                    HStack {
-                        if isPasswordVisible {
-                            TextField("비밀번호를 입력해주세요", text: $password)
-                        } else {
-                            SecureField("비밀번호를 입력해주세요", text: $password)
+                    TextFieldView(
+                        text: $password,
+                        placeholder: "비밀번호를 입력해주세요",
+                        isSecure: true,
+                        errorMessage: loginErrorMessage,
+                        onTextChange: { _ in
+                            loginErrorMessage = nil // 에러 메시지 초기화
                         }
-                        Button(action: {
-                            isPasswordVisible.toggle()
-                        }) {
-                            Image(systemName: isPasswordVisible ? "eye" : "eye.slash")
-                                .foregroundColor(.customLightGray)
-                        }
-                    }
-                    .padding(12)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 4)
-                            .stroke(Color.customLightGray, lineWidth: 1)
                     )
                 }
                 
@@ -113,13 +109,8 @@ struct LoginView: View {
                 Spacer()
             }
             .padding()
-            .navigationBarBackButtonHidden(true)
-            .backButton()
             .navigationDestination(isPresented: $navigateToMain) {
                 MainTabView() // 로그인 성공 시 이동
-            }
-            .onAppear {
-                UITextField.appearance().clearButtonMode = .whileEditing
             }
         }
     }
@@ -161,4 +152,5 @@ struct LoginView: View {
 
 #Preview {
     LoginView()
+        .environmentObject(AuthManager())
 }
