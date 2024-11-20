@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MainTabView: View {
     @State private var selectedTab: Tab = .home
+    @State private var isPostPresented: Bool = false
+    
     enum Tab {
         case home
         case lounge
@@ -24,42 +26,26 @@ struct MainTabView: View {
                     switch selectedTab {
                     case .home:
                         HomeView()
-                            .tabItem() {
-                                Label("홈", systemImage: "house")
-                            }
-                            .tag(0)
                         
                     case .lounge:
                         LoungeView()
-                            .tabItem() {
-                                Label("라운지", systemImage: "list.bullet.clipboard")
-                            }
-                            .tag(1)
                         
                     case .post:
-                        PostView()
-                            .tabItem () {
-                                Label("", systemImage: "pill")
-                            }
-                            .tag(2)
+                        EmptyView()
                         
                     case .chat:
                         ChatView()
-                            .tabItem() {
-                                Label("HealthList", systemImage: "list.clipboard")
-                            }
-                            .tag(3)
+                        
                     case .profile:
                         MyProfileView()
-                            .tabItem() {
-                                Label("Profile", systemImage: "person.crop.circle")
-                            }
-                            .tag(4)
                     }
                 }
-                TabBar(selectedTab: $selectedTab)
+                TabBar(selectedTab: $selectedTab, isPostPresented: $isPostPresented)
                     .frame(alignment: .bottom)
                     .background(.white)
+            }
+            .fullScreenCover(isPresented: $isPostPresented) {
+                PostView()
             }
         }
         .navigationBarBackButtonHidden(true)
