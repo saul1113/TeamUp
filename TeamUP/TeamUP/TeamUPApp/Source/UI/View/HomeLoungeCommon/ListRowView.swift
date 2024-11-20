@@ -20,17 +20,17 @@ struct ListRowView: View {
                         if post.isRecruit {
                             Text("모집중")
                                 .font(.semibold12)
-                                .foregroundColor(.customBlue)
+                                .foregroundColor(.white)
                                 .padding(.horizontal, 4)
-                                .padding(.vertical, 2)
-                                .background(Color.customBlue.opacity(0.1))
+                                .padding(.vertical, 4)
+                                .background(Color.customBlue)
                                 .cornerRadius(4)
                         }
                         else {
                             Text("모집완료")
                                 .font(.semibold12)
                                 .foregroundColor(.white)
-                                .padding(.vertical, 2)
+                                .padding(.vertical, 4)
                                 .padding(.horizontal, 4)
                                 .background(Color.gray)
                                 .cornerRadius(4)
@@ -53,7 +53,7 @@ struct ListRowView: View {
                 }
                
                     Text(model.title)
-                    .font(.semibold16)
+                    .font(.semibold18)
                 
                  
                
@@ -68,7 +68,9 @@ struct ListRowView: View {
                     Text("•")
                     Text(model.time)
                         .font(.regular12)
+                    
                     Spacer()
+                    
                     HStack(spacing: 3){
                         Image(systemName: "bookmark.fill")
                         Text("\(model.save)")

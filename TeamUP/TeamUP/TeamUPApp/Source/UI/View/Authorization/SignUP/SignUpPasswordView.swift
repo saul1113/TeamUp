@@ -78,8 +78,8 @@ struct SignUpPasswordView: View {
                     Text("다 음")
                         .frame(width: 360, height: 50)
                         .font(.semibold20)
-                        .foregroundColor(.white)
-                        .background(canProceedToNextStep ? Color.customBlue : Color.gray)
+                        .foregroundColor(canProceedToNextStep ? .white : .customDarkGray)
+                        .background(canProceedToNextStep ? Color.customBlue : Color.customLightGray)
                         .cornerRadius(4)
                 }
                 .disabled(!canProceedToNextStep) // 버튼 비활성화 상태
@@ -139,3 +139,4 @@ struct SignUpPasswordView: View {
         canProceedToNextStep = isPasswordMatched && !password.isEmpty && !confirmPassword.isEmpty
     }
 }
+

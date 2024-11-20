@@ -22,7 +22,7 @@ struct CustomSearchBar: View {
                     isSearching = isEditing
                 })
                 .foregroundColor(.primary)
-                
+                .font(.regular14)
                 
                 if !searchText.isEmpty {
                     Button(action: {

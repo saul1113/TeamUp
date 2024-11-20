@@ -44,7 +44,7 @@ struct GroupChatListView: View {
                     }
                     Rectangle()
                         .fill(.gray)
-                        .frame(height: 1)
+                        .frame(height: 0.3)
                 }
             }
             .padding(.horizontal, 16)
@@ -55,7 +55,7 @@ struct GroupChatListView: View {
             room.roomImage
                 .resizable()
                 .frame(width: 40, height: 40)
-                .foregroundStyle(.black)
+                .foregroundStyle(.gray)
             VStack (alignment: .leading, spacing: 5) {
                 HStack {
                     Text(room.roomTitle)

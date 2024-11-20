@@ -31,7 +31,7 @@ struct LoginView: View {
                         .padding(12)
                         .overlay(
                             RoundedRectangle(cornerRadius: 4)
-                                .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                                .stroke(Color.customLightGray, lineWidth: 1)
                         )
                         .autocapitalization(.none)
                         .keyboardType(.emailAddress)
@@ -42,7 +42,7 @@ struct LoginView: View {
                     .frame(height: 40)
                 
                 // 비밀번호 입력
-                VStack(alignment: .leading, spacing: 8) {
+                VStack(alignment: .leading) {
                     Text("비밀번호")
                         .font(.semibold18)
                     
@@ -56,13 +56,13 @@ struct LoginView: View {
                             isPasswordVisible.toggle()
                         }) {
                             Image(systemName: isPasswordVisible ? "eye" : "eye.slash")
-                                .foregroundColor(.gray)
+                                .foregroundColor(.customLightGray)
                         }
                     }
                     .padding(12)
                     .overlay(
                         RoundedRectangle(cornerRadius: 4)
-                            .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                            .stroke(Color.customLightGray, lineWidth: 1)
                     )
                 }
                 
@@ -72,8 +72,8 @@ struct LoginView: View {
                 // 에러 메시지
                 if let loginErrorMessage = loginErrorMessage {
                     Text(loginErrorMessage)
-                        .foregroundColor(.red)
-                        .font(.caption)
+                        .foregroundColor(.customRed)
+                        .font(.regular14)
                         .padding(.bottom, 10)
                 }
                 
@@ -84,10 +84,10 @@ struct LoginView: View {
                             .frame(maxWidth: .infinity, minHeight: 48)
                     } else {
                         Text("로그인")
-                            .font(.headline)
-                            .foregroundColor(isLoginEnabled ? .white : .gray)
+                            .font(.semibold20)
+                            .foregroundColor(isLoginEnabled ? .white : .customDarkGray)
                             .frame(maxWidth: .infinity, minHeight: 48)
-                            .background(isLoginEnabled ? Color.blue : Color.gray.opacity(0.4))
+                            .background(isLoginEnabled ? Color.customBlue : Color.customLightGray)
                             .cornerRadius(4)
                     }
                 }
@@ -99,12 +99,12 @@ struct LoginView: View {
                     
                     Text("계정이 없으신가요?")
                         .font(.regular16)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.customDarkGray)
                     
                     NavigationLink(destination: SignUPView(email: $email)) {
                         Text("가입하기")
                             .font(.regular16)
-                            .foregroundColor(.blue)
+                            .foregroundColor(.customBlue)
                     }
                 }
                 .padding(.vertical)
@@ -157,4 +157,8 @@ struct LoginView: View {
             }
         }
     }
+}
+
+#Preview {
+    LoginView()
 }
