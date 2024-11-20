@@ -13,7 +13,7 @@ struct ToggleButtonView: View {
         var body: some View {
             ZStack {
                 Capsule()
-                    .stroke(Color.gray)
+                    .strokeBorder(Color.gray, lineWidth: 0.5)
                     .frame(width: 120, height: 40)
                 
                 HStack {
