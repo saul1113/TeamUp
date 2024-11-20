@@ -46,7 +46,7 @@ struct CustomSearchBar: View {
                     UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 }) {
                     Text("취소")
-                        .foregroundColor(.blue)
+                        .foregroundColor(.customBlue)
                 }
                 .animation(.easeInOut, value: isSearching) //후에 수정
             }

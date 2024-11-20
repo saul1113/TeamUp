@@ -84,7 +84,7 @@ struct LoungeView: View {
     }
     
     var body: some View {
-        NavigationView {  // NavigationView로 감싸기
+      
             VStack(alignment: .leading) {
                 CustomSearchBar(searchText: $searchText, placeholder: "검색어를 입력해주세요 (ex 웹프로젝트, 알고리즘 스터디", onSearch: { text in
                     print("검색실행")
@@ -151,7 +151,7 @@ struct LoungeView: View {
                         return true
                     }, id: \.title) { rounge in
                         NavigationLink(destination: HomeLoungeDetailView(model: rounge)) {  // NavigationLink 추가
-                            ListRowView(model: rounge)
+                            ListRowView(model: rounge, isMyPage: false)
                             //.padding(.vertical, 5)
                         }
                     }
@@ -159,7 +159,7 @@ struct LoungeView: View {
                 }
                 .listStyle(PlainListStyle())
             }
-        }
+        
     }
 }
 #Preview {
