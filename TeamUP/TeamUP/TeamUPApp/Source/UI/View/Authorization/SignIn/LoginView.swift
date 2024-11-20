@@ -16,6 +16,7 @@ struct LoginView: View {
     @State private var isLoading: Bool = false // 로딩 상태
     @State private var loginErrorMessage: String? = nil // 에러 메시지
     @State private var navigateToMain: Bool = false // 메인 화면 이동 여부
+    @State private var selectedView: String? = nil
     
     var body: some View {
         NavigationStack {
@@ -120,6 +121,43 @@ struct LoginView: View {
             }
             .onAppear {
                 UITextField.appearance().clearButtonMode = .whileEditing
+            }
+            .onOpenURL { url in
+                //if authManager.isAuthenticated {
+                    if let host = url.host {
+                        selectedView = host
+                    //}
+                }
+            }
+            NavigationLink(
+                destination: HomeView(),
+                tag: "post",
+                selection: $selectedView
+            ) {
+                EmptyView()
+            }
+            
+            NavigationLink(
+                destination: LoungeView(),
+                tag: "lounge",
+                selection: $selectedView
+            ) {
+                EmptyView()
+            }
+            
+            NavigationLink(
+                destination: MyProfileView(),
+                tag: "MyProfile",
+                selection: $selectedView
+            ) {
+                EmptyView()
+            }
+            NavigationLink(
+                destination: FriendProfileView(),
+                tag: "friends",
+                selection: $selectedView
+            ) {
+                EmptyView()
             }
         }
     }
