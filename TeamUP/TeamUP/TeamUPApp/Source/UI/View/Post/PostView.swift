@@ -80,19 +80,15 @@ struct PostView: View {
         .padding(20)
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
-                Button {
-                    
-                } label: {
-                    BackButton()
-                }
+                XMarkButton()
             }
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
                     
                 } label: {
                     Text("임시저장")
-                        .fontWeight(.semibold)
-                        .foregroundColor(.blue)
+                        .fontWeight(.regular)
+                        .foregroundColor(.black)
                 }
             }
         }

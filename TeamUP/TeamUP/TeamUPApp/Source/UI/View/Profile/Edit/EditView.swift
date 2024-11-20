@@ -44,7 +44,7 @@ struct EditView: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .font(.regular14)
                     
-                        .padding(.bottom, 10)
+                    Spacer()
                     
                     Text("소개")
                         .font(.semibold18)
@@ -52,7 +52,7 @@ struct EditView: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .font(.regular14)
                     
-                        .padding(.bottom, 10)
+                    Spacer()
                     
                     Text("관심분야")
                         .font(.semibold18)
@@ -66,6 +66,8 @@ struct EditView: View {
                     
                     
                     TagView(tags: $tags)
+                     
+                    Spacer()
                     
                     
                     Text("링크")
@@ -82,19 +84,22 @@ struct EditView: View {
                     Spacer()
                 }
             }
-            
-            Button {
-                
-            } label : {
-                Text("작성 완료")
-                    .frame(width: 360, height: 50)
-                    .font(.semibold20)
-                    .foregroundColor(.white)
-                    .background(Color.customBlue)
-                    .cornerRadius(4)
-            }
         }
         .padding(20)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                XMarkButton()
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    
+                } label: {
+                    Text("완료")
+                        .fontWeight(.regular)
+                        .foregroundColor(.black)
+                }
+            }
+        }
         .navigationTitle("프로필 수정")
     }
     
