@@ -59,12 +59,12 @@ struct PostView: View {
                     ToggleButtonView(isPreviewMode: $isPreviewMode)
                         .padding(.top, 20)
                 }
-                .padding(.horizontal)
+//                .padding(.horizontal)
                 
                 ZStack(alignment: .topLeading) {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color.gray, lineWidth: 0.3)
-                        .frame(width: 360, height: 500)
+                        .frame(width: 370, height: 500)
                     
                     if isPreviewMode {
                         Markdown(markdownText)
