@@ -113,12 +113,13 @@ struct MyProfileView: View {
         }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    
-                } label: {
-                    Image(systemName: "square.and.arrow.up")
-                        .foregroundStyle(.black)
-                }
+                
+                ShareLink(
+                    item: "TeamUpApp://MyProfile",
+                    subject: Text("TeamUpApp"),
+                    message: Text("프로필 공유")) {
+                        Image(systemName: "square.and.arrow.up")
+                    }
             }
         }
         //        .onChange(of: authManager.isAuthenticated) { isAuthenticated in

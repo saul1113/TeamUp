@@ -84,12 +84,13 @@ struct FriendProfileView: View {
                 BackButton()
             }
             ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    
-                } label: {
-                    Image(systemName: "square.and.arrow.up")
-                        .foregroundStyle(.black)
-                }
+                ShareLink(
+                    item: "TeamUpApp://friends",
+                    subject: Text("TeamUpApp"),
+                    message: Text("프로필 공유")) {
+                        Image(systemName: "square.and.arrow.up")
+                    }
+                    .foregroundStyle(.customBlue)
             }
         }
     }

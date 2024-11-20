@@ -11,6 +11,7 @@ struct HomeLoungeDetailView: View {
     @State private var saveCount: Int
     @State private var isBookmarked = false
     @State private var newComment = ""
+  
     // 모델이 수정 가능한 값으로 `save` 프로퍼티를 가지고 있다고 가정
     init(model: Listable) {
         self.model = model
@@ -114,10 +115,12 @@ struct HomeLoungeDetailView: View {
                 }
                 .padding(.horizontal)
                 .padding(.top, 10)
-                
+        
                 //라운지일때
                 if let rounge = model as? Rounge {
                     Divider()
+                        .padding(.horizontal)
+                    
                         .padding(.top, 30)
                     HStack{
                         Text("댓글")
@@ -128,6 +131,7 @@ struct HomeLoungeDetailView: View {
                     .padding()
                     
                     Divider()
+                        .padding(.horizontal)
                     
                     
                     VStack(alignment: .leading){
@@ -158,6 +162,7 @@ struct HomeLoungeDetailView: View {
                                 }
                             }
                             Divider()
+                                
                         }
                         HStack {
                             //로그인한 유저로 변경 필요
@@ -192,22 +197,24 @@ struct HomeLoungeDetailView: View {
                 }
                 //포스트(홈)일때
                 if model is Post {
-                    Spacer()
+                    
+                    Spacer().frame(height: 40)
+                    
                     Button(action: {
                         // 신청 로직
                     }) {
                         Text("신청하기")
-                            .font(.semibold14)
+                            .font(.semibold20)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
-                            .frame(height: 50)
+                            .frame(width:360, height: 50)
                             .background(Color.customBlue)
-                            .cornerRadius(8)
+                            .cornerRadius(4)
                             .padding(.horizontal)
                     }
-                    .padding(60)
+                    
+                    
                 }
-                
                 
             }
             .navigationBarBackButtonHidden()
@@ -217,16 +224,29 @@ struct HomeLoungeDetailView: View {
                 BackButton()
             }
             ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    //공유 로직와야할곳
-                
-                    
-                } label: {
-                    Image(systemName: "square.and.arrow.up")
-                        .foregroundStyle(.black)
+                if model is Rounge {
+                    ShareLink(
+                        item: "TeamUpApp://lounge",
+                        subject: Text("TeamUpApp"),
+                        message: Text("게시글 공유")) {
+                            Image(systemName: "square.and.arrow.up")
+                        }
+                        .foregroundStyle(.customBlue)
+                } else if model is Post {
+                    ShareLink(
+                        item: "TeamUpApp://post",
+                        subject: Text("TeamUpApp"),
+                        message: Text("게시글 공유")) {
+                            Image(systemName: "square.and.arrow.up")
+                        }
+                        .foregroundStyle(.customBlue)
                 }
+                            
+               
             }
+            
         }
+        
     }
 }
 
