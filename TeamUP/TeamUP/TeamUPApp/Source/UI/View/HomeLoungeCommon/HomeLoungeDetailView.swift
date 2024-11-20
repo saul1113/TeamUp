@@ -17,197 +17,195 @@ struct HomeLoungeDetailView: View {
         _saveCount = State(initialValue: model.save) // 초기값을 model.save로 설정
     }
     var body: some View {
-        VStack(spacing: 0) {
-            // 상단 바
-            HStack {
-                BackButton()
-                Spacer()
-                Button(action: {
-                    // 공유 로직
-                }) {
-                    Image(systemName: "square.and.arrow.up")
-                        .font(.title2)
-                        .foregroundColor(.black)
-                }
-            }
-            .padding(.horizontal)
-            .padding(.top, 10)
-            
-            
-            VStack(alignment: .leading, spacing: 16) {
-                
-                Text(model.categoryString)
-                    .font(.caption)
-                    .fontWeight(.bold)
-                    .padding(.vertical, 4)
-                    .padding(.horizontal, 8)
-                    .background(Color.blue.opacity(0.1))
-                    .foregroundColor(.blue)
-                    .cornerRadius(4)
-                
-                // 작성자 정보
-                HStack(spacing: 8) {
-                    Circle()
-                        .fill(Color.gray.opacity(0.5))
-                        .frame(width: 40, height: 40)
-                        .overlay(
-                            //실제론 유저 프로필 이미지?
-                            Text(model.user.nickname.prefix(1))
-                                .font(.headline)
-                                .foregroundColor(.white)
-                        )
-                    
-                    VStack(alignment: .leading) {
-                        Text(model.user.nickname)
-                            .font(.headline)
-                        HStack(spacing: 5) {
-                            Text(model.time)
-                                .font(.caption)
-                                .foregroundColor(.gray)
-                            Text("•")
-                                .font(.caption)
-                                .foregroundColor(.gray)
-                            Text("조회수 \(model.seen)")
-                                .font(.caption)
-                                .foregroundColor(.gray)
-                        }
-                    }
-                    Spacer()
-                    if model is Post{
-                        Button {
-                            //채팅 로직
-                        } label: {
-                            Text("1:1 채팅")
-                                .font(.caption)
-                                .padding(.vertical, 4)
-                                .padding(.horizontal, 8)
-                                .background(Color.gray.opacity(0.2))
-                                .cornerRadius(4)
-                        }
-                    }
-                    
-                    
-                }
-                Divider()
-                
-                HomeLoungeDetailContentView(model: model)
-                
-                // 인원 정보
+        ScrollView {
+            VStack(spacing: 0) {
+                // 상단 바
                 HStack {
-                    if let post = model as? Post{
-                        Text("👤 \(post.currentCapacity)/\(post.maxCapacity)")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                    }
+                    BackButton()
                     Spacer()
-                    
-                    Button {
-                        //실제 저장 로직 와야함
-                        
-                        isBookmarked.toggle()
-                        
-                        
-                        if isBookmarked {
-                            saveCount += 1
-                        } else {
-                            saveCount -= 1
-                        }
-                    } label: {
-                        
-                        Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
-                            .font(.title2)
-                            .foregroundColor(.blue)
-                        Text("\(saveCount)") // 변경된 saveCount 표시
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
+                    Button(action: {
+                        // 공유 로직
+                    }) {
+                        Image(systemName: "square.and.arrow.up")
+                            .foregroundColor(.black)
                     }
-                    
-                    
-                }.frame(height: 10 )
-               
-            }
-            .padding(.horizontal)
-            .padding(.top, 10)
-            
-            //라운지일때
-            if let rounge = model as? Rounge {
-                Divider()
-                    .padding(.top, 30)
-                HStack{
-                    Text("댓글")
-                    Text("\(rounge.reply.count)")
-                    
-                    Spacer()
                 }
-                .padding()
+                .padding(.horizontal)
+                .padding(.top, 10)
                 
-                Divider()
-                    .padding(.top , 1)
+                
+                VStack(alignment: .leading, spacing: 16) {
                     
-                VStack{
-                    List(rounge.reply) { reply in
-                        VStack(alignment: .leading, spacing: 20) {
-                            // 사용자 정보 및 작성 시간
-                            HStack {
-                                Circle()
-                                    .fill(Color.gray.opacity(0.5))
-                                    .frame(width: 40, height: 40)
-                                    .overlay(
-                                        Text(reply.user.prefix(1))
-                                            .font(.headline)
-                                            .foregroundColor(.white)
-                                    )
-                                    .padding(.leading, -5)
-                                
-                                VStack(alignment: .leading) {
-                                    Text(reply.user)
-                                        .font(.headline)
-                                    Text(reply.timestamp, style: .relative) // 시간 포맷: "1시간 전"
-                                        .font(.caption)
-                                        .foregroundColor(.gray)
-                                    Text(reply.content)
-                                        .font(.body)
-                                        .foregroundColor(.black)
-                                }
-                                
-                            }
-                        }
-                    }
-                    .listStyle(PlainListStyle())
-                    HStack {
-                        //로그인한 유저로 변경 필요
+                    Text(model.categoryString)
+                        .font(.semibold12)
+                        .fontWeight(.bold)
+                        .padding(.vertical, 4)
+                        .padding(.horizontal, 8)
+                        .background(.customBlue.opacity(0.1))
+                        .foregroundColor(.customBlue)
+                        .cornerRadius(4)
+                    
+                    // 작성자 정보
+                    HStack(spacing: 8) {
                         Circle()
                             .fill(Color.gray.opacity(0.5))
                             .frame(width: 40, height: 40)
                             .overlay(
-                                Text(rounge.user.nickname.prefix(1))
-                                    .font(.headline)
+                                //실제론 유저 프로필 이미지?
+                                Text(model.user.nickname.prefix(1))
+                                    .font(.bold16)
                                     .foregroundColor(.white)
                             )
-                        TextField("댓글을 입력해주세요", text: $newComment)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .frame(height: 40)
                         
-                        Button(action: {
-                            // 댓글 작성 로직
-                        }) {
-                            Text("게시")
-                                .foregroundColor(newComment.isEmpty ? .gray : .blue)
-                                .padding(.horizontal, 12)
-                                .padding(.vertical, 7)
-                                .background(Color.blue.opacity(0.1))
-                                .cornerRadius(4)
-                                
+                        VStack(alignment: .leading) {
+                            Text(model.user.nickname)
+                                .font(.bold16)
+                            HStack(spacing: 5) {
+                                Text(model.time)
+                                    .font(.semibold12)
+                                    .foregroundColor(.gray)
+                                Text("•")
+                                    .font(.semibold12)
+                                    .foregroundColor(.gray)
+                                Text("조회수 \(model.seen)")
+                                    .font(.semibold12)
+                                    .foregroundColor(.gray)
+                            }
                         }
-                        .frame(height: 40)
+                        Spacer()
+                        if model is Post{
+                            Button {
+                                //채팅 로직
+                            } label: {
+                                Text("1:1 채팅")
+                                    .font(.semibold12)
+                                    .foregroundColor(Color.customBlue)
+                                    .padding(.vertical, 4)
+                                    .padding(.horizontal, 8)
+                                    .background(Color.gray.opacity(0.2))
+                                    .cornerRadius(4)
+                            }
+                        }
                         
-                        .disabled(newComment.isEmpty)
+                        
                     }
-                    .padding(.bottom,10)
-                    .padding(.horizontal)
-                    Spacer()
+                    Divider()
+                    
+                    HomeLoungeDetailContentView(model: model)
+                    
+                    // 인원 정보
+                    HStack {
+                        if let post = model as? Post{
+                            Text("👤 \(post.currentCapacity)/\(post.maxCapacity)")
+                                .font(.regular14)
+                                .foregroundColor(.gray)
+                        }
+                        Spacer()
+                        
+                        Button {
+                            //실제 저장 로직 와야함
+                            
+                            isBookmarked.toggle()
+                            
+                            
+                            if isBookmarked {
+                                saveCount += 1
+                            } else {
+                                saveCount -= 1
+                            }
+                        } label: {
+                            
+                            Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
+                                .foregroundColor(.blue)
+                            Text("\(saveCount)") // 변경된 saveCount 표시
+                                .font(.regular14)
+                                .foregroundColor(.gray)
+                        }
+                        
+                        
+                    }.frame(height: 10 )
+                    
                 }
-            }
+                .padding(.horizontal)
+                .padding(.top, 10)
+                
+                //라운지일때
+                if let rounge = model as? Rounge {
+                    Divider()
+                        .padding(.top, 30)
+                    HStack{
+                        Text("댓글")
+                        Text("\(rounge.reply.count)")
+                        
+                        Spacer()
+                    }
+                    .padding()
+                    
+                    Divider()
+                    
+                    
+                    VStack(alignment: .leading){
+                        ForEach(rounge.reply) { reply in
+                            VStack(alignment: .leading, spacing: 20) {
+                                // 사용자 정보 및 작성 시간
+                                HStack {
+                                    Circle()
+                                        .fill(Color.gray.opacity(0.5))
+                                        .frame(width: 40, height: 40)
+                                        .overlay(
+                                            Text(reply.user.prefix(1))
+                                                .font(.semibold16)
+                                                .foregroundColor(.white)
+                                        )
+                                       
+                                    VStack(alignment: .leading) {
+                                        Text(reply.user)
+                                            .font(.semibold16)
+                                        Text(reply.timestamp, style: .relative) // 시간 포맷: "1시간 전"
+                                            .font(.regular12)
+                                            .foregroundColor(.gray)
+                                        Text(reply.content)
+                                            .font(.regular14)
+                                            .foregroundColor(.black)
+                                    }
+                                    
+                                }
+                            }
+                            Divider()
+                        }
+                        HStack {
+                            //로그인한 유저로 변경 필요
+                            Circle()
+                                .fill(Color.gray.opacity(0.5))
+                                .frame(width: 40, height: 40)
+                                .overlay(
+                                    Text(rounge.user.nickname.prefix(1))
+                                        .font(.semibold16)
+                                        .foregroundColor(.white)
+                                )
+                            TextField("댓글을 입력해주세요", text: $newComment)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .frame(height: 40)
+                            
+                            Button(action: {
+                                // 댓글 작성 로직
+                            }) {
+                                Text("게시")
+                                    .foregroundColor(newComment.isEmpty ? .gray : .customBlue)
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 7)
+                                    .background(Color.blue.opacity(0.1))
+                                    .cornerRadius(4)
+                                
+                            }
+                            .frame(height: 40)
+                            
+                            .disabled(newComment.isEmpty)
+                        }
+                        Spacer()
+                    }
+                    .padding()
+                }
                 //포스트(홈)일때
                 if model is Post {
                     Spacer()
@@ -215,11 +213,11 @@ struct HomeLoungeDetailView: View {
                         // 신청 로직
                     }) {
                         Text("신청하기")
-                            .font(.headline)
+                            .font(.semibold14)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
                             .frame(height: 50)
-                            .background(Color.blue)
+                            .background(Color.customBlue)
                             .cornerRadius(8)
                             .padding(.horizontal)
                     }
@@ -228,9 +226,10 @@ struct HomeLoungeDetailView: View {
                 
                 
             }
-                .navigationBarBackButtonHidden()
+            .navigationBarBackButtonHidden()
         }
     }
+}
 
 
 #Preview {
@@ -243,7 +242,11 @@ struct HomeLoungeDetailView: View {
         reply: [
             Reply(user: "Alice", content: "공지 확인했습니다. 감사합니다.", timestamp: Date()),
             Reply(user: "Bob", content: "규정 변경 관련 문의는 어디로 해야 하나요?", timestamp: Date()),
+            Reply(user: "Charlie", content: "수고하셨습니다!", timestamp: Date()),
             Reply(user: "Charlie", content: "수고하셨습니다!", timestamp: Date())
+            ,
+            Reply(user: "Charlie", content: "수고하셨습니다!", timestamp: Date()),
+            Reply(user: "Charlie", content: "수고하셨습니다!", timestamp: Date()),
         ],
         time: "2024-11-18 10:00",
         save: 120,
