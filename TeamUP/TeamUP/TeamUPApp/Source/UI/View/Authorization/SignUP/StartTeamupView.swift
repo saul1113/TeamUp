@@ -9,7 +9,6 @@ import SwiftUI
 
 struct StartTeamupView: View {
     @StateObject private var authManager = AuthManager()
-    @State private var email: String = ""
     
     var body: some View {
         NavigationStack {
@@ -19,9 +18,8 @@ struct StartTeamupView: View {
                     MainTabView()
                         .environmentObject(authManager) // MainTabView에 AuthManager 전달
                 } else {
-                    // 로그인되지 않은 경우 로그인/회원가입 화면 표시
-                    Color.customBlue.ignoresSafeArea()
-                    loginOrSignUpView
+                    // 로그인되지 않은 경우 로그인뷰
+                    LoginView()
                         .environmentObject(authManager) // LoginView, SignUpView에서 AuthManager 사용
                 }
             }
@@ -30,6 +28,16 @@ struct StartTeamupView: View {
                 if authManager.hasAccessToken() {
                     print("자동 로그인 상태: \(authManager.getToken(key: "access_token") ?? "")")
                     authManager.isAuthenticated = true
+                    
+                    // 서버에서 사용자 정보를 가져옴
+                    authManager.fetchUserInfo { result in
+                        switch result {
+                        case .success(let user):
+                            print("자동 로그인 사용자 정보 가져오기 성공: \(user)")
+                        case .failure(let error):
+                            print("자동 로그인 사용자 정보 가져오기 실패: \(error.localizedDescription)")
+                        }
+                    }
                 } else {
                     print("로그인이 필요합니다.")
                     authManager.isAuthenticated = false
@@ -62,7 +70,7 @@ struct StartTeamupView: View {
             Spacer()
                 .frame(height: 23)
             
-            NavigationLink(destination: SignUPView(email: $email)) {
+            NavigationLink(destination: SignUPView()) {
                 Text("회원가입")
                     .font(Font.semibold14)
                     .foregroundStyle(.white)
