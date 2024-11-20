@@ -40,6 +40,10 @@ struct LoginView: View {
                             loginErrorMessage = nil // 에러 메시지 초기화
                         }
                     )
+                    .keyboardType(.emailAddress)
+                    .textContentType(.emailAddress)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
                 }
                 
                 Spacer()
@@ -58,6 +62,10 @@ struct LoginView: View {
                             loginErrorMessage = nil // 에러 메시지 초기화
                         }
                     )
+                    .keyboardType(.asciiCapable)
+                    .textContentType(.password)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
                 }
                 
                 Spacer()

@@ -119,7 +119,7 @@ final class AuthManager: ObservableObject {
                 case .failure(let error):
                     debugPrint("Error: \(error)")
                     completion(.failure(error))
-                } 
+                }
             }
     }
     
@@ -220,5 +220,40 @@ final class AuthManager: ObservableObject {
     
     func hasAccessToken() -> Bool {
         return keychain.get(accessTokenKey) != nil
+    }
+    
+    func fetchUserInfo(completion: @escaping (Result<User, Error>) -> Void) {
+        defaultURL.path = "/user/signin/auto" // 엔드포인트 경로 설정
+        
+        guard let url = defaultURL.url else {
+            print("Invalid URL")
+            completion(.failure(NSError(domain: "Invalid URL", code: 400, userInfo: nil)))
+            return
+        }
+        
+        guard let accessToken = getToken(key: accessTokenKey) else {
+            print("Access token is missing")
+            completion(.failure(NSError(domain: "Missing Access Token", code: 401, userInfo: nil)))
+            return
+        }
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(accessToken)"
+        ]
+        
+        // POST 요청 실행
+        AF.request(url, method: .post, headers: headers)
+            .validate() // HTTP 상태 코드 200-299만 허용
+            .responseDecodable(of: User.self) { response in
+                switch response.result {
+                case .success(let user):
+                    self.user = user // 사용자 정보를 AuthManager에 저장
+                    completion(.success(user))
+                    print("자동 로그인 성공: \(user)")
+                case .failure(let error):
+                    print("자동 로그인 사용자 정보 가져오기 실패: \(error.localizedDescription)")
+                    completion(.failure(error))
+                }
+            }
     }
 }

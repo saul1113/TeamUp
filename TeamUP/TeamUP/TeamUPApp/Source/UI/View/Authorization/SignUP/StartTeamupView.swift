@@ -28,6 +28,16 @@ struct StartTeamupView: View {
                 if authManager.hasAccessToken() {
                     print("자동 로그인 상태: \(authManager.getToken(key: "access_token") ?? "")")
                     authManager.isAuthenticated = true
+                    
+                    // 서버에서 사용자 정보를 가져옴
+                    authManager.fetchUserInfo { result in
+                        switch result {
+                        case .success(let user):
+                            print("자동 로그인 사용자 정보 가져오기 성공: \(user)")
+                        case .failure(let error):
+                            print("자동 로그인 사용자 정보 가져오기 실패: \(error.localizedDescription)")
+                        }
+                    }
                 } else {
                     print("로그인이 필요합니다.")
                     authManager.isAuthenticated = false

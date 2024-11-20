@@ -11,7 +11,6 @@ struct MyProfileView: View {
     @EnvironmentObject var authManager: AuthManager
     @Environment(\.presentationMode) var presentationMode
     
-//    @State private var selfPR: String = "튜하. iOS 앱스쿨 6기 노량진튜산시장 놀러와라."
     @State private var tags: [String] = ["iOS", "앱개발"]
     @State private var link: String = "www.example.com"
     @State private var linkName: String = "노션"
@@ -91,7 +90,7 @@ struct MyProfileView: View {
                     Spacer()
                     
                     Button("로그아웃") {
-                        authManager.logout()
+                        showLogoutAlert.toggle()
                     }
                     .font(.bold16)
                     .foregroundStyle(.red)
