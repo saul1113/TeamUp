@@ -19,7 +19,7 @@ struct TagView: View {
                     ForEach(tags, id: \.self) { tag in
                         HStack {
                             Text(tag)
-                                .font(.system(size: 16))
+                                .font(.regular16)
                             
                             Button {
                                 removeTag(tag)
@@ -53,11 +53,11 @@ struct TagViewX: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(tags, id: \.self) { tag in
-                            Text(tag)
-                                .font(.system(size: 16))
-                        .padding(8)
-                        .background(Color.gray.opacity(0.1))
-                        .cornerRadius(8)
+                        Text(tag)
+                            .font(.regular16)
+                            .padding(8)
+                            .background(Color.gray.opacity(0.1))
+                            .cornerRadius(8)
                     }
                 }
             }

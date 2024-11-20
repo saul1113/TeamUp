@@ -90,14 +90,14 @@ struct HomeView: View {
                 .padding(.horizontal)
                 
                 // 스터디 카테고리 필터링
-                HStack(spacing: 5) {
+                HStack (spacing: 20){
                     ForEach([nil] + PostCategory.allCases, id: \.self) { category in
                         Button(action: {
                             selectedCategory = category
                         }) {
                             VStack(spacing: 2){
                                 Text(category?.rawValue ?? "전체")
-                                    .font(.bold16)
+                                    .font(.semibold20)
                                     .foregroundColor(selectedCategory == category ? .black : .gray)
                                 if selectedCategory == category {
                                     Rectangle()
@@ -106,21 +106,21 @@ struct HomeView: View {
                                         .animation(.easeInOut, value: selectedCategory)
                                 }
                             }
-                            .padding(.horizontal)
-                            .padding(.top, 3)
-                            .padding(.bottom, 10)
                         }
                     }
                     Spacer() // 버튼들을 왼쪽으로 밀기
                 }
+                .padding(.horizontal, 20)
+                .padding(.vertical, 20)
                 
                 // 최신순 저장많은순 조회순 필터링
-                HStack {
+                HStack (spacing: 15){
                     Button(action: {
                         selectedSort = "최신순"
                     }) {
                         Text("• 최신순")
                             .foregroundColor(selectedSort == "최신순" ? .customBlue : .gray)
+                            .font(.medium14)
                     }
                     
                     Button(action: {
@@ -128,6 +128,7 @@ struct HomeView: View {
                     }) {
                         Text("• 저장많은순")
                             .foregroundColor(selectedSort == "저장많은순" ? .customBlue : .gray)
+                            .font(.medium14)
                     }
                     
                     Button(action: {
@@ -135,6 +136,7 @@ struct HomeView: View {
                     }) {
                         Text("• 조회순")
                             .foregroundColor(selectedSort == "조회순" ? .customBlue : .gray)
+                            .font(.medium14)
                     }
                 }
                 .padding(.horizontal)
@@ -179,6 +181,7 @@ struct CustomCheckBox: ToggleStyle {
         }, label: {
             HStack {
                 Image(systemName: configuration.isOn ? "checkmark.circle.fill" : "circle")
+                    .foregroundStyle(.customBlue)
                 configuration.label
             }
         })

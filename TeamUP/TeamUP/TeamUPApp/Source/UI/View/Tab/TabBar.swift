@@ -19,9 +19,10 @@ struct TabBar: View {
                     VStack(alignment: .center,spacing: 0){
                         Image(systemName: "house")
                             .frame(width: 30,height: 30)
-                            .foregroundColor(selectedTab == .home ? .accentColor : Color.projectTab)
-                        Text("홈")
-                            .foregroundColor(selectedTab == .home ? .accentColor : Color.projectTab)
+                            .foregroundColor(selectedTab == .home ? .customBlue : Color.projectTab)
+                        Text("모집")
+                            .foregroundColor(selectedTab == .home ? .customBlue : Color.projectTab)
+                            .font(.semibold16)
                     }
                     .frame(height: 50)
                     .frame(maxWidth: .infinity)
@@ -32,9 +33,10 @@ struct TabBar: View {
                     VStack(alignment: .center,spacing: 0){
                         Image(systemName: "chair.lounge")
                             .frame(width: 30,height: 30)
-                            .foregroundColor(selectedTab == .lounge ? .accentColor : Color.projectTab)
+                            .foregroundColor(selectedTab == .lounge ? .customBlue : Color.projectTab)
                         Text("라운지")
-                            .foregroundColor(selectedTab == .lounge ?  .accentColor : Color.projectTab)
+                            .foregroundColor(selectedTab == .lounge ?  .customBlue : Color.projectTab)
+                            .font(.semibold16)
                     }
                     .frame(height: 50)
                     .frame(maxWidth: .infinity)
@@ -46,9 +48,10 @@ struct TabBar: View {
                         Image(systemName: "plus")
                             .frame(width: 30,height: 30)
                             .aspectRatio(contentMode: .fit)
-                            .foregroundStyle(selectedTab == .post  ? .accentColor : Color.projectTab)
+                            .foregroundStyle(selectedTab == .post  ? .customBlue : Color.projectTab)
                         Text("플러스")
-                            .foregroundStyle(selectedTab == .post  ? .accentColor : Color.projectTab)
+                            .foregroundStyle(selectedTab == .post  ? .customBlue : Color.projectTab)
+                            .font(.semibold16)
                     }
                     .frame(height: 50)
                     .frame(maxWidth: .infinity)
@@ -60,9 +63,9 @@ struct TabBar: View {
                         Image(systemName: "message")
                             .frame(width: 30,height: 30)
                             .aspectRatio(contentMode: .fit)
-                            .foregroundStyle(selectedTab == .chat  ? .accentColor : Color.projectTab)
+                            .foregroundStyle(selectedTab == .chat  ? .customBlue : Color.projectTab)
                         Text("채팅")
-                            .foregroundStyle(selectedTab == .chat  ? .accentColor : Color.projectTab)
+                            .foregroundStyle(selectedTab == .chat  ? .customBlue : Color.projectTab)
                     }
                     .frame(height: 50)
                     .frame(maxWidth: .infinity)
@@ -74,8 +77,9 @@ struct TabBar: View {
                         Image(systemName: "person.fill")
                             .frame(width: 30,height: 30)
                         Text("프로필")
+                            .font(.semibold16)
                     }
-                    .foregroundColor(selectedTab == .profile ? .accentColor : Color.projectTab)
+                    .foregroundColor(selectedTab == .profile ? .customBlue : Color.projectTab)
                     .frame(height: 50)
                     .frame(maxWidth: .infinity)
                 }

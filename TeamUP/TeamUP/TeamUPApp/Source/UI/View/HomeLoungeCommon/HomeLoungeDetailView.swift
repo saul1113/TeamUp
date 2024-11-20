@@ -23,7 +23,7 @@ struct HomeLoungeDetailView: View {
                 VStack(alignment: .leading, spacing: 16) {
                     
                     Text(model.categoryString)
-                        .font(.semibold12)
+                        .font(.semibold14)
                         .fontWeight(.bold)
                         .padding(.vertical, 4)
                         .padding(.horizontal, 8)
@@ -100,12 +100,12 @@ struct HomeLoungeDetailView: View {
                                 saveCount -= 1
                             }
                         } label: {
-                            
                             Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
-                                .foregroundColor(.blue)
+                                .foregroundColor(.customBlue)
+                                .padding(.trailing, -5)
                             Text("\(saveCount)") // 변경된 saveCount 표시
                                 .font(.regular14)
-                                .foregroundColor(.gray)
+                                .foregroundColor(.black)
                         }
                         
                         
@@ -176,12 +176,10 @@ struct HomeLoungeDetailView: View {
                             Button(action: {
                                 // 댓글 작성 로직
                             }) {
-                                Text("게시")
-                                    .foregroundColor(newComment.isEmpty ? .gray : .customBlue)
-                                    .padding(.horizontal, 12)
-                                    .padding(.vertical, 7)
-                                    .background(Color.blue.opacity(0.1))
-                                    .cornerRadius(4)
+                                Image(systemName: "arrow.up.circle.fill")
+                                    .resizable()
+                                    .frame(width: 30,height: 30)
+                                    .foregroundStyle(newComment.isEmpty ? .gray : Color.customBlue)
                                 
                             }
                             .frame(height: 40)
