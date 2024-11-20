@@ -180,16 +180,18 @@ final class AuthManager: ObservableObject {
         ]
         
         AF.request(url, method: .post, headers: headers)
-            .validate() // HTTP 상태 코드 검증
-            .responseDecodable(of: String.self) { response in
+            .responseDecodable(of: [String: String].self) { response in
                 switch response.result {
                 case .success(let newToken):
-                    self.keychain.set(newToken, forKey: self.accessTokenKey, withAccess: .accessibleAfterFirstUnlock)
-                    print("토큰 갱신 성공: \(newToken)")
+                    self.keychain.set(newToken["access_token"]!, forKey: self.accessTokenKey)
+                    print("토큰 갱신 성공: \(newToken["access_token"]!)")
                     completion(true)
                 case .failure(let error):
+                    print(response.response?.statusCode)
                     print("토큰 갱신 실패: \(error.localizedDescription)")
-                    self.clearToken() // 리프레쉬 토큰도 만료되었다면 모든 인증 정보 삭제
+                    if let res = response.response, res.statusCode == 401 {
+                        self.clearToken() // 리프레쉬 토큰도 만료되었다면 모든 인증 정보 삭제
+                    }
                     completion(false)
                 }
             }
@@ -287,7 +289,6 @@ final class AuthManager: ObservableObject {
                     completion(.success(user))
                     print("자동 로그인 성공: \(user)")
                 case .failure(let error):
-                    print(response.response?.statusCode)
                     if let res = response.response, res.statusCode == 401 {
                         // 토큰 만료 상태라면 갱신 시도
                         print("토큰 만료: 리프레쉬 토큰으로 갱신 시도")
