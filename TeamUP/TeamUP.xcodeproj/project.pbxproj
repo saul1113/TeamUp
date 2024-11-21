@@ -41,6 +41,10 @@
 		2CBEEB3F2CEB001B001CE6ED /* GroupChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBEEB3E2CEB001B001CE6ED /* GroupChatListView.swift */; };
 		50241F922CEB8D10002014EF /* PrivateChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50241F912CEB8D10002014EF /* PrivateChatListView.swift */; };
 		50241F942CEB8D1B002014EF /* PrivateChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50241F932CEB8D1B002014EF /* PrivateChatView.swift */; };
+		50A7A87C2CEEC220002EF75F /* MyPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7A87A2CEEC220002EF75F /* MyPostsView.swift */; };
+		50A7A87E2CEEC22A002EF75F /* MyRecruitingTeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7A87D2CEEC22A002EF75F /* MyRecruitingTeamsView.swift */; };
+		50A7A8802CEEC236002EF75F /* MyAppliedTeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7A87F2CEEC236002EF75F /* MyAppliedTeamsView.swift */; };
+		50A7A8822CEECE6E002EF75F /* TeamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7A8812CEECE6E002EF75F /* TeamDetailView.swift */; };
 		770E953F2CE722E500761A03 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E953E2CE722E500761A03 /* BackButton.swift */; };
 		770E95412CE7232E00761A03 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E95402CE7232E00761A03 /* CustomFont.swift */; };
 		771306DD2CEB1CAC00D47BD5 /* TextEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771306DC2CEB1CAC00D47BD5 /* TextEditorView.swift */; };
@@ -113,6 +117,10 @@
 		2CBEEB3E2CEB001B001CE6ED /* GroupChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatListView.swift; sourceTree = "<group>"; };
 		50241F912CEB8D10002014EF /* PrivateChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateChatListView.swift; sourceTree = "<group>"; };
 		50241F932CEB8D1B002014EF /* PrivateChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateChatView.swift; sourceTree = "<group>"; };
+		50A7A87A2CEEC220002EF75F /* MyPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsView.swift; sourceTree = "<group>"; };
+		50A7A87D2CEEC22A002EF75F /* MyRecruitingTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecruitingTeamsView.swift; sourceTree = "<group>"; };
+		50A7A87F2CEEC236002EF75F /* MyAppliedTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppliedTeamsView.swift; sourceTree = "<group>"; };
+		50A7A8812CEECE6E002EF75F /* TeamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailView.swift; sourceTree = "<group>"; };
 		770E953E2CE722E500761A03 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		770E95402CE7232E00761A03 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		770E95422CE724A700761A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -303,6 +311,7 @@
 			children = (
 				2CBE306E2CEDBE6C00066EB5 /* FriendProfileView.swift */,
 				2CBE306F2CEDBE6C00066EB5 /* MyProfileView.swift */,
+				50A7A87B2CEEC220002EF75F /* myTeam */,
 				7793F18A2CEC6B32007595D4 /* Edit */,
 				FE2061542CE990F80001FCD1 /* Policies */,
 				FE2061492CE9679D0001FCD1 /* Sub */,
@@ -423,6 +432,17 @@
 				2C2E58132CE71F0D008766A8 /* ProjectMoyoApp.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		50A7A87B2CEEC220002EF75F /* myTeam */ = {
+			isa = PBXGroup;
+			children = (
+				50A7A87A2CEEC220002EF75F /* MyPostsView.swift */,
+				50A7A87D2CEEC22A002EF75F /* MyRecruitingTeamsView.swift */,
+				50A7A8812CEECE6E002EF75F /* TeamDetailView.swift */,
+				50A7A87F2CEEC236002EF75F /* MyAppliedTeamsView.swift */,
+			);
+			path = myTeam;
 			sourceTree = "<group>";
 		};
 		770E953D2CE722CD00761A03 /* Component */ = {
@@ -640,6 +660,8 @@
 				FE2061402CE951380001FCD1 /* InformationModel.swift in Sources */,
 				7793F1882CEC6534007595D4 /* TagView.swift in Sources */,
 				2C2E581B2CE71F0D008766A8 /* HomeView.swift in Sources */,
+				50A7A87C2CEEC220002EF75F /* MyPostsView.swift in Sources */,
+				50A7A87E2CEEC22A002EF75F /* MyRecruitingTeamsView.swift in Sources */,
 				FE2061372CE949780001FCD1 /* InformationView.swift in Sources */,
 				FE2061482CE9612F0001FCD1 /* CustomBackButtonModifier.swift in Sources */,
 				50241F922CEB8D10002014EF /* PrivateChatListView.swift in Sources */,
@@ -667,6 +689,8 @@
 				2C2E58212CE71F0D008766A8 /* Color.swift in Sources */,
 				EBA041EF2CEED5140031E738 /* QuestionDetailView.swift in Sources */,
 				7793F1862CEC2F03007595D4 /* ToggleButtonView.swift in Sources */,
+				50A7A8802CEEC236002EF75F /* MyAppliedTeamsView.swift in Sources */,
+				50A7A8822CEECE6E002EF75F /* TeamDetailView.swift in Sources */,
 				FE20614B2CE967AD0001FCD1 /* AnnouncementView.swift in Sources */,
 				FE2061532CE983400001FCD1 /* SettingView.swift in Sources */,
 				EBA041EB2CEED3D50031E738 /* QuestionModel.swift in Sources */,
