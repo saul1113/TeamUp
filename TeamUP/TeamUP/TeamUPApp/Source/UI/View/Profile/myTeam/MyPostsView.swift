@@ -59,8 +59,6 @@ struct MyPostsView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                
-                
                 // 탭 전환
                 Picker("Tabs", selection: $selectedTab) {
                     Text("홈").tag(0)
@@ -101,12 +99,19 @@ struct MyPostsView: View {
                 }
                 .listStyle(.plain)
             }
-            //        .navigationTitle("")
-        }
-        .navigationBarBackButtonHidden(true)
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                BackButtonBlack()
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    BackButtonBlack()
+                }
+                
+                ToolbarItem(placement: .principal) {
+                    Text("내가 쓴 글 관리")
+                        .font(.semibold20)
+                        .foregroundColor(.black)
+                }
+                
             }
         }
     }

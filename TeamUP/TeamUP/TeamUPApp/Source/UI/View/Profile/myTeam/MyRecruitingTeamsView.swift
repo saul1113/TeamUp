@@ -40,10 +40,6 @@ struct MyRecruitingTeamsView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Text("내가 모집중인 팀")
-                    .font(.semibold18)
-                    .padding(.top, 10)
-                
                 List(recruitingTeams) { team in
                     NavigationLink(destination: TeamDetailView(team: team)) {
                         ListRowView(model: team, isMyPage: false)
@@ -52,9 +48,17 @@ struct MyRecruitingTeamsView: View {
                 .listStyle(.plain)
             }
             .navigationBarBackButtonHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     BackButtonBlack()
+                }
+                
+                ToolbarItem(placement:.principal) {
+                    Text("내가 쓴 글 관리")
+                        .font(.semibold20)
+                        .foregroundColor(.black)
+                    
                 }
             }
         }
