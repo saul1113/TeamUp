@@ -41,6 +41,7 @@
 		2CBEEB3F2CEB001B001CE6ED /* GroupChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBEEB3E2CEB001B001CE6ED /* GroupChatListView.swift */; };
 		50241F922CEB8D10002014EF /* PrivateChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50241F912CEB8D10002014EF /* PrivateChatListView.swift */; };
 		50241F942CEB8D1B002014EF /* PrivateChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50241F932CEB8D1B002014EF /* PrivateChatView.swift */; };
+		770C29DE2CEF0D2C005C7844 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C29DD2CEF0D2C005C7844 /* ImagePicker.swift */; };
 		50A7A87C2CEEC220002EF75F /* MyPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7A87A2CEEC220002EF75F /* MyPostsView.swift */; };
 		50A7A87E2CEEC22A002EF75F /* MyRecruitingTeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7A87D2CEEC22A002EF75F /* MyRecruitingTeamsView.swift */; };
 		50A7A8802CEEC236002EF75F /* MyAppliedTeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7A87F2CEEC236002EF75F /* MyAppliedTeamsView.swift */; };
@@ -117,6 +118,7 @@
 		2CBEEB3E2CEB001B001CE6ED /* GroupChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatListView.swift; sourceTree = "<group>"; };
 		50241F912CEB8D10002014EF /* PrivateChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateChatListView.swift; sourceTree = "<group>"; };
 		50241F932CEB8D1B002014EF /* PrivateChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateChatView.swift; sourceTree = "<group>"; };
+		770C29DD2CEF0D2C005C7844 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		50A7A87A2CEEC220002EF75F /* MyPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsView.swift; sourceTree = "<group>"; };
 		50A7A87D2CEEC22A002EF75F /* MyRecruitingTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecruitingTeamsView.swift; sourceTree = "<group>"; };
 		50A7A87F2CEEC236002EF75F /* MyAppliedTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppliedTeamsView.swift; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 				FE3F76A42CEE541400137A99 /* PostViewModel.swift */,
 				EBA041E82CEEC68F0031E738 /* AnnouncementViewModel.swift */,
 				EBA041EC2CEED4280031E738 /* QuestionViewModel.swift */,
+				770C29DD2CEF0D2C005C7844 /* ImagePicker.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -689,6 +692,7 @@
 				2C2E58212CE71F0D008766A8 /* Color.swift in Sources */,
 				EBA041EF2CEED5140031E738 /* QuestionDetailView.swift in Sources */,
 				7793F1862CEC2F03007595D4 /* ToggleButtonView.swift in Sources */,
+				770C29DE2CEF0D2C005C7844 /* ImagePicker.swift in Sources */,
 				50A7A8802CEEC236002EF75F /* MyAppliedTeamsView.swift in Sources */,
 				50A7A8822CEECE6E002EF75F /* TeamDetailView.swift in Sources */,
 				FE20614B2CE967AD0001FCD1 /* AnnouncementView.swift in Sources */,
