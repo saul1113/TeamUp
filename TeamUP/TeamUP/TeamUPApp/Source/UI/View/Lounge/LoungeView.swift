@@ -162,6 +162,7 @@ struct LoungeView: View {
                     
                     NavigationLink(destination: HomeLoungeDetailView(model: rounge)) {  // NavigationLink 추가
                         ListRowView(model: rounge, isMyPage: false)
+                            .padding(.vertical, 2)
                     }
                 }
                 

@@ -148,7 +148,8 @@ struct HomeLoungeDetailView: View {
                                                 .foregroundColor(.white)
                                         )
                                     
-                                    VStack(alignment: .leading) {
+                                    VStack(alignment: .leading, spacing: 3) {
+                                        Spacer().frame(height: 3)
                                         Text(reply.user)
                                             .font(.semibold16)
                                         Text(reply.timestamp, style: .relative) // 시간 포맷: "1시간 전"
@@ -158,6 +159,7 @@ struct HomeLoungeDetailView: View {
                                             .font(.regular14)
                                             .foregroundColor(.black)
                                     }
+                                   
                                     
                                 }
                             }
@@ -193,7 +195,7 @@ struct HomeLoungeDetailView: View {
                         }
                         Spacer()
                     }
-                    .padding()
+                    .padding(.horizontal)
                 }
                 //포스트(홈)일때
                 if model is PostModelStruct {

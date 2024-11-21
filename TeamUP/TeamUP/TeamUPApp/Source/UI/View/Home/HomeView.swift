@@ -153,18 +153,20 @@ struct HomeView: View {
                 }
             }
             .padding(.horizontal)
-            .padding(.bottom, 10)
+            //.padding(.bottom, 10)
             
             // 모집중 필터링
-            Toggle(isOn: $isRecruit) {
-                Text("모집중만 보기")
-                    .font(.semibold12)
-                    .foregroundStyle(Color.black)
-            }
-            .toggleStyle(CustomCheckBox())
-            .padding(.horizontal)
-            .padding(.bottom, -10)
-            
+            HStack(spacing: 0) {
+                Spacer()
+                Toggle(isOn: $isRecruit) {
+                    Text("모집중만 보기")
+                        .font(.semibold12)
+                        .foregroundStyle(Color.black)
+                }
+                .toggleStyle(CustomCheckBox())
+                .padding(.horizontal)
+                
+            }.padding(.bottom, -15)
             
             ScrollView {
                 ForEach(sortedItems.filter { post in
@@ -178,6 +180,7 @@ struct HomeView: View {
                     
                     NavigationLink(destination: HomeLoungeDetailView(model: post)) {  // NavigationLink 추가
                         ListRowView(model: post, isMyPage: false)
+                            .padding(.vertical, 2)
                     }
                 }
                 .padding(20)
