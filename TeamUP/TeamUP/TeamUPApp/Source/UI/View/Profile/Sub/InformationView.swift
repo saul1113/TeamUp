@@ -11,12 +11,7 @@ import SwiftUI
 struct InformationView: View {
     private let padding: CGFloat = 20
     private var title: String = ""
-    private var contents: [InformationDetailView] = []
-    
-    init(title: String, contents: [InformationDetailView]) {
-        self.title = title
-        self.contents = contents
-    }
+    @StateObject private var viewModel = AnnouncementViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -24,32 +19,32 @@ struct InformationView: View {
                 .font(.bold24)
                 .padding(.horizontal, padding)
             
-            List(contents, id: \.item.id) { content in
-                ExpandedDividerWithVStackView {
-                    NavigationLink {
-                        content
-                            .navigationTitle(title)
-                            .backButton()
-                    } label: {
-                        Text(content.item.title)
-                            .font(.semibold18)
-                    }
+            List(viewModel.announcementList) { item in
+                NavigationLink {
+                    InformationDetailView(item: item)
+                        .navigationTitle(item.title)
+                } label: {
+                    Text(item.title)
+                        .font(.semibold18)
                 }
                 .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
             .listRowInsets(EdgeInsets(top: 0, leading: padding, bottom: 0, trailing: padding))
         }
-        .navigationTitle(title)
-        .backButton()
+        .navigationTitle("공지사항")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem (placement: .topBarLeading) {
+                BackButtonBlack()
+            }
+        }
     }
 }
 
 #Preview {
     NavigationStack {
-        InformationView(title: "공지사항", contents: [
-            InformationDetailView(item: InformationModel(title: "[공지]", content: "공지사항 - 1", createAt: "2024.11.17")),
-            InformationDetailView(item: InformationModel(title: "[공지]", content: "공지사항 - 1", createAt: "2024.11.17"))
-        ])
+        InformationView()
     }
 }
