@@ -17,7 +17,6 @@
 		2C2E581D2CE71F0D008766A8 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E58012CE71F0D008766A8 /* PostView.swift */; };
 		2C2E581F2CE71F0D008766A8 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E58052CE71F0D008766A8 /* MainTabView.swift */; };
 		2C2E58202CE71F0D008766A8 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E58062CE71F0D008766A8 /* TabBar.swift */; };
-		2C2E58212CE71F0D008766A8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E580A2CE71F0D008766A8 /* Color.swift */; };
 		2C2E58222CE71F0D008766A8 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E580C2CE71F0D008766A8 /* RoundedCorner.swift */; };
 		2C2E58242CE71F0D008766A8 /* ProjectMoyoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E58132CE71F0D008766A8 /* ProjectMoyoApp.swift */; };
 		2C2E58262CE71F0D008766A8 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C2E57E42CE71F0D008766A8 /* Pretendard-Bold.ttf */; };
@@ -106,7 +105,6 @@
 		2C2E58012CE71F0D008766A8 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		2C2E58052CE71F0D008766A8 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		2C2E58062CE71F0D008766A8 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
-		2C2E580A2CE71F0D008766A8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2C2E580C2CE71F0D008766A8 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		2C2E58132CE71F0D008766A8 /* ProjectMoyoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMoyoApp.swift; sourceTree = "<group>"; };
 		2C6D8CE02CEB13F3001B8F08 /* GroupChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatView.swift; sourceTree = "<group>"; };
@@ -336,6 +334,7 @@
 		2C2E58082CE71F0D008766A8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2C2E58072CE71F0D008766A8 /* Tab */,
 				F6CFC5D22CEB718A003C0087 /* HomeLoungeCommon */,
 				2C2E57FA2CE71F0D008766A8 /* Authorization */,
 				2C2E57FC2CE71F0D008766A8 /* Chat */,
@@ -343,7 +342,6 @@
 				2C2E58002CE71F0D008766A8 /* Lounge */,
 				2C2E58022CE71F0D008766A8 /* Post */,
 				2C2E58042CE71F0D008766A8 /* Profile */,
-				2C2E58072CE71F0D008766A8 /* Tab */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -354,14 +352,6 @@
 				2C2E58082CE71F0D008766A8 /* View */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		2C2E580B2CE71F0D008766A8 /* Color */ = {
-			isa = PBXGroup;
-			children = (
-				2C2E580A2CE71F0D008766A8 /* Color.swift */,
-			);
-			path = Color;
 			sourceTree = "<group>";
 		};
 		2C2E580D2CE71F0D008766A8 /* Extension */ = {
@@ -380,7 +370,6 @@
 			children = (
 				FE2061462CE9610A0001FCD1 /* ViewModifier */,
 				770E953D2CE722CD00761A03 /* Component */,
-				2C2E580B2CE71F0D008766A8 /* Color */,
 				2C2E580D2CE71F0D008766A8 /* Extension */,
 			);
 			path = Uitl;
@@ -685,11 +674,9 @@
 				2C2E581F2CE71F0D008766A8 /* MainTabView.swift in Sources */,
 				F6CFC5C32CEB2C38003C0087 /* HomeLoungeDetailView.swift in Sources */,
 				2C2E58202CE71F0D008766A8 /* TabBar.swift in Sources */,
-				2C2E58212CE71F0D008766A8 /* Color.swift in Sources */,
 				F6CFC5BB2CEB2429003C0087 /* PostModel.swift in Sources */,
 				FE20614E2CE969070001FCD1 /* QuestionView.swift in Sources */,
 				2C2E58202CE71F0D008766A8 /* TabBar.swift in Sources */,
-				2C2E58212CE71F0D008766A8 /* Color.swift in Sources */,
 				EBA041EF2CEED5140031E738 /* QuestionDetailView.swift in Sources */,
 				7793F1862CEC2F03007595D4 /* ToggleButtonView.swift in Sources */,
 				770C29DE2CEF0D2C005C7844 /* ImagePicker.swift in Sources */,
@@ -843,7 +830,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 6R3M7VGRP2;
+				DEVELOPMENT_TEAM = U4BQZ3AXAA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TeamUP/Info.plist;
@@ -878,7 +865,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 6R3M7VGRP2;
+				DEVELOPMENT_TEAM = U4BQZ3AXAA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TeamUP/Info.plist;

@@ -105,9 +105,10 @@ struct MyProfileView: View {
                     
                     Spacer().frame(height: 3)
                     
-                    Divider()
+                    Rectangle()
+                        .fill(Color.gray)
+                        .frame(maxWidth: .infinity)
                         .frame(height: 3)
-                        .background(Color.gray)
                     
                     VStack (alignment: .leading, spacing: 20) {
                         Text("내가 쓴 글")
@@ -179,4 +180,5 @@ struct MyProfileView: View {
     NavigationStack {
         MyProfileView()
     }
+    .environmentObject(AuthManager())
 }

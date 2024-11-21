@@ -22,14 +22,14 @@ struct TabBar: View {
                             .frame(height: 10)
                         Image(systemName: "house")
                             .resizable()
-                            .foregroundStyle(selectedTab == .home  ? .customBlue : Color.projectTab)
+                            .foregroundStyle(selectedTab == .home  ? .customBlue : .customTab)
                             .frame(width: 20, height: 20)
                             .scaledToFit()
                         
                         Spacer()
                             .frame(height: 4)
                         Text("모집")
-                            .foregroundColor(selectedTab == .home ? .customBlue : Color.projectTab)
+                            .foregroundColor(selectedTab == .home ? .customBlue : .customTab)
                             .font(.semibold16)
                         
                         Spacer()
@@ -52,13 +52,13 @@ struct TabBar: View {
                         
                         Image(systemName: "chair.lounge")
                             .resizable()
-                            .foregroundStyle(selectedTab == .lounge  ? .customBlue : Color.projectTab)
+                            .foregroundStyle(selectedTab == .lounge  ? .customBlue : .customTab)
                             .frame(width: 20, height: 20)
                             .scaledToFit()
                         Spacer()
                             .frame(height: 4)
                         Text("라운지")
-                            .foregroundColor(selectedTab == .lounge ?  .customBlue : Color.projectTab)
+                            .foregroundColor(selectedTab == .lounge ?  .customBlue : .customTab)
                             .font(.semibold16)
                         
                         Spacer()
@@ -78,12 +78,12 @@ struct TabBar: View {
                         Image(.teamUpPlusIcon)
                             .resizable()
                             .frame(width: 50,height: 50)
-                            .foregroundStyle(selectedTab == .post  ? .customBlue : Color.projectTab)
+                            .foregroundStyle(selectedTab == .post  ? .customBlue : .customTab)
                             .clipShape(Circle())
                             .shadow(radius: 3)
                             .offset(y: -10)
                         Text("")
-                            .foregroundStyle(selectedTab == .post  ? .customBlue : Color.projectTab)
+                            .foregroundStyle(selectedTab == .post  ? .customBlue : .customTab)
                             .font(.semibold16)
                     }
                     .frame(height: 50)
@@ -98,7 +98,7 @@ struct TabBar: View {
                         
                         Image(systemName: "message")
                             .resizable()
-                            .foregroundStyle(selectedTab == .chat ? .customBlue : Color.projectTab)
+                            .foregroundStyle(selectedTab == .chat ? .customBlue : .customTab)
                             .frame(width: 20, height: 20)
                             .scaledToFit()
                         
@@ -106,7 +106,7 @@ struct TabBar: View {
                             .frame(height: 4)
                         
                         Text("채팅")
-                            .foregroundStyle(selectedTab == .chat  ? .customBlue : Color.projectTab)
+                            .foregroundStyle(selectedTab == .chat  ? .customBlue : .customTab)
                             .font(.semibold16)
                         
                         Spacer()
@@ -125,7 +125,7 @@ struct TabBar: View {
                         Spacer()
                         Image(systemName: "person.fill")
                             .resizable()
-                            .foregroundStyle(selectedTab == .profile ? .customBlue : Color.projectTab)
+                            .foregroundStyle(selectedTab == .profile ? .customBlue : .customTab)
                             .frame(width: 20, height: 20)
                             .scaledToFit()
                         
@@ -139,7 +139,7 @@ struct TabBar: View {
                             .fill(selectedTab == .profile ?  .customBlue : Color.clear)
                             .frame(height: 4)
                     }
-                    .foregroundColor(selectedTab == .profile ? .customBlue : Color.projectTab)
+                    .foregroundColor(selectedTab == .profile ? .customBlue : .customTab)
                     .frame(maxWidth: .infinity)
                 }
             }
