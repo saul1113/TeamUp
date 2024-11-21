@@ -64,7 +64,7 @@ struct MyRecruitingTeamsView: View {
                 
                 ToolbarItem(placement: .principal) {
                     Text("내가 모집중인 팀")
-                        .font(.semibold20)
+                        .font(.semibold18)
                         .foregroundColor(.black)
                 }
             }

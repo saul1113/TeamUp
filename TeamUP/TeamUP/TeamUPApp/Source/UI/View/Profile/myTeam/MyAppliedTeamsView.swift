@@ -28,18 +28,27 @@ struct MyAppliedTeamsView: View {
         )
     ]
     
+    var filteredTeams: [Post] {
+        switch selectedTab {
+        case 1: // 신청대기
+            return appliedTeams.filter { $0.isRecruit }
+        case 2: // 신청완료
+            return appliedTeams.filter { !$0.isRecruit }
+        default: // 전체
+            return appliedTeams
+        }
+    }
+    
     var body: some View {
         VStack {
-            // 탭 전환
-            Picker("Tabs", selection: $selectedTab) {
-                Text("전체").tag(0)
-                Text("신청대기").tag(1)
-                Text("신청완료").tag(2)
+            HStack {
+                segmentButton(title: "전체", tab: 0)
+                segmentButton(title: "신청대기", tab: 1)
+                segmentButton(title: "신청완료", tab: 2)
+                Spacer()
             }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding(.horizontal)
-            
-            Divider()
+            .font(.semibold20)
+            .padding(.horizontal, 20)
             
             // 리스트
             List {
@@ -102,8 +111,34 @@ struct MyAppliedTeamsView: View {
             
             ToolbarItem(placement: .principal) {
                 Text("내가 신청한 팀")
-                    .font(.semibold20)
+                    .font(.semibold18)
                     .foregroundColor(.black)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func segmentButton(title: String, tab: Int) -> some View {
+        Button(action: {
+            withAnimation(.easeInOut) {
+                selectedTab = tab
+            }
+        }) {
+            VStack(spacing: 5) {
+                Text(title)
+                    .foregroundColor(selectedTab == tab ? .black : .gray)
+                    .background(
+                        GeometryReader { geometry in
+                            if selectedTab == tab {
+                                Capsule()
+                                    .fill(Color.customBlue)
+                                    .frame(width: geometry.size.width, height: 2)
+                                    .offset(y: 20)
+                                    .animation(.easeInOut, value: selectedTab)
+                            }
+                        }
+                            .frame(height: 0.5)
+                    )
             }
         }
     }

@@ -107,7 +107,7 @@ struct MyPostsView: View {
                         }
                     }
                 }
-                .font(.semibold24)
+                .font(.semibold20)
                 .padding(.horizontal, 20)
                 
                 if let currentUserID = authManager.user?.email {
@@ -162,7 +162,7 @@ struct MyPostsView: View {
                 }
                 ToolbarItem(placement: .principal) {
                     Text("내가 쓴 글 관리")
-                        .font(.semibold20)
+                        .font(.semibold18)
                         .foregroundColor(.black)
                 }
             }
