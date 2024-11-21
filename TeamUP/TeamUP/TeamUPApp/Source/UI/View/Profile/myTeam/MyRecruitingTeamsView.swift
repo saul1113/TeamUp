@@ -55,7 +55,7 @@ struct MyRecruitingTeamsView: View {
                 }
                 
                 ToolbarItem(placement:.principal) {
-                    Text("내가 쓴 글 관리")
+                    Text("내가 모집중인 팀")
                         .font(.semibold20)
                         .foregroundColor(.black)
                     

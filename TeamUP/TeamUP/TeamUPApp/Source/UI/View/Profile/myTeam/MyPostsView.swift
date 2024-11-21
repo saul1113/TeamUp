@@ -10,9 +10,12 @@ import SwiftUI
 struct MyPostsView: View {
     @State private var selectedTab = 0
     @State private var searchText = ""
+    @EnvironmentObject var postViewModel: PostViewModel
+    @EnvironmentObject var authManager: AuthManager
     
+    /*
     // 홈 글 데이터
-    let homePosts: [Post] = [
+    @State private var homePosts: [Post] = [
         Post(
             category: .study,
             user: User(id: "1", email: "test@test.com", password: "123", nickname: "수민", profileImageName: "default.png"),
@@ -42,7 +45,7 @@ struct MyPostsView: View {
     ]
     
     // 라운지 글 데이터
-    let loungePosts: [Rounge] = [
+    @State private var loungePosts: [Rounge] = [
         Rounge(
             category: .qna,
             user: User(id: "3", email: "test3@test.com", password: "123", nickname: "소영", profileImageName: "default.png"),
@@ -56,9 +59,9 @@ struct MyPostsView: View {
         ),
         Rounge(
             category: .qna,
-            user: User(id: "4", email: "test3@test.com", password: "123", nickname: "승호", profileImageName: "default.png"),
+            user: User(id: "4", email: "test4@test.com", password: "123", nickname: "승호", profileImageName: "default.png"),
             title: "질문 있습니다!",
-            content: "다들 지치고 힘들때 어떻게 하나요?",
+            content: "다들 지치고 힘들 때 어떻게 하나요?",
             reply: [],
             time: "5시간 전",
             save: 10,
@@ -66,72 +69,89 @@ struct MyPostsView: View {
             hasTag: ["질문"]
         )
     ]
+     */
+    
     
     var body: some View {
         NavigationStack {
             VStack {
                 
-                    HStack (alignment: .bottom,spacing: 0) {
-                        Button(action: {
-                            withAnimation(.easeInOut) {
-                                selectedTab = 0
-                            }
-                        }) {
-                            VStack(spacing: 5) {
-                                Text("홈")
-                                    .frame(maxWidth: .infinity)
-                                    .foregroundColor(selectedTab == 0 ? .black : .gray)
-                                Rectangle()
-                                    .fill(selectedTab == 0 ? Color.customBlue : Color.gray)
-                                    .frame(height:selectedTab == 0 ? 3 : 0.4)
-                            }
+                HStack (alignment: .bottom,spacing: 0) {
+                    Button(action: {
+                        withAnimation(.easeInOut) {
+                            selectedTab = 0
                         }
-                        
-                        Button(action: {
-                            withAnimation(.easeInOut) {
-                                selectedTab = 1
-                            }
-                        }) {
-                            VStack(spacing: 5) {
-                                Text("라운지")
-                                    .frame(maxWidth: .infinity)
-                                    .foregroundColor(selectedTab == 1 ? .black : .gray)
-                                Rectangle()
-                                    .fill(selectedTab == 1 ? Color.customBlue : Color.gray)
-                                    .frame(height:selectedTab == 1 ? 3 : 0.4)
-                            }
+                    }) {
+                        VStack(spacing: 5) {
+                            Text("홈")
+                                .frame(maxWidth: .infinity)
+                                .foregroundColor(selectedTab == 0 ? .black : .gray)
+                            Rectangle()
+                                .fill(selectedTab == 0 ? Color.customBlue : Color.gray)
+                                .frame(height:selectedTab == 0 ? 3 : 0.4)
                         }
                     }
-                    .font(.semibold24)
-                    .padding(.horizontal, 20)
-                
-                // 리스트
-                ScrollView {
-                    if selectedTab == 0 {
-                        // 홈 탭
-                        ForEach(homePosts.filter {
-                            searchText.isEmpty || $0.title.contains(searchText)
-                        }) { post in
-                            NavigationLink(destination: HomeLoungeDetailView(model: post)) {
-                                ListRowView(model: post, isMyPage: true)
-                            }
-                            
-                            Divider()
+                    
+                    Button(action: {
+                        withAnimation(.easeInOut) {
+                            selectedTab = 1
                         }
-                    } else {
-                        // 라운지 탭
-                        ForEach(loungePosts.filter {
-                            searchText.isEmpty || $0.title.contains(searchText)
-                        }) { post in
-                            NavigationLink(destination: HomeLoungeDetailView(model: post)) {
-                                ListRowView(model: post, isMyPage: true)
-                            }
-                            
-                            Divider()
+                    }) {
+                        VStack(spacing: 5) {
+                            Text("라운지")
+                                .frame(maxWidth: .infinity)
+                                .foregroundColor(selectedTab == 1 ? .black : .gray)
+                            Rectangle()
+                                .fill(selectedTab == 1 ? Color.customBlue : Color.gray)
+                                .frame(height:selectedTab == 1 ? 3 : 0.4)
                         }
                     }
                 }
-                .padding(20)
+                .font(.semibold24)
+                .padding(.horizontal, 20)
+                
+                if let currentUserID = authManager.user?.email {
+                    ScrollView {
+                        if selectedTab == 0 {
+                            // 홈 탭
+                            ForEach(postViewModel.posts.filter { post in
+                                (searchText.isEmpty || post.title.contains(searchText)) &&
+                                post.user.email == currentUserID
+                            }, id: \.id) { post in
+                                NavigationLink(destination: HomeLoungeDetailView(model: post)) {
+                                    ListRowView(model: post, isMyPage: true)
+                                }
+                                Divider()
+                            }
+                        } else {
+                            // 라운지 탭
+                            ForEach(postViewModel.posts.filter { post in
+                                (searchText.isEmpty || post.title.contains(searchText)) &&
+                                post.categoryString == "라운지" &&
+                                post.user.email == currentUserID
+                            }, id: \.id) { post in
+                                NavigationLink(destination: HomeLoungeDetailView(model: post)) {
+                                    ListRowView(model: post, isMyPage: true)
+                                }
+                                Divider()
+                            }
+                        }
+                    }
+                    .padding(20)
+                    .onAppear {
+                        // 디버깅 로그 추가
+                        print("AuthManager User Email: \(currentUserID)")
+                        print("All Post User Emails: \(postViewModel.posts.map { $0.user.email })")
+                    }
+                } else {
+                    Text("사용자 이메일을 불러올 수 없습니다.")
+                        .onAppear {
+                            // 디버깅 로그 추가
+                            print("user = \(authManager.user?.email)")
+                            print("All Post User Emails: \(postViewModel.posts.map { $0.user.email })")
+                        }
+                }
+                Spacer()
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
@@ -143,6 +163,18 @@ struct MyPostsView: View {
                     Text("내가 쓴 글 관리")
                         .font(.semibold20)
                         .foregroundColor(.black)
+                }
+            }
+        }
+        .onAppear {
+            if authManager.user == nil {
+                authManager.fetchUserInfo { result in
+                    switch result {
+                    case .success(let user):
+                        print("User loaded: \(user.email)")
+                    case .failure(let error):
+                        print("Failed to load user: \(error)")
+                    }
                 }
             }
         }
