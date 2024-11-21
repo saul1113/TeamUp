@@ -53,7 +53,13 @@ struct TermsAndConditionsView: View {
             }
             .padding(.horizontal, padding)
             .navigationTitle("이용약관")
-            .backButton()
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem (placement: .topBarLeading) {
+                    BackButtonBlack()
+                }
+            }
         }
     }
 }

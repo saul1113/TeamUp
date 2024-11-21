@@ -18,7 +18,7 @@ struct SettingView: View {
                 .padding(.horizontal, padding)
             
             List {
-                 Toggle("알림 허용", isOn: $notificationOn)
+                Toggle("알림 허용", isOn: $notificationOn)
                 
                 Divider()
                     .listRowInsets(EdgeInsets())
@@ -43,12 +43,17 @@ struct SettingView: View {
         }
         .navigationTitle("설정")
         .font(.regular18)
+        .navigationBarBackButtonHidden(true)
         .onChange(of: notificationOn) {
             if notificationOn {
                 // TODO: 알림 수신 설정 변경
             }
         }
-        .backButton()
+        .toolbar {
+            ToolbarItem (placement: .topBarLeading) {
+                BackButtonBlack()
+            }
+        }
     }
 }
 

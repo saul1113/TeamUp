@@ -57,6 +57,10 @@
 		EB45716F2CE9CFF5002C9166 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB45716E2CE9CFF5002C9166 /* AuthManager.swift */; };
 		EB4571732CE9D028002C9166 /* StartTeamupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4571722CE9D028002C9166 /* StartTeamupView.swift */; };
 		EB4571752CE9D030002C9166 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4571742CE9D030002C9166 /* TextFieldView.swift */; };
+		EBA041E92CEEC68F0031E738 /* AnnouncementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA041E82CEEC68F0031E738 /* AnnouncementViewModel.swift */; };
+		EBA041EB2CEED3D50031E738 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA041EA2CEED3D50031E738 /* QuestionModel.swift */; };
+		EBA041ED2CEED4280031E738 /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA041EC2CEED4280031E738 /* QuestionViewModel.swift */; };
+		EBA041EF2CEED5140031E738 /* QuestionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA041EE2CEED5140031E738 /* QuestionDetailView.swift */; };
 		EBB25C9F2CEB12700018A139 /* SignUpPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB25C9E2CEB12700018A139 /* SignUpPasswordView.swift */; };
 		EBE645DE2CEB82BE0033426B /* SignUpNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE645DD2CEB82BE0033426B /* SignUpNicknameView.swift */; };
 		F6CFC5BB2CEB2429003C0087 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5BA2CEB241D003C0087 /* PostModel.swift */; };
@@ -130,6 +134,10 @@
 		EB45716E2CE9CFF5002C9166 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		EB4571722CE9D028002C9166 /* StartTeamupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTeamupView.swift; sourceTree = "<group>"; };
 		EB4571742CE9D030002C9166 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		EBA041E82CEEC68F0031E738 /* AnnouncementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementViewModel.swift; sourceTree = "<group>"; };
+		EBA041EA2CEED3D50031E738 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		EBA041EC2CEED4280031E738 /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
+		EBA041EE2CEED5140031E738 /* QuestionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailView.swift; sourceTree = "<group>"; };
 		EBB25C9E2CEB12700018A139 /* SignUpPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordView.swift; sourceTree = "<group>"; };
 		EBE645DD2CEB82BE0033426B /* SignUpNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameView.swift; sourceTree = "<group>"; };
 		F6CFC5BA2CEB241D003C0087 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
@@ -381,6 +389,8 @@
 			children = (
 				EB45716E2CE9CFF5002C9166 /* AuthManager.swift */,
 				FE3F76A42CEE541400137A99 /* PostViewModel.swift */,
+				EBA041E82CEEC68F0031E738 /* AnnouncementViewModel.swift */,
+				EBA041EC2CEED4280031E738 /* QuestionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -485,6 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				FE20613E2CE951190001FCD1 /* Announcement */,
+				EBA041EA2CEED3D50031E738 /* QuestionModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -518,6 +529,7 @@
 			isa = PBXGroup;
 			children = (
 				FE20614D2CE969070001FCD1 /* QuestionView.swift */,
+				EBA041EE2CEED5140031E738 /* QuestionDetailView.swift */,
 			);
 			path = Question;
 			sourceTree = "<group>";
@@ -660,6 +672,7 @@
 				77EA83F32CED64FB00483731 /* XMarkButton.swift in Sources */,
 				F6CFC5BF2CEB24F4003C0087 /* ListRowView.swift in Sources */,
 				2C2E581D2CE71F0D008766A8 /* PostView.swift in Sources */,
+				EBA041ED2CEED4280031E738 /* QuestionViewModel.swift in Sources */,
 				FE2061452CE95AAF0001FCD1 /* ViewBackButton.swift in Sources */,
 				EBB25C9F2CEB12700018A139 /* SignUpPasswordView.swift in Sources */,
 				2C6D8CE52CEB18A0001B8F08 /* CustomPadding.swift in Sources */,
@@ -674,11 +687,13 @@
 				FE20614E2CE969070001FCD1 /* QuestionView.swift in Sources */,
 				2C2E58202CE71F0D008766A8 /* TabBar.swift in Sources */,
 				2C2E58212CE71F0D008766A8 /* Color.swift in Sources */,
+				EBA041EF2CEED5140031E738 /* QuestionDetailView.swift in Sources */,
 				7793F1862CEC2F03007595D4 /* ToggleButtonView.swift in Sources */,
 				50A7A8802CEEC236002EF75F /* MyAppliedTeamsView.swift in Sources */,
 				50A7A8822CEECE6E002EF75F /* TeamDetailView.swift in Sources */,
 				FE20614B2CE967AD0001FCD1 /* AnnouncementView.swift in Sources */,
 				FE2061532CE983400001FCD1 /* SettingView.swift in Sources */,
+				EBA041EB2CEED3D50031E738 /* QuestionModel.swift in Sources */,
 				2C2E58222CE71F0D008766A8 /* RoundedCorner.swift in Sources */,
 				7793F18C2CEC6B46007595D4 /* EditView.swift in Sources */,
 				FE2061562CE991320001FCD1 /* TermsAndConditionsView.swift in Sources */,
@@ -686,6 +701,7 @@
 				2CBEEB3F2CEB001B001CE6ED /* GroupChatListView.swift in Sources */,
 				2C2E58242CE71F0D008766A8 /* ProjectMoyoApp.swift in Sources */,
 				2CBE30702CEDBE6C00066EB5 /* FriendProfileView.swift in Sources */,
+				EBA041E92CEEC68F0031E738 /* AnnouncementViewModel.swift in Sources */,
 				2CBE30712CEDBE6C00066EB5 /* MyProfileView.swift in Sources */,
 				771306DD2CEB1CAC00D47BD5 /* TextEditorView.swift in Sources */,
 			);

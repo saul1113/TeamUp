@@ -69,4 +69,6 @@ struct MainTabView: View {
 
 #Preview {
     MainTabView()
+        .environmentObject(AuthManager())
+        .environmentObject(PostViewModel())
 }
