@@ -9,7 +9,7 @@ import SwiftUI
 import MarkdownUI
 
 struct PostView: View {
-    @Environment(\.dismiss) var dismiss // 닫기 동작 처리
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject private var postViewModel: PostViewModel
     
     @State private var postCategory = "프로젝트 모집"
@@ -61,7 +61,6 @@ struct PostView: View {
                     ToggleButtonView(isPreviewMode: $isPreviewMode)
                         .padding(.top, 20)
                 }
-//                .padding(.horizontal)
                 
                 ZStack(alignment: .topLeading) {
                     RoundedRectangle(cornerRadius: 10)
@@ -90,6 +89,7 @@ struct PostView: View {
                             print(error)
                         }
                     }
+                    dismiss()
                 }
             } label: {
                 Text("작성 완료")

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EditView: View {
     @EnvironmentObject var authManager: AuthManager
+    @Environment(\.dismiss) var dismiss
     
     @State private var nickname: String = ""
     @State private var selfPR: String = ""
@@ -135,7 +136,8 @@ struct EditView: View {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
                     authManager.updateUser(nickname: nickname, bio: selfPR, interests: tags, link: link)
-                    print("Updated nickname: \(authManager.user?.nickname ?? "No user")")
+                    print("유저닉네임 : \(authManager.user?.nickname ?? "No user")")
+                    dismiss()
                 } label: {
                     Text("완료")
                         .fontWeight(.regular)

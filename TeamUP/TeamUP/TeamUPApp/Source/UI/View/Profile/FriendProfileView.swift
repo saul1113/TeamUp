@@ -9,7 +9,6 @@ import SwiftUI
 
 struct FriendProfileView: View {
     @EnvironmentObject var authManager: AuthManager
-    @Environment(\.presentationMode) var presentationMode
     
     @State private var tags: [String] = ["iOS", "앱개발"]
     @State private var linkName: String = "노션"
@@ -59,7 +58,7 @@ struct FriendProfileView: View {
                     Text("관심분야")
                         .font(.semibold22)
                     
-                    TagViewX(tags: $tags)  // Assuming TagViewX is used to display the tags
+                    TagViewX(tags: $tags)
                     
                     Spacer()
                     
@@ -84,7 +83,7 @@ struct FriendProfileView: View {
         }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                BackButton()
+                BackButtonBlack()
             }
             ToolbarItem(placement: .topBarTrailing) {
                 ShareLink(
