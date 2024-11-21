@@ -18,7 +18,7 @@ struct InformationDetailView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text(item.title)
-                .font(.bold24)
+                .font(.bold20)
             
             Text(item.createAt)
                 .font(.semibold16)
@@ -35,11 +35,13 @@ struct InformationDetailView: View {
             Spacer()
         }
         .padding(.horizontal, padding)
-    }
-}
-
-#Preview {
-    NavigationStack {
-        InformationDetailView(item: InformationModel(title: "공지사항", content: "고오오옹지지지ㅣㅈ하항", createAt: "2024.11.17"))
+        .navigationTitle("공지사항")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem (placement: .topBarLeading) {
+                BackButtonBlack()
+            }
+        }
     }
 }

@@ -92,7 +92,13 @@ struct PrivacyPolicyView: View {
             }
             .padding(.horizontal, padding)
             .navigationTitle("개인정보처리방침")
-            .backButton()
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem (placement: .topBarLeading) {
+                    BackButtonBlack()
+                }
+            }
         }
     }
 

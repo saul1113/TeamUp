@@ -15,7 +15,7 @@ struct AnnouncementView: View {
     ]
     
     var body: some View {
-        InformationView(title: "공지사항", contents: contents)
+        InformationView()
     }
 }
 
