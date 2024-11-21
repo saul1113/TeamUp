@@ -53,30 +53,60 @@ struct MyPostsView: View {
             save: 10,
             seen: 8,
             hasTag: ["질문"]
+        ),
+        Rounge(
+            category: .qna,
+            user: User(id: "4", email: "test3@test.com", password: "123", nickname: "승호", profileImageName: "default.png"),
+            title: "질문 있습니다!",
+            content: "다들 지치고 힘들때 어떻게 하나요?",
+            reply: [],
+            time: "5시간 전",
+            save: 10,
+            seen: 8,
+            hasTag: ["질문"]
         )
     ]
     
     var body: some View {
         NavigationStack {
             VStack {
-                // 탭 전환
-                Picker("Tabs", selection: $selectedTab) {
-                    Text("홈").tag(0)
-                    Text("라운지").tag(1)
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding(.horizontal)
                 
-                Divider()
-                
-                // 검색창
-                CustomSearchBar(searchText: $searchText, placeholder: "검색어를 입력하세요") { query in
-                    // 검색 로직
-                }
-                .padding(.horizontal)
+                    HStack (alignment: .bottom,spacing: 0) {
+                        Button(action: {
+                            withAnimation(.easeInOut) {
+                                selectedTab = 0
+                            }
+                        }) {
+                            VStack(spacing: 5) {
+                                Text("홈")
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(selectedTab == 0 ? .black : .gray)
+                                Rectangle()
+                                    .fill(selectedTab == 0 ? Color.customBlue : Color.gray)
+                                    .frame(height:selectedTab == 0 ? 3 : 0.4)
+                            }
+                        }
+                        
+                        Button(action: {
+                            withAnimation(.easeInOut) {
+                                selectedTab = 1
+                            }
+                        }) {
+                            VStack(spacing: 5) {
+                                Text("라운지")
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(selectedTab == 1 ? .black : .gray)
+                                Rectangle()
+                                    .fill(selectedTab == 1 ? Color.customBlue : Color.gray)
+                                    .frame(height:selectedTab == 1 ? 3 : 0.4)
+                            }
+                        }
+                    }
+                    .font(.semibold24)
+                    .padding(.horizontal, 20)
                 
                 // 리스트
-                List {
+                ScrollView {
                     if selectedTab == 0 {
                         // 홈 탭
                         ForEach(homePosts.filter {
@@ -85,6 +115,8 @@ struct MyPostsView: View {
                             NavigationLink(destination: HomeLoungeDetailView(model: post)) {
                                 ListRowView(model: post, isMyPage: true)
                             }
+                            
+                            Divider()
                         }
                     } else {
                         // 라운지 탭
@@ -94,10 +126,12 @@ struct MyPostsView: View {
                             NavigationLink(destination: HomeLoungeDetailView(model: post)) {
                                 ListRowView(model: post, isMyPage: true)
                             }
+                            
+                            Divider()
                         }
                     }
                 }
-                .listStyle(.plain)
+                .padding(20)
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
@@ -105,13 +139,11 @@ struct MyPostsView: View {
                 ToolbarItem(placement: .topBarLeading) {
                     BackButtonBlack()
                 }
-                
                 ToolbarItem(placement: .principal) {
                     Text("내가 쓴 글 관리")
                         .font(.semibold20)
                         .foregroundColor(.black)
                 }
-                
             }
         }
     }
