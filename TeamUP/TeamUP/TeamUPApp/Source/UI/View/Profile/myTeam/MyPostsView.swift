@@ -138,6 +138,7 @@ struct MyPostsView: View {
                         }
                     }
                     .padding(20)
+                    .padding(.bottom, 50)
                     .onAppear {
                         // 디버깅 로그 추가
                         print("AuthManager User Email: \(currentUserID)")

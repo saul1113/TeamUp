@@ -20,22 +20,29 @@ struct TeamDetailView: View {
             VStack(alignment: .leading, spacing: 16) {
                 Text(team.title)
                     .font(.bold24)
-                    .padding(.bottom, 5)
                 
                 Text("작성일: \(team.time)")
                     .font(.regular14)
                     .foregroundColor(.gray)
                 
-                Divider()
                 
                 Text(team.content)
                     .font(.regular16)
                     .padding(.bottom, 10)
                 
                 Divider()
+                    .frame(height: 2)
+                    .background(Color.gray)
                 
-                Text("신청한 사람 \(applicants.count)")
-                    .font(.semibold16)
+                HStack {
+                    Text("신청한 사람 \(applicants.count)")
+                        .font(.semibold16)
+                    
+                    Spacer()
+                    
+                    Text("신청 상태")
+                        .font(.semibold16)
+                }
                 
                 ForEach(applicants.indices, id: \.self) { index in
                     HStack {
@@ -58,16 +65,25 @@ struct TeamDetailView: View {
                         Spacer()
                         
                         Menu {
-                            Button("수락", action: { applicationStatus[index] = "수락됨" })
-                            Button("거절", action: { applicationStatus[index] = "거절됨" })
+                            Button("수락") {
+                                applicationStatus[index] = "수락됨"
+                            }
+                            Button("거절") {
+                                applicationStatus[index] = "거절됨"
+                            }
                         } label: {
-                            Text(applicationStatus[index])
-                                .font(.regular14)
-                                .foregroundColor(.customBlue)
-                                .padding(.vertical, 4)
-                                .padding(.horizontal, 8)
-                                .background(Color.gray.opacity(0.2))
-                                .cornerRadius(4)
+                            HStack(spacing: 5) {
+                                Text(applicationStatus[index])
+                                    .font(.regular14)
+                                    .foregroundColor(.customBlue)
+                                Image(systemName: "chevron.down")
+                                    .foregroundColor(.customBlue)
+                                    .font(.system(size: 12))
+                            }
+                            .padding(.vertical, 4)
+                            .padding(.horizontal, 8)
+                            .background(Color.gray.opacity(0.2))
+                            .cornerRadius(4)
                         }
                     }
                     Divider()

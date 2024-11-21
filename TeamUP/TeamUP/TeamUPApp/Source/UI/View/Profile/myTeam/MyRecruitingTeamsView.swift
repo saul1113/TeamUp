@@ -40,12 +40,20 @@ struct MyRecruitingTeamsView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                List(recruitingTeams) { team in
-                    NavigationLink(destination: TeamDetailView(team: team)) {
-                        ListRowView(model: team, isMyPage: false)
+                ScrollView {
+                    VStack(spacing: 15) { // 카드 사이의 간격을 위해 VStack 사용
+                        ForEach(recruitingTeams, id: \.id) { team in
+                            NavigationLink(destination: TeamDetailView(team: team)) {
+                                ListRowView(model: team, isMyPage: false)
+                            }
+                            
+                            Divider()
+                        }
                     }
+                    .padding(.horizontal, 20) // 전체 ScrollView의 좌우 패딩
+                    .padding(.top, 15) // ScrollView 상단 여백
                 }
-                .listStyle(.plain)
+                .padding(.bottom, 50)
             }
             .navigationBarBackButtonHidden(true)
             .navigationBarTitleDisplayMode(.inline)
@@ -54,11 +62,10 @@ struct MyRecruitingTeamsView: View {
                     BackButtonBlack()
                 }
                 
-                ToolbarItem(placement:.principal) {
+                ToolbarItem(placement: .principal) {
                     Text("내가 모집중인 팀")
                         .font(.semibold20)
                         .foregroundColor(.black)
-                    
                 }
             }
         }
