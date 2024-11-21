@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct FriendProfileView: View {
-    //    @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var authManager: AuthManager
     @Environment(\.presentationMode) var presentationMode
     
-    @State private var nickname: String = "수민이다"
-    @State private var selfPR: String = "소개소개소개소개"
     @State private var tags: [String] = ["iOS", "앱개발"]
     @State private var linkName: String = "노션"
     @State private var link: String = "www.example.com"
+    
+    var friend: User?
     
     var body: some View {
         NavigationStack {
@@ -28,7 +28,8 @@ struct FriendProfileView: View {
                             .foregroundColor(.gray.opacity(0.3))
                             .padding(.trailing, 10)
                         
-                        Text("\(nickname)")
+
+                        Text(friend?.nickname ?? "알 수 없는 사용자")
                             .font(.semibold22)
                         
                         Spacer()
@@ -43,15 +44,14 @@ struct FriendProfileView: View {
                                 .background(Color.customBlue)
                                 .cornerRadius(5)
                         }
-                        
                     }
                     
-                    Spacer()
-                        .frame(height: 10)
+                    Spacer().frame(height: 10)
                     
                     Text("소개")
                         .font(.semibold22)
-                    Text("\(selfPR)")
+                    
+                    Text(friend?.bio ?? "소개글이 없습니다")
                         .font(.regular16)
                     
                     Spacer()
@@ -59,19 +59,22 @@ struct FriendProfileView: View {
                     Text("관심분야")
                         .font(.semibold22)
                     
-                    TagViewX(tags: $tags)
-                    
+                    TagViewX(tags: $tags)  // Assuming TagViewX is used to display the tags
                     
                     Spacer()
                     
-                    
                     Text("링크")
                         .font(.semibold22)
+                    
                     HStack {
-                        Text("\(linkName)")
+                        Image("LinkIcon/notionIcon")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .padding(.trailing, 5)
+                        
+                        Link(linkName, destination: URL(string: link) ?? URL(string: "https://likelion.notion.site/iOS-6-9e9fde30b6e74d58aa4ef9864c7ed093")!)
                             .font(.regular18)
-                        Text("\(link)")
-                            .font(.regular16)
+                            .underline()
                     }
                     
                     Spacer()
@@ -96,6 +99,6 @@ struct FriendProfileView: View {
     }
 }
 
-#Preview {
-    FriendProfileView()
-}
+//#Preview {
+//    FriendProfileView(friend: User(nickname: "수민이다", bio: "소개소개소개소개", tags: ["iOS", "앱개발"]))
+//}

@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct EditView: View {
+    @EnvironmentObject var authManager: AuthManager
+    
     @State private var nickname: String = ""
     @State private var selfPR: String = ""
     @State private var newTag: String = ""
     @State private var tags: [String] = []
+    @State private var link: [String] = []
     @State private var linkName: String = ""
-    @State private var link: String = ""
+    @State private var profileImage: UIImage = UIImage()
+    @State private var isPresented: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -22,17 +26,30 @@ struct EditView: View {
                     HStack {
                         Spacer()
                         VStack {
-                            Image(systemName: "person.crop.circle.fill")
-                                .resizable()
-                                .frame(width: 100, height: 100)
-                                .foregroundColor(.gray.opacity(0.3))
-                                .overlay(
+                            Button(action: {
+                                isPresented = true
+                            }) {
+                                ZStack {
+                                    if profileImage != UIImage() {
+                                        Image(uiImage: profileImage)
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: 100, height: 100)
+                                            .clipShape(.circle)
+                                        
+                                    } else {
+                                        Image(systemName: "person.crop.circle.fill")
+                                            .resizable()
+                                            .frame(width: 100, height: 100)
+                                            .foregroundColor(.gray.opacity(0.3))
+                                    }
                                     Image(systemName: "camera.fill")
                                         .resizable()
                                         .frame(width: 28, height: 24)
                                         .offset(x: 40, y: 28)
                                         .foregroundColor(.gray)
-                                )
+                                }
+                            }
                         }
                         Spacer()
                     }
@@ -66,19 +83,39 @@ struct EditView: View {
                     
                     
                     TagView(tags: $tags)
-                     
+                    
                     Spacer()
                     
                     
                     Text("링크")
                         .font(.semibold18)
-                    HStack {
-                        TextField("표시할 이름", text: $linkName)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .font(.regular14)
-                        TextField("URL 주소", text: $link)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .font(.regular14)
+                    
+                    VStack (alignment: .leading){
+                        ForEach(link, id: \.self) { linkURL in
+                            HStack {
+                                Text(linkURL)
+                                    .font(.regular16)
+                                Button(action: {
+                                    removeLink(linkURL)
+                                }) {
+                                    Image(systemName: "minus.circle")
+                                        .foregroundColor(.customRed)
+                                }
+                            }
+                        }
+                        
+                        HStack {
+                            TextField("URL 주소를 입력해주세요", text: $linkName)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .font(.regular14)
+                            
+                            Button(action: {
+                                addLink()
+                            }) {
+                                Image(systemName: "plus.circle.fill")
+                                    .foregroundColor(.blue)
+                            }
+                        }
                     }
                     
                     Spacer()
@@ -97,7 +134,8 @@ struct EditView: View {
             }
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    
+                    authManager.updateUser(nickname: nickname, bio: selfPR, interests: tags, link: link)
+                    print("Updated nickname: \(authManager.user?.nickname ?? "No user")")
                 } label: {
                     Text("완료")
                         .fontWeight(.regular)
@@ -107,12 +145,37 @@ struct EditView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            if let user = authManager.user {
+                nickname = user.nickname
+                selfPR = user.bio
+                // tags = user.interests
+                // linkName = user.linkName
+                // link = user.link
+            }
+        }
+        .sheet(isPresented: $isPresented) {
+            ImagePicker(sourceType: .photoLibrary, selectedImage: self.$profileImage)
+        }
     }
     
     func addTag() {
         if !newTag.isEmpty {
             tags.append(newTag)
             newTag = ""
+        }
+    }
+    
+    func addLink() {
+        if !linkName.isEmpty {
+            link.append(linkName)
+            linkName = ""
+        }
+    }
+    
+    func removeLink(_ linkURL: String) {
+        if let index = link.firstIndex(of: linkURL) {
+            link.remove(at: index)
         }
     }
 }
