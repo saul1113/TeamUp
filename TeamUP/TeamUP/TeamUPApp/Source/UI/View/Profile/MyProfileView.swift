@@ -12,7 +12,7 @@ struct MyProfileView: View {
     @Environment(\.presentationMode) var presentationMode
     
 
-    @State private var tags: [String] = ["iOS", "앱개발"]
+    @State private var tags: [String] = ["iOS", "앱개발", "디자인", "폰트","이지투온"]
     @State private var link: String = "www.example.com"
     @State private var linkName: String = "노션"
     @State private var showLogoutAlert: Bool = false
@@ -113,24 +113,25 @@ struct MyProfileView: View {
                     
                     Spacer().frame(height: 3)
                     
-                    Rectangle()
-                        .fill(Color.gray)
-                        .frame(width: .infinity , height: 3)
+                    Divider()
+                        .frame(height: 3)
+                        .background(Color.gray)
                     
-                    VStack (alignment: .leading, spacing: 20) {
-                        Text("내가 쓴 글")
+                    VStack(alignment: .leading, spacing: 20) {
+                        NavigationLink("내가 쓴 글", destination: MyPostsView())
                             .font(.semibold18)
                         
                         Divider()
                         
-                        Text("내가 모집 중인 팀")
+                        NavigationLink("내가 모집 중인 팀", destination: MyRecruitingTeamsView())
                             .font(.semibold18)
                         
                         Divider()
                         
-                        Text("내가 신청한 팀")
+                        NavigationLink("내가 신청한 팀", destination: MyAppliedTeamsView())
                             .font(.semibold18)
                     }
+                    .foregroundStyle(.black)
                     
                     Divider()
                     
