@@ -17,39 +17,71 @@ struct TabBar: View {
                 Button(action: {
                     selectedTab = .home
                 }) {
-                    VStack(alignment: .center,spacing: 0){
+                    VStack(alignment: .center, spacing: 0){
+                        Spacer()
+                            .frame(height: 10)
                         Image(systemName: "house")
-                            .frame(width: 30,height: 30)
-                            .foregroundColor(selectedTab == .home ? .customBlue : Color.projectTab)
+                            .resizable()
+                            .foregroundStyle(selectedTab == .home  ? .customBlue : Color.projectTab)
+                            .frame(width: 20, height: 20)
+                            .scaledToFit()
+                        
+                        Spacer()
+                            .frame(height: 4)
                         Text("모집")
                             .foregroundColor(selectedTab == .home ? .customBlue : Color.projectTab)
                             .font(.semibold16)
+                        
+                        Spacer()
+                            .frame(height: 4)
+                        RoundedRectangle(cornerRadius: 26)
+                            .fill(selectedTab == .home ? .customBlue : Color.clear)
+                            .frame(height: 4)
+                            .padding(.horizontal, 2)
+                        
                     }
-                    .frame(height: 50)
                     .frame(maxWidth: .infinity)
                 }
                 Button{
                     selectedTab = .lounge
                 }label: {
                     VStack(alignment: .center,spacing: 0){
+                        
+                        Spacer()
+                            .frame(height: 10)
+                        
                         Image(systemName: "chair.lounge")
-                            .frame(width: 30,height: 30)
-                            .foregroundColor(selectedTab == .lounge ? .customBlue : Color.projectTab)
+                            .resizable()
+                            .foregroundStyle(selectedTab == .lounge  ? .customBlue : Color.projectTab)
+                            .frame(width: 20, height: 20)
+                            .scaledToFit()
+                        Spacer()
+                            .frame(height: 4)
                         Text("라운지")
                             .foregroundColor(selectedTab == .lounge ?  .customBlue : Color.projectTab)
                             .font(.semibold16)
+                        
+                        Spacer()
+                            .frame(height: 4)
+                        
+                        RoundedRectangle(cornerRadius: 26)
+                            .fill(selectedTab == .lounge ?  .customBlue : Color.clear)
+                            .frame(height: 4)
+                        
                     }
-                    .frame(height: 50)
                     .frame(maxWidth: .infinity)
                 }
                 Button{
                     isPostPresented = true 
                 }label: {
-                    VStack(alignment: .center,spacing: 0){
-                        Image(systemName: "plus")
+                    VStack(alignment: .center,spacing: 4){
+                        Image(.teamUpPlusIcon)
+                            .resizable()
                             .frame(width: 50,height: 50)
-                            .aspectRatio(contentMode: .fit)
                             .foregroundStyle(selectedTab == .post  ? .customBlue : Color.projectTab)
+                            .clipShape(Circle())
+                            .shadow(radius: 3)
+                            .offset(y: -10)
                         Text("")
                             .foregroundStyle(selectedTab == .post  ? .customBlue : Color.projectTab)
                             .font(.semibold16)
@@ -61,32 +93,62 @@ struct TabBar: View {
                     selectedTab = .chat
                 }label: {
                     VStack(alignment: .center,spacing: 0){
+                        Spacer()
+                            .frame(height: 10)
+                        
                         Image(systemName: "message")
-                            .frame(width: 30,height: 30)
-                            .aspectRatio(contentMode: .fit)
-                            .foregroundStyle(selectedTab == .chat  ? .customBlue : Color.projectTab)
+                            .resizable()
+                            .foregroundStyle(selectedTab == .chat ? .customBlue : Color.projectTab)
+                            .frame(width: 20, height: 20)
+                            .scaledToFit()
+                        
+                        Spacer()
+                            .frame(height: 4)
+                        
                         Text("채팅")
                             .foregroundStyle(selectedTab == .chat  ? .customBlue : Color.projectTab)
+                            .font(.semibold16)
+                        
+                        Spacer()
+                            .frame(height: 4)
+                        
+                        RoundedRectangle(cornerRadius: 26)
+                            .fill(selectedTab == .chat ?  .customBlue : Color.clear)
+                            .frame(height: 4)
                     }
-                    .frame(height: 50)
                     .frame(maxWidth: .infinity)
                 }
                 Button{
                     selectedTab = .profile
                 }label: {
                     VStack(alignment: .center,spacing: 0){
+                        Spacer()
                         Image(systemName: "person.fill")
-                            .frame(width: 30,height: 30)
+                            .resizable()
+                            .foregroundStyle(selectedTab == .profile ? .customBlue : Color.projectTab)
+                            .frame(width: 20, height: 20)
+                            .scaledToFit()
+                        
+                        Spacer()
+                            .frame(height: 4)
                         Text("프로필")
                             .font(.semibold16)
+                        Spacer()
+                            .frame(height: 4)
+                        RoundedRectangle(cornerRadius: 26)
+                            .fill(selectedTab == .profile ?  .customBlue : Color.clear)
+                            .frame(height: 4)
                     }
                     .foregroundColor(selectedTab == .profile ? .customBlue : Color.projectTab)
-                    .frame(height: 50)
                     .frame(maxWidth: .infinity)
                 }
             }
         }
         .frame(height: 50)
         .frame(maxWidth: .infinity)
+        .padding(.horizontal, 20)
     }
+}
+#Preview {
+    TabBar(selectedTab: .constant(.home), isPostPresented: .constant(false))
 }
