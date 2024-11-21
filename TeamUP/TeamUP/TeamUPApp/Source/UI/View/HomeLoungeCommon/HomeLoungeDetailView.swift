@@ -82,8 +82,8 @@ struct HomeLoungeDetailView: View {
                     
                     // 인원 정보
                     HStack {
-                        if let post = model as? Post{
-                            Text("👤 \(post.currentCapacity)/\(post.maxCapacity)")
+                        if let post = model as? PostModelStruct{
+                            Text("👤 \(post.currentUserCount)/\(post.maxUserCount)")
                                 .font(.regular14)
                                 .foregroundColor(.gray)
                         }
@@ -196,7 +196,7 @@ struct HomeLoungeDetailView: View {
                     .padding()
                 }
                 //포스트(홈)일때
-                if model is Post {
+                if model is PostModelStruct {
                     
                     Spacer().frame(height: 40)
                     
