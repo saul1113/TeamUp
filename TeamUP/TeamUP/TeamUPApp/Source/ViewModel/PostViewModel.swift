@@ -67,17 +67,6 @@ final class PostViewModel: ObservableObject {
             defaultURL.scheme = "https"
             defaultURL.host = url
         }
-        
-        Task {
-            try await fetchPosts { [weak self] result in
-                switch result {
-                case .success(let data):
-                    self?.posts = data
-                case .failure(let error):
-                    print(error)
-                }
-            }
-        }
     }
     
     func setData(posts: [PostModelStruct]) {
