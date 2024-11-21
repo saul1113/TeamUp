@@ -11,7 +11,6 @@ struct MyProfileView: View {
     @EnvironmentObject var authManager: AuthManager
     @Environment(\.presentationMode) var presentationMode
     
-    
     @State private var tags: [String] = ["iOS", "앱개발"]
     @State private var link: [String] = ["https://likelion.notion.site", "https://github.com", "https://example.com"]
     @State private var showLogoutAlert: Bool = false
@@ -106,9 +105,9 @@ struct MyProfileView: View {
                     
                     Spacer().frame(height: 3)
                     
-                    Rectangle()
-                        .fill(Color.gray)
-                        .frame(width: .infinity , height: 3)
+                    Divider()
+                        .frame(height: 3)
+                        .background(Color.gray)
                     
                     VStack (alignment: .leading, spacing: 20) {
                         Text("내가 쓴 글")
@@ -124,6 +123,7 @@ struct MyProfileView: View {
                         Text("내가 신청한 팀")
                             .font(.semibold16)
                     }
+                    .foregroundStyle(.black)
                     
                     Divider()
                     
