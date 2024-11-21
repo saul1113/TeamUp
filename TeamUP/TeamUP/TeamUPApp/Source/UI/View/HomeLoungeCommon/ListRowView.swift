@@ -66,7 +66,7 @@ struct ListRowView: View {
                 HStack() {
                     Text(model.user.nickname)
                     Text("•")
-                    Text(model.time)
+                    Text(formatTime: model.time)
                     
                     Spacer()
                     

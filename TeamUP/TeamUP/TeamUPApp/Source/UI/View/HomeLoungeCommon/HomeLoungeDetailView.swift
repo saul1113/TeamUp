@@ -48,7 +48,7 @@ struct HomeLoungeDetailView: View {
                             Text(model.user.nickname)
                                 .font(.bold16)
                             HStack(spacing: 5) {
-                                Text(model.time)
+                                Text(formatTime: model.time)
                                     .font(.semibold12)
                                     .foregroundColor(.gray)
                                 Text("•")
@@ -202,6 +202,7 @@ struct HomeLoungeDetailView: View {
                     
                     Button(action: {
                         // 신청 로직
+                     
                     }) {
                         Text("신청하기")
                             .font(.semibold20)

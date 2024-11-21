@@ -39,7 +39,7 @@ let samplePostData = [
 - 팀 생산성 지표 분석
 ---
 """, time: "43분 전", save: 8, seen: 2, maxCapacity: 6, currentCapacity: 6 ,hasTag: ["알고리즘","스터디","프로젝트"])
-   ]
+]
 
 
 struct HomeView: View {
@@ -49,7 +49,7 @@ struct HomeView: View {
     @State private var searchText: String = ""
     @State private var selectedSort: String = "최신순"
     @State private var isRecruit: Bool = false
-
+    
     // 검색 필터
     var filteredItems: [PostModelStruct] {
         var items = postViewModel.posts
@@ -84,96 +84,107 @@ struct HomeView: View {
     }
     var postStore = PostViewModel()
     var body: some View {
-            VStack(alignment: .leading) {
-                CustomSearchBar(searchText: $searchText, placeholder: "검색어를 입력해주세요 (ex 웹프로젝트, 알고리즘 스터디", onSearch: { text in
-                    print("검색실행")
-                })
-                .padding(.horizontal)
-                
-                // 스터디 카테고리 필터링
-                HStack (spacing: 20){
-                    ForEach([nil] + PostCategory.allCases, id: \.self) { category in
-                        Button(action: {
-                            selectedCategory = category
-                        }) {
-                            VStack(spacing: 2){
-                                Text(category?.rawValue ?? "전체")
-                                    .font(.semibold20)
-                                    .foregroundColor(selectedCategory == category ? .black : .gray)
-                                if selectedCategory == category {
-                                    Rectangle()
-                                        .frame(width: 30, height: 2)
-                                        .foregroundColor(.customBlue)
-                                        .animation(.easeInOut, value: selectedCategory)
-                                }
-                            }
-                        }
-                    }
-                    Spacer() // 버튼들을 왼쪽으로 밀기
-                }
-                .padding(.horizontal, 20)
-                .padding(.vertical, 20)
-
-                
-                // 최신순 저장많은순 조회순 필터링
-                HStack (spacing: 15){
-                    Button(action: {
-                        selectedSort = "최신순"
-                    }) {
-                        Text("• 최신순")
-                            .foregroundColor(selectedSort == "최신순" ? .customBlue : .gray)
-                            .font(.medium14)
-                    }
-                    
-                    Button(action: {
-                        selectedSort = "저장많은순"
-                    }) {
-                        Text("• 저장많은순")
-                            .foregroundColor(selectedSort == "저장많은순" ? .customBlue : .gray)
-                            .font(.medium14)
-                    }
-                    
-                    Button(action: {
-                        selectedSort = "조회순"
-                    }) {
-                        Text("• 조회순")
-                            .foregroundColor(selectedSort == "조회순" ? .customBlue : .gray)
-                            .font(.medium14)
-                    }
-                }
-                .padding(.horizontal)
-                .padding(.bottom, 10)
-                
-                // 모집중 필터링
-                Toggle(isOn: $isRecruit) {
-                    Text("모집중만 보기")
-                        .font(.semibold12)
-                        .foregroundStyle(Color.black)
-                }
-                .toggleStyle(CustomCheckBox())
-                .padding(.horizontal)
-                .padding(.bottom, -10)
+        VStack(alignment: .leading) {
+            CustomSearchBar(searchText: $searchText, placeholder: "검색어를 입력해주세요 (ex 웹프로젝트, 알고리즘 스터디", onSearch: { text in
+                print("검색실행")
+            })
+            .padding(.horizontal)
             
-                
-                ScrollView {
-                    ForEach(sortedItems.filter { post in
-                        if let selectedCategory = selectedCategory {
-                            return post.categoryString == selectedCategory.rawValue
-                        }
-                        return true
-                    }, id: \.title) { post in
-                        
-                        Divider()
-                        
-                        NavigationLink(destination: HomeLoungeDetailView(model: post)) {  // NavigationLink 추가
-                            ListRowView(model: post, isMyPage: false)
+            // 스터디 카테고리 필터링
+            HStack (spacing: 20){
+                ForEach([nil] + PostCategory.allCases, id: \.self) { category in
+                    Button(action: {
+                        selectedCategory = category
+                    }) {
+                        VStack(spacing: 2){
+                            Text(category?.rawValue ?? "전체")
+                                .font(.semibold20)
+                                .foregroundColor(selectedCategory == category ? .black : .gray)
+                                .background(
+                                    VStack {
+                                        Spacer()
+                                        if selectedCategory == category {
+                                            Rectangle()
+                                                .frame(height: 2)
+                                                .foregroundColor(.customBlue)
+                                                .padding(.top, 4)
+                                                .animation(.easeInOut, value: selectedCategory)
+                                        }
+                                    }
+                                )
+//                                .onTapGesture {
+//                                    withAnimation(.easeInOut) {
+//                                        selectedCategory = category
+//                                    }
+//                                }
                         }
                     }
-                    .padding(20)
+                }
+                Spacer() // 버튼들을 왼쪽으로 밀기
+            }
+            .padding(.horizontal, 20)
+            .padding(.vertical, 20)
+            
+            
+            // 최신순 저장많은순 조회순 필터링
+            HStack (spacing: 15){
+                Button(action: {
+                    selectedSort = "최신순"
+                }) {
+                    Text("• 최신순")
+                        .foregroundColor(selectedSort == "최신순" ? .customBlue : .gray)
+                        .font(.medium14)
                 }
                 
-                Spacer()
+                Button(action: {
+                    selectedSort = "저장많은순"
+                }) {
+                    Text("• 저장많은순")
+                        .foregroundColor(selectedSort == "저장많은순" ? .customBlue : .gray)
+                        .font(.medium14)
+                }
+                
+                Button(action: {
+                    selectedSort = "조회순"
+                }) {
+                    Text("• 조회순")
+                        .foregroundColor(selectedSort == "조회순" ? .customBlue : .gray)
+                        .font(.medium14)
+                }
             }
+            .padding(.horizontal)
+            .padding(.bottom, 10)
+            
+            // 모집중 필터링
+            Toggle(isOn: $isRecruit) {
+                Text("모집중만 보기")
+                    .font(.semibold12)
+                    .foregroundStyle(Color.black)
+            }
+            .toggleStyle(CustomCheckBox())
+            .padding(.horizontal)
+            .padding(.bottom, -10)
+            
+            
+            ScrollView {
+                ForEach(sortedItems.filter { post in
+                    if let selectedCategory = selectedCategory {
+                        return post.categoryString == selectedCategory.rawValue
+                    }
+                    return true
+                }, id: \.title) { post in
+                    
+                    Divider()
+                    
+                    NavigationLink(destination: HomeLoungeDetailView(model: post)) {  // NavigationLink 추가
+                        ListRowView(model: post, isMyPage: false)
+                    }
+                }
+                .padding(20)
+            }
+            
+            Spacer()
+        }
         
     }
 }
@@ -194,6 +205,23 @@ struct CustomCheckBox: ToggleStyle {
 
 
 
+extension Text {
+    init(formatTime: String, dateFormat: String = "yyyy-MM-dd HH:mm") {
+        let isoFormatter = ISO8601DateFormatter()
+        isoFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        
+        let displayFormatter = DateFormatter()
+        displayFormatter.dateFormat = dateFormat
+        displayFormatter.locale = Locale(identifier: "ko_KR")
+        displayFormatter.timeZone = TimeZone.current
+        
+        if let date = isoFormatter.date(from: formatTime) {
+            self.init(displayFormatter.string(from: date))
+        } else {
+            self.init(formatTime)
+        }
+    }
+}
 
 
 #Preview {
