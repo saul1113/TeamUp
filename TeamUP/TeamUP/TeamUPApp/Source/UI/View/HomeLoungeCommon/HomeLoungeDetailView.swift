@@ -46,6 +46,7 @@ struct HomeLoungeDetailView: View {
                             // 작성자의 프로필을 보여주는 로직
                             selectedUser = model.user
                             print("Selected user: \(String(describing: selectedUser))")
+                            print("Model user: \(String(describing: model.user))")
                             isShowingFriendProfile.toggle()
                         }) {
                             Circle()
@@ -262,11 +263,7 @@ struct HomeLoungeDetailView: View {
             }
         }
         .sheet(isPresented: $isShowingFriendProfile) {
-            if let user = selectedUser {
-                FriendProfileView(friend: user)
-            } else {
-                Text("사용자 정보를 불러올 수 없습니다.")
-            }
+                FriendProfileView(friend: selectedUser)
         }
         
     }

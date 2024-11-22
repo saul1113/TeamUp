@@ -98,6 +98,9 @@ struct FriendProfileView: View {
                     .foregroundStyle(.customBlue)
             }
         }
+        .onAppear() {
+            print("friend : \(friend)")
+        }
     }
 }
 
