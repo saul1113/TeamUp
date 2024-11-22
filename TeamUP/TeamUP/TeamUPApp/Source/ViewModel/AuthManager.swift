@@ -345,17 +345,37 @@ final class AuthManager: ObservableObject {
             }
     }
 
-    func updateUser(nickname: String, bio: String, interests: [String], link: [String]) {
+    func updateUserProfile(nickname: String, bio: String, /*interests: [String], links: [String],*/ completion: @escaping (Result<String, Error>) -> Void) async throws {
+        defaultURL.path = "/user"
         
-        guard var editUser = user else { return }
-
-        editUser.nickname = nickname
-        editUser.bio = bio
-//        editUser.interests = interests
-//        editUser.linkName = linkName
-//        editUser.link = link
-
-        user = editUser
+        guard let url = defaultURL.url else { throw HttpError.urlError }
+        guard let key = keychain.get(accessTokenKey) else { throw HttpError.keyError }
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(key)"
+        ]
+        
+        let parameters: [String: Any] = [
+//            "nickname": nickname,
+            "bio": bio,
+//            "interests": interests,
+//            "links": links
+        ]
+        
+        AF.request(url, method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+            .validate()  // 서버 응답 검증
+            .responseDecodable(of: [String : String].self) { response in
+                switch response.result {
+                case .success(let updatedUser):
+                    if let data = updatedUser["message"] as? String {
+                        print(data)
+                        completion(.success(data))
+                    }
+                case .failure(let error):
+                        completion(.failure(error))
+                }
+            }
     }
+
 
 }
