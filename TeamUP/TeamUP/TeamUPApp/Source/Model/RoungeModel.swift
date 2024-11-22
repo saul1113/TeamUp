@@ -14,6 +14,7 @@ protocol Listable {
     var time: String { get }
     var save: Int { get }
     var seen: Int { get }
+    var id : Int {get}
 }
 
 
@@ -26,7 +27,7 @@ enum RoungeCategory: String, CaseIterable, Identifiable {
 
 // Rounge 모델
 struct Rounge: Listable, Identifiable {
-    var id: String = UUID().uuidString
+    var id: Int
     var category: RoungeCategory
     var user: User
     var title: String

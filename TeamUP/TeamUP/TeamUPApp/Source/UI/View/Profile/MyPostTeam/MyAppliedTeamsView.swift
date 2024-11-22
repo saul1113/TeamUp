@@ -14,7 +14,7 @@ struct MyAppliedTeamsView: View {
     // Mock 데이터
     let appliedTeams: [Post] = [
         Post(
-            category: .study,
+            id: 1, category: .study,
             user: User(id: "1", email: "test@test.com", password: "123", nickname: "수민이다", profileImageName: "default.png"),
             isRecruit: true,
             title: "알고리즘 스터디",
@@ -49,58 +49,67 @@ struct MyAppliedTeamsView: View {
             }
             .font(.semibold20)
             .padding(.horizontal, 20)
+            .padding(.bottom, 25)
             
-            // 리스트
-            List {
-                ForEach(appliedTeams.filter {
-                    searchText.isEmpty || $0.title.contains(searchText)
-                }) { team in
-                    HStack {
-                        VStack(alignment: .leading, spacing: 10) {
-                            HStack {
-                                Text(team.categoryString)
-                                    .font(.semibold14)
-                                    .foregroundColor(.white)
-                                    .padding(.horizontal, 8)
-                                    .padding(.vertical, 4)
-                                    .background(Color.customBlue)
-                                    .cornerRadius(4)
-                                
-                                Spacer()
-                                
-                                Text("신청대기")
-                                    .font(.semibold12)
-                                    .foregroundColor(.gray)
-                            }
+            ForEach(appliedTeams.filter {
+                searchText.isEmpty || $0.title.contains(searchText)
+            }) { team in
+                HStack {
+                    VStack(alignment: .leading, spacing: 10) {
+                        HStack {
+                            Text(team.categoryString)
+                                .font(.semibold14)
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 4)
+                                .background(Color.customBlue)
+                                .cornerRadius(4)
+                            
                             Text(team.title)
-                                .font(.semibold16)
+                                .font(.semibold18)
                                 .foregroundColor(.black)
                             
-                            Text(team.content)
+                            Spacer()
+                            
+                            Text("신청대기")
                                 .font(.regular14)
-                                .foregroundColor(.gray)
-                                .lineLimit(1)
+                                .foregroundColor(.black)
+                        }
+                        
+                        
+                        Text(team.content)
+                            .font(.regular14)
+                            .foregroundColor(.gray)
+                            .lineLimit(1)
+                        
+                        HStack {
+                            Text(team.user.nickname)
+                                .font(.regular14)
+                                .foregroundColor(.customDarkGray)
+                            Text("·")
+                                .font(.regular14)
+                                .foregroundColor(.customDarkGray)
+                            Text(team.time)
+                                .font(.regular14)
+                                .foregroundColor(.customDarkGray)
+                            
+                            Spacer()
                             
                             HStack {
-                                Text(team.user.nickname)
-                                Text("·")
-                                Text(team.time)
-                                
-                                Spacer()
-                                
-                                HStack {
-                                    Image(systemName: "person")
-                                    Text("\(team.currentCapacity)/\(team.maxCapacity)")
-                                }
-                                .font(.regular14)
-                                .foregroundColor(.gray)
+                                Image(systemName: "person.fill")
+                                Text("\(team.currentCapacity)/\(team.maxCapacity)")
                             }
+                            .font(.regular14)
+                            .foregroundColor(.customDarkGray)
                         }
                     }
-                    .padding(.vertical, 5)
                 }
+                .padding(.bottom, 5)
+                .padding(.horizontal, 20)
+                Divider()
+                    .padding(.horizontal, 20)
             }
-            .listStyle(.plain)
+            Spacer()
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
@@ -140,6 +149,7 @@ struct MyAppliedTeamsView: View {
                             .frame(height: 0.5)
                     )
             }
+            .padding(.trailing, 5)
         }
     }
 }

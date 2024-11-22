@@ -282,6 +282,10 @@ final class AuthManager: ObservableObject {
         isAuthenticated = false  // 인증 상태 초기화
         print("로그아웃 완료: 토큰 삭제 및 인증 상태 초기화")
     }
+    
+    func deleteAccount() {
+        print("회원탈퇴 완료")
+    }
 
     func hasAccessToken() -> Bool {
         return keychain.get(accessTokenKey) != nil

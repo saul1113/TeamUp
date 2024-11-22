@@ -16,7 +16,7 @@ func createDate(from string: String) -> Date {
 
 let sampleRoungeData: [Rounge] = [
     Rounge(
-        category: .qna,
+        id: 1, category: .qna,
         user: User(id: UUID().uuidString, email: "add", password: "123", nickname: "ㅎㅎ", profileImageName: "String"),
         title: "새로운 규정 공지",
         content: "새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요.",
@@ -30,7 +30,7 @@ let sampleRoungeData: [Rounge] = [
         seen: 350, hasTag: ["질문","궁금해요","스터디"]
     ),
     Rounge(
-            category: .talk,
+        id: 2, category: .talk,
             user: User(id: UUID().uuidString, email: "add", password: "123", nickname: "친구야", profileImageName: "String"),
             title: "오늘 점심 뭐 먹을까요?",
             content: "여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요! 길게 작성된 내용입니다.",
@@ -45,7 +45,7 @@ let sampleRoungeData: [Rounge] = [
             hasTag: ["질문", "궁금해요", "스터디"]
         ),
         Rounge(
-            category: .qna,
+            id: 3, category: .qna,
             user: User(id: UUID().uuidString, email: "add", password: "123", nickname: "김원호요", profileImageName: "String"),
             title: "iOS 프로젝트에서 List 뷰 사용법",
             content: "iOS 프로젝트에서 `List` 뷰를 사용하려면 어떻게 해야 하나요? 방법을 알고 싶은데 알려주세요!",
@@ -60,7 +60,7 @@ let sampleRoungeData: [Rounge] = [
             hasTag: ["질문", "궁금해요", "스터디"]
         ),
         Rounge(
-            category: .qna,
+            id: 2, category: .qna,
             user: User(id: UUID().uuidString, email: "user1@test.com", password: "123", nickname: "알파", profileImageName: "default.png"),
             title: "SwiftUI에서 Binding 사용법",
             content: "SwiftUI에서 Binding의 사용법과 사례를 알고 싶습니다. 예제를 포함해서 설명 부탁드립니다.",
@@ -74,7 +74,7 @@ let sampleRoungeData: [Rounge] = [
             hasTag: ["SwiftUI", "Binding", "질문"]
         ),
         Rounge(
-            category: .talk,
+            id: 4, category: .talk,
             user: User(id: UUID().uuidString, email: "user2@test.com", password: "123", nickname: "베타", profileImageName: "default.png"),
             title: "좋아하는 영화 추천",
             content: "최근 본 영화 중에 정말 재미있었던 영화는 무엇인가요? 이유도 함께 알려주시면 좋겠습니다.",
@@ -88,7 +88,7 @@ let sampleRoungeData: [Rounge] = [
             hasTag: ["영화", "추천", "취미"]
         ),
         Rounge(
-            category: .qna,
+            id: 2, category: .qna,
             user: User(id: UUID().uuidString, email: "user3@test.com", password: "123", nickname: "감마", profileImageName: "default.png"),
             title: "Combine 프레임워크 초보 질문",
             content: """
@@ -105,7 +105,7 @@ let sampleRoungeData: [Rounge] = [
             hasTag: ["Combine", "Swift", "질문"]
         ),
         Rounge(
-            category: .talk,
+            id: 5, category: .talk,
             user: User(id: UUID().uuidString, email: "user4@test.com", password: "123", nickname: "델타", profileImageName: "default.png"),
             title: "좋아하는 음악 공유",
             content: """
@@ -125,7 +125,7 @@ let sampleRoungeData: [Rounge] = [
             hasTag: ["음악", "추천", "취미"]
         ),
     Rounge(
-            category: .qna,
+        id: 6, category: .qna,
             user: User(id: UUID().uuidString, email: "user5@test.com", password: "123", nickname: "엡실론", profileImageName: "default.png"),
             title: "Xcode에서 빌드 시간이 너무 길어요",
             content: "Xcode에서 빌드 시간을 줄일 수 있는 방법이 있을까요? 프로젝트가 커지면서 빌드 속도가 너무 느려졌습니다.",
@@ -139,7 +139,7 @@ let sampleRoungeData: [Rounge] = [
             hasTag: ["Xcode", "빌드", "질문"]
         ),
         Rounge(
-            category: .talk,
+            id: 4, category: .talk,
             user: User(id: UUID().uuidString, email: "user6@test.com", password: "123", nickname: "파이", profileImageName: "default.png"),
             title: "내일 날씨가 궁금합니다",
             content: "내일 비가 온다고 들었는데, 여러분은 어떤 준비를 하고 계신가요?",
@@ -153,7 +153,7 @@ let sampleRoungeData: [Rounge] = [
             hasTag: ["날씨", "일상", "추천"]
         ),
         Rounge(
-            category: .talk,
+            id: 2, category: .talk,
             user: User(id: UUID().uuidString, email: "user7@test.com", password: "123", nickname: "하하호호", profileImageName: "default.png"),
             title: "최고의 여행지 추천해주세요",
             content: """
@@ -170,7 +170,7 @@ let sampleRoungeData: [Rounge] = [
             hasTag: ["여행", "추천", "취미"]
         ),
         Rounge(
-            category: .qna,
+            id: 6, category: .qna,
             user: User(id: UUID().uuidString, email: "user8@test.com", password: "123", nickname: "안녕하세요", profileImageName: "default.png"),
             title: "Swift에서 클로저 사용법 질문",
             content: "클로저를 사용하는 기본 문법을 알고 싶습니다. 클로저의 Capture List는 어떤 경우에 유용한가요?",
@@ -184,7 +184,7 @@ let sampleRoungeData: [Rounge] = [
             hasTag: ["Swift", "클로저", "질문"]
         ),
         Rounge(
-            category: .talk,
+            id: 2, category: .talk,
             user: User(id: UUID().uuidString, email: "user9@test.com", password: "123", nickname: "파란하늘", profileImageName: "default.png"),
             title: "운동할 때 들으면 좋은 음악 추천",
             content: """
@@ -201,7 +201,7 @@ let sampleRoungeData: [Rounge] = [
             hasTag: ["운동", "음악", "추천"]
         ),
         Rounge(
-            category: .qna,
+            id: 4, category: .qna,
             user: User(id: UUID().uuidString, email: "user10@test.com", password: "123", nickname: "새로운시작", profileImageName: "default.png"),
             title: "Firebase Authentication 사용법 질문",
             content: """
@@ -218,7 +218,7 @@ let sampleRoungeData: [Rounge] = [
             hasTag: ["Firebase", "로그인", "질문"]
         ),
         Rounge(
-            category: .talk,
+            id: 4, category: .talk,
             user: User(id: UUID().uuidString, email: "user11@test.com", password: "123", nickname: "행복한날", profileImageName: "default.png"),
             title: "오늘의 기분을 나눠봅시다",
             content: "오늘은 너무 기분 좋은 하루네요! 여러분의 하루는 어땠나요?",
@@ -232,7 +232,7 @@ let sampleRoungeData: [Rounge] = [
             hasTag: ["일상", "행복", "소통"]
         ),
     Rounge(
-        category: .talk,
+        id: 7, category: .talk,
         user: User(id: UUID().uuidString, email: "user12@test.com", password: "123", nickname: "배고파요", profileImageName: "default.png"),
         title: "오늘 저녁 뭐 드시나요?",
         content: "다들 저녁 메뉴 뭐 하실 계획인가요? 저는 피자나 치킨 생각 중인데, 다른 추천 메뉴 있을까요?",
@@ -246,7 +246,7 @@ let sampleRoungeData: [Rounge] = [
         hasTag: ["음식", "저녁", "추천"]
     ),
     Rounge(
-        category: .qna,
+        id: 8, category: .qna,
         user: User(id: UUID().uuidString, email: "user13@test.com", password: "123", nickname: "Swift초보", profileImageName: "default.png"),
         title: "Combine 프레임워크 사용법 질문",
         content: """
@@ -263,7 +263,7 @@ let sampleRoungeData: [Rounge] = [
         hasTag: ["Swift", "Combine", "질문"]
     ),
     Rounge(
-        category: .talk,
+        id: 4, category: .talk,
         user: User(id: UUID().uuidString, email: "user14@test.com", password: "123", nickname: "운동러", profileImageName: "default.png"),
         title: "오늘 러닝 다녀왔습니다!",
         content: """
@@ -280,7 +280,7 @@ let sampleRoungeData: [Rounge] = [
         hasTag: ["운동", "러닝", "추천"]
     ),
     Rounge(
-        category: .qna,
+        id: 8, category: .qna,
         user: User(id: UUID().uuidString, email: "user15@test.com", password: "123", nickname: "개발자A", profileImageName: "default.png"),
         title: "Core Data와 SwiftData 차이점",
         content: """
@@ -297,7 +297,7 @@ let sampleRoungeData: [Rounge] = [
         hasTag: ["iOS", "SwiftData", "CoreData"]
     ),
     Rounge(
-        category: .talk,
+        id: 9, category: .talk,
         user: User(id: UUID().uuidString, email: "user16@test.com", password: "123", nickname: "독서가", profileImageName: "default.png"),
         title: "책 추천 받습니다!",
         content: "최근에 읽은 책이 너무 좋았습니다. 더 좋은 책 추천해주세요! 장르는 상관없습니다.",
@@ -311,7 +311,7 @@ let sampleRoungeData: [Rounge] = [
         hasTag: ["독서", "책추천", "취미"]
     ),
     Rounge(
-        category: .qna,
+        id: 9, category: .qna,
         user: User(id: UUID().uuidString, email: "dev1@test.com", password: "123", nickname: "코더A", profileImageName: "default.png"),
         title: "Swift의 Result 타입 활용법",
         content: """
@@ -328,7 +328,7 @@ let sampleRoungeData: [Rounge] = [
         hasTag: ["Swift", "Result", "에러처리"]
     ),
     Rounge(
-        category: .qna,
+        id: 8, category: .qna,
         user: User(id: UUID().uuidString, email: "dev2@test.com", password: "123", nickname: "초보개발자", profileImageName: "default.png"),
         title: "Dependency Injection (DI) 이해가 어려워요",
         content: """
@@ -345,7 +345,7 @@ let sampleRoungeData: [Rounge] = [
         hasTag: ["DI", "의존성주입", "테스트"]
     ),
     Rounge(
-        category: .qna,
+        id: 6, category: .qna,
         user: User(id: UUID().uuidString, email: "dev3@test.com", password: "123", nickname: "API개발자", profileImageName: "default.png"),
         title: "RESTful API 설계 원칙",
         content: """
@@ -362,7 +362,7 @@ let sampleRoungeData: [Rounge] = [
         hasTag: ["API", "REST", "설계"]
     ),
     Rounge(
-        category: .talk,
+        id: 8, category: .talk,
         user: User(id: UUID().uuidString, email: "dev4@test.com", password: "123", nickname: "아키텍트", profileImageName: "default.png"),
         title: "Clean Architecture 적용 사례",
         content: """
@@ -379,7 +379,7 @@ let sampleRoungeData: [Rounge] = [
         hasTag: ["아키텍처", "Clean Architecture", "코드구조"]
     ),
     Rounge(
-        category: .qna,
+        id: 7, category: .qna,
         user: User(id: UUID().uuidString, email: "dev5@test.com", password: "123", nickname: "시니어개발자", profileImageName: "default.png"),
         title: "SwiftUI와 UIKit의 혼합 사용법",
         content: """
@@ -396,7 +396,7 @@ let sampleRoungeData: [Rounge] = [
         hasTag: ["SwiftUI", "UIKit", "iOS개발"]
     ),
     Rounge(
-        category: .qna,
+        id: 1, category: .qna,
         user: User(id: UUID().uuidString, email: "backend1@test.com", password: "123", nickname: "백엔드A", profileImageName: "default.png"),
         title: "Node.js 성능 최적화 팁",
         content: """
@@ -413,7 +413,7 @@ let sampleRoungeData: [Rounge] = [
         hasTag: ["Node.js", "성능", "최적화"]
     ),
     Rounge(
-        category: .qna,
+        id: 2, category: .qna,
         user: User(id: UUID().uuidString, email: "backend2@test.com", password: "123", nickname: "데이터중심개발자", profileImageName: "default.png"),
         title: "데이터베이스 정규화와 비정규화의 균형",
         content: """
@@ -430,7 +430,7 @@ let sampleRoungeData: [Rounge] = [
         hasTag: ["데이터베이스", "정규화", "비정규화"]
     ),
     Rounge(
-        category: .talk,
+        id: 4, category: .talk,
         user: User(id: UUID().uuidString, email: "backend3@test.com", password: "123", nickname: "클라우드초보", profileImageName: "default.png"),
         title: "AWS와 GCP, 어떤 게 더 좋은가요?",
         content: """
@@ -447,7 +447,7 @@ let sampleRoungeData: [Rounge] = [
         hasTag: ["AWS", "GCP", "클라우드"]
     ),
     Rounge(
-        category: .qna,
+        id: 6, category: .qna,
         user: User(id: UUID().uuidString, email: "backend4@test.com", password: "123", nickname: "보안중심", profileImageName: "default.png"),
         title: "API 보안 강화 방법",
         content: """
@@ -464,7 +464,7 @@ let sampleRoungeData: [Rounge] = [
         hasTag: ["API", "보안", "JWT"]
     ),
     Rounge(
-        category: .qna,
+        id: 4, category: .qna,
         user: User(id: UUID().uuidString, email: "backend5@test.com", password: "123", nickname: "스케일러", profileImageName: "default.png"),
         title: "서버 부하 분산을 위한 로드밸런싱 전략",
         content: """
