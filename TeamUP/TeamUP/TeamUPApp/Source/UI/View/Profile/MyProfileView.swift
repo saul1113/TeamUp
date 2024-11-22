@@ -14,6 +14,7 @@ struct MyProfileView: View {
     @State private var tags: [String] = ["iOS", "앱개발"]
     @State private var link: [String] = ["https://likelion.notion.site", "https://github.com", "https://example.com"]
     @State private var showLogoutAlert: Bool = false
+    @State private var showDeleteAlert: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -111,17 +112,26 @@ struct MyProfileView: View {
                     Rectangle()
                         .fill(Color.gray)
                         .frame(maxWidth: .infinity)
-                        .frame(height: 3)
+                        .frame(height: 1)
                     
-                    VStack (alignment: .leading, spacing: 25) {
+                    VStack (alignment: .leading, spacing: 20) {
                         NavigationLink(destination: MyPostsView()) {
                             HStack {
                                 Text("내가 쓴 글")
-                                    .padding(.top, 15)
+                                    .padding(.top, 12)
                             }
                         }
                         
                         Divider()
+                        
+                        NavigationLink(destination: MyBookmarksView()) {
+                            HStack {
+                                Text("내가 저장한 글")
+                            }
+                        }
+                        
+                        Divider()
+                        
                         
                         NavigationLink(destination: MyRecruitingTeamsView()) {
                             HStack {
@@ -136,7 +146,7 @@ struct MyProfileView: View {
                             HStack {
                                 Text("내가 신청한 팀")
                                     .font(.semibold18)
-                                    .padding(.bottom, 15)
+                                    .padding(.bottom, 12)
                             }
                         }
                     }
@@ -152,11 +162,7 @@ struct MyProfileView: View {
                             .font(.semibold18)
                             .padding(.top, 15)
                         
-                        NavigationLink("공지사항", destination: AnnouncementView())
-                        
                         NavigationLink("자주 묻는 질문", destination: QuestionView())
-                        
-                        NavigationLink("설정", destination: SettingView())
                         
                         NavigationLink("이용약관", destination: TermsAndConditionsView())
                         
@@ -165,7 +171,6 @@ struct MyProfileView: View {
                         Button("로그아웃") {
                             showLogoutAlert.toggle()
                         }
-                        .padding(.bottom, 50)
                         .font(.regular16)
                         .foregroundStyle(.red)
                         .alert(isPresented: $showLogoutAlert) {
@@ -174,6 +179,25 @@ struct MyProfileView: View {
                                 message: Text("정말 로그아웃 하시겠습니까?"),
                                 primaryButton: .destructive(Text("로그아웃")) {
                                     authManager.logout() // 로그아웃 실행
+                                },
+                                secondaryButton: .cancel(Text("취소"))
+                            )
+                        }
+                        
+                        Divider()
+                        
+                        Button("회원탈퇴") {
+                            showDeleteAlert.toggle()
+                        }
+                        .padding(.bottom, 50)
+                        .font(.regular16)
+                        .foregroundStyle(.customDarkGray)
+                        .alert(isPresented: $showDeleteAlert) {
+                            Alert(
+                                title: Text("회원탈퇴"),
+                                message: Text("정말 회원탈퇴 하시겠습니까?"),
+                                primaryButton: .destructive(Text("회원탈퇴")) {
+                                    authManager.deleteAccount()
                                 },
                                 secondaryButton: .cancel(Text("취소"))
                             )

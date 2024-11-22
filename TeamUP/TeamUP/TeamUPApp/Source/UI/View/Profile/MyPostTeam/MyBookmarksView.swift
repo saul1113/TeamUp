@@ -1,13 +1,13 @@
 //
-//  MyPostsView.swift
+//  MyBookmarksView.swift
 //  TeamUP
 //
-//  Created by Hwang_Inyoung on 11/21/24.
+//  Created by 김수민 on 11/22/24.
 //
 
 import SwiftUI
 
-struct MyPostsView: View {
+struct MyBookmarksView: View {
     @State private var selectedTab = 0
     @State private var searchText = ""
     @EnvironmentObject var postViewModel: PostViewModel
@@ -149,6 +149,7 @@ struct MyPostsView: View {
                 }
                 Spacer()
             }
+            .padding(.top,10)
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .toolbar {
@@ -156,7 +157,7 @@ struct MyPostsView: View {
                     BackButtonBlack()
                 }
                 ToolbarItem(placement: .principal) {
-                    Text("내가 쓴 글 관리")
+                    Text("내가 쓴 글")
                         .font(.semibold18)
                         .foregroundColor(.black)
                 }
@@ -175,4 +176,8 @@ struct MyPostsView: View {
             }
         }
     }
+}
+
+#Preview {
+    MyBookmarksView()
 }
