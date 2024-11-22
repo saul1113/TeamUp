@@ -356,7 +356,7 @@ final class AuthManager: ObservableObject {
         ]
         
         let parameters: [String: Any] = [
-            "nickname": nickname,
+//            "nickname": nickname,
             "bio": bio,
 //            "interests": interests,
 //            "links": links

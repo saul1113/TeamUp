@@ -127,7 +127,6 @@ struct EditView: View {
                             try await authManager.updateUserProfile(nickname: nickname, bio: selfPR/*, interests: tags, links: link*/) { result in
                                 switch result {
                                 case .success(let updatedUser):
-                                    print("\(updatedUser.nickname)")
                                     dismiss()
                                 case .failure(let error):
                                     print("\(error.localizedDescription)")

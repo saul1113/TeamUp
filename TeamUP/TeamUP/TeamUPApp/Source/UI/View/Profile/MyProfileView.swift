@@ -58,7 +58,8 @@ struct MyProfileView: View {
                         Text(user.bio)
                             .font(.regular16)
                     } else {
-                        Text("소개 정보를 추가하세요.")
+                        Text("소개글이 비어있습니다")
+                            .foregroundStyle(.customDarkGray)
                     }
                     
                     Spacer()
@@ -82,6 +83,7 @@ struct MyProfileView: View {
                                     .padding(.trailing, 5)
                                 
                                 Link("Notion", destination: URL(string: linkURL) ?? URL(string: "https://www.notion.so/ko")!)
+                                    .foregroundStyle(.customBlue)
                                 
                             } else if linkURL.contains("github") {
                                 Image("LinkIcon/githubIcon")
@@ -90,6 +92,7 @@ struct MyProfileView: View {
                                     .padding(.trailing, 5)
                                 
                                 Link("GitHub", destination: URL(string: linkURL) ?? URL(string: "https://github.com")!)
+                                    .foregroundStyle(.customBlue)
                                 
                             } else {
                                 Image(systemName: "link")
@@ -97,7 +100,7 @@ struct MyProfileView: View {
                                     .foregroundStyle(.black)
                                 
                                 Link(linkURL, destination: URL(string: linkURL)!)
-                                    .underline()
+                                    .foregroundStyle(.customBlue)
                             }
                         }
                         .font(.regular18)
@@ -110,20 +113,35 @@ struct MyProfileView: View {
                         .frame(maxWidth: .infinity)
                         .frame(height: 3)
                     
-                    VStack (alignment: .leading, spacing: 20) {
-                        Text("내가 쓴 글")
-                            .font(.semibold16)
+                    VStack (alignment: .leading, spacing: 25) {
+                        NavigationLink(destination: MyPostsView()) {
+                            HStack {
+                                Text("내가 쓴 글")
+                                    .padding(.top, 15)
+                            }
+                        }
                         
                         Divider()
                         
-                        Text("내가 모집 중인 팀")
-                            .font(.semibold16)
+                        NavigationLink(destination: MyRecruitingTeamsView()) {
+                            HStack {
+                                Text("내가 모집 중인 팀")
+                                    .font(.semibold18)
+                            }
+                        }
                         
                         Divider()
                         
-                        Text("내가 신청한 팀")
-                            .font(.semibold16)
+                        NavigationLink(destination: MyAppliedTeamsView()) {
+                            HStack {
+                                Text("내가 신청한 팀")
+                                    .font(.semibold18)
+                                    .padding(.bottom, 15)
+                            }
+                        }
                     }
+                    .buttonStyle(PlainButtonStyle())
+                    .font(.semibold18)
                     .foregroundStyle(.black)
                     
                     Divider()
@@ -131,7 +149,8 @@ struct MyProfileView: View {
                     VStack (alignment: .leading, spacing: 20){
                         
                         Text("기타")
-                            .font(.semibold16)
+                            .font(.semibold18)
+                            .padding(.top, 15)
                         
                         NavigationLink("공지사항", destination: AnnouncementView())
                         
@@ -143,30 +162,25 @@ struct MyProfileView: View {
                         
                         NavigationLink("개인정보처리방침", destination: PrivacyPolicyView())
                         
-                        
+                        Button("로그아웃") {
+                            showLogoutAlert.toggle()
+                        }
+                        .padding(.bottom, 50)
+                        .font(.regular16)
+                        .foregroundStyle(.red)
+                        .alert(isPresented: $showLogoutAlert) {
+                            Alert(
+                                title: Text("로그아웃"),
+                                message: Text("정말 로그아웃 하시겠습니까?"),
+                                primaryButton: .destructive(Text("로그아웃")) {
+                                    authManager.logout() // 로그아웃 실행
+                                },
+                                secondaryButton: .cancel(Text("취소"))
+                            )
+                        }
                     }
                     .font(.regular16)
                     .foregroundStyle(.black)
-                    
-                    Divider()
-                    
-                    Button("로그아웃") {
-                        showLogoutAlert.toggle()
-                    }
-                    .padding(.bottom, 50)
-                    .font(.regular16)
-                    .foregroundStyle(.red)
-                    .alert(isPresented: $showLogoutAlert) {
-                        Alert(
-                            title: Text("로그아웃"),
-                            message: Text("정말 로그아웃 하시겠습니까?"),
-                            primaryButton: .destructive(Text("로그아웃")) {
-                                authManager.logout() // 로그아웃 실행
-                            },
-                            secondaryButton: .cancel(Text("취소"))
-                        )
-                    }
-                    
                 }
                 .padding(20)
                 
