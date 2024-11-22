@@ -321,7 +321,6 @@ final class AuthManager: ObservableObject {
                     self.user = user
                     self.isAuthenticated = true
                     completion(.success(user))
-                    print("자동 로그인 성공: \(user)")
                 case .failure(let error):
                     if let res = response.response, res.statusCode == 401 {
                         // 토큰 만료 상태라면 갱신 시도
@@ -337,7 +336,6 @@ final class AuthManager: ObservableObject {
                             }
                         }
                     } else {
-                        print("자동 로그인 실패: \(error.localizedDescription)")
                         self.isAuthenticated = false
                         completion(.failure(error))
                     }

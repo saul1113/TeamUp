@@ -171,7 +171,6 @@ struct MyProfileView: View {
                 .padding(20)
                 
             }
-            
         }
     }
 }

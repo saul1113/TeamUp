@@ -38,13 +38,15 @@
 		2CBE30702CEDBE6C00066EB5 /* FriendProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE306E2CEDBE6C00066EB5 /* FriendProfileView.swift */; };
 		2CBE30712CEDBE6C00066EB5 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE306F2CEDBE6C00066EB5 /* MyProfileView.swift */; };
 		2CBEEB3F2CEB001B001CE6ED /* GroupChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBEEB3E2CEB001B001CE6ED /* GroupChatListView.swift */; };
+		2CFB663D2CEF843E0079B06A /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB663C2CEF843E0079B06A /* ChatViewModel.swift */; };
+		2CFB66402CEF84670079B06A /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 2CFB663F2CEF84670079B06A /* SocketIO */; };
 		50241F922CEB8D10002014EF /* PrivateChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50241F912CEB8D10002014EF /* PrivateChatListView.swift */; };
 		50241F942CEB8D1B002014EF /* PrivateChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50241F932CEB8D1B002014EF /* PrivateChatView.swift */; };
-		770C29DE2CEF0D2C005C7844 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C29DD2CEF0D2C005C7844 /* ImagePicker.swift */; };
 		50A7A87C2CEEC220002EF75F /* MyPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7A87A2CEEC220002EF75F /* MyPostsView.swift */; };
 		50A7A87E2CEEC22A002EF75F /* MyRecruitingTeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7A87D2CEEC22A002EF75F /* MyRecruitingTeamsView.swift */; };
 		50A7A8802CEEC236002EF75F /* MyAppliedTeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7A87F2CEEC236002EF75F /* MyAppliedTeamsView.swift */; };
 		50A7A8822CEECE6E002EF75F /* TeamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7A8812CEECE6E002EF75F /* TeamDetailView.swift */; };
+		770C29DE2CEF0D2C005C7844 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C29DD2CEF0D2C005C7844 /* ImagePicker.swift */; };
 		770E953F2CE722E500761A03 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E953E2CE722E500761A03 /* BackButton.swift */; };
 		770E95412CE7232E00761A03 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E95402CE7232E00761A03 /* CustomFont.swift */; };
 		771306DD2CEB1CAC00D47BD5 /* TextEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771306DC2CEB1CAC00D47BD5 /* TextEditorView.swift */; };
@@ -114,13 +116,14 @@
 		2CBE306E2CEDBE6C00066EB5 /* FriendProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileView.swift; sourceTree = "<group>"; };
 		2CBE306F2CEDBE6C00066EB5 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		2CBEEB3E2CEB001B001CE6ED /* GroupChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatListView.swift; sourceTree = "<group>"; };
+		2CFB663C2CEF843E0079B06A /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		50241F912CEB8D10002014EF /* PrivateChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateChatListView.swift; sourceTree = "<group>"; };
 		50241F932CEB8D1B002014EF /* PrivateChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateChatView.swift; sourceTree = "<group>"; };
-		770C29DD2CEF0D2C005C7844 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		50A7A87A2CEEC220002EF75F /* MyPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsView.swift; sourceTree = "<group>"; };
 		50A7A87D2CEEC22A002EF75F /* MyRecruitingTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecruitingTeamsView.swift; sourceTree = "<group>"; };
 		50A7A87F2CEEC236002EF75F /* MyAppliedTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppliedTeamsView.swift; sourceTree = "<group>"; };
 		50A7A8812CEECE6E002EF75F /* TeamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailView.swift; sourceTree = "<group>"; };
+		770C29DD2CEF0D2C005C7844 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		770E953E2CE722E500761A03 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		770E95402CE7232E00761A03 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		770E95422CE724A700761A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CB1BF532CE725DF00CA6A26 /* MarkdownUI in Frameworks */,
+				2CFB66402CEF84670079B06A /* SocketIO in Frameworks */,
 				2CB1BF502CE725D000CA6A26 /* KeychainSwift in Frameworks */,
 				2CB1BF4B2CE725B000CA6A26 /* Alamofire in Frameworks */,
 			);
@@ -378,6 +382,7 @@
 		2C2E58102CE71F0D008766A8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2CFB663C2CEF843E0079B06A /* ChatViewModel.swift */,
 				EB45716E2CE9CFF5002C9166 /* AuthManager.swift */,
 				FE3F76A42CEE541400137A99 /* PostViewModel.swift */,
 				EBA041E82CEEC68F0031E738 /* AnnouncementViewModel.swift */,
@@ -563,6 +568,7 @@
 				2CB1BF4A2CE725B000CA6A26 /* Alamofire */,
 				2CB1BF4F2CE725D000CA6A26 /* KeychainSwift */,
 				2CB1BF522CE725DF00CA6A26 /* MarkdownUI */,
+				2CFB663F2CEF84670079B06A /* SocketIO */,
 			);
 			productName = TeamUP;
 			productReference = 2C2E57832CE71E8B008766A8 /* TeamUP.app */;
@@ -596,6 +602,7 @@
 				2CB1BF492CE725B000CA6A26 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				2CB1BF4E2CE725D000CA6A26 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				2CB1BF512CE725DF00CA6A26 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				2CFB663E2CEF84670079B06A /* XCRemoteSwiftPackageReference "socket.io-client-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2C2E57842CE71E8B008766A8 /* Products */;
@@ -690,6 +697,7 @@
 				FE2061562CE991320001FCD1 /* TermsAndConditionsView.swift in Sources */,
 				FE20613C2CE94A1A0001FCD1 /* InformationDetailView.swift in Sources */,
 				2CBEEB3F2CEB001B001CE6ED /* GroupChatListView.swift in Sources */,
+				2CFB663D2CEF843E0079B06A /* ChatViewModel.swift in Sources */,
 				2C2E58242CE71F0D008766A8 /* ProjectMoyoApp.swift in Sources */,
 				2CBE30702CEDBE6C00066EB5 /* FriendProfileView.swift in Sources */,
 				EBA041E92CEEC68F0031E738 /* AnnouncementViewModel.swift in Sources */,
@@ -940,6 +948,14 @@
 				minimumVersion = 2.4.1;
 			};
 		};
+		2CFB663E2CEF84670079B06A /* XCRemoteSwiftPackageReference "socket.io-client-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -957,6 +973,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2CB1BF512CE725DF00CA6A26 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
 			productName = MarkdownUI;
+		};
+		2CFB663F2CEF84670079B06A /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CFB663E2CEF84670079B06A /* XCRemoteSwiftPackageReference "socket.io-client-swift" */;
+			productName = SocketIO;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

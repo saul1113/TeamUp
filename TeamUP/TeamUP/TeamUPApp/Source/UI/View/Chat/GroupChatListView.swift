@@ -32,6 +32,7 @@ struct GroupChatRoom: Identifiable {
 }
 struct GroupChatListView: View {
     @State private var groupRooms: [GroupChatRoom] = GroupChatRoom.dummyData
+    @State private var chatViewModel = ChatViewModel()
     var body: some View {
         NavigationStack {
             VStack (alignment: .leading, spacing: 15) {
@@ -45,6 +46,11 @@ struct GroupChatListView: View {
                     Rectangle()
                         .fill(.gray)
                         .frame(height: 0.3)
+                }
+                Button {
+                    chatViewModel.sendMessage(room: 1 , message: "가냐?")
+                }label: {
+                    Text("connect")
                 }
             }
             .padding(.horizontal, 16)
@@ -64,10 +70,10 @@ struct GroupChatListView: View {
                     Text("\(room.roomMember)")
                         .font(Font.regular12)
                         .foregroundStyle(.gray)
-                    Spacer()
                     Text(room.decodedDateToString)
                         .font(Font.regular12)
                         .foregroundStyle(.gray)
+                    Spacer()
                 }
                 Text(room.roomLastMessage)
                     .foregroundStyle(.gray)
