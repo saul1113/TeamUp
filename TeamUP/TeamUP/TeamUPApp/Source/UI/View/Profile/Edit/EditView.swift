@@ -133,7 +133,7 @@ struct EditView: View {
                             dismiss()
                         }
                     } label: {
-                        Text("작성 완료")
+                        Text("수정 완료")
                             .frame(width: 360, height: 50)
                             .font(.semibold20)
                             .foregroundColor(.white)
