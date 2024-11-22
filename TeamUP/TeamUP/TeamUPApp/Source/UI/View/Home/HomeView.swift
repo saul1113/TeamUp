@@ -91,7 +91,7 @@ struct HomeView: View {
             .padding(.horizontal)
             
             // 스터디 카테고리 필터링
-            HStack (spacing: 20){
+            HStack (spacing: 22){
                 ForEach([nil] + PostCategory.allCases, id: \.self) { category in
                     Button(action: {
                         selectedCategory = category
@@ -107,7 +107,6 @@ struct HomeView: View {
                                             Rectangle()
                                                 .frame(height: 2)
                                                 .foregroundColor(.customBlue)
-                                                .padding(.top, 4)
                                                 .animation(.easeInOut, value: selectedCategory)
                                         }
                                     }

@@ -11,7 +11,7 @@ struct HomeLoungeDetailView: View {
     @State private var saveCount: Int
     @State private var isBookmarked = false
     @State private var newComment = ""
-  
+    
     // 모델이 수정 가능한 값으로 `save` 프로퍼티를 가지고 있다고 가정
     init(model: Listable) {
         self.model = model
@@ -83,10 +83,14 @@ struct HomeLoungeDetailView: View {
                     // 인원 정보
                     HStack {
                         if let post = model as? PostModelStruct{
-                            Text("👤 \(post.currentUserCount)/\(post.maxUserCount)")
-                                .font(.regular14)
-                                .foregroundColor(.gray)
+                            Image(systemName: "person.fill")
+                                .padding(.trailing, 3)
+                                .foregroundColor(.customDarkGray)
+                            Text("\(post.currentUserCount) / \(post.maxUserCount)")
+                                .font(.regular16)
+                                .foregroundColor(.customDarkGray)
                         }
+                            
                         Spacer()
                         
                         Button {
@@ -110,12 +114,14 @@ struct HomeLoungeDetailView: View {
                         }
                         
                         
-                    }.frame(height: 10 )
+                    }
+                    .frame(height: 10)
+                    .padding(.top, 10)
                     
                 }
-                .padding(.horizontal)
+                .padding(.horizontal, 20)
                 .padding(.top, 10)
-        
+                
                 //라운지일때
                 if let rounge = model as? Rounge {
                     Divider()
@@ -131,7 +137,7 @@ struct HomeLoungeDetailView: View {
                     .padding()
                     
                     Divider()
-                        .padding(.horizontal)
+                        .padding(.horizontal, 20)
                     
                     
                     VStack(alignment: .leading){
@@ -159,12 +165,12 @@ struct HomeLoungeDetailView: View {
                                             .font(.regular14)
                                             .foregroundColor(.black)
                                     }
-                                   
+                                    
                                     
                                 }
                             }
                             Divider()
-                                
+                            
                         }
                         HStack {
                             //로그인한 유저로 변경 필요
@@ -195,7 +201,7 @@ struct HomeLoungeDetailView: View {
                         }
                         Spacer()
                     }
-                    .padding(.horizontal)
+                    .padding(.horizontal,20)
                 }
                 //포스트(홈)일때
                 if model is PostModelStruct {
@@ -204,7 +210,7 @@ struct HomeLoungeDetailView: View {
                     
                     Button(action: {
                         // 신청 로직
-                     
+                        
                     }) {
                         Text("신청하기")
                             .font(.semibold20)
@@ -244,8 +250,8 @@ struct HomeLoungeDetailView: View {
                         }
                         .foregroundStyle(.black)
                 }
-                            
-               
+                
+                
             }
             
         }
