@@ -30,7 +30,7 @@ struct TabBar: View {
                             .frame(height: 4)
                         Text("모집")
                             .foregroundColor(selectedTab == .home ? .customBlue : .customTab)
-                            .font(.semibold16)
+                            .font(.semibold14)
                         
                         Spacer()
                             .frame(height: 4)
@@ -59,7 +59,7 @@ struct TabBar: View {
                             .frame(height: 4)
                         Text("라운지")
                             .foregroundColor(selectedTab == .lounge ?  .customBlue : .customTab)
-                            .font(.semibold16)
+                            .font(.semibold14)
                         
                         Spacer()
                             .frame(height: 4)
@@ -84,7 +84,7 @@ struct TabBar: View {
                             .offset(y: -10)
                         Text("")
                             .foregroundStyle(selectedTab == .post  ? .customBlue : .customTab)
-                            .font(.semibold16)
+                            .font(.semibold14)
                     }
                     .frame(height: 50)
                     .frame(maxWidth: .infinity)
@@ -107,7 +107,7 @@ struct TabBar: View {
                         
                         Text("채팅")
                             .foregroundStyle(selectedTab == .chat  ? .customBlue : .customTab)
-                            .font(.semibold16)
+                            .font(.semibold14)
                         
                         Spacer()
                             .frame(height: 4)
@@ -132,7 +132,7 @@ struct TabBar: View {
                         Spacer()
                             .frame(height: 4)
                         Text("프로필")
-                            .font(.semibold16)
+                            .font(.semibold14)
                         Spacer()
                             .frame(height: 4)
                         RoundedRectangle(cornerRadius: 26)

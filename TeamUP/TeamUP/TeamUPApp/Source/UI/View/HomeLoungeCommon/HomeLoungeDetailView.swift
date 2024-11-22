@@ -86,10 +86,14 @@ struct HomeLoungeDetailView: View {
                     // 인원 정보
                     HStack {
                         if let post = model as? PostModelStruct{
-                            Text("👤 \(post.currentUserCount)/\(post.maxUserCount)")
-                                .font(.regular14)
-                                .foregroundColor(.gray)
+                            Image(systemName: "person.fill")
+                                .padding(.trailing, 3)
+                                .foregroundColor(.customDarkGray)
+                            Text("\(post.currentUserCount) / \(post.maxUserCount)")
+                                .font(.regular16)
+                                .foregroundColor(.customDarkGray)
                         }
+                            
                         Spacer()
                         
                         Button {
@@ -113,10 +117,12 @@ struct HomeLoungeDetailView: View {
                         }
                         
                         
-                    }.frame(height: 10 )
+                    }
+                    .frame(height: 10)
+                    .padding(.top, 10)
                     
                 }
-                .padding(.horizontal)
+                .padding(.horizontal, 20)
                 .padding(.top, 10)
                 
                 //라운지일때
@@ -134,7 +140,7 @@ struct HomeLoungeDetailView: View {
                     .padding()
                     
                     Divider()
-                        .padding(.horizontal)
+                        .padding(.horizontal, 20)
                     
                     
                     VStack(alignment: .leading){
@@ -198,7 +204,7 @@ struct HomeLoungeDetailView: View {
                         }
                         Spacer()
                     }
-                    .padding(.horizontal)
+                    .padding(.horizontal,20)
                 }
                 //포스트(홈)일때
                 if model is PostModelStruct {
@@ -206,6 +212,7 @@ struct HomeLoungeDetailView: View {
                     Spacer().frame(height: 40)
                     
                     Button(action: {
+
                         guard !isApplied else { return }
                         Task {
                             do {
@@ -218,6 +225,9 @@ struct HomeLoungeDetailView: View {
                                 showAlert = true
                             }
                         }
+
+                        
+
                     }) {
                         Text(isApplied ? "신청 완료" : "신청하기")
                             .font(.semibold20)
