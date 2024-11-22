@@ -15,6 +15,9 @@ struct FriendProfileView: View {
     @State private var link: String = "www.example.com"
     
     var friend: User?
+    private var defaultUser: User {
+        User(id: UUID().uuidString, email: "unknown@example.com", password: "", nickname: "알 수 없는 사용자", profileImageName: "", bio: "소개글이 없습니다")
+    }
     
     var body: some View {
         NavigationStack {
@@ -27,8 +30,8 @@ struct FriendProfileView: View {
                             .foregroundColor(.gray.opacity(0.3))
                             .padding(.trailing, 10)
                         
-
-                        Text(friend?.nickname ?? "알 수 없는 사용자")
+                        
+                        Text(friend?.nickname ?? defaultUser.nickname)
                             .font(.semibold22)
                         
                         Spacer()
@@ -50,7 +53,7 @@ struct FriendProfileView: View {
                     Text("소개")
                         .font(.semibold22)
                     
-                    Text(friend?.bio ?? "소개글이 없습니다")
+                    Text(friend?.bio ?? defaultUser.bio)
                         .font(.regular16)
                     
                     Spacer()
