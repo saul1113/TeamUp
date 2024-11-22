@@ -45,6 +45,7 @@
 		50A7A8802CEEC236002EF75F /* MyAppliedTeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7A87F2CEEC236002EF75F /* MyAppliedTeamsView.swift */; };
 		50A7A8822CEECE6E002EF75F /* TeamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7A8812CEECE6E002EF75F /* TeamDetailView.swift */; };
 		770C29DE2CEF0D2C005C7844 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C29DD2CEF0D2C005C7844 /* ImagePicker.swift */; };
+		770C29E02CF05E01005C7844 /* MyBookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C29DF2CF05E01005C7844 /* MyBookmarksView.swift */; };
 		770E953F2CE722E500761A03 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E953E2CE722E500761A03 /* BackButton.swift */; };
 		770E95412CE7232E00761A03 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E95402CE7232E00761A03 /* CustomFont.swift */; };
 		771306DD2CEB1CAC00D47BD5 /* TextEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771306DC2CEB1CAC00D47BD5 /* TextEditorView.swift */; };
@@ -66,15 +67,11 @@
 		F6CFC5C12CEB256B003C0087 /* RoungeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5C02CEB2563003C0087 /* RoungeModel.swift */; };
 		F6CFC5C32CEB2C38003C0087 /* HomeLoungeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5C22CEB2C32003C0087 /* HomeLoungeDetailView.swift */; };
 		F6CFC5C92CEB4803003C0087 /* HomeLoungeDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFC5C82CEB4803003C0087 /* HomeLoungeDetailContentView.swift */; };
-		FE2061372CE949780001FCD1 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061362CE949780001FCD1 /* InformationView.swift */; };
-		FE20613C2CE94A1A0001FCD1 /* InformationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE20613B2CE94A1A0001FCD1 /* InformationDetailView.swift */; };
 		FE2061402CE951380001FCD1 /* InformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE20613F2CE951380001FCD1 /* InformationModel.swift */; };
 		FE2061452CE95AAF0001FCD1 /* ViewBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061442CE95AAF0001FCD1 /* ViewBackButton.swift */; };
 		FE2061482CE9612F0001FCD1 /* CustomBackButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061472CE9612F0001FCD1 /* CustomBackButtonModifier.swift */; };
-		FE20614B2CE967AD0001FCD1 /* AnnouncementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE20614A2CE967AD0001FCD1 /* AnnouncementView.swift */; };
 		FE20614E2CE969070001FCD1 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE20614D2CE969070001FCD1 /* QuestionView.swift */; };
 		FE2061502CE96DF30001FCD1 /* ExpandedDividerWithVStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE20614F2CE96DF30001FCD1 /* ExpandedDividerWithVStackView.swift */; };
-		FE2061532CE983400001FCD1 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061522CE983400001FCD1 /* SettingView.swift */; };
 		FE2061562CE991320001FCD1 /* TermsAndConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061552CE991320001FCD1 /* TermsAndConditionsView.swift */; };
 		FE2061582CE992D90001FCD1 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061572CE992D90001FCD1 /* PrivacyPolicyView.swift */; };
 		FE3F76A52CEE541400137A99 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3F76A42CEE541400137A99 /* PostViewModel.swift */; };
@@ -119,6 +116,7 @@
 		50A7A87F2CEEC236002EF75F /* MyAppliedTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppliedTeamsView.swift; sourceTree = "<group>"; };
 		50A7A8812CEECE6E002EF75F /* TeamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailView.swift; sourceTree = "<group>"; };
 		770C29DD2CEF0D2C005C7844 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		770C29DF2CF05E01005C7844 /* MyBookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookmarksView.swift; sourceTree = "<group>"; };
 		770E953E2CE722E500761A03 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		770E95402CE7232E00761A03 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		770E95422CE724A700761A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -141,15 +139,11 @@
 		F6CFC5C02CEB2563003C0087 /* RoungeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoungeModel.swift; sourceTree = "<group>"; };
 		F6CFC5C22CEB2C32003C0087 /* HomeLoungeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoungeDetailView.swift; sourceTree = "<group>"; };
 		F6CFC5C82CEB4803003C0087 /* HomeLoungeDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoungeDetailContentView.swift; sourceTree = "<group>"; };
-		FE2061362CE949780001FCD1 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
-		FE20613B2CE94A1A0001FCD1 /* InformationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailView.swift; sourceTree = "<group>"; };
 		FE20613F2CE951380001FCD1 /* InformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationModel.swift; sourceTree = "<group>"; };
 		FE2061442CE95AAF0001FCD1 /* ViewBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBackButton.swift; sourceTree = "<group>"; };
 		FE2061472CE9612F0001FCD1 /* CustomBackButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButtonModifier.swift; sourceTree = "<group>"; };
-		FE20614A2CE967AD0001FCD1 /* AnnouncementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementView.swift; sourceTree = "<group>"; };
 		FE20614D2CE969070001FCD1 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		FE20614F2CE96DF30001FCD1 /* ExpandedDividerWithVStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedDividerWithVStackView.swift; sourceTree = "<group>"; };
-		FE2061522CE983400001FCD1 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		FE2061552CE991320001FCD1 /* TermsAndConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsView.swift; sourceTree = "<group>"; };
 		FE2061572CE992D90001FCD1 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		FE3F76A42CEE541400137A99 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
@@ -307,13 +301,10 @@
 			children = (
 				2CBE306E2CEDBE6C00066EB5 /* FriendProfileView.swift */,
 				2CBE306F2CEDBE6C00066EB5 /* MyProfileView.swift */,
-				50A7A87B2CEEC220002EF75F /* myTeam */,
+				50A7A87B2CEEC220002EF75F /* MyPostTeam */,
 				7793F18A2CEC6B32007595D4 /* Edit */,
 				FE2061542CE990F80001FCD1 /* Policies */,
-				FE2061492CE9679D0001FCD1 /* Sub */,
-				FE2061382CE949C60001FCD1 /* Announcement */,
 				FE20614C2CE968E40001FCD1 /* Question */,
-				FE2061512CE9831F0001FCD1 /* Setting */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -422,15 +413,16 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		50A7A87B2CEEC220002EF75F /* myTeam */ = {
+		50A7A87B2CEEC220002EF75F /* MyPostTeam */ = {
 			isa = PBXGroup;
 			children = (
 				50A7A87A2CEEC220002EF75F /* MyPostsView.swift */,
 				50A7A87D2CEEC22A002EF75F /* MyRecruitingTeamsView.swift */,
 				50A7A8812CEECE6E002EF75F /* TeamDetailView.swift */,
 				50A7A87F2CEEC236002EF75F /* MyAppliedTeamsView.swift */,
+				770C29DF2CF05E01005C7844 /* MyBookmarksView.swift */,
 			);
-			path = myTeam;
+			path = MyPostTeam;
 			sourceTree = "<group>";
 		};
 		770E953D2CE722CD00761A03 /* Component */ = {
@@ -471,14 +463,6 @@
 			path = HomeLoungeCommon;
 			sourceTree = "<group>";
 		};
-		FE2061382CE949C60001FCD1 /* Announcement */ = {
-			isa = PBXGroup;
-			children = (
-				FE20614A2CE967AD0001FCD1 /* AnnouncementView.swift */,
-			);
-			path = Announcement;
-			sourceTree = "<group>";
-		};
 		FE20613D2CE951120001FCD1 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,29 +487,12 @@
 			path = ViewModifier;
 			sourceTree = "<group>";
 		};
-		FE2061492CE9679D0001FCD1 /* Sub */ = {
-			isa = PBXGroup;
-			children = (
-				FE2061362CE949780001FCD1 /* InformationView.swift */,
-				FE20613B2CE94A1A0001FCD1 /* InformationDetailView.swift */,
-			);
-			path = Sub;
-			sourceTree = "<group>";
-		};
 		FE20614C2CE968E40001FCD1 /* Question */ = {
 			isa = PBXGroup;
 			children = (
 				FE20614D2CE969070001FCD1 /* QuestionView.swift */,
 			);
 			path = Question;
-			sourceTree = "<group>";
-		};
-		FE2061512CE9831F0001FCD1 /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-				FE2061522CE983400001FCD1 /* SettingView.swift */,
-			);
-			path = Setting;
 			sourceTree = "<group>";
 		};
 		FE2061542CE990F80001FCD1 /* Policies */ = {
@@ -636,6 +603,7 @@
 				2C6D8CE12CEB13F3001B8F08 /* GroupChatView.swift in Sources */,
 				770E95412CE7232E00761A03 /* CustomFont.swift in Sources */,
 				EBE645DE2CEB82BE0033426B /* SignUpNicknameView.swift in Sources */,
+				770C29E02CF05E01005C7844 /* MyBookmarksView.swift in Sources */,
 				F6CFC5C92CEB4803003C0087 /* HomeLoungeDetailContentView.swift in Sources */,
 				2C2E58182CE71F0D008766A8 /* LoginView.swift in Sources */,
 				F6CFC5C12CEB256B003C0087 /* RoungeModel.swift in Sources */,
@@ -648,7 +616,6 @@
 				2C2E581B2CE71F0D008766A8 /* HomeView.swift in Sources */,
 				50A7A87C2CEEC220002EF75F /* MyPostsView.swift in Sources */,
 				50A7A87E2CEEC22A002EF75F /* MyRecruitingTeamsView.swift in Sources */,
-				FE2061372CE949780001FCD1 /* InformationView.swift in Sources */,
 				FE2061482CE9612F0001FCD1 /* CustomBackButtonModifier.swift in Sources */,
 				50241F922CEB8D10002014EF /* PrivateChatListView.swift in Sources */,
 				7793F1842CEC1A28007595D4 /* CategorySelectedView.swift in Sources */,
@@ -676,11 +643,11 @@
 				50A7A8822CEECE6E002EF75F /* TeamDetailView.swift in Sources */,
 				FE20614B2CE967AD0001FCD1 /* AnnouncementView.swift in Sources */,
 				FE2061532CE983400001FCD1 /* SettingView.swift in Sources */,
+				EBA041EB2CEED3D50031E738 /* QuestionModel.swift in Sources */,
 				FE9F24542CEF656E003217F0 /* ApplicationViewModel.swift in Sources */,
 				2C2E58222CE71F0D008766A8 /* RoundedCorner.swift in Sources */,
 				7793F18C2CEC6B46007595D4 /* EditView.swift in Sources */,
 				FE2061562CE991320001FCD1 /* TermsAndConditionsView.swift in Sources */,
-				FE20613C2CE94A1A0001FCD1 /* InformationDetailView.swift in Sources */,
 				2CBEEB3F2CEB001B001CE6ED /* GroupChatListView.swift in Sources */,
 				2C2E58242CE71F0D008766A8 /* ProjectMoyoApp.swift in Sources */,
 				2CBE30702CEDBE6C00066EB5 /* FriendProfileView.swift in Sources */,
