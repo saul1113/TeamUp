@@ -19,7 +19,6 @@ struct EditView: View {
     @State private var linkName: String = ""
     @State private var profileImage: UIImage = UIImage()
     @State private var isPresented: Bool = false
-    @State private var isLoad: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -44,24 +43,23 @@ struct EditView: View {
                                             .resizable()
                                             .frame(width: 100, height: 100)
                                             .foregroundColor(.gray.opacity(0.3))
+                                        
+                                        Image(systemName: "camera.fill")
+                                            .resizable()
+                                            .frame(width: 28, height: 24)
+                                            .offset(x: 40, y: 28)
+                                            .foregroundColor(.gray)
                                     }
-                                    Image(systemName: "camera.fill")
-                                        .resizable()
-                                        .frame(width: 28, height: 24)
-                                        .offset(x: 40, y: 28)
-                                        .foregroundColor(.gray)
                                 }
                             }
+                            Text("\(nickname)")
+                                .font(.semibold22)
+                                .padding(.top, 15)
                         }
                         Spacer()
                     }
                     .padding(.top, 20)
                     
-                    Text("닉네임")
-                        .font(.semibold18)
-                    TextField("수민이다", text: $nickname)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .font(.regular14)
                     
                     Spacer()
                     
