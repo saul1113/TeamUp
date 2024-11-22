@@ -12,7 +12,7 @@ struct HomeLoungeDetailView: View {
     @State private var isBookmarked = false
     @State private var newComment = ""
     @State private var showAlert = false
-     @State private var alertMessage = ""
+    @State private var alertMessage = ""
     @EnvironmentObject var viewModel: ApplicationViewModel
     @State private var isApplied = false
     // 모델이 수정 가능한 값으로 `save` 프로퍼티를 가지고 있다고 가정
@@ -206,12 +206,13 @@ struct HomeLoungeDetailView: View {
                     Spacer().frame(height: 40)
                     
                     Button(action: {
+                        guard !isApplied else { return }
                         Task {
-                        do {
-                            try await viewModel.apply(postID: String(model.id))  // 실제 신청 로직 호출
+                            do {
+                                try await viewModel.apply(postID: String(model.id))  // 실제 신청 로직 호출
                                 alertMessage = "신청이 완료되었습니다."
                                 showAlert = true
-                                isApplied = true
+                                isApplied = true // 신청 완료 후 상태 업데이트
                             } catch {
                                 alertMessage = "신청에 실패했습니다: \(error.localizedDescription)"
                                 showAlert = true
@@ -222,15 +223,16 @@ struct HomeLoungeDetailView: View {
                             .font(.semibold20)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
-                            .frame(width:360, height: 50)
-                            .background(isApplied ? Color.gray :Color.customBlue)
+                            .frame(width: 360, height: 50)
+                            .background(isApplied ? Color.gray : Color.customBlue)
                             .cornerRadius(4)
                             .padding(.horizontal)
-                            .disabled(isApplied)
+                           
                     }
+                    .disabled(isApplied)
                     .alert(isPresented: $showAlert) {
-                                           Alert(title: Text("알림"), message: Text(alertMessage), dismissButton: .default(Text("확인")))
-                                       }
+                        Alert(title: Text("알림"), message: Text(alertMessage), dismissButton: .default(Text("확인")))
+                    }
                     
                     
                 }
