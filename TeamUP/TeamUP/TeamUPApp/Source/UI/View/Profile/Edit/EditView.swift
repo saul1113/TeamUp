@@ -19,6 +19,7 @@ struct EditView: View {
     @State private var linkName: String = ""
     @State private var profileImage: UIImage = UIImage()
     @State private var isPresented: Bool = false
+    @State private var isLoad: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -120,6 +121,29 @@ struct EditView: View {
                     }
                     
                     Spacer()
+                    
+                    Button {
+                        Task {
+                            try await authManager.updateUserProfile(nickname: nickname, bio: selfPR/*, interests: tags, links: link*/) { result in
+                                switch result {
+                                case .success(let updatedUser):
+                                    print("\(updatedUser.nickname)")
+                                    dismiss()
+                                case .failure(let error):
+                                    print("\(error.localizedDescription)")
+                                }
+                            }
+                            dismiss()
+                        }
+                    } label: {
+                        Text("작성 완료")
+                            .frame(width: 360, height: 50)
+                            .font(.semibold20)
+                            .foregroundColor(.white)
+                            .background(Color.customBlue)
+                            .cornerRadius(4)
+                    }
+                    .padding(.bottom, 20)
                 }
             }
         }
@@ -132,17 +156,6 @@ struct EditView: View {
                 Text("프로필 수정")
                     .fontWeight(.semibold)
                     .foregroundColor(.black)
-            }
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    authManager.updateUser(nickname: nickname, bio: selfPR, interests: tags, link: link)
-                    print("유저닉네임 : \(authManager.user?.nickname ?? "No user")")
-                    dismiss()
-                } label: {
-                    Text("완료")
-                        .fontWeight(.regular)
-                        .foregroundColor(.black)
-                }
             }
         }
         .navigationBarBackButtonHidden(true)
