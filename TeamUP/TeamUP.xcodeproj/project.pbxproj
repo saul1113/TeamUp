@@ -40,6 +40,7 @@
 		2CBEEB3F2CEB001B001CE6ED /* GroupChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBEEB3E2CEB001B001CE6ED /* GroupChatListView.swift */; };
 		50241F922CEB8D10002014EF /* PrivateChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50241F912CEB8D10002014EF /* PrivateChatListView.swift */; };
 		50241F942CEB8D1B002014EF /* PrivateChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50241F932CEB8D1B002014EF /* PrivateChatView.swift */; };
+		507B762D2CF0432200C1B7AE /* sampleRoungeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507B762C2CF0432200C1B7AE /* sampleRoungeData.swift */; };
 		50A7A87C2CEEC220002EF75F /* MyPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7A87A2CEEC220002EF75F /* MyPostsView.swift */; };
 		50A7A87E2CEEC22A002EF75F /* MyRecruitingTeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7A87D2CEEC22A002EF75F /* MyRecruitingTeamsView.swift */; };
 		50A7A8802CEEC236002EF75F /* MyAppliedTeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7A87F2CEEC236002EF75F /* MyAppliedTeamsView.swift */; };
@@ -117,6 +118,7 @@
 		2CBEEB3E2CEB001B001CE6ED /* GroupChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatListView.swift; sourceTree = "<group>"; };
 		50241F912CEB8D10002014EF /* PrivateChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateChatListView.swift; sourceTree = "<group>"; };
 		50241F932CEB8D1B002014EF /* PrivateChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateChatView.swift; sourceTree = "<group>"; };
+		507B762C2CF0432200C1B7AE /* sampleRoungeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleRoungeData.swift; sourceTree = "<group>"; };
 		50A7A87A2CEEC220002EF75F /* MyPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsView.swift; sourceTree = "<group>"; };
 		50A7A87D2CEEC22A002EF75F /* MyRecruitingTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecruitingTeamsView.swift; sourceTree = "<group>"; };
 		50A7A87F2CEEC236002EF75F /* MyAppliedTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppliedTeamsView.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				2C2E57FF2CE71F0D008766A8 /* LoungeView.swift */,
+				507B762C2CF0432200C1B7AE /* sampleRoungeData.swift */,
 			);
 			path = Lounge;
 			sourceTree = "<group>";
@@ -670,6 +673,7 @@
 				EBA041ED2CEED4280031E738 /* QuestionViewModel.swift in Sources */,
 				FE2061452CE95AAF0001FCD1 /* ViewBackButton.swift in Sources */,
 				EBB25C9F2CEB12700018A139 /* SignUpPasswordView.swift in Sources */,
+				507B762D2CF0432200C1B7AE /* sampleRoungeData.swift in Sources */,
 				2C6D8CE52CEB18A0001B8F08 /* CustomPadding.swift in Sources */,
 				770E953F2CE722E500761A03 /* BackButton.swift in Sources */,
 				FE2061582CE992D90001FCD1 /* PrivacyPolicyView.swift in Sources */,
