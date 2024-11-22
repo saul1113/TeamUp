@@ -11,7 +11,10 @@ struct HomeLoungeDetailView: View {
     @State private var saveCount: Int
     @State private var isBookmarked = false
     @State private var newComment = ""
-    
+    @State private var showAlert = false
+    @State private var alertMessage = ""
+    @EnvironmentObject var viewModel: ApplicationViewModel
+    @State private var isApplied = false
     // 모델이 수정 가능한 값으로 `save` 프로퍼티를 가지고 있다고 가정
     init(model: Listable) {
         self.model = model
@@ -209,17 +212,36 @@ struct HomeLoungeDetailView: View {
                     Spacer().frame(height: 40)
                     
                     Button(action: {
-                        // 신청 로직
+
+                        guard !isApplied else { return }
+                        Task {
+                            do {
+                                try await viewModel.apply(postID: String(model.id))  // 실제 신청 로직 호출
+                                alertMessage = "신청이 완료되었습니다."
+                                showAlert = true
+                                isApplied = true // 신청 완료 후 상태 업데이트
+                            } catch {
+                                alertMessage = "신청에 실패했습니다: \(error.localizedDescription)"
+                                showAlert = true
+                            }
+                        }
+
                         
+
                     }) {
-                        Text("신청하기")
+                        Text(isApplied ? "신청 완료" : "신청하기")
                             .font(.semibold20)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
-                            .frame(width:360, height: 50)
-                            .background(Color.customBlue)
+                            .frame(width: 360, height: 50)
+                            .background(isApplied ? Color.gray : Color.customBlue)
                             .cornerRadius(4)
                             .padding(.horizontal)
+                           
+                    }
+                    .disabled(isApplied)
+                    .alert(isPresented: $showAlert) {
+                        Alert(title: Text("알림"), message: Text(alertMessage), dismissButton: .default(Text("확인")))
                     }
                     
                     
@@ -264,7 +286,7 @@ struct HomeLoungeDetailView: View {
 #Preview {
     let sampleRoungeData =
     Rounge(
-        category: .qna,
+        id: 1, category: .qna,
         user: User(id: UUID().uuidString, email: "add", password: "123", nickname: "ㅎㅎ", profileImageName: "String"),
         title: "새로운 규정 공지",
         content: "새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요.새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요",
@@ -281,6 +303,6 @@ struct HomeLoungeDetailView: View {
         save: 120,
         seen: 350, hasTag: ["질문","궁금해요","스터디"]
     )
-    let samplePost = Post(category: .study, user: User(id: UUID().uuidString,email: "1231", password: "1231", nickname: "수민이다", profileImageName: "ㅁㄴㅇㄴㅇ"), isRecruit: true, title: "강아지 잃어버리신분!!!", content: "배가고파서 집에서 나오는길 늘 그렇듯 늘어선 가로등은 타오르지 마치 싸울듯이 엉켜있었떤 머시기 시기지난 래퍼들의 반대편을 바라보던 래퍼들의 래퍼 그건 100프로 난 몰라요 하하하하 아무말이나 반대편을 바라보던 래퍼들의 래퍼 그건 100프로 난 몰라요 늘 그렇듯 늘어선 가로등은 타오르지 마치 싸울듯이 엉켜있었떤 머시기 시기지난 래퍼들의 반대편을 바라보던 래퍼들의 래퍼 그건 100프로 난 몰라요  ", time: "4시간 전", save: 4, seen: 6, maxCapacity: 5, currentCapacity: 2 ,hasTag: ["알고리즘","스터디","프로젝트"])
+    let samplePost = Post(id: 1, category: .study, user: User(id: UUID().uuidString,email: "1231", password: "1231", nickname: "수민이다", profileImageName: "ㅁㄴㅇㄴㅇ"), isRecruit: true, title: "강아지 잃어버리신분!!!", content: "배가고파서 집에서 나오는길 늘 그렇듯 늘어선 가로등은 타오르지 마치 싸울듯이 엉켜있었떤 머시기 시기지난 래퍼들의 반대편을 바라보던 래퍼들의 래퍼 그건 100프로 난 몰라요 하하하하 아무말이나 반대편을 바라보던 래퍼들의 래퍼 그건 100프로 난 몰라요 늘 그렇듯 늘어선 가로등은 타오르지 마치 싸울듯이 엉켜있었떤 머시기 시기지난 래퍼들의 반대편을 바라보던 래퍼들의 래퍼 그건 100프로 난 몰라요  ", time: "4시간 전", save: 4, seen: 6, maxCapacity: 5, currentCapacity: 2 ,hasTag: ["알고리즘","스터디","프로젝트"])
     HomeLoungeDetailView(model: sampleRoungeData)
 }

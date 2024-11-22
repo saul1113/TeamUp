@@ -14,7 +14,7 @@ struct MyAppliedTeamsView: View {
     // Mock 데이터
     let appliedTeams: [Post] = [
         Post(
-            category: .study,
+            id: 1, category: .study,
             user: User(id: "1", email: "test@test.com", password: "123", nickname: "수민이다", profileImageName: "default.png"),
             isRecruit: true,
             title: "알고리즘 스터디",

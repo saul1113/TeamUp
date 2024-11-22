@@ -10,7 +10,7 @@ import SwiftUI
 struct MyRecruitingTeamsView: View {
     let recruitingTeams: [Post] = [
         Post(
-            category: .study,
+            id: 1, category: .study,
             user: User(id: "1", email: "test@test.com", password: "123", nickname: "수민", profileImageName: "default.png"),
             isRecruit: true,
             title: "알고리즘 스터디",
@@ -23,7 +23,7 @@ struct MyRecruitingTeamsView: View {
             hasTag: ["알고리즘"]
         ),
         Post(
-            category: .project,
+            id: 2, category: .project,
             user: User(id: "2", email: "test2@test.com", password: "123", nickname: "원호", profileImageName: "default.png"),
             isRecruit: true,
             title: "웹 프로젝트",

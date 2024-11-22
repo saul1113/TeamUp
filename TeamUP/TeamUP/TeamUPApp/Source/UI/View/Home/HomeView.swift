@@ -10,9 +10,9 @@ import SwiftUI
 
 // 샘플 게시글 데이터
 let samplePostData = [
-    Post(category: .study, user: User(id: UUID().uuidString,email: "add", password: "123", nickname: "하이요", profileImageName: "String"), isRecruit: true, title: "강아지 잃어버리신분!!!", content: "여기 뚝도시장입니다 주인없이 돌아다니는데 찾으러 오세요", time: "4시간 전", save: 4, seen: 6, maxCapacity: 5, currentCapacity: 2 ,hasTag: ["알고리즘","스터디","프로젝트"]),
-    Post(category: .project, user: User(id: UUID().uuidString,email: "add", password: "123", nickname: "메롱", profileImageName: "String"), isRecruit: true, title: "건물안에서 갇혔는데 열어주실분", content: "독카실용음악학원 4층인데요 지금 오셔서 열어주시면 감사하겠습니다.여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!", time: "1일 전", save: 4, seen: 6, maxCapacity: 5, currentCapacity: 2 , hasTag: ["알고리즘","스터디","프로젝트"]),
-    Post(category: .study, user: User(id: UUID().uuidString,email: "add", password: "123", nickname: "ㅋㅋ맨", profileImageName: "String"), isRecruit: false, title: "강아지 보호소 괜찮을까요", content:
+    Post(id: 1, category: .study, user: User(id: UUID().uuidString,email: "add", password: "123", nickname: "하이요", profileImageName: "String"), isRecruit: true, title: "강아지 잃어버리신분!!!", content: "여기 뚝도시장입니다 주인없이 돌아다니는데 찾으러 오세요", time: "4시간 전", save: 4, seen: 6, maxCapacity: 5, currentCapacity: 2 ,hasTag: ["알고리즘","스터디","프로젝트"]),
+    Post(id: 2, category: .project, user: User(id: UUID().uuidString,email: "add", password: "123", nickname: "메롱", profileImageName: "String"), isRecruit: true, title: "건물안에서 갇혔는데 열어주실분", content: "독카실용음악학원 4층인데요 지금 오셔서 열어주시면 감사하겠습니다.여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!", time: "1일 전", save: 4, seen: 6, maxCapacity: 5, currentCapacity: 2 , hasTag: ["알고리즘","스터디","프로젝트"]),
+    Post(id: 3, category: .study, user: User(id: UUID().uuidString,email: "add", password: "123", nickname: "ㅋㅋ맨", profileImageName: "String"), isRecruit: false, title: "강아지 보호소 괜찮을까요", content:
             """
 ## 프로젝트 개요
 - **주제:** SwiftUI를 활용한 협업 툴 개발
