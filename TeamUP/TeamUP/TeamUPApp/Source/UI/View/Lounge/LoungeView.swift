@@ -8,7 +8,7 @@
 import SwiftUI
 let sampleRoungeData: [Rounge] = [
     Rounge(
-        category: .qna,
+        id: 1, category: .qna,
         user: User(id: UUID().uuidString, email: "add", password: "123", nickname: "ㅎㅎ", profileImageName: "String"),
         title: "새로운 규정 공지",
         content: "새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요.",
@@ -22,7 +22,7 @@ let sampleRoungeData: [Rounge] = [
         seen: 350, hasTag: ["질문","궁금해요","스터디"]
     ),
     Rounge(
-        category: .talk,
+        id: 1, category: .talk,
         user:User(id: UUID().uuidString, email: "add", password: "123", nickname: "친구야", profileImageName: "String"),
         title: "오늘 점심 뭐 먹을까요?",
         content: "여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!",
@@ -36,7 +36,7 @@ let sampleRoungeData: [Rounge] = [
         seen: 150, hasTag: ["질문","궁금해요","스터디"]
     ),
     Rounge(
-        category: .qna,
+        id: 3, category: .qna,
         user: User(id: UUID().uuidString, email: "add", password: "123", nickname: "김원호요", profileImageName: "String"),
         title: "iOS 프로젝트에서 List 뷰 사용법",
         content: "iOS 프로젝트에서 `List` 뷰를 사용하려면 어떻게 해야 하나요? 방법을 알고 싶은데 알려주세요!",
