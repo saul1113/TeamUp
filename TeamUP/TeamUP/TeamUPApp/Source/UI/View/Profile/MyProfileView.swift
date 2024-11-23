@@ -56,7 +56,7 @@ struct MyProfileView: View {
                         .font(.semibold18)
                     
                     if let user = authManager.user {
-                        Text(user.bio)
+                        Text(user.bio ?? "")
                             .font(.regular16)
                     } else {
                         Text("소개글이 비어있습니다")

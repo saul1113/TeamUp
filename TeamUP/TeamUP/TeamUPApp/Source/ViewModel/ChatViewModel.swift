@@ -15,7 +15,7 @@ struct ChatMessage: Equatable {
         true
     }
     
-    let user: ChatUser
+    let user: User
     let room: Int
     let message: String
     let date: String
@@ -35,17 +35,7 @@ struct ChatMessage: Equatable {
         }
     }
 }
-struct ChatUser {
-    let id: String
-    let nickname: String
-    let profileImageName: String
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case nickname
-        case profileImageName = "profile_image_name"
-    }
-}
+
 @Observable
 class ChatViewModel {
     var chatMessage: [ChatMessage] = []
@@ -84,10 +74,10 @@ class ChatViewModel {
                let room = message["room"] as? Int,
                let msg = message["message"] as? String,
                let date = message["date"] as? String,
-               let userID = user["id"] as? String,
+               let userEmail = user["id"] as? String,
                let userNickname = user["nickname"] as? String,
                let userImage = user["profile_image_name"] as? String  {
-                let chatUser = ChatUser(id: userID, nickname: userNickname, profileImageName: userImage)
+                let chatUser = User(id: "",email: userEmail, password: "", nickname: userNickname ,profileImageName: userImage)
                 self.chatMessage.append(ChatMessage(user: chatUser, room: room, message: msg , date: date))
             }
         }

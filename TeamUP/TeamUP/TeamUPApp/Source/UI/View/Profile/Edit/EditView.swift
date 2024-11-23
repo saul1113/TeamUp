@@ -160,7 +160,7 @@ struct EditView: View {
         .onAppear {
             if let user = authManager.user {
                 nickname = user.nickname
-                selfPR = user.bio
+                selfPR = user.bio ?? ""
                 // tags = user.interests
                 // linkName = user.linkName
                 // link = user.link

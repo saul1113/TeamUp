@@ -90,52 +90,54 @@ struct GroupChatView: View {
     
     @ViewBuilder
     func messageView(message: ChatMessage) -> some View {
-        if message.user.nickname == authManager.user!.nickname {
-            HStack (alignment: .bottom) {
-                Text(message.decodedDateString)
-                    .font(Font.regular12)
-                    .foregroundStyle(.gray)
-                Text(message.message)
-                    .padding(.vertical, 12)
-                    .customPadding()
-                    .foregroundStyle(.black)
-                    .background {
-                        Rectangle()
-                            .fill(Color.customBlue.opacity(0.5))
-                            .cornerRadius(20, corners: [.topLeft, .bottomLeft, .bottomRight])
-                    }
-            }
-            .frame(maxWidth: .infinity, alignment: .trailing)
-        } else {
-            HStack ( alignment: .bottom, spacing:0 ) {
-                VStack {
-                    Image(systemName: "person.circle")
-                        .resizable()
-                        .frame(width: 35,height: 35)
+        if let user = authManager.user {
+            if message.user.email == user.email {
+                HStack (alignment: .bottom) {
+                    Text(message.decodedDateString)
+                        .font(Font.regular12)
                         .foregroundStyle(.gray)
-                    Spacer()
-                }
-                VStack (alignment: .leading) {
-                    Text(message.user.nickname)
-                        .font(Font.semibold14)
-                        .padding(.horizontal, 6)
                     Text(message.message)
                         .padding(.vertical, 12)
                         .customPadding()
                         .foregroundStyle(.black)
                         .background {
                             Rectangle()
-                                .fill(Color.customGray)
-                                .cornerRadius(20, corners: [.topRight, .bottomLeft, .bottomRight])
+                                .fill(Color.customBlue.opacity(0.5))
+                                .cornerRadius(20, corners: [.topLeft, .bottomLeft, .bottomRight])
                         }
                 }
-                .padding(.trailing, -30)
-                Text(message.decodedDateString)
-                    .font(Font.regular12)
-                    .foregroundStyle(.gray)
-                Spacer()
+                .frame(maxWidth: .infinity, alignment: .trailing)
+            } else {
+                HStack ( alignment: .bottom, spacing:0 ) {
+                    VStack {
+                        Image(systemName: "person.circle")
+                            .resizable()
+                            .frame(width: 35,height: 35)
+                            .foregroundStyle(.gray)
+                        Spacer()
+                    }
+                    VStack (alignment: .leading) {
+                        Text(message.user.nickname)
+                            .font(Font.semibold14)
+                            .padding(.horizontal, 6)
+                        Text(message.message)
+                            .padding(.vertical, 12)
+                            .customPadding()
+                            .foregroundStyle(.black)
+                            .background {
+                                Rectangle()
+                                    .fill(Color.customGray)
+                                    .cornerRadius(20, corners: [.topRight, .bottomLeft, .bottomRight])
+                            }
+                    }
+                    .padding(.trailing, -30)
+                    Text(message.decodedDateString)
+                        .font(Font.regular12)
+                        .foregroundStyle(.gray)
+                    Spacer()
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }
