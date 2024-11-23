@@ -43,24 +43,23 @@ struct EditView: View {
                                             .resizable()
                                             .frame(width: 100, height: 100)
                                             .foregroundColor(.gray.opacity(0.3))
+                                        
+                                        Image(systemName: "camera.fill")
+                                            .resizable()
+                                            .frame(width: 28, height: 24)
+                                            .offset(x: 40, y: 28)
+                                            .foregroundColor(.gray)
                                     }
-                                    Image(systemName: "camera.fill")
-                                        .resizable()
-                                        .frame(width: 28, height: 24)
-                                        .offset(x: 40, y: 28)
-                                        .foregroundColor(.gray)
                                 }
                             }
+                            Text("\(nickname)")
+                                .font(.semibold22)
+                                .padding(.top, 15)
                         }
                         Spacer()
                     }
                     .padding(.top, 20)
                     
-                    Text("닉네임")
-                        .font(.semibold18)
-                    TextField("수민이다", text: $nickname)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .font(.regular14)
                     
                     Spacer()
                     
@@ -120,6 +119,28 @@ struct EditView: View {
                     }
                     
                     Spacer()
+                    
+                    Button {
+                        Task {
+                            try await authManager.updateUserProfile(nickname: nickname, bio: selfPR/*, interests: tags, links: link*/) { result in
+                                switch result {
+                                case .success(let updatedUser):
+                                    dismiss()
+                                case .failure(let error):
+                                    print("\(error.localizedDescription)")
+                                }
+                            }
+                            dismiss()
+                        }
+                    } label: {
+                        Text("수정 완료")
+                            .frame(width: 360, height: 50)
+                            .font(.semibold20)
+                            .foregroundColor(.white)
+                            .background(Color.customBlue)
+                            .cornerRadius(4)
+                    }
+                    .padding(.bottom, 20)
                 }
             }
         }
@@ -132,17 +153,6 @@ struct EditView: View {
                 Text("프로필 수정")
                     .fontWeight(.semibold)
                     .foregroundColor(.black)
-            }
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    authManager.updateUser(nickname: nickname, bio: selfPR, interests: tags, link: link)
-                    print("유저닉네임 : \(authManager.user?.nickname ?? "No user")")
-                    dismiss()
-                } label: {
-                    Text("완료")
-                        .fontWeight(.regular)
-                        .foregroundColor(.black)
-                }
             }
         }
         .navigationBarBackButtonHidden(true)

@@ -81,12 +81,11 @@ struct PrivacyPolicyView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 10) {
-                Text("개인정보처리방침")
-                    .font(.bold20)
-                
                 Divider()
                     .padding(.horizontal, -padding)
                 
+                Spacer()
+                    .frame(height: 1)
                 Text(message)
                     .font(.semibold18)
             }

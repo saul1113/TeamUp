@@ -60,7 +60,7 @@ final class PostViewModel: ObservableObject {
     private let keychain = KeychainSwift()
     private var defaultURL: URLComponents = URLComponents()
     private let accessTokenKey = "access_token"
-    private(set) var posts: [PostModelStruct] = []
+    @Published private(set) var posts: [PostModelStruct] = []
     
     init() {
         if let urlString = Bundle.main.infoDictionary?["UrlString"], let url = urlString as? String {

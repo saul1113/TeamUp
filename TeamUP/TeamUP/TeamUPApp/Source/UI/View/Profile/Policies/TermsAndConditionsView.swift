@@ -42,12 +42,10 @@ struct TermsAndConditionsView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 10) {
-                Text("이용약관")
-                    .font(.bold20)
-                
                 Divider()
                     .padding(.horizontal, -padding)
-                
+                Spacer()
+                    .frame(height: 1)
                 Text(message)
                     .font(.semibold18)
             }
