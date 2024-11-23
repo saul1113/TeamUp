@@ -10,7 +10,7 @@ import MarkdownUI
 
 struct PostView: View {
     @Environment(\.dismiss) var dismiss
-    @EnvironmentObject private var postViewModel: PostViewModel
+    @Environment(PostViewModel.self) private var postViewModel: PostViewModel
     
     @State private var postCategory = "프로젝트 모집"
     let categories = ["프로젝트 모집", "스터디 모집", "Q & A", "잡담"]
@@ -114,4 +114,5 @@ struct PostView: View {
 
 #Preview {
     PostView()
+        .environment(PostViewModel())
 }

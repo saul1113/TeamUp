@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MyProfileView: View {
-    @EnvironmentObject var authManager: AuthManager
+    @Environment(AuthManager.self) private var authManager: AuthManager
     @Environment(\.presentationMode) var presentationMode
     
     @State private var tags: [String] = ["iOS", "앱개발"]
@@ -39,7 +39,7 @@ struct MyProfileView: View {
                         Spacer()
                         
                         
-                        NavigationLink(destination: EditView().environmentObject(authManager)) {
+                        NavigationLink(destination: EditView()) {
                             Text("프로필 수정")
                                 .frame(width: 80, height: 40)
                                 .font(.semibold14)
@@ -217,5 +217,5 @@ struct MyProfileView: View {
     NavigationStack {
         MyProfileView()
     }
-    .environmentObject(AuthManager())
+    .environment(AuthManager())
 }

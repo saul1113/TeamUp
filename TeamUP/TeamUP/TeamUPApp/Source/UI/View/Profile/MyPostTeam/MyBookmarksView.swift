@@ -10,8 +10,8 @@ import SwiftUI
 struct MyBookmarksView: View {
     @State private var selectedTab = 0
     @State private var searchText = ""
-    @EnvironmentObject var postViewModel: PostViewModel
-    @EnvironmentObject var authManager: AuthManager
+    @Environment(PostViewModel.self) private var postViewModel: PostViewModel
+    @Environment(AuthManager.self) private var authManager: AuthManager
     
     /*
      // 홈 글 데이터

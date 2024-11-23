@@ -9,17 +9,17 @@ import SwiftUI
 
 @main
 struct ProjectMoyoApp: App {
-    @StateObject private var authManager: AuthManager = AuthManager()
-    @StateObject private var postViewModel: PostViewModel = PostViewModel()
-    @StateObject private var applicationViewModel: ApplicationViewModel = ApplicationViewModel()
+    @State private var authManager: AuthManager = AuthManager()
+    @State private var postViewModel: PostViewModel = PostViewModel()
     @State private var chatViewModel: ChatViewModel = ChatViewModel()
     var body: some Scene {
         WindowGroup {
-            StartTeamupView()
-                .environmentObject(authManager) // 인스턴스 전달
-                .environmentObject(postViewModel)
-                .environmentObject(applicationViewModel)
-                .environment(chatViewModel)
+            NavigationStack {
+                StartTeamupView()
+            }
+            .environment(authManager)
+            .environment(postViewModel)
+            .environment(chatViewModel)
         }
     }
 }

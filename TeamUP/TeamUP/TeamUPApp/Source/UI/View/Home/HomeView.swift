@@ -43,7 +43,7 @@ let samplePostData = [
 
 
 struct HomeView: View {
-    @EnvironmentObject private var postViewModel: PostViewModel
+    @Environment(PostViewModel.self) private var postViewModel: PostViewModel
     @State private var selectedCategory: PostCategory?
     @State private var isSheetPresented = false
     @State private var searchText: String = ""
@@ -228,4 +228,5 @@ extension Text {
 
 #Preview {
     HomeView()
+        .environment(PostViewModel())
 }

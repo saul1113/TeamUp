@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditView: View {
-    @EnvironmentObject var authManager: AuthManager
+    @Environment(AuthManager.self) private var authManager: AuthManager
     @Environment(\.dismiss) var dismiss
     
     @State private var nickname: String = ""

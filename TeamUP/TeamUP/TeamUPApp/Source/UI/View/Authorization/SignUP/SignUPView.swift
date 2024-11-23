@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignUPView: View {
-    @EnvironmentObject var authManager: AuthManager // AuthManager 인스턴스 사용
+    @Environment(AuthManager.self) var authManager: AuthManager // AuthManager 인스턴스 사용
     
     @State private var progress = 0.0
     @State private var email: String = ""
@@ -174,5 +174,5 @@ struct SignUPView: View {
 
 #Preview {
     SignUPView()
-        .environmentObject(AuthManager())
+        .environment(AuthManager())
 }

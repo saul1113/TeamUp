@@ -54,7 +54,7 @@ class ChatViewModel {
         let token = KeychainSwift().get("access_token")!
         self.manager = SocketManager(socketURL: URL(string: chatUrl)!, config: [
             .log(true),
-            .connectParams(["nickname":"soom@gmail.com", "profile_image_name": "asd"]),
+            .connectParams(["nickname":"socket", "profile_image_name": "asd"]),
             .compress,
             .forceWebsockets(true),
             .extraHeaders(["Authorization":"Bearer \(token)"])
@@ -74,11 +74,14 @@ class ChatViewModel {
                let room = message["room"] as? Int,
                let msg = message["message"] as? String,
                let date = message["date"] as? String,
-               let userEmail = user["id"] as? String,
+               let userEmail = user["email"] as? String,
                let userNickname = user["nickname"] as? String,
                let userImage = user["profile_image_name"] as? String  {
                 let chatUser = User(id: "",email: userEmail, password: "", nickname: userNickname ,profileImageName: userImage)
                 self.chatMessage.append(ChatMessage(user: chatUser, room: room, message: msg , date: date))
+                print("chat message: \(self.chatMessage)")
+            } else {
+                print("Chat message decode error \(data)")
             }
         }
         socket.connect()

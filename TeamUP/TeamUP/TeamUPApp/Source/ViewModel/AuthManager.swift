@@ -5,19 +5,20 @@
 //  Created by 강희창 on 11/16/24.
 //
 
-import Alamofire
-import KeychainSwift
 import SwiftUI
+import KeychainSwift
+import Alamofire
 
 struct LoginResponse: Decodable {
     let token: AuthManager.Token
     let user: User
 }
 
-final class AuthManager: ObservableObject {
+@Observable
+final class AuthManager {
     private let keychain = KeychainSwift()
-    @Published private(set) var user: User?
-    @Published private(set) var isValied: Bool = false
+    private(set) var user: User?
+    private(set) var isValied: Bool = false
 
     private var defaultURL: URLComponents = URLComponents()
 
@@ -44,7 +45,7 @@ final class AuthManager: ObservableObject {
         }
     }
     // 인증 관련 상태 관리
-    @Published var isAuthenticated: Bool = false
+    var isAuthenticated: Bool = false
 
     // MARK: - Token 저장 메서드
     func saveToken(_ token: Token) {

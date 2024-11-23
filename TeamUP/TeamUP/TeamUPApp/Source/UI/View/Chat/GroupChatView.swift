@@ -10,7 +10,7 @@ import SwiftUI
 struct GroupChatView: View {
     @State private var text: String = ""
     @Environment(ChatViewModel.self) private var chatViewModel: ChatViewModel
-    @EnvironmentObject private var authManager: AuthManager
+    @Environment(AuthManager.self) private var authManager: AuthManager
     let roomTitle: String
     var body: some View {
         NavigationStack {
@@ -28,6 +28,7 @@ struct GroupChatView: View {
                         }
                     }
                     .onChange(of: chatViewModel.chatMessage) { _, _ in
+                        print(chatViewModel.chatMessage.count)
                         if let lastMessageIndex = chatViewModel.chatMessage.indices.last {
                             withAnimation {
                                 proxy.scrollTo(lastMessageIndex, anchor: .bottom)
@@ -90,6 +91,10 @@ struct GroupChatView: View {
     
     @ViewBuilder
     func messageView(message: ChatMessage) -> some View {
+        Text("")
+            .onAppear {
+                print("auth user: \(authManager.user)")
+            }
         if let user = authManager.user {
             if message.user.email == user.email {
                 HStack (alignment: .bottom) {
@@ -130,7 +135,6 @@ struct GroupChatView: View {
                                     .cornerRadius(20, corners: [.topRight, .bottomLeft, .bottomRight])
                             }
                     }
-                    .padding(.trailing, -30)
                     Text(message.decodedDateString)
                         .font(Font.regular12)
                         .foregroundStyle(.gray)
@@ -150,5 +154,4 @@ struct GroupChatView: View {
     NavigationStack {
         GroupChatView(roomTitle: "봄날은 간다")
     }
-    .environmentObject(AuthManager())
 }

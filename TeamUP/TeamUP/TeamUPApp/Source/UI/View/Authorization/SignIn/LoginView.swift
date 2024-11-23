@@ -16,7 +16,7 @@ import SwiftUI
 import Alamofire
 
 struct LoginView: View {
-    @EnvironmentObject var authManager: AuthManager // AuthManager 사용
+    @Environment(AuthManager.self) var authManager: AuthManager // AuthManager 사용
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var isLoading: Bool = false // 로딩 상태
@@ -196,5 +196,5 @@ struct LoginView: View {
 
 #Preview {
     LoginView()
-        .environmentObject(AuthManager())
+        .environment(AuthManager())
 }

@@ -13,7 +13,7 @@ struct HomeLoungeDetailView: View {
     @State private var newComment = ""
     @State private var showAlert = false
     @State private var alertMessage = ""
-    @EnvironmentObject var viewModel: ApplicationViewModel
+    let viewModel: ApplicationViewModel = ApplicationViewModel()
     @State private var isApplied = false
     // 모델이 수정 가능한 값으로 `save` 프로퍼티를 가지고 있다고 가정
     init(model: Listable) {
