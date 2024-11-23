@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GroupChatView: View {
     @State private var text: String = ""
-    @State private var chatViewModel = ChatViewModel()
+    @Environment(ChatViewModel.self) private var chatViewModel: ChatViewModel
     @EnvironmentObject private var authManager: AuthManager
     let roomTitle: String
     var body: some View {
