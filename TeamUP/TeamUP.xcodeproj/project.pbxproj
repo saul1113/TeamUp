@@ -11,7 +11,7 @@
 		2C2E58172CE71F0D008766A8 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E57F42CE71F0D008766A8 /* MainService.swift */; };
 		2C2E58182CE71F0D008766A8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E57F62CE71F0D008766A8 /* LoginView.swift */; };
 		2C2E58192CE71F0D008766A8 /* SignUPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E57F82CE71F0D008766A8 /* SignUPView.swift */; };
-		2C2E581A2CE71F0D008766A8 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E57FB2CE71F0D008766A8 /* ChatView.swift */; };
+		2C2E581A2CE71F0D008766A8 /* ChatSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E57FB2CE71F0D008766A8 /* ChatSelectView.swift */; };
 		2C2E581B2CE71F0D008766A8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E57FD2CE71F0D008766A8 /* HomeView.swift */; };
 		2C2E581C2CE71F0D008766A8 /* LoungeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E57FF2CE71F0D008766A8 /* LoungeView.swift */; };
 		2C2E581D2CE71F0D008766A8 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E58012CE71F0D008766A8 /* PostView.swift */; };
@@ -96,7 +96,7 @@
 		2C2E57F42CE71F0D008766A8 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
 		2C2E57F62CE71F0D008766A8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2C2E57F82CE71F0D008766A8 /* SignUPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPView.swift; sourceTree = "<group>"; };
-		2C2E57FB2CE71F0D008766A8 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		2C2E57FB2CE71F0D008766A8 /* ChatSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSelectView.swift; sourceTree = "<group>"; };
 		2C2E57FD2CE71F0D008766A8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2C2E57FF2CE71F0D008766A8 /* LoungeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoungeView.swift; sourceTree = "<group>"; };
 		2C2E58012CE71F0D008766A8 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
@@ -261,7 +261,7 @@
 		2C2E57FC2CE71F0D008766A8 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				2C2E57FB2CE71F0D008766A8 /* ChatView.swift */,
+				2C2E57FB2CE71F0D008766A8 /* ChatSelectView.swift */,
 				50241F912CEB8D10002014EF /* PrivateChatListView.swift */,
 				50241F932CEB8D1B002014EF /* PrivateChatView.swift */,
 				2CBEEB3E2CEB001B001CE6ED /* GroupChatListView.swift */,
@@ -617,7 +617,7 @@
 				FE2061502CE96DF30001FCD1 /* ExpandedDividerWithVStackView.swift in Sources */,
 				2C2E58192CE71F0D008766A8 /* SignUPView.swift in Sources */,
 				EB4571752CE9D030002C9166 /* TextFieldView.swift in Sources */,
-				2C2E581A2CE71F0D008766A8 /* ChatView.swift in Sources */,
+				2C2E581A2CE71F0D008766A8 /* ChatSelectView.swift in Sources */,
 				FE2061402CE951380001FCD1 /* InformationModel.swift in Sources */,
 				7793F1882CEC6534007595D4 /* TagView.swift in Sources */,
 				2C2E581B2CE71F0D008766A8 /* HomeView.swift in Sources */,
@@ -648,9 +648,6 @@
 				770C29DE2CEF0D2C005C7844 /* ImagePicker.swift in Sources */,
 				50A7A8802CEEC236002EF75F /* MyAppliedTeamsView.swift in Sources */,
 				50A7A8822CEECE6E002EF75F /* TeamDetailView.swift in Sources */,
-				FE20614B2CE967AD0001FCD1 /* AnnouncementView.swift in Sources */,
-				FE2061532CE983400001FCD1 /* SettingView.swift in Sources */,
-				EBA041EB2CEED3D50031E738 /* QuestionModel.swift in Sources */,
 				FE9F24542CEF656E003217F0 /* ApplicationViewModel.swift in Sources */,
 				2C2E58222CE71F0D008766A8 /* RoundedCorner.swift in Sources */,
 				7793F18C2CEC6B46007595D4 /* EditView.swift in Sources */,

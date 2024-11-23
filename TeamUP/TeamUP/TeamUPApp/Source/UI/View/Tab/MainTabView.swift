@@ -35,7 +35,7 @@ struct MainTabView: View {
                         EmptyView()
                         
                     case .chat:
-                        ChatView()
+                        ChatSelectView()
                         
                     case .profile:
                         MyProfileView()
