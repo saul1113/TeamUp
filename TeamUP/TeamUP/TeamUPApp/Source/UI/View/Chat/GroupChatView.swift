@@ -60,6 +60,7 @@ struct GroupChatView: View {
                 }
                 Divider()
                 textField()
+                
                 Spacer()
                     .frame(height: 16)
             }
@@ -91,13 +92,10 @@ struct GroupChatView: View {
     
     @ViewBuilder
     func messageView(message: ChatMessage) -> some View {
-        Text("")
-            .onAppear {
-                print("auth user: \(authManager.user)")
-            }
         if let user = authManager.user {
             if message.user.email == user.email {
-                HStack (alignment: .bottom) {
+                HStack (alignment: .bottom, spacing: 5) {
+                    Spacer()
                     Text(message.decodedDateString)
                         .font(Font.regular12)
                         .foregroundStyle(.gray)
@@ -111,9 +109,8 @@ struct GroupChatView: View {
                                 .cornerRadius(20, corners: [.topLeft, .bottomLeft, .bottomRight])
                         }
                 }
-                .frame(maxWidth: .infinity, alignment: .trailing)
             } else {
-                HStack ( alignment: .bottom, spacing:0 ) {
+                HStack ( alignment: .bottom, spacing: 5) {
                     VStack {
                         Image(systemName: "person.circle")
                             .resizable()
@@ -121,6 +118,7 @@ struct GroupChatView: View {
                             .foregroundStyle(.gray)
                         Spacer()
                     }
+                    .padding(.trailing, -2)
                     VStack (alignment: .leading) {
                         Text(message.user.nickname)
                             .font(Font.semibold14)
@@ -140,7 +138,6 @@ struct GroupChatView: View {
                         .foregroundStyle(.gray)
                     Spacer()
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
     }

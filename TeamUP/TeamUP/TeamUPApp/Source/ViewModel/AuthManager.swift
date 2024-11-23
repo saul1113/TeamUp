@@ -324,6 +324,7 @@ final class AuthManager {
                 switch response.result {
                 case .success(let user):
                     self.user = user
+                    print(self.user)
                     self.isAuthenticated = true
                     completion(.success(user))
                 case .failure(let error):

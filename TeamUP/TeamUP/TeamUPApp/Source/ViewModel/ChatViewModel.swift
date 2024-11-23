@@ -51,10 +51,10 @@ class ChatViewModel {
     }
     
     init() {
-        let token = KeychainSwift().get("access_token")!
+        let token = KeychainSwift().get("access_token") ?? ""
         self.manager = SocketManager(socketURL: URL(string: chatUrl)!, config: [
             .log(true),
-            .connectParams(["nickname":"socket", "profile_image_name": "asd"]),
+            .connectParams(["nickname":"soom", "profile_image_name": "asd"]),
             .compress,
             .forceWebsockets(true),
             .extraHeaders(["Authorization":"Bearer \(token)"])
