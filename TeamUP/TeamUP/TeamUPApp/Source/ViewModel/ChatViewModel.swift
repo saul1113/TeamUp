@@ -38,21 +38,29 @@ struct ChatMessage: Equatable {
 
 @Observable
 class ChatViewModel {
-    var chatMessage: [ChatMessage] = []
-    let chatUrl: String = "https://protectmeios.xyz:446"
-    let namespace = "/chat"
+    private(set) var chatMessage: [Int: [ChatMessage]] = [:]
+    private let namespace = "/chat"
+    private var defaultURL = URLComponents()
     private var manager: SocketManager?
     private var socket: SocketIOClient?
-    var token: String {
+    private var token: String {
         if let token = KeychainSwift().get("access_token") {
             return token
         }
         return "Not found Token"
     }
     
-    func configureSocket(user: User?) {
+    init() {
+        if let urlString = Bundle.main.infoDictionary?["UrlString"], let url = urlString as? String {
+            defaultURL.scheme = "https"
+            defaultURL.host = url
+            defaultURL.port = 446
+        }
+    }
+    
+    func configureSocket(user: User?, connectEvent: @escaping () -> Void) {
         if let token = KeychainSwift().get("access_token"), let authUser = user {
-            self.manager = SocketManager(socketURL: URL(string: chatUrl)!, config: [
+            self.manager = SocketManager(socketURL: defaultURL.url!, config: [
                 .log(true),
                 .connectParams(["nickname": authUser.nickname, "profile_image_name": authUser.profileImageName]),
                 .compress,
@@ -60,12 +68,13 @@ class ChatViewModel {
                 .extraHeaders(["Authorization":"Bearer \(token)"])
             ])
             self.socket = manager?.socket(forNamespace: namespace)
-            self.connect()
+            self.connect(connectEvent: connectEvent)
         }
     }
-    func connect() {
+    
+    func connect(connectEvent: @escaping () -> Void) {
         socket?.on(clientEvent: .connect) { data, ask in
-            self.join(1)
+            connectEvent()
             print(data)
         }
         socket?.on("chat") { data, ack in
@@ -78,7 +87,7 @@ class ChatViewModel {
                let userNickname = user["nickname"] as? String,
                let userImage = user["profile_image_name"] as? String  {
                 let chatUser = User(id: "",email: userEmail, password: "", nickname: userNickname ,profileImageName: userImage)
-                self.chatMessage.append(ChatMessage(user: chatUser, room: room, message: msg , date: date))
+                self.chatMessage[room]!.append(ChatMessage(user: chatUser, room: room, message: msg , date: date))
                 print("chat message: \(self.chatMessage)")
             } else {
                 print("Chat message decode error \(data)")
@@ -86,9 +95,14 @@ class ChatViewModel {
         }
         socket?.connect()
     }
+    
     func join(_ roomID: Int) {
         socket?.emit("join", roomID)
+        if chatMessage[roomID] == nil {
+            chatMessage[roomID] = []
+        }
     }
+    
     func sendMessage(room: Int, message: String) {
         let data: [String: Any] = ["msg": message, "room": room]
         socket?.emit("chat", data)

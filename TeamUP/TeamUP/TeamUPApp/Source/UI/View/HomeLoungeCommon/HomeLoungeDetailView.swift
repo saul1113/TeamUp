@@ -8,6 +8,8 @@ import SwiftUI
 
 struct HomeLoungeDetailView: View {
     var model: Listable
+    @Environment(ChatRoomViewModel.self) private var chatroomViewModel: ChatRoomViewModel
+    @Environment(AuthManager.self) private var authManager: AuthManager
     @State private var saveCount: Int
     @State private var isBookmarked = false
     @State private var newComment = ""
@@ -217,6 +219,7 @@ struct HomeLoungeDetailView: View {
                         Task {
                             do {
                                 try await viewModel.apply(postID: String(model.id))  // 실제 신청 로직 호출
+                                try chatroomViewModel.addUser(postID: model.id, userEmail: authManager.user!.email)
                                 alertMessage = "신청이 완료되었습니다."
                                 showAlert = true
                                 isApplied = true // 신청 완료 후 상태 업데이트

@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct ProjectMoyoApp: App {
-    @State private var authManager: AuthManager = AuthManager()
-    @State private var postViewModel: PostViewModel = PostViewModel()
-    @State private var chatViewModel: ChatViewModel = ChatViewModel()
+    private var authManager: AuthManager = AuthManager()
+    private var postViewModel: PostViewModel = PostViewModel()
+    private var chatViewModel: ChatViewModel = ChatViewModel()
+    private var chatroomViewModel: ChatRoomViewModel = ChatRoomViewModel()
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack {
@@ -20,6 +22,7 @@ struct ProjectMoyoApp: App {
             .environment(authManager)
             .environment(postViewModel)
             .environment(chatViewModel)
+            .environment(chatroomViewModel)
         }
     }
 }

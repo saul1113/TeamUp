@@ -12,6 +12,8 @@ struct GroupChatView: View {
     @Environment(ChatViewModel.self) private var chatViewModel: ChatViewModel
     @Environment(AuthManager.self) private var authManager: AuthManager
     let roomTitle: String
+    let roomID: Int
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -22,14 +24,14 @@ struct GroupChatView: View {
                 
                 ScrollViewReader { proxy in
                     ScrollView {
-                        ForEach(chatViewModel.chatMessage.indices, id: \.self) { index in
-                            messageView(message: chatViewModel.chatMessage[index])
+                        ForEach(chatViewModel.chatMessage[roomID]!.indices, id: \.self) { index in
+                            messageView(message: chatViewModel.chatMessage[roomID]![index])
                                 .id(index)
                         }
                     }
-                    .onChange(of: chatViewModel.chatMessage) { _, _ in
+                    .onChange(of: chatViewModel.chatMessage[roomID]!) { _, _ in
                         print(chatViewModel.chatMessage.count)
-                        if let lastMessageIndex = chatViewModel.chatMessage.indices.last {
+                        if let lastMessageIndex = chatViewModel.chatMessage[roomID]!.indices.last {
                             withAnimation {
                                 proxy.scrollTo(lastMessageIndex, anchor: .bottom)
                             }
@@ -66,9 +68,6 @@ struct GroupChatView: View {
             }
             .customPadding()
         }
-        .onAppear {
-            chatViewModel.configureSocket(user: authManager.user)
-        }
     }
     func textField() -> some View {
         HStack {
@@ -80,7 +79,7 @@ struct GroupChatView: View {
                         .strokeBorder(Color.gray, lineWidth: 0.5)
                 }
             Button {
-                chatViewModel.sendMessage(room: 1, message: text)
+                chatViewModel.sendMessage(room: roomID, message: text)
                 text = ""
             }label: {
                 Image(systemName: "arrow.up.circle.fill")
@@ -152,6 +151,6 @@ struct GroupChatView: View {
 
 #Preview {
     NavigationStack {
-        GroupChatView(roomTitle: "봄날은 간다")
+        GroupChatView(roomTitle: "봄날은 간다", roomID: 1)
     }
 }

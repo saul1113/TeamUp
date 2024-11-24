@@ -31,45 +31,76 @@ struct GroupChatRoom: Identifiable {
     ]
 }
 struct GroupChatListView: View {
+    static private var firstLoad: Bool = true
     @State private var groupRooms: [GroupChatRoom] = GroupChatRoom.dummyData
+    @Environment(AuthManager.self) private var authManager: AuthManager
+    @Environment(ChatRoomViewModel.self) private var chatroomViewModel: ChatRoomViewModel
+    @Environment(ChatViewModel.self) private var chatViewModel: ChatViewModel
+    
     var body: some View {
         NavigationStack {
-            VStack (alignment: .leading, spacing: 15) {
-                ForEach(groupRooms, id: \.id) { room in
-                    NavigationLink {
-                        GroupChatView(roomTitle: "봄날은 간다")
-                            .navigationBarBackButtonHidden(true)
-                    } label: {
-                        GroupRoomView(room)
+            ScrollView {
+                VStack (alignment: .leading, spacing: 15) {
+                    ForEach(chatroomViewModel.chatRooms, id: \.id) { room in
+                        NavigationLink {
+                            GroupChatView(roomTitle: room.name, roomID: room.id)
+                                .navigationBarBackButtonHidden(true)
+                        } label: {
+                            GroupRoomView(room)
+                        }
+                        Rectangle()
+                            .fill(.gray)
+                            .frame(height: 0.3)
                     }
-                    Rectangle()
-                        .fill(.gray)
-                        .frame(height: 0.3)
+                }
+                .padding(.horizontal, 16)
+            }
+        }
+        .onAppear {
+            if GroupChatListView.firstLoad {
+                Task {
+                    try chatroomViewModel.fetchChatRooms()
+                    chatViewModel.configureSocket(user: authManager.user) {
+                        for room in chatroomViewModel.chatRooms {
+                            chatViewModel.join(room.id)
+                        }
+                    }
+                    
+                    GroupChatListView.firstLoad = false
                 }
             }
-            .padding(.horizontal, 16)
+        }
+        .refreshable {
+            Task {
+                try chatroomViewModel.fetchChatRooms()
+                chatViewModel.configureSocket(user: authManager.user) {
+                    for room in chatroomViewModel.chatRooms {
+                        chatViewModel.join(room.id)
+                    }
+                }
+            }
         }
     }
-    func GroupRoomView(_ room: GroupChatRoom) -> some View {
+    func GroupRoomView(_ room: ChatRoom) -> some View {
         HStack (alignment: .top) {
-            room.roomImage
+            Image(systemName: "person.crop.circle")
                 .resizable()
                 .frame(width: 40, height: 40)
                 .foregroundStyle(.gray)
             VStack (alignment: .leading, spacing: 5) {
                 HStack {
-                    Text(room.roomTitle)
+                    Text(room.name)
                         .font(Font.semibold20)
                         .foregroundStyle(.black)
-                    Text("\(room.roomMember)")
+                    Text("\(room.maxUserCount)")
                         .font(Font.regular12)
                         .foregroundStyle(.gray)
-                    Text(room.decodedDateToString)
+                    Text(formatTime: room.joinAt)
                         .font(Font.regular12)
                         .foregroundStyle(.gray)
                     Spacer()
                 }
-                Text(room.roomLastMessage)
+                Text(room.owner.nickname)
                     .foregroundStyle(.gray)
                     .font(Font.regular14)
             }
