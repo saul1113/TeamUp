@@ -11,7 +11,7 @@
 		2C2E58172CE71F0D008766A8 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E57F42CE71F0D008766A8 /* MainService.swift */; };
 		2C2E58182CE71F0D008766A8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E57F62CE71F0D008766A8 /* LoginView.swift */; };
 		2C2E58192CE71F0D008766A8 /* SignUPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E57F82CE71F0D008766A8 /* SignUPView.swift */; };
-		2C2E581A2CE71F0D008766A8 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E57FB2CE71F0D008766A8 /* ChatView.swift */; };
+		2C2E581A2CE71F0D008766A8 /* ChatSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E57FB2CE71F0D008766A8 /* ChatSelectView.swift */; };
 		2C2E581B2CE71F0D008766A8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E57FD2CE71F0D008766A8 /* HomeView.swift */; };
 		2C2E581C2CE71F0D008766A8 /* LoungeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E57FF2CE71F0D008766A8 /* LoungeView.swift */; };
 		2C2E581D2CE71F0D008766A8 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E58012CE71F0D008766A8 /* PostView.swift */; };
@@ -38,6 +38,8 @@
 		2CBE30702CEDBE6C00066EB5 /* FriendProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE306E2CEDBE6C00066EB5 /* FriendProfileView.swift */; };
 		2CBE30712CEDBE6C00066EB5 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE306F2CEDBE6C00066EB5 /* MyProfileView.swift */; };
 		2CBEEB3F2CEB001B001CE6ED /* GroupChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBEEB3E2CEB001B001CE6ED /* GroupChatListView.swift */; };
+		2CFB663D2CEF843E0079B06A /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB663C2CEF843E0079B06A /* ChatViewModel.swift */; };
+		2CFB66402CEF84670079B06A /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 2CFB663F2CEF84670079B06A /* SocketIO */; };
 		50241F922CEB8D10002014EF /* PrivateChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50241F912CEB8D10002014EF /* PrivateChatListView.swift */; };
 		50241F942CEB8D1B002014EF /* PrivateChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50241F932CEB8D1B002014EF /* PrivateChatView.swift */; };
 		50A7A87C2CEEC220002EF75F /* MyPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7A87A2CEEC220002EF75F /* MyPostsView.swift */; };
@@ -94,7 +96,7 @@
 		2C2E57F42CE71F0D008766A8 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
 		2C2E57F62CE71F0D008766A8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2C2E57F82CE71F0D008766A8 /* SignUPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPView.swift; sourceTree = "<group>"; };
-		2C2E57FB2CE71F0D008766A8 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		2C2E57FB2CE71F0D008766A8 /* ChatSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSelectView.swift; sourceTree = "<group>"; };
 		2C2E57FD2CE71F0D008766A8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2C2E57FF2CE71F0D008766A8 /* LoungeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoungeView.swift; sourceTree = "<group>"; };
 		2C2E58012CE71F0D008766A8 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		2CBE306E2CEDBE6C00066EB5 /* FriendProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileView.swift; sourceTree = "<group>"; };
 		2CBE306F2CEDBE6C00066EB5 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		2CBEEB3E2CEB001B001CE6ED /* GroupChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatListView.swift; sourceTree = "<group>"; };
+		2CFB663C2CEF843E0079B06A /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		50241F912CEB8D10002014EF /* PrivateChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateChatListView.swift; sourceTree = "<group>"; };
 		50241F932CEB8D1B002014EF /* PrivateChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateChatView.swift; sourceTree = "<group>"; };
 		50A7A87A2CEEC220002EF75F /* MyPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsView.swift; sourceTree = "<group>"; };
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CB1BF532CE725DF00CA6A26 /* MarkdownUI in Frameworks */,
+				2CFB66402CEF84670079B06A /* SocketIO in Frameworks */,
 				2CB1BF502CE725D000CA6A26 /* KeychainSwift in Frameworks */,
 				2CB1BF4B2CE725B000CA6A26 /* Alamofire in Frameworks */,
 			);
@@ -257,7 +261,7 @@
 		2C2E57FC2CE71F0D008766A8 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				2C2E57FB2CE71F0D008766A8 /* ChatView.swift */,
+				2C2E57FB2CE71F0D008766A8 /* ChatSelectView.swift */,
 				50241F912CEB8D10002014EF /* PrivateChatListView.swift */,
 				50241F932CEB8D1B002014EF /* PrivateChatView.swift */,
 				2CBEEB3E2CEB001B001CE6ED /* GroupChatListView.swift */,
@@ -365,6 +369,7 @@
 		2C2E58102CE71F0D008766A8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2CFB663C2CEF843E0079B06A /* ChatViewModel.swift */,
 				EB45716E2CE9CFF5002C9166 /* AuthManager.swift */,
 				FE3F76A42CEE541400137A99 /* PostViewModel.swift */,
 				EBA041E82CEEC68F0031E738 /* AnnouncementViewModel.swift */,
@@ -524,6 +529,7 @@
 				2CB1BF4A2CE725B000CA6A26 /* Alamofire */,
 				2CB1BF4F2CE725D000CA6A26 /* KeychainSwift */,
 				2CB1BF522CE725DF00CA6A26 /* MarkdownUI */,
+				2CFB663F2CEF84670079B06A /* SocketIO */,
 			);
 			productName = TeamUP;
 			productReference = 2C2E57832CE71E8B008766A8 /* TeamUP.app */;
@@ -557,6 +563,7 @@
 				2CB1BF492CE725B000CA6A26 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				2CB1BF4E2CE725D000CA6A26 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				2CB1BF512CE725DF00CA6A26 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				2CFB663E2CEF84670079B06A /* XCRemoteSwiftPackageReference "socket.io-client-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2C2E57842CE71E8B008766A8 /* Products */;
@@ -610,7 +617,7 @@
 				FE2061502CE96DF30001FCD1 /* ExpandedDividerWithVStackView.swift in Sources */,
 				2C2E58192CE71F0D008766A8 /* SignUPView.swift in Sources */,
 				EB4571752CE9D030002C9166 /* TextFieldView.swift in Sources */,
-				2C2E581A2CE71F0D008766A8 /* ChatView.swift in Sources */,
+				2C2E581A2CE71F0D008766A8 /* ChatSelectView.swift in Sources */,
 				FE2061402CE951380001FCD1 /* InformationModel.swift in Sources */,
 				7793F1882CEC6534007595D4 /* TagView.swift in Sources */,
 				2C2E581B2CE71F0D008766A8 /* HomeView.swift in Sources */,
@@ -641,14 +648,12 @@
 				770C29DE2CEF0D2C005C7844 /* ImagePicker.swift in Sources */,
 				50A7A8802CEEC236002EF75F /* MyAppliedTeamsView.swift in Sources */,
 				50A7A8822CEECE6E002EF75F /* TeamDetailView.swift in Sources */,
-				FE20614B2CE967AD0001FCD1 /* AnnouncementView.swift in Sources */,
-				FE2061532CE983400001FCD1 /* SettingView.swift in Sources */,
-				EBA041EB2CEED3D50031E738 /* QuestionModel.swift in Sources */,
 				FE9F24542CEF656E003217F0 /* ApplicationViewModel.swift in Sources */,
 				2C2E58222CE71F0D008766A8 /* RoundedCorner.swift in Sources */,
 				7793F18C2CEC6B46007595D4 /* EditView.swift in Sources */,
 				FE2061562CE991320001FCD1 /* TermsAndConditionsView.swift in Sources */,
 				2CBEEB3F2CEB001B001CE6ED /* GroupChatListView.swift in Sources */,
+				2CFB663D2CEF843E0079B06A /* ChatViewModel.swift in Sources */,
 				2C2E58242CE71F0D008766A8 /* ProjectMoyoApp.swift in Sources */,
 				2CBE30702CEDBE6C00066EB5 /* FriendProfileView.swift in Sources */,
 				EBA041E92CEEC68F0031E738 /* AnnouncementViewModel.swift in Sources */,
@@ -899,6 +904,14 @@
 				minimumVersion = 2.4.1;
 			};
 		};
+		2CFB663E2CEF84670079B06A /* XCRemoteSwiftPackageReference "socket.io-client-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -916,6 +929,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2CB1BF512CE725DF00CA6A26 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
 			productName = MarkdownUI;
+		};
+		2CFB663F2CEF84670079B06A /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CFB663E2CEF84670079B06A /* XCRemoteSwiftPackageReference "socket.io-client-swift" */;
+			productName = SocketIO;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -64,10 +64,10 @@ struct GroupChatListView: View {
                     Text("\(room.roomMember)")
                         .font(Font.regular12)
                         .foregroundStyle(.gray)
-                    Spacer()
                     Text(room.decodedDateToString)
                         .font(Font.regular12)
                         .foregroundStyle(.gray)
+                    Spacer()
                 }
                 Text(room.roomLastMessage)
                     .foregroundStyle(.gray)

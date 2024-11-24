@@ -19,7 +19,7 @@ struct SignUpNicknameView: View {
     @State private var errorColor: Color = .red
     @State private var showCompletionMessage: Bool = false // 완료 메시지 표시 상태
     
-    @EnvironmentObject var authManager: AuthManager
+    @Environment(AuthManager.self) private var authManager: AuthManager
     @State private var navigateToLoginView = false // 로그인 화면으로 이동 상태
     
     var body: some View {

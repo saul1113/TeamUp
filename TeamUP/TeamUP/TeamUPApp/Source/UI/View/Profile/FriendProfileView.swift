@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FriendProfileView: View {
-    @EnvironmentObject var authManager: AuthManager
+    @Environment(AuthManager.self) private var authManager: AuthManager
     
     @State private var tags: [String] = ["iOS", "앱개발"]
     @State private var linkName: String = "노션"

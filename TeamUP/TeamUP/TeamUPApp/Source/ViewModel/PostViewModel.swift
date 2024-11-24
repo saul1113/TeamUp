@@ -56,11 +56,12 @@ struct PostModelStruct: Listable, Codable {
     }
 }
 
-final class PostViewModel: ObservableObject {
+@Observable
+final class PostViewModel {
     private let keychain = KeychainSwift()
     private var defaultURL: URLComponents = URLComponents()
     private let accessTokenKey = "access_token"
-    @Published private(set) var posts: [PostModelStruct] = []
+    private(set) var posts: [PostModelStruct] = []
     
     init() {
         if let urlString = Bundle.main.infoDictionary?["UrlString"], let url = urlString as? String {

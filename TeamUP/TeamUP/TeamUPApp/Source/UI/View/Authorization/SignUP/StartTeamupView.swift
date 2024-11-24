@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StartTeamupView: View {
-    @StateObject private var authManager = AuthManager()
+    @Environment(AuthManager.self) private var authManager
     
     var body: some View {
         NavigationStack {
@@ -16,11 +16,9 @@ struct StartTeamupView: View {
                 if authManager.isAuthenticated {
                     // 로그인 상태라면 MainTabView로 이동
                     MainTabView()
-                        .environmentObject(authManager) // MainTabView에 AuthManager 전달
                 } else {
                     // 로그인되지 않은 경우 로그인뷰
                     LoginView()
-                        .environmentObject(authManager) // LoginView, SignUpView에서 AuthManager 사용
                 }
             }
             .onAppear {
