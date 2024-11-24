@@ -66,6 +66,9 @@ struct GroupChatView: View {
             }
             .customPadding()
         }
+        .onAppear {
+            chatViewModel.configureSocket(user: authManager.user)
+        }
     }
     func textField() -> some View {
         HStack {

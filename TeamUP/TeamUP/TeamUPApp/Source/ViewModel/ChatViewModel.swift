@@ -41,8 +41,8 @@ class ChatViewModel {
     var chatMessage: [ChatMessage] = []
     let chatUrl: String = "https://protectmeios.xyz:446"
     let namespace = "/chat"
-    private let manager: SocketManager
-    private let socket: SocketIOClient
+    private var manager: SocketManager?
+    private var socket: SocketIOClient?
     var token: String {
         if let token = KeychainSwift().get("access_token") {
             return token
@@ -50,25 +50,25 @@ class ChatViewModel {
         return "Not found Token"
     }
     
-    init() {
-        let token = KeychainSwift().get("access_token") ?? ""
-        self.manager = SocketManager(socketURL: URL(string: chatUrl)!, config: [
-            .log(true),
-            .connectParams(["nickname":"soom", "profile_image_name": "asd"]),
-            .compress,
-            .forceWebsockets(true),
-            .extraHeaders(["Authorization":"Bearer \(token)"])
-        ])
-        self.socket = manager.socket(forNamespace: namespace)
-        self.connect()
+    func configureSocket(user: User?) {
+        if let token = KeychainSwift().get("access_token"), let authUser = user {
+            self.manager = SocketManager(socketURL: URL(string: chatUrl)!, config: [
+                .log(true),
+                .connectParams(["nickname": authUser.nickname, "profile_image_name": authUser.profileImageName]),
+                .compress,
+                .forceWebsockets(true),
+                .extraHeaders(["Authorization":"Bearer \(token)"])
+            ])
+            self.socket = manager?.socket(forNamespace: namespace)
+            self.connect()
+        }
     }
-    
     func connect() {
-        socket.on(clientEvent: .connect) { data, ask in
+        socket?.on(clientEvent: .connect) { data, ask in
             self.join(1)
             print(data)
         }
-        socket.on("chat") { data, ack in
+        socket?.on("chat") { data, ack in
             if let message = data.first as? [String: Any],
                let user = message["user"] as? [String: Any],
                let room = message["room"] as? Int,
@@ -84,14 +84,14 @@ class ChatViewModel {
                 print("Chat message decode error \(data)")
             }
         }
-        socket.connect()
+        socket?.connect()
     }
     func join(_ roomID: Int) {
-        socket.emit("join", roomID)
+        socket?.emit("join", roomID)
     }
     func sendMessage(room: Int, message: String) {
         let data: [String: Any] = ["msg": message, "room": room]
-        socket.emit("chat", data)
+        socket?.emit("chat", data)
         print("Sent message: \(message) to room: \(room)")
     }
 }
