@@ -103,7 +103,7 @@ struct SignUPView: View {
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    BackButton()
+                    BackButtonBlack()
                 }
             }
         }
