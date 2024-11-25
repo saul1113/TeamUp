@@ -13,6 +13,10 @@ struct HomeLoungeDetailView: View {
     @State private var saveCount: Int
     @State private var isBookmarked = false
     @State private var newComment = ""
+    @State private var replies: [Reply]
+    @State private var isShowingFriendProfile = false // 프로필 보기 플래그
+    @State private var selectedUser: User? // 선택된 유저
+    
     @State private var showAlert = false
     @State private var alertMessage = ""
     let viewModel: ApplicationViewModel = ApplicationViewModel()
@@ -21,6 +25,11 @@ struct HomeLoungeDetailView: View {
     init(model: Listable) {
         self.model = model
         _saveCount = State(initialValue: model.save) // 초기값을 model.save로 설정
+        if let rounge = model as? Rounge {
+            _replies = State(initialValue: rounge.reply)
+        } else {
+            _replies = State(initialValue: [])
+        }
     }
     var body: some View {
         ScrollView {
@@ -39,15 +48,23 @@ struct HomeLoungeDetailView: View {
                     
                     // 작성자 정보
                     HStack(spacing: 8) {
-                        Circle()
-                            .fill(Color.gray.opacity(0.5))
-                            .frame(width: 40, height: 40)
-                            .overlay(
-                                //실제론 유저 프로필 이미지?
-                                Text(model.user.nickname.prefix(1))
-                                    .font(.bold16)
-                                    .foregroundColor(.white)
-                            )
+                        Button(action: {
+                            // 작성자의 프로필을 보여주는 로직
+                            selectedUser = model.user
+                            print("Selected user: \(String(describing: selectedUser))")
+                            print("Model user: \(String(describing: model.user))")
+                            isShowingFriendProfile.toggle()
+                        }) {
+                            Circle()
+                                .fill(Color.gray.opacity(0.5))
+                                .frame(width: 40, height: 40)
+                                .overlay(
+                                    Text(model.user.nickname.prefix(1))
+                                        .font(.bold16)
+                                        .foregroundColor(.white)
+                                )
+                        }
+                        .buttonStyle(PlainButtonStyle()) // 버튼 스타일 제거
                         
                         VStack(alignment: .leading) {
                             Text(model.user.nickname)
@@ -135,7 +152,7 @@ struct HomeLoungeDetailView: View {
                         .padding(.top, 30)
                     HStack{
                         Text("댓글")
-                        Text("\(rounge.reply.count)")
+                        Text("\(replies.count)")
                         
                         Spacer()
                     }
@@ -146,7 +163,7 @@ struct HomeLoungeDetailView: View {
                     
                     
                     VStack(alignment: .leading){
-                        ForEach(rounge.reply) { reply in
+                        ForEach(replies) { reply in
                             VStack(alignment: .leading, spacing: 20) {
                                 // 사용자 정보 및 작성 시간
                                 HStack {
@@ -192,7 +209,7 @@ struct HomeLoungeDetailView: View {
                                 .frame(height: 40)
                             
                             Button(action: {
-                                // 댓글 작성 로직
+                                addComment()
                             }) {
                                 Image(systemName: "arrow.up.circle.fill")
                                     .resizable()
@@ -276,12 +293,20 @@ struct HomeLoungeDetailView: View {
                         .foregroundStyle(.black)
                 }
                 
-                
             }
-            
+        }
+        .sheet(isPresented: $isShowingFriendProfile) {
+                FriendProfileView(friend: selectedUser)
         }
         
     }
+    
+    private func addComment() {
+        let newReply = Reply(user: "현재 유저", content: newComment, timestamp: Date())
+        replies.append(newReply) // 댓글 배열에 새로운 댓글 추가
+        newComment = "" // 입력 필드 초기화
+    }
+    
 }
 
 

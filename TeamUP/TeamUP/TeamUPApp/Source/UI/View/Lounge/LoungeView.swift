@@ -6,50 +6,6 @@
 //
 
 import SwiftUI
-let sampleRoungeData: [Rounge] = [
-    Rounge(
-        id: 1, category: .qna,
-        user: User(id: UUID().uuidString, email: "add", password: "123", nickname: "ㅎㅎ", profileImageName: "String"),
-        title: "새로운 규정 공지",
-        content: "새로운 규정이 추가되었습니다. 자세한 사항은 공지사항을 참조해 주세요.",
-        reply: [
-            Reply(user: "Alice", content: "공지 확인했습니다. 감사합니다.", timestamp: Date()),
-            Reply(user: "Bob", content: "규정 변경 관련 문의는 어디로 해야 하나요?", timestamp: Date()),
-            Reply(user: "Charlie", content: "수고하셨습니다!", timestamp: Date())
-        ],
-        time: "2024-11-18 10:00",
-        save: 120,
-        seen: 350, hasTag: ["질문","궁금해요","스터디"]
-    ),
-    Rounge(
-        id: 1, category: .talk,
-        user:User(id: UUID().uuidString, email: "add", password: "123", nickname: "친구야", profileImageName: "String"),
-        title: "오늘 점심 뭐 먹을까요?",
-        content: "여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!여러분 오늘 점심 뭐 먹을지 고민인데 추천 좀 해주세요!",
-        reply: [
-            Reply(user: "Alice", content: "공지 확인했습니다. 감사합니다.", timestamp: Date()),
-            Reply(user: "Bob", content: "규정 변경 관련 문의는 어디로 해야 하나요?", timestamp: Date()),
-            Reply(user: "Charlie", content: "수고하셨습니다!", timestamp: Date())
-        ],
-        time: "2024-11-18 12:15",
-        save: 40,
-        seen: 150, hasTag: ["질문","궁금해요","스터디"]
-    ),
-    Rounge(
-        id: 3, category: .qna,
-        user: User(id: UUID().uuidString, email: "add", password: "123", nickname: "김원호요", profileImageName: "String"),
-        title: "iOS 프로젝트에서 List 뷰 사용법",
-        content: "iOS 프로젝트에서 `List` 뷰를 사용하려면 어떻게 해야 하나요? 방법을 알고 싶은데 알려주세요!",
-        reply: [
-            Reply(user: "Alice", content: "공지 확인했습니다. 감사합니다.", timestamp: Date()),
-            Reply(user: "Bob", content: "규정 변경 관련 문의는 어디로 해야 하나요?", timestamp: Date()),
-            Reply(user: "Charlie", content: "수고하셨습니다!", timestamp: Date())
-        ],
-        time: "2024-11-17 15:30",
-        save: 25,
-        seen: 200, hasTag: ["질문","궁금해요","스터디"]
-    )
-]
 
 struct LoungeView: View {
     @State private var selectedCategory: RoungeCategory?
@@ -150,23 +106,25 @@ struct LoungeView: View {
             .padding(.horizontal)
             .padding(.bottom, -10)
             
-            VStack (spacing: 10) {
-                ForEach(sortedItems.filter { rounge in
-                    if let selectedCategory = selectedCategory {
-                        return rounge.category == selectedCategory
+            ScrollView {
+                VStack (spacing: 10) {
+                    ForEach(sortedItems.filter { rounge in
+                        if let selectedCategory = selectedCategory {
+                            return rounge.category == selectedCategory
+                        }
+                        return true
+                    }, id: \.title) { rounge in
+                        
+                        Divider()
+                        
+                        NavigationLink(destination: HomeLoungeDetailView(model: rounge)) {  // NavigationLink 추가
+                            ListRowView(model: rounge, isMyPage: false)
+                                .padding(.vertical, 2)
+                        }
                     }
-                    return true
-                }, id: \.title) { rounge in
                     
-                    Divider()
-                    
-                    NavigationLink(destination: HomeLoungeDetailView(model: rounge)) {  // NavigationLink 추가
-                        ListRowView(model: rounge, isMyPage: false)
-                            .padding(.vertical, 2)
-                    }
-                }
-                
-            }.padding(20)
+                }.padding(20)
+            }
             
             Spacer()
             
