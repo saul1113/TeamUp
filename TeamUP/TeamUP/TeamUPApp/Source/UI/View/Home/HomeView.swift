@@ -43,7 +43,7 @@ let samplePostData = [
 
 
 struct HomeView: View {
-    @EnvironmentObject private var postViewModel: PostViewModel
+    @Environment(PostViewModel.self) private var postViewModel: PostViewModel
     @State private var selectedCategory: PostCategory?
     @State private var isSheetPresented = false
     @State private var searchText: String = ""
@@ -82,7 +82,6 @@ struct HomeView: View {
             return filteredItems
         }
     }
-    var postStore = PostViewModel()
     var body: some View {
         VStack(alignment: .leading) {
             CustomSearchBar(searchText: $searchText, placeholder: "검색어를 입력해주세요 (ex 웹프로젝트, 알고리즘 스터디", onSearch: { text in
@@ -228,4 +227,5 @@ extension Text {
 
 #Preview {
     HomeView()
+        .environment(PostViewModel())
 }

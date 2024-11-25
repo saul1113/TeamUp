@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct MainTabView: View {
-    @EnvironmentObject private var postViewModel: PostViewModel
+    @Environment(PostViewModel.self) private var postViewModel: PostViewModel
+    @Environment(AuthManager.self) private var authManager: AuthManager
     @State private var selectedTab: Tab = .home
     @State private var isPostPresented: Bool = false
     
@@ -35,7 +36,7 @@ struct MainTabView: View {
                         EmptyView()
                         
                     case .chat:
-                        ChatView()
+                        ChatSelectView()
                         
                     case .profile:
                         MyProfileView()
@@ -44,6 +45,9 @@ struct MainTabView: View {
                 TabBar(selectedTab: $selectedTab, isPostPresented: $isPostPresented)
                     .frame(alignment: .bottom)
                     .background(.white)
+                    .onAppear {
+                        print("tab auth\(authManager.user)")
+                    }
             }
             .fullScreenCover(isPresented: $isPostPresented) {
                 PostView()
@@ -69,6 +73,5 @@ struct MainTabView: View {
 
 #Preview {
     MainTabView()
-        .environmentObject(AuthManager())
-        .environmentObject(PostViewModel())
+        .environment(PostViewModel())
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FriendProfileView: View {
-    @EnvironmentObject var authManager: AuthManager
+    @Environment(AuthManager.self) private var authManager: AuthManager
     
     @State private var tags: [String] = ["iOS", "앱개발"]
     @State private var linkName: String = "노션"
@@ -53,7 +53,7 @@ struct FriendProfileView: View {
                     Text("소개")
                         .font(.semibold22)
                     
-                    Text(friend?.bio ?? defaultUser.bio)
+                    Text((friend?.bio ?? defaultUser.bio) ?? "")
                         .font(.regular16)
                     
                     Spacer()

@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 import KeychainSwift
 
-final class ApplicationViewModel: ObservableObject {
+final class ApplicationViewModel {
     private let keychain = KeychainSwift()
     private var defaultURL: URLComponents = URLComponents()
     private let accessTokenKey = "access_token"

@@ -7,27 +7,13 @@
 
 import SwiftUI
 
-struct ChatMessage: Identifiable {
-    let id = UUID()
-    let message: String
-    let image: Image
-    let author: String
-    let sendDate: Date
-    var decodeToStringDate: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "오전 HH:mm"
-        return formatter.string(from: sendDate)
-    }
-    static let dummyData: [ChatMessage] = [
-        ChatMessage(message: "안녕하세요", image: Image(systemName: "person.crop.circle"), author: "Soom", sendDate: .distantPast),
-        ChatMessage(message: "집가고싶어요", image: Image(systemName: "person.crop.circle"), author: "sooso", sendDate: .distantPast),
-        ChatMessage(message: "전 배고파요", image: Image(systemName: "person.crop.circle"), author: "aaa", sendDate: .distantPast)
-    ]
-}
 struct GroupChatView: View {
     @State private var text: String = ""
-    @State private var messages: [ChatMessage] = ChatMessage.dummyData
+    @Environment(ChatViewModel.self) private var chatViewModel: ChatViewModel
+    @Environment(AuthManager.self) private var authManager: AuthManager
     let roomTitle: String
+    let roomID: Int
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -36,9 +22,20 @@ struct GroupChatView: View {
                 Spacer()
                     .frame(height: 20)
                 
-                ScrollView {
-                    ForEach(messages, id: \.id) { message in
-                        messageView(message: message)
+                ScrollViewReader { proxy in
+                    ScrollView {
+                        ForEach(chatViewModel.chatMessage[roomID]!.indices, id: \.self) { index in
+                            messageView(message: chatViewModel.chatMessage[roomID]![index])
+                                .id(index)
+                        }
+                    }
+                    .onChange(of: chatViewModel.chatMessage[roomID]!) { _, _ in
+                        print(chatViewModel.chatMessage.count)
+                        if let lastMessageIndex = chatViewModel.chatMessage[roomID]!.indices.last {
+                            withAnimation {
+                                proxy.scrollTo(lastMessageIndex, anchor: .bottom)
+                            }
+                        }
                     }
                 }
                 .navigationBarTitleDisplayMode(.inline)
@@ -65,6 +62,9 @@ struct GroupChatView: View {
                 }
                 Divider()
                 textField()
+                
+                Spacer()
+                    .frame(height: 16)
             }
             .customPadding()
         }
@@ -79,7 +79,7 @@ struct GroupChatView: View {
                         .strokeBorder(Color.gray, lineWidth: 0.5)
                 }
             Button {
-                messages.append(ChatMessage(message: text, image: Image(systemName: ""), author: "Soom" , sendDate: .distantFuture))
+                chatViewModel.sendMessage(room: roomID, message: text)
                 text = ""
             }label: {
                 Image(systemName: "arrow.up.circle.fill")
@@ -91,51 +91,56 @@ struct GroupChatView: View {
         }
         .customPadding()
     }
+    
     @ViewBuilder
     func messageView(message: ChatMessage) -> some View {
-        if message.author == "Soom" {
-            HStack (alignment: .bottom) {
-                Text(message.decodeToStringDate)
-                    .font(Font.regular12)
-                    .foregroundStyle(.gray)
-                Text(message.message)
-                    .padding(.vertical, 12)
-                    .customPadding()
-                    .foregroundStyle(.black)
-                    .background {
-                        Rectangle()
-                            .fill(Color.customBlue.opacity(0.5))
-                            .cornerRadius(20, corners: [.topLeft, .bottomLeft, .bottomRight])
-                    }
-            }
-            .frame(maxWidth: .infinity, alignment: .trailing)
-        } else {
-            HStack ( alignment: .bottom ) {
-                VStack {
-                    message.image
-                        .resizable()
-                        .frame(width: 35,height: 35)
-                        .foregroundStyle(.gray)
+        if let user = authManager.user {
+            if message.user.email == user.email {
+                HStack (alignment: .bottom, spacing: 5) {
                     Spacer()
-                }
-                VStack (alignment: .leading) {
-                    Text(message.author)
-                        .font(Font.semibold14)
+                    Text(message.decodedDateString)
+                        .font(Font.regular12)
+                        .foregroundStyle(.gray)
                     Text(message.message)
                         .padding(.vertical, 12)
                         .customPadding()
                         .foregroundStyle(.black)
                         .background {
                             Rectangle()
-                                .fill(Color.customGray)
-                                .cornerRadius(20, corners: [.topRight, .bottomLeft, .bottomRight])
+                                .fill(Color.customBlue.opacity(0.5))
+                                .cornerRadius(20, corners: [.topLeft, .bottomLeft, .bottomRight])
                         }
                 }
-                Text(message.decodeToStringDate)
-                    .font(Font.regular12)
-                    .foregroundStyle(.gray)
+            } else {
+                HStack ( alignment: .bottom, spacing: 5) {
+                    VStack {
+                        Image(systemName: "person.circle")
+                            .resizable()
+                            .frame(width: 35,height: 35)
+                            .foregroundStyle(.gray)
+                        Spacer()
+                    }
+                    .padding(.trailing, -2)
+                    VStack (alignment: .leading) {
+                        Text(message.user.nickname)
+                            .font(Font.semibold14)
+                            .padding(.horizontal, 6)
+                        Text(message.message)
+                            .padding(.vertical, 12)
+                            .customPadding()
+                            .foregroundStyle(.black)
+                            .background {
+                                Rectangle()
+                                    .fill(Color.customGray)
+                                    .cornerRadius(20, corners: [.topRight, .bottomLeft, .bottomRight])
+                            }
+                    }
+                    Text(message.decodedDateString)
+                        .font(Font.regular12)
+                        .foregroundStyle(.gray)
+                    Spacer()
+                }
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }
@@ -146,6 +151,6 @@ struct GroupChatView: View {
 
 #Preview {
     NavigationStack {
-        GroupChatView(roomTitle: "봄날은 간다")
+        GroupChatView(roomTitle: "봄날은 간다", roomID: 1)
     }
 }

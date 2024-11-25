@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditView: View {
-    @EnvironmentObject var authManager: AuthManager
+    @Environment(AuthManager.self) private var authManager: AuthManager
     @Environment(\.dismiss) var dismiss
     
     @State private var nickname: String = ""
@@ -160,7 +160,7 @@ struct EditView: View {
         .onAppear {
             if let user = authManager.user {
                 nickname = user.nickname
-                selfPR = user.bio
+                selfPR = user.bio ?? ""
                 // tags = user.interests
                 // linkName = user.linkName
                 // link = user.link

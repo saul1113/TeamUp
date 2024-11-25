@@ -16,7 +16,7 @@ struct SignUpPasswordView: View {
     @State private var canProceedToNextStep: Bool = false // 다음 버튼 활성화 상태
     @State private var errorMessage: String? = nil
     @State private var navigateToNext: Bool = false
-    @EnvironmentObject var authManager: AuthManager
+    @Environment(AuthManager.self) var authManager: AuthManager
     
     var body: some View {
         NavigationStack {

@@ -9,12 +9,12 @@ import Foundation
 
 
 struct User: Codable {
-    let id: String
+    let id: String?
     let email: String
-    var password: String
+    var password: String?
     var nickname: String
     var profileImageName: String
-    var bio: String
+    var bio: String?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -34,7 +34,7 @@ struct User: Codable {
         password = try container.decodeIfPresent(String.self, forKey: .password) ?? ""
         nickname = try container.decode(String.self, forKey: .nickname)
         profileImageName = try container.decode(String.self, forKey: .profileImageName)
-        bio = try container.decode(String.self, forKey: .bio)
+        bio = try container.decodeIfPresent(String.self, forKey: .bio)
     }
     
     //기본 생성자
