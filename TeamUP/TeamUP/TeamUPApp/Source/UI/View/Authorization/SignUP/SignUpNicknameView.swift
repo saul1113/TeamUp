@@ -35,9 +35,9 @@ struct SignUpNicknameView: View {
                     Spacer()
                         .frame(height: 40)
                     VStack(alignment: .leading) {
-                        Text("닉네임을 입력해주세요.")
+                        Text("닉네임을 입력해주세요")
                             .font(.bold24)
-                        Text("닉네임은 2자부터 6자까지 설정해주세요.")
+                        Text("닉네임은 2자부터 6자까지 설정해주세요")
                             .font(.regular14)
                             .foregroundStyle(.gray)
                     }
@@ -113,7 +113,7 @@ struct SignUpNicknameView: View {
                 }
                 
                 if showCompletionMessage {
-                    Text("회원가입이 완료되었습니다.")
+                    Text("회원가입이 완료되었습니다")
                         .font(.semibold16)
                         .foregroundColor(.white)
                         .padding()
@@ -142,7 +142,7 @@ struct SignUpNicknameView: View {
             errorMessage = nil
             isNicknameValid = true
         } else {
-            errorMessage = "닉네임은 2자에서 6자까지 입력해주세요."
+            errorMessage = "닉네임은 2자에서 6자까지 입력해주세요"
             isNicknameValid = false
         }
         updateProceedState()
@@ -157,18 +157,18 @@ struct SignUpNicknameView: View {
             DispatchQueue.main.async {
                 if isDuplicated {
                     self.isNicknameChecked = false
-                    self.errorMessage = "중복된 닉네임입니다."
+                    self.errorMessage = "중복된 닉네임입니다"
                     self.errorColor = .red
                 } else {
                     self.isNicknameChecked = true
-                    self.errorMessage = "사용 가능한 닉네임입니다."
+                    self.errorMessage = "사용 가능한 닉네임입니다"
                     self.errorColor = .blue
                 }
                 updateProceedState()
             }
         } catch {
             DispatchQueue.main.async {
-                self.errorMessage = "네트워크 오류가 발생했습니다. 다시 시도해주세요."
+                self.errorMessage = "네트워크 오류가 발생했습니다. 다시 시도해주세요"
                 self.errorColor = .red
             }
         }
@@ -198,7 +198,7 @@ struct SignUpNicknameView: View {
             }
         } catch {
             DispatchQueue.main.async {
-                errorMessage = "회원가입 중 오류가 발생했습니다. 다시 시도해주세요."
+                errorMessage = "회원가입 중 오류가 발생했습니다. 다시 시도해주세요"
                 errorColor = .red
             }
         }

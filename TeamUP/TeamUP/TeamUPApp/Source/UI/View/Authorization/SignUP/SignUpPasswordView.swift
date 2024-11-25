@@ -31,7 +31,7 @@ struct SignUpPasswordView: View {
                 VStack(alignment: .leading) {
                     Text("비밀번호를 입력해주세요")
                         .font(Font.bold24)
-                    Text("로그인 시 사용할 비밀번호를 입력해주세요.")
+                    Text("로그인 시 사용할 비밀번호를 입력해주세요")
                         .font(Font.regular14)
                         .foregroundStyle(.gray)
                 }
@@ -59,7 +59,7 @@ struct SignUpPasswordView: View {
                             .font(.semibold16)
                         TextFieldView(
                             text: $confirmPassword,
-                            placeholder: "비밀번호와 동일하게 설정해주세요.",
+                            placeholder: "비밀번호와 동일하게 설정해주세요",
                             isSecure: true,
                             errorColor: .red,
                             errorMessage: errorMessage
@@ -125,7 +125,7 @@ struct SignUpPasswordView: View {
             errorMessage = nil // 비어있는 경우 에러 메시지 없음
             isPasswordMatched = false
         } else if password != confirmPassword {
-            errorMessage = "비밀번호가 일치하지 않습니다."
+            errorMessage = "비밀번호가 일치하지 않습니다"
             isPasswordMatched = false
         } else {
             errorMessage = nil

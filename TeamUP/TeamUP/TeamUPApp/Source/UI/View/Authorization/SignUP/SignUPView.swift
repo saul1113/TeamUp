@@ -129,7 +129,7 @@ struct SignUPView: View {
             emailMessage = nil
             emailMessageColor = .blue
         } else {
-            emailMessage = "이메일 형식이 아닙니다."
+            emailMessage = "이메일 형식이 아닙니다"
             emailMessageColor = .red
         }
         isEmailChecked = false
@@ -144,11 +144,11 @@ struct SignUPView: View {
             DispatchQueue.main.async {
                 if isDuplicated {
                     self.isEmailChecked = false
-                    self.emailMessage = "중복된 이메일입니다."
+                    self.emailMessage = "중복된 이메일입니다"
                     self.emailMessageColor = .red
                 } else {
                     self.isEmailChecked = true
-                    self.emailMessage = "사용 가능한 이메일입니다."
+                    self.emailMessage = "사용 가능한 이메일입니다"
                     self.emailMessageColor = .blue
                 }
                 updateProceedState()
@@ -158,9 +158,9 @@ struct SignUPView: View {
                 print("Email check error: \(error.localizedDescription)")
                 let nsError = error as NSError
                 if nsError.domain == NSURLErrorDomain {
-                    self.emailMessage = "네트워크 연결에 문제가 있습니다. 다시 시도해주세요."
+                    self.emailMessage = "네트워크 연결에 문제가 있습니다. 다시 시도해주세요"
                 } else {
-                    self.emailMessage = "서버 오류가 발생했습니다. 다시 시도해주세요."
+                    self.emailMessage = "서버 오류가 발생했습니다. 다시 시도해주세요"
                 }
                 self.emailMessageColor = .red
             }

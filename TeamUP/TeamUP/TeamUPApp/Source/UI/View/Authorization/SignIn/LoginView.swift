@@ -179,14 +179,14 @@ struct LoginView: View {
                     if let afError = error as? AFError, let responseCode = afError.responseCode {
                         switch responseCode {
                         case 401:
-                            loginErrorMessage = "이메일 또는 비밀번호가 잘못되었습니다."
+                            loginErrorMessage = "이메일 또는 비밀번호가 잘못되었습니다"
                         case 500:
-                            loginErrorMessage = "서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요."
+                            loginErrorMessage = "서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요"
                         default:
-                            loginErrorMessage = "알 수 없는 오류가 발생했습니다."
+                            loginErrorMessage = "알 수 없는 오류가 발생했습니다"
                         }
                     } else {
-                        loginErrorMessage = "네트워크 연결을 확인해주세요."
+                        loginErrorMessage = "네트워크 연결을 확인해주세요"
                     }
                 }
             }
