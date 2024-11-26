@@ -103,7 +103,7 @@ final class AuthManager {
         email: String, password: String,
         completion: @escaping (Result<User, Error>) -> Void
     ) {
-        defaultURL.path = "/user/login"
+        defaultURL.path = "/user/signin"
         guard let loginEndpoint = defaultURL.url else {
             print("url 없음")
             return
