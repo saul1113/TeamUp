@@ -22,7 +22,7 @@ struct PostModelStruct: Listable, Codable {
     var seen: Int
     var title: String
     var content: String
-    var isRecruit: Int
+    var isRecruit: Bool
     var maxUserCount: Int
     var currentUserCount: Int
     var time: String
@@ -47,7 +47,7 @@ struct PostModelStruct: Listable, Codable {
         self.user = User(id: "", email: "", password: "", nickname: "", profileImageName: "")
         self.title = title
         self.content = content
-        self.isRecruit = 1
+        self.isRecruit = true
         self.save = 0
         self.seen = 0
         self.maxUserCount = maxUserCount
@@ -76,7 +76,7 @@ final class PostViewModel {
     
     func fetchPosts(completion: @escaping (Result<[PostModelStruct], Error>) -> Void) async throws {
         defaultURL.path = "/post/all/data"
-        defaultURL.queryItems = [ URLQueryItem(name: "last-date", value: "0"), URLQueryItem(name: "last-id", value: "0") ]
+        defaultURL.queryItems = [ URLQueryItem(name: "last-date", value: "0") ]
         
         guard let url = defaultURL.url else { throw HttpError.urlError }
         guard let key = keychain.get(accessTokenKey) else { throw HttpError.keyError }

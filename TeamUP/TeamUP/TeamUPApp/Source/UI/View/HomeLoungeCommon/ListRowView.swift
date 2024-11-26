@@ -17,7 +17,7 @@ struct ListRowView: View {
             VStack(alignment: .leading, spacing: 5) {
                 HStack {
                     if let post = model as? PostModelStruct {
-                        if post.isRecruit == 1 {
+                        if post.isRecruit {
                             Text("모집중")
                                 .font(.semibold12)
                                 .foregroundColor(.white)

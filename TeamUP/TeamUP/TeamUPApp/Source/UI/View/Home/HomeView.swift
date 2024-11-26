@@ -64,7 +64,7 @@ struct HomeView: View {
         
         // "모집중" 필터링
         if isRecruit {
-            items = items.filter { $0.isRecruit == 1 }  // 리크루트 트루만 필터링
+            items = items.filter { $0.isRecruit }  // 리크루트 트루만 필터링
         }
         
         return items

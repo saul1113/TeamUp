@@ -58,7 +58,8 @@ struct MainTabView: View {
                         switch result {
                         case .success(let data):
                             postViewModel.setData(posts: data)
-                        case .failure:
+                        case .failure(let error):
+                            print(error)
                             break
                         }
                     }
