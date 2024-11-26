@@ -103,7 +103,11 @@ final class AuthManager {
         email: String, password: String,
         completion: @escaping (Result<User, Error>) -> Void
     ) {
-        let loginEndpoint = "https://protectmeios.xyz/user/signin"
+        defaultURL.path = "/user/login"
+        guard let loginEndpoint = defaultURL.url else {
+            print("url 없음")
+            return
+        }
         let parameters: [String: String] = [
             "id": email,
             "password": password,
@@ -155,7 +159,11 @@ final class AuthManager {
         }
 
         // 서버의 토큰 갱신 엔드포인트
-        let refreshEndpoint = "https://protectmeios.xyz/auth/refresh"
+        defaultURL.path = "/refresh"
+        guard let refreshEndpoint = defaultURL.url else {
+            print("refreshURL 생성 실패")
+            return
+        }
 
         // 요청에 필요한 파라미터
         let parameters: [String: String] = [
