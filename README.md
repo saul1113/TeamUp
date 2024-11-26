@@ -1,12 +1,28 @@
 <img src="https://github.com/user-attachments/assets/36fb8776-2c21-4cc5-8fb2-2b945cc6ca21" width="650" height="500"/>
 
+---
 
+# 목차 📚
+
+1. [ADS](#ads)  
+2. [페르소나 🌏](#페르소나)  
+3. [Tab 및 기능 소개 🔧](#tab-및-기능-소개)  
+4. [Library 📕](#library)  
+5. [Foldering 🗂️](#foldering)  
+6. [팀업 개발자 🫂](#팀업-개발자)  
+7. [Links 🌐](#links)  
+8. [License 📜](#license)  
+9. [Setting ⚙️](#setting)
+
+---
+
+<a name="ads"></a>
 # ADS
 ## 프로젝트 커뮤니티를 통해 실전 경험과 네트워크를 쌓으며 성장하고자 하는 열정적인 사람들을 위한 앱
 
 _우리 ‘TeamUp’은 새로운 도전에 필요한 공부와 프로젝트를 ‘어디서, 어떻게 해야할까?’
 하는 고민들을 없애고 다양한 경험과 도전을 두려움보다 설렘으로 바꾸기 위해 기획하고 개발한 앱 입니다._
-
+<a name="페르소나"></a>
 # 페르소나 🌏
 ![image](https://github.com/user-attachments/assets/5a65669f-65e2-4dfa-bcf1-69c2731c5d68)
 ***
@@ -14,7 +30,7 @@ _우리 ‘TeamUp’은 새로운 도전에 필요한 공부와 프로젝트를 
 ***
 ![image](https://github.com/user-attachments/assets/c2e1b42a-1932-4134-b122-df23597b2c8c)
 
-
+<a name="tab-및-기능-소개"></a>
 # Tab 및 기능 소개 🔧
 
 <img src="https://github.com/user-attachments/assets/65d25887-0cb0-4b07-bd7a-a9c6b15203ab" width="600" height="150"/>
@@ -86,6 +102,7 @@ _우리 ‘TeamUp’은 새로운 도전에 필요한 공부와 프로젝트를 
 
 <img src="https://github.com/user-attachments/assets/8bb3bc60-e87a-4da1-83e0-c31233c570ce" width="250" height="560"/>
 
+<a name="library"></a>
 # Library 📕
 ```
 1. 리눅스(우분투)
@@ -119,6 +136,7 @@ _우리 ‘TeamUp’은 새로운 도전에 필요한 공부와 프로젝트를 
     Markdown 파일을 렌더링하고 사용자 인터페이스(UI)를 위한 마크다운 뷰어를 제공합니다.
 
 ```
+<a name="foldering"></a>
 # Foldering 🗂️
 ```
 📦 TeamUP-iOS
@@ -154,6 +172,7 @@ _우리 ‘TeamUp’은 새로운 도전에 필요한 공부와 프로젝트를 
 
 ```
 ---
+<a name="팀업-개발자"></a>
 # 팀업 개발자 🫂
   | [강희창](https://github.com/saul1113) | [김수민](https://github.com/sumchive) | [김수은](https://github.com/sueunal) |
   |:---:|:---:|:---:|
@@ -164,13 +183,13 @@ _우리 ‘TeamUp’은 새로운 도전에 필요한 공부와 프로젝트를 
   |:---:|:---:|:---:|
   | <img src="https://github.com/KimLips.png" width="150"> | <img src="https://github.com/IUCyH.png" width="150"> | <img src="https://github.com/InyoungTechit.png" width="150"> |
   | **모집 메인 뷰** <br> **모집 상세 뷰** <br> **라운지 메인 뷰** <br> **라운지 상세 뷰**  | **백엔드** <br> **웹 서버** <br> **웹 소켓 서버** <br> **디자인**|**PM** <br> **로그인 뷰** <br>**프로필 글 관리** |
-
+<a name="links"></a>
 # Links 🌐 
   <a href="https://www.figma.com/design/IYuGX6R3cISeNLB65tYHkp/LAB4-%EC%99%80%EC%9D%B4%EC%96%B4%ED%94%84%EB%A0%88%EC%9E%84%26%EB%94%94%EC%9E%90%EC%9D%B8?node-id=1155-1114&node-type=frame&t=WNgTVjtuUfDcrzNK-0" target="_blank" style="margin: 10px; text-decoration: none; color: #ffffff; background-color: #007bff; padding: 10px 20px; border-radius: 5px; transition: background-color 0.3s;">피그마</a>
-
+<a name="license"></a>
 # License 📜
   Licensed under the <a href="LICENSE" style="color: #007bff;">aLicensed under the [Apache License, version 2.0](LICENSE) license.</a> license.
-
+<a name="setting"></a>
 # Setting ⚙️
 - Xcode 버전 : 16.1
 - iOS 버전 정보 : 17.0
