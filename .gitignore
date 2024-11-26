@@ -98,4 +98,5 @@ iOSInjectionProject/
 
 # Config
 # config file settings ignore
-**/Config.xcconfig 
+**/Config.xcconfig
+TeamUP/TeamUP/TeamUPApp/Resource/Config.xcconfig

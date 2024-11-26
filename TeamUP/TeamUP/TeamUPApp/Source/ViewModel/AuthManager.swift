@@ -103,7 +103,7 @@ final class AuthManager {
         email: String, password: String,
         completion: @escaping (Result<User, Error>) -> Void
     ) {
-        let loginEndpoint = "https://protectmeios.xyz/user/signin"
+        let loginEndpoint = "https://teamupios.xyz/user/signin"
         let parameters: [String: String] = [
             "id": email,
             "password": password,

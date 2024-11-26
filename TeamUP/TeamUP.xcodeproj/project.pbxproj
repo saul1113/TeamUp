@@ -79,8 +79,8 @@
 		FE2061582CE992D90001FCD1 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2061572CE992D90001FCD1 /* PrivacyPolicyView.swift */; };
 		FE3F76A52CEE541400137A99 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3F76A42CEE541400137A99 /* PostViewModel.swift */; };
 		FE5914FD2CF39C1E001096C5 /* ChatRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5914FC2CF39C1E001096C5 /* ChatRoomViewModel.swift */; };
-		FE7836EE2CEB385F00EF5569 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FE7836ED2CEB385F00EF5569 /* Config.xcconfig */; };
 		FE9F24542CEF656E003217F0 /* ApplicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9F24532CEF656E003217F0 /* ApplicationViewModel.swift */; };
+		FEC415972CF5690400E05250 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FEC415962CF5690400E05250 /* Config.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -154,8 +154,8 @@
 		FE2061572CE992D90001FCD1 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		FE3F76A42CEE541400137A99 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		FE5914FC2CF39C1E001096C5 /* ChatRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewModel.swift; sourceTree = "<group>"; };
-		FE7836ED2CEB385F00EF5569 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		FE9F24532CEF656E003217F0 /* ApplicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationViewModel.swift; sourceTree = "<group>"; };
+		FEC415962CF5690400E05250 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +210,7 @@
 				2C2E57ED2CE71F0D008766A8 /* Assets.xcassets */,
 				2C2E57EE2CE71F0D008766A8 /* Color.xcassets */,
 				2C2E57F02CE71F0D008766A8 /* Image.xcassets */,
+				FEC415962CF5690400E05250 /* Config.xcconfig */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -450,7 +451,6 @@
 		7793F1802CEC1514007595D4 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				FE7836ED2CEB385F00EF5569 /* Config.xcconfig */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -592,7 +592,7 @@
 				2C2E582B2CE71F0D008766A8 /* Pretendard-Regular.ttf in Resources */,
 				2C2E582C2CE71F0D008766A8 /* Pretendard-SemiBold.ttf in Resources */,
 				2C2E582D2CE71F0D008766A8 /* Pretendard-Thin.ttf in Resources */,
-				FE7836EE2CEB385F00EF5569 /* Config.xcconfig in Resources */,
+				FEC415972CF5690400E05250 /* Config.xcconfig in Resources */,
 				2C2E582E2CE71F0D008766A8 /* Assets.xcassets in Resources */,
 				2C2E582F2CE71F0D008766A8 /* Color.xcassets in Resources */,
 				2C2E58312CE71F0D008766A8 /* Image.xcassets in Resources */,
@@ -675,7 +675,6 @@
 /* Begin XCBuildConfiguration section */
 		2C2E578F2CE71E8C008766A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE7836ED2CEB385F00EF5569 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -739,7 +738,6 @@
 		};
 		2C2E57902CE71E8C008766A8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE7836ED2CEB385F00EF5569 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -802,7 +800,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = U4BQZ3AXAA;
+				DEVELOPMENT_TEAM = HBVHMLA55U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TeamUP/Info.plist;
@@ -837,7 +835,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = U4BQZ3AXAA;
+				DEVELOPMENT_TEAM = HBVHMLA55U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TeamUP/Info.plist;
