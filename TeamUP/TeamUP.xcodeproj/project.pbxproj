@@ -121,6 +121,7 @@
 		50A7A87D2CEEC22A002EF75F /* MyRecruitingTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecruitingTeamsView.swift; sourceTree = "<group>"; };
 		50A7A87F2CEEC236002EF75F /* MyAppliedTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppliedTeamsView.swift; sourceTree = "<group>"; };
 		50A7A8812CEECE6E002EF75F /* TeamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailView.swift; sourceTree = "<group>"; };
+		50F2A9E42CF569B0003C1CFD /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		770C29DD2CEF0D2C005C7844 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		770C29DF2CF05E01005C7844 /* MyBookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookmarksView.swift; sourceTree = "<group>"; };
 		770E953E2CE722E500761A03 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
@@ -451,6 +452,7 @@
 		7793F1802CEC1514007595D4 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
+				50F2A9E42CF569B0003C1CFD /* Config.xcconfig */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
