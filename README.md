@@ -9,13 +9,13 @@ _우리 ‘TeamUp’은 새로운 도전에 필요한 공부와 프로젝트를 
 
 # 페르소나 🌏
 ![image](https://github.com/user-attachments/assets/5a65669f-65e2-4dfa-bcf1-69c2731c5d68)
-
+***
 ![image](https://github.com/user-attachments/assets/f9f96418-d7f7-49a7-8012-16d630888933)
-
+***
 ![image](https://github.com/user-attachments/assets/c2e1b42a-1932-4134-b122-df23597b2c8c)
 
 
-# Tab 소개 🔧
+# Tab 및 기능 소개 🔧
 
 <img src="https://github.com/user-attachments/assets/65d25887-0cb0-4b07-bd7a-a9c6b15203ab" width="600" height="150"/>
 
@@ -26,6 +26,65 @@ _우리 ‘TeamUp’은 새로운 도전에 필요한 공부와 프로젝트를 
 | **글쓰기 탭 📝** | 모집 탭과 라운지 탭에 글을 작성하여 다양한 정보를 공유할 수 있습니다. |
 | **채팅 탭 💬**   | 1:1 채팅 및 그룹 채팅을 통해 실시간 소통할 수 있습니다. |
 | **프로필 탭 👤** | 내 프로필을 꾸미고, 신청하고 저장한 글들을 한눈에 확인할 수 있습니다. |
+---
+
+## 회원가입
+
+<img src="https://github.com/user-attachments/assets/ec9fbb64-f3b0-48e5-9955-a4ef9cb9335f" width="250" height="560"/>
+
+<img src="https://github.com/user-attachments/assets/756f4522-90e2-4f39-b8b0-db9eab287213" width="250" height="560"/>
+
+<img src="https://github.com/user-attachments/assets/7a840781-65e9-4bbd-bba7-deec4de610d6" width="250" height="560"/>
+
+## 로그인
+
+<img src="https://github.com/user-attachments/assets/5e112fd6-d8fd-47af-9188-526accffcc10" width="250" height="560"/>
+
+## 모집
+
+<img src="https://github.com/user-attachments/assets/536aeb04-46bc-44c7-b542-96111b1169f0" width="250" height="560"/>
+
+<img src="https://github.com/user-attachments/assets/77aa77b7-2d3f-41fa-b5a7-d225418cae96" width="250" height="560"/> 
+
+## 라운지
+
+<img src="https://github.com/user-attachments/assets/8e2cb4cf-dfc8-4db8-9ccb-813a49886232" width="250" height="560"/>
+
+<img src="https://github.com/user-attachments/assets/a8a016e2-77c7-4cbd-961d-4e986acf3e02" width="250" height="560"/>
+
+## 글쓰기
+
+<img src="https://github.com/user-attachments/assets/7c84d5c1-5f2e-4a63-8db0-d405f4ed8801" width="250" height="560"/>
+
+## 채팅
+
+<img src="https://github.com/user-attachments/assets/e5c7af92-fe5b-4953-975b-ca6a7a26c93f" width="250" height="560"/>
+
+<img src="https://github.com/user-attachments/assets/6dfa7205-65de-4c2b-8266-f836f907f820" width="250" height="560"/>
+
+<img src="https://github.com/user-attachments/assets/eb0c9eee-b551-4ce7-b881-801419c12acc" width="250" height="560"/>
+
+## 프로필
+
+<img src="https://github.com/user-attachments/assets/44420a8c-a8be-40b9-9653-4edade5d65e9" width="250" height="560"/>
+
+<img src="https://github.com/user-attachments/assets/ae69d036-ab99-4a53-9fab-acb39d3daa86" width="250" height="560"/>
+
+<img src="https://github.com/user-attachments/assets/b5bec352-69ba-4c25-a998-e24b5756d911" width="250" height="560"/>
+
+<img src="https://github.com/user-attachments/assets/ce771cc0-7faa-4f5e-a57e-ca3a2a0d515c" width="250" height="560"/>
+
+<img src="https://github.com/user-attachments/assets/70727636-cba9-40ef-8a7a-f2fa434a16f9" width="250" height="560"/>
+
+<img src="https://github.com/user-attachments/assets/9c5a0775-44fa-4833-906a-13ddd6a8d46f" width="250" height="560"/>
+
+# 기타
+
+<img src="https://github.com/user-attachments/assets/a74fb0e2-4854-419b-9e37-3f67153ce1e0" width="250" height="560"/>
+
+<img src="https://github.com/user-attachments/assets/b519b7ca-ded1-41bd-a289-3a98bf96b6c1" width="250" height="560"/>
+
+<img src="https://github.com/user-attachments/assets/8bb3bc60-e87a-4da1-83e0-c31233c570ce" width="250" height="560"/>
 
 # Library 📕
 ```
